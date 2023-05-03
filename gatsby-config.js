@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Be A React Dev`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Rob Welan`,
+      summary: `who lives and works in Ipswich Queensland building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Welcome to be-a-react-dev, a blog written from the perspective of a person self-diagnosed with autism who happens to be passionate about ReactJS.`,
+    siteUrl: `https://beareact.dev`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `rmwits`,
     },
   },
   plugins: [
