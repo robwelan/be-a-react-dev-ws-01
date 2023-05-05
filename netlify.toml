@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://be-a-react-dev-ws-v01.netlify.app/*"
+  to = "https://beareact.dev//"
+  status = 301
+  force = true
