@@ -12,7 +12,7 @@ settings_include_in_fti: true
 settings_featured_image:
   alt: >-
     typescript plus reactjs
-  src: /typescript-plus-react.jpg
+  src: /typescript-plus-react.png
   title: 'Typescript + Reactjs'
 settings_publish: true
 twitter_tags:
@@ -34,3 +34,5 @@ By combining the power of ReactJS and TypeScript, developers can enjoy the benef
 Using TypeScript with ReactJS is not only beneficial for developers but also for businesses. The static type checking of TypeScript helps reduce the number of bugs and makes the codebase easier to maintain. This leads to a more stable and reliable application, reducing the time and resources spent on debugging and maintenance.
 
 So if you're looking to build scalable and maintainable web applications, consider using TypeScript with ReactJS. With these two powerful technologies in your arsenal, you'll be able to create high-quality applications that are easy to develop, maintain, and scale.
+
+(written mostly by ChatGPT)
