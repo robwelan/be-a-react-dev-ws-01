@@ -88,7 +88,10 @@ module.exports = {
               })
             },
             query: `{
-              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+              allMarkdownRemark(
+                sort: {frontmatter: {date: DESC}}
+                filter: {frontmatter: {settings_publish: {eq: true}}}
+              ) {
                 nodes {
                   excerpt
                   html
@@ -103,7 +106,7 @@ module.exports = {
               }
             }`,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Be A React Dev RSS Feed",
           },
         ],
       },
@@ -111,7 +114,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Be A React Dev`,
         short_name: `Gatsby`,
         start_url: `/`,
         background_color: `#ffffff`,
