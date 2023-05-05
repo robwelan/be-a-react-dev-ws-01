@@ -1,15 +1,15 @@
-import * as React from "react"
+import * as React from 'react';
 
-import Bio from "../../components/bio"
-import Layout from "../../components/layout"
+import Bio from '../../components/bio';
+import Layout from '../../components/layout';
 //  blog post
-import BlogPost from "./post"
+import BlogPost from './post';
 
-const ContentHomePage = props => {
-  const { data, location } = props
+const ContentHomePage = (props) => {
+  const { data, location } = props;
 
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
+  const posts = data.allMarkdownRemark.nodes;
 
   if (posts.length === 0) {
     return (
@@ -21,19 +21,19 @@ const ContentHomePage = props => {
           gatsby-config.js).
         </p>
       </Layout>
-    )
+    );
   }
 
   return (
     <Layout location={location} title={siteTitle}>
       <Bio />
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => (
+        {posts.map((post) => (
           <BlogPost key={post.fields.slug} post={post} />
         ))}
       </ol>
     </Layout>
-  )
-}
+  );
+};
 
-export default ContentHomePage
+export default ContentHomePage;

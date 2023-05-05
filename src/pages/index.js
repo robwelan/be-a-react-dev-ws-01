@@ -1,23 +1,23 @@
-import * as React from "react"
+import * as React from 'react';
 //  gatsby
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby';
 //  components
-import Seo from "../components/seo"
+import Seo from '../components/seo';
 //  content
-import ContentHomePage from "../content-pages/home-page"
+import ContentHomePage from '../content-pages/home-page';
 
 const BlogIndex = ({ data, location }) => (
   <ContentHomePage data={data} location={location} />
-)
+);
 
-export default BlogIndex
+export default BlogIndex;
 
 /**
  * Head export to define metadata for the page
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />
+export const Head = () => <Seo title="All posts" />;
 
 export const pageQuery = graphql`
   {
@@ -52,4 +52,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

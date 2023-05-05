@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react';
 //  chakra-ui
 //  gatsby
-import { Link } from "gatsby"
+import { Link } from 'gatsby';
 
-const HeaderSansImage = props => {
-  const { post, title } = props
+const HeaderSansImage = (props) => {
+  const { post, title } = props;
 
   return (
     <header>
@@ -15,7 +15,7 @@ const HeaderSansImage = props => {
       </h2>
       <small>{post.frontmatter.date}</small>
     </header>
-  )
-}
+  );
+};
 
-export default HeaderSansImage
+export default HeaderSansImage;

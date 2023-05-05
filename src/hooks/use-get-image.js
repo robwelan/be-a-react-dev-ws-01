@@ -1,11 +1,11 @@
 //  gatsby
-import { useStaticQuery, graphql } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 //  lodash
-import { find as _Find } from "lodash"
+import { find as _Find } from 'lodash';
 
-const useGetImage = payload => {
-  const { image = "" } = payload
+const useGetImage = (payload) => {
+  const { image = '' } = payload;
   const data = useStaticQuery(
     graphql`
       query allImageSharp {
@@ -23,16 +23,16 @@ const useGetImage = payload => {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
   const imageNode = _Find(data.allImageSharp.edges, {
     node: { fixed: { originalName: image } },
-  })
+  });
 
-  const imageResult = getImage(imageNode.node.gatsbyImageData)
+  const imageResult = getImage(imageNode.node.gatsbyImageData);
 
-  return imageResult
-}
+  return imageResult;
+};
 
-export default useGetImage
+export default useGetImage;
