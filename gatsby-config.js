@@ -7,6 +7,9 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+const siteUrl = 'https://beareact.dev';
+
 module.exports = {
   siteMetadata: {
     title: `Be A React Dev`,
@@ -15,7 +18,7 @@ module.exports = {
       summary: `who lives and works in Ipswich Queensland building useful things.`,
     },
     description: `Welcome to be-a-react-dev, a blog written from the perspective of a person self-diagnosed with autism who happens to be passionate about ReactJS.`,
-    siteUrl: `https://beareact.dev`,
+    siteUrl,
     social: {
       twitter: `rmwits`,
     },
@@ -47,7 +50,7 @@ module.exports = {
           // Avoids sending pageview hits from custom paths
           exclude: ['/preview/**', '/do-not-track/me/too/'],
           // Defaults to https://www.googletagmanager.com
-          origin: 'YOUR_SELF_HOSTED_ORIGIN',
+          origin: siteUrl,
           // Delays processing pageview events on route update (in milliseconds)
           delayOnRouteUpdate: 0,
         },
