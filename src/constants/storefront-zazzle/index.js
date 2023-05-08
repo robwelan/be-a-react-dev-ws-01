@@ -1,5 +1,6 @@
-import tshirtAutisticAsFuck from './tshirt-autistic-as-fuck';
+import tshirtMenAutisticAsFuck from './tshirt-men-autistic-as-fuck';
+import tshirtWomenAutisticAsFuck from './tshirt-women-autistic-as-fuck';
 
-const storefront = [tshirtAutisticAsFuck];
+const storefront = [tshirtMenAutisticAsFuck, tshirtWomenAutisticAsFuck];
 
 export default storefront;
