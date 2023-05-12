@@ -1,22 +1,22 @@
 const getRemoveLeadAndEndCharacter = (payload = {}) => {
-  const { value, character = {} } = payload
-  const { end = "", lead = "" } = character
+  const { value = '', character = {} } = payload;
+  const { end = '', lead = '' } = character;
 
-  if (value === "" || end === "" || lead === "") {
-    return value
+  if (value === '' || end === '' || lead === '') {
+    return value;
   }
 
-  const valueArray = value.split("")
+  const valueArray = value.split('');
 
   if (valueArray[0] === lead) {
-    valueArray.shift()
+    valueArray.shift();
   }
 
   if (valueArray.at(-1) === end) {
-    valueArray.pop()
+    valueArray.pop();
   }
 
-  return valueArray.join("")
-}
+  return valueArray.join('');
+};
 
-export default getRemoveLeadAndEndCharacter
+export default getRemoveLeadAndEndCharacter;

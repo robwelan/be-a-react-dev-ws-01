@@ -4,9 +4,9 @@ import Seo from '../components/seo';
 //  content
 import ContentShopPage from '../content-pages/shop-page';
 
-const BlogIndex = ({ location }) => <ContentShopPage location={location} />;
+const PageShop = ({ location }) => <ContentShopPage location={location} />;
 
-export default BlogIndex;
+export default PageShop;
 
 /**
  * Head export to define metadata for the page

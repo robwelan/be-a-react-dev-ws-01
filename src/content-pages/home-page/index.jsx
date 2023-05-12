@@ -1,38 +1,33 @@
-import * as React from 'react';
-
-import Bio from '../../components/bio';
-import Layout from '../../components/layout';
-//  blog post
-import BlogPost from './post';
+import React from 'react';
+//  chakra-ui
+import { Container, Text } from '@chakra-ui/react';
+//  posts
+import BlogPosts from './posts';
 
 const ContentHomePage = (props) => {
-  const { data, location } = props;
+  const { data } = props;
+  const { edges = [], searchResults = [] } = data.allMarkdownRemark;
+  const searchResultsLength = searchResults.length || 0;
 
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const posts = data.allMarkdownRemark.nodes;
-
-  if (posts.length === 0) {
+  if (edges.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
+      <>
+        <Container maxW="6xl" sx={{ marginBottom: '2em' }}>
+          <Text>There are no posts. Please come back later.</Text>
+        </Container>
+      </>
     );
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map((post) => (
-          <BlogPost key={post.fields.slug} post={post} />
-        ))}
-      </ol>
-    </Layout>
+    <>
+      <Container maxW="6xl" sx={{ marginBottom: '2em' }}>
+        <>
+          {searchResultsLength === 0 && <BlogPosts data={edges} />}
+          {searchResultsLength > 0 && <BlogPosts data={searchResults} />}
+        </>
+      </Container>
+    </>
   );
 };
 

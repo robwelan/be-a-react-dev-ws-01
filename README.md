@@ -17,3 +17,5 @@ If you want to hire me - that would be a first. You can find me on [LinkedIn](ht
 
 FYI:
 This blog was built from this starter blog: [https://github.com/gatsbyjs/gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
+
+TODO: https://dragonza.io/create-multiple-blog-post-types-gatsby/

@@ -32,8 +32,6 @@
     "@chakra-ui/system": "^2.5.7",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@fontsource/merriweather": "^4.5.14",
-    "@fontsource/montserrat": "^4.5.14",
     "@react-icons/all-files": "^4.1.0",
     "framer-motion": "^10.12.9",
     "gatsby": "^5.9.1",
