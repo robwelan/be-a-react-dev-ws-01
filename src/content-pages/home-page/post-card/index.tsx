@@ -48,7 +48,7 @@ const BlogPostCard = (props: Props) => {
   const { date, settings_featured_image, title } = frontmatter;
   const { alt: featuredAlt = '', src: featuredSrc = '' } =
     settings_featured_image;
-  console.log('device', device);
+
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4}>
       <Flex gap={4}>
