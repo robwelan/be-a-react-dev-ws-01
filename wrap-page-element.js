@@ -26,7 +26,8 @@ const wrapPageElement = ({ element, props }) => {
   return (
     <Layout {...props}>
       <Router basepath={PUBLIC_ROUTE_PAGE_HOME}>
-        <PageNotFound default></PageNotFound>
+        <PageNotFound default />
+
         <PageHome path={PUBLIC_ROUTE_PAGE_HOME} />
         <PageCookies path={PUBLIC_ROUTE_PAGE_COOKIES} />
         <PagePrivacy path={PUBLIC_ROUTE_PAGE_PRIVACY} />
