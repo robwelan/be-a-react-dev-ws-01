@@ -2,6 +2,7 @@ import React from 'react';
 //  chakra ui
 import { Grid, GridItem } from '@chakra-ui/react';
 //  hooks
+import useDeviceSize from '../../hooks/use-device-size';
 import useSiteMetadata from '../../hooks/use-site-meta-data';
 //  components
 import BlogPostCard from './post-card';
@@ -18,6 +19,7 @@ type Props = {
 
 const BlogPosts = (props: Props) => {
   const { data } = props;
+  const device = useDeviceSize();
   const siteMetadata = useSiteMetadata();
   const { title = '' } = siteMetadata;
 
@@ -32,7 +34,7 @@ const BlogPosts = (props: Props) => {
       <>
         {data.map((edge) => (
           <GridItem key={edge.node.id}>
-            <BlogPostCard post={edge.node} title={title} />
+            <BlogPostCard device={device} post={edge.node} title={title} />
           </GridItem>
         ))}
       </>

@@ -17,6 +17,11 @@ import FeaturedImage from '../../../components/feaured-image';
 import getRemoveLeadAndEndCharacter from '../../../utilities/strings/remove-lead-and-end-character';
 
 type Props = {
+  device: {
+    type: {
+      isMobile: boolean;
+    };
+  };
   post: {
     excerpt: string;
     fields: {
@@ -35,13 +40,15 @@ type Props = {
 };
 
 const BlogPostCard = (props: Props) => {
-  const { post } = props;
+  const { device, post } = props;
+  const { type } = device;
+  const { isMobile } = type;
   const { excerpt, fields, frontmatter, timeToRead } = post;
   const { slug } = fields;
   const { date, settings_featured_image, title } = frontmatter;
   const { alt: featuredAlt = '', src: featuredSrc = '' } =
     settings_featured_image;
-
+  console.log('device', device);
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4}>
       <Flex gap={4}>
@@ -59,15 +66,21 @@ const BlogPostCard = (props: Props) => {
               borderColor="#FFDE59"
               sx={{ marginBottom: '0.5em', marginTop: '0.5em' }}
             />
-            <Box height="1em"></Box>
-            <Box as="span" fontSize="sm">
-              <Text>{excerpt}</Text>
-            </Box>
-            <Box height="1em"></Box>
-            <Divider
-              borderColor="#FFDE59"
-              sx={{ marginBottom: '0.25em', marginTop: '0.25em' }}
-            />
+
+            {!isMobile && (
+              <>
+                <Box height="1em"></Box>
+                <Box as="span" fontSize="sm">
+                  <Text>{excerpt}</Text>
+                </Box>
+                <Box height="1em"></Box>
+                <Divider
+                  borderColor="#FFDE59"
+                  sx={{ marginBottom: '0.25em', marginTop: '0.25em' }}
+                />
+              </>
+            )}
+
             <Box height="1em"></Box>
             <Box fontSize="sm">
               <GatsbyLink to={slug}>{`${timeToRead} minute read`}</GatsbyLink>
