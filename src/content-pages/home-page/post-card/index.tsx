@@ -4,6 +4,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import {
   AspectRatio,
   Box,
+  Center,
   Divider,
   Flex,
   Heading,
@@ -58,34 +59,37 @@ const BlogPostCard = (props: Props) => {
               borderColor="#FFDE59"
               sx={{ marginBottom: '0.5em', marginTop: '0.5em' }}
             />
+            <Box height="1em"></Box>
             <Box as="span" fontSize="sm">
               <Text>{excerpt}</Text>
             </Box>
-          </Box>
-          <Box height="1em"></Box>
-          <Divider
-            borderColor="#FFDE59"
-            sx={{ marginBottom: '0.25em', marginTop: '0.25em' }}
-          />
-          <Box height="1em"></Box>
-          <Box fontSize="sm">
-            <GatsbyLink to={slug}>{`${timeToRead} minute read`}</GatsbyLink>
+            <Box height="1em"></Box>
+            <Divider
+              borderColor="#FFDE59"
+              sx={{ marginBottom: '0.25em', marginTop: '0.25em' }}
+            />
+            <Box height="1em"></Box>
+            <Box fontSize="sm">
+              <GatsbyLink to={slug}>{`${timeToRead} minute read`}</GatsbyLink>
+            </Box>
           </Box>
         </Box>
         <Box>
           <>
             {featuredSrc !== '' && (
-              <Link as={GatsbyLink} to={slug}>
-                <AspectRatio width="112px" ratio={1 / 1}>
-                  <FeaturedImage
-                    alt={post.frontmatter.settings_featured_image.alt || ''}
-                    filename={getRemoveLeadAndEndCharacter({
-                      value: post.frontmatter.settings_featured_image.src,
-                      character: { end: '/', lead: '/' },
-                    })}
-                  />
-                </AspectRatio>
-              </Link>
+              <Center sx={{ height: '100%', width: '100%' }}>
+                <Link as={GatsbyLink} to={slug}>
+                  <AspectRatio width="112px" ratio={1 / 1}>
+                    <FeaturedImage
+                      alt={post.frontmatter.settings_featured_image.alt || ''}
+                      filename={getRemoveLeadAndEndCharacter({
+                        value: post.frontmatter.settings_featured_image.src,
+                        character: { end: '/', lead: '/' },
+                      })}
+                    />
+                  </AspectRatio>
+                </Link>
+              </Center>
             )}
           </>
         </Box>

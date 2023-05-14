@@ -1,8 +1,12 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Heading, Text, Button } from '@chakra-ui/react';
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
+//  gatsbyjs
+import { Link as GatsbyLink } from 'gatsby';
 //  components
 import Seo from '../components/seo';
+//  security
+import { PUBLIC_ROUTE_PAGE_HOME } from '../security/constants/routes-public';
 
 const NotFoundPage = ({ location }) => {
   return (
@@ -25,9 +29,11 @@ const NotFoundPage = ({ location }) => {
         </Text>
 
         <Button
+          as={GatsbyLink}
           colorScheme="teal"
           bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
           color="white"
+          to={PUBLIC_ROUTE_PAGE_HOME}
           variant="solid"
         >
           Go to Home
