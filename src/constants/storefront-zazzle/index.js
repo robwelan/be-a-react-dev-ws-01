@@ -9,6 +9,13 @@ import tshirtWomenNSFW from './tshirt-women-nsfw';
 import tshirtWomenTheSystemIsFixed from './tshirt-women-the-system-is-fixed';
 import tshirtWomenWistful from './tshirt-women-wistful';
 
+const shared = {
+  store: {
+    name: 'Be A React Dev',
+    uri: 'https://www.zazzle.com.au/store/beareactdev',
+  },
+};
+
 const storefront = [
   tshirtMenAutisticAsFuck,
   tshirtMenMerryEverything,
@@ -22,4 +29,12 @@ const storefront = [
   tshirtWomenTheSystemIsFixed,
   tshirtWomenWistful,
 ];
+
+const store = {
+  common: shared,
+  products: storefront,
+};
+
+export { store };
+
 export default storefront;
