@@ -16,6 +16,4 @@ This blog is free. Please be mindful to attribute the content if you want to sha
 If you want to hire me - that would be a first. You can find me on [LinkedIn](https://www.linkedin.com) at [Rob Welan](https://www.linkedin.com/in/robwelan/")
 
 FYI:
-This blog was built from this starter blog: [https://github.com/gatsbyjs/gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
-
-TODO: https://dragonza.io/create-multiple-blog-post-types-gatsby/
+This blog was built from this starter blog: [https://github.com/gatsbyjs/gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) in May of 2023

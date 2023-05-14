@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react';
+//  chakra-ui
+import { useColorMode, useDisclosure } from '@chakra-ui/react';
+//  react-scroll
 import { animateScroll as scroll } from 'react-scroll';
 //  constants
 import { Children, Location } from '../constants/types';
 //  local components
-import ContentProvider from './provider';
+import ContentListeners from './listeners';
+//  local components
+import Routes from '../security/routes';
+import WrapRoutes from './wrap-routes';
+//  hooks
+import useDeviceSize from '../hooks/use-device-size';
 //  styles
 import './index.css';
 
@@ -15,7 +23,9 @@ type Props = {
 const ContentLayout = (props: Props) => {
   const { children, location } = props;
   const { pathname } = location;
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const device = useDeviceSize();
   //  scroll to top when path changes effect
   useEffect(() => {
     scroll.scrollToTop({
@@ -26,9 +36,26 @@ const ContentLayout = (props: Props) => {
     });
   }, [pathname]);
 
+  const configuration = {
+    color: {
+      colorMode,
+      toggleColorMode,
+    },
+    device,
+    disclosure: {
+      isOpen,
+      onOpen,
+      onClose,
+    },
+  };
+
   return (
     <>
-      <ContentProvider location={location}>{children}</ContentProvider>
+      <ContentListeners />
+      <WrapRoutes configuration={configuration}>
+        {/* <Routes location={location} /> */}
+        <>{children}</>
+      </WrapRoutes>
     </>
   );
 };

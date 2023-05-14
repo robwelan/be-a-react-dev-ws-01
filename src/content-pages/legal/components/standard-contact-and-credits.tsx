@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 //  chakra-ui
 import { Link } from '@chakra-ui/react';
 import { EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons';

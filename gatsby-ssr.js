@@ -7,9 +7,12 @@
 
 // You can delete this file if you're not using it
 //  Components
-import CustomLayout from './wrap-page-element';
+import CustomElement from './wrap-page-element';
+import CustomRoot from './wrap-root-element';
 
-export const wrapPageElement = CustomLayout;
+export const wrapPageElement = CustomElement;
+
+export const wrapRootElement = CustomRoot;
 
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}

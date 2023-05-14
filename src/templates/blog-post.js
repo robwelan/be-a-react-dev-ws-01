@@ -3,25 +3,18 @@ import { Link as GatsbyLink, graphql } from 'gatsby';
 import renderHTML from 'react-render-html';
 //  chakra ui
 import {
-  Alert,
-  AlertIcon,
   AspectRatio,
   Box,
-  Container,
   Divider,
-  Grid,
-  GridItem,
   Heading,
   HStack,
   Link,
-  ListItem,
   Text,
-  UnorderedList,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 //  components
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import FeaturedImage from '../components/feaured-image';
 //  utiltities
 import getRemoveLeadAndEndCharacter from '../utilities/strings/remove-lead-and-end-character';
@@ -99,7 +92,7 @@ export default BlogPost;
 
 export const Head = ({ data: { markdownRemark: post } }) => {
   return (
-    <SEO
+    <Seo
       title={post.frontmatter.title || 'Blog Post'}
       description={post.frontmatter.description || post.excerpt}
     />

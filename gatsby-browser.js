@@ -1,5 +1,6 @@
 //  components
-import CustomLayout from './wrap-page-element';
+import CustomElement from './wrap-page-element';
+import CustomRoot from './wrap-root-element';
 // highlighting for code blocks
 import 'prismjs/themes/prism.css';
 
@@ -24,4 +25,6 @@ export const onServiceWorkerUpdateReady = () => {
 
 export const registerServiceWorker = () => true;
 
-export const wrapPageElement = CustomLayout;
+export const wrapPageElement = CustomElement;
+
+export const wrapRootElement = CustomRoot;

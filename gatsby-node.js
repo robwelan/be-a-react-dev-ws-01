@@ -55,14 +55,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].id;
 
       createPage({
-        matchPath: `${post.fields.slug}`,
-        path: post.fields.slug,
         component: blogPost,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
         },
+        matchPath: post.fields.slug,
+        path: post.fields.slug,
       });
     });
   }

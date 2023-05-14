@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeadFC, PageProps } from 'gatsby';
 //  components
-import SEO from '../../components/seo';
+import Seo from '../../components/seo';
 //  content
 import PageContent from '../../content-pages/legal/privacy';
 
@@ -9,4 +9,4 @@ const PrivacyPage: React.FC<PageProps> = () => <PageContent />;
 
 export default PrivacyPage;
 
-export const Head: HeadFC = () => <SEO title="Privacy" />;
+export const Head: HeadFC = () => <Seo title="Privacy" />;

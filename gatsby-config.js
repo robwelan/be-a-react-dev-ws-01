@@ -26,6 +26,7 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-netlify',
     {
       resolve: '@chakra-ui/gatsby-plugin',
       options: {
