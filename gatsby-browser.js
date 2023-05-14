@@ -10,17 +10,17 @@ export const onClientEntry = () => {
     import('intersection-observer');
   }
 
-  registerServiceWorker();
+  // registerServiceWorker();
 };
 
 // export const onServiceWorkerUpdateReady = () => {};
 
-export const registerServiceWorker = () => {
-  if (typeof window !== 'undefined') {
-    //  force refresh
-    window.location.reload();
-  }
-};
+// export const registerServiceWorker = () => {
+//   if (typeof window !== 'undefined') {
+//     //  force refresh
+//     window.location.reload();
+//   }
+// };
 
 export const wrapPageElement = CustomElement;
 
