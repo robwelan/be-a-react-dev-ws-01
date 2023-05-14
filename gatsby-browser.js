@@ -9,21 +9,18 @@ export const onClientEntry = () => {
   if (typeof window.IntersectionObserver === 'undefined') {
     import('intersection-observer');
   }
+
+  registerServiceWorker();
 };
 
-export const onServiceWorkerUpdateReady = () => {
-  // const answer = window.confirm(
-  //   `This application has been updated. ` +
-  //     `Reload to display the latest version?`
-  // )
-  // if (answer === true) {
-  //   window.location.reload()
-  // }
-  //  force refresh
-  window.location.reload();
-};
+// export const onServiceWorkerUpdateReady = () => {};
 
-export const registerServiceWorker = () => true;
+export const registerServiceWorker = () => {
+  if (typeof window !== 'undefined') {
+    //  force refresh
+    window.location.reload();
+  }
+};
 
 export const wrapPageElement = CustomElement;
 
