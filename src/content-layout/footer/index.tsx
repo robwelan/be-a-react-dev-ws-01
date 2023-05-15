@@ -34,7 +34,8 @@ import {
 import iconGatsby from '../../images/gatsbyjs_icon.svg';
 import iconJavascript from '../../images/javascript_icon.svg';
 import iconNetlify from '../../images/netlify_icon.svg';
-import iconNode from '../../images/nodejs_icon.svg';
+import iconNodeDark from '../../images/nodejs_icon_dark.svg';
+import iconNodeLight from '../../images/nodejs_icon_light.svg';
 import iconReact from '../../images/react_icon.svg';
 import iconTypescript from '../../images/typescript_icon.svg';
 
@@ -126,7 +127,7 @@ const LayoutFooter = () => {
                 >
                   <Image
                     alt=""
-                    src={colorMode === 'light' ? iconNode : iconNode}
+                    src={colorMode === 'light' ? iconNodeLight : iconNodeDark}
                     sx={{ height: '1.2em' }}
                   />
                 </Link>
@@ -189,7 +190,7 @@ const LayoutFooter = () => {
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           {`© ${new Date().getFullYear()} ${
             siteMetadata.title
-          }. All rights reserved`}
+          }. All rights reserved.`}
         </Text>
       </Box>
     </Box>
