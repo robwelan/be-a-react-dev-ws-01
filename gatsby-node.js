@@ -75,12 +75,27 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const filePath = createFilePath({ node, getNode });
+    const fileNode = getNode(node.parent);
+    const created = new Date(fileNode.birthtime);
+    const updated = new Date(fileNode.mtime);
 
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: filePath,
+    });
+
+    createNodeField({
+      name: `date_created`,
+      node,
+      value: created,
+    });
+
+    createNodeField({
+      name: `date_updated`,
+      node,
+      value: updated,
     });
   }
 };
@@ -126,6 +141,8 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Fields {
       slug: String
+      date_created: Date @dateformat
+      date_updated: Date @dateformat
     }
   `);
 };
