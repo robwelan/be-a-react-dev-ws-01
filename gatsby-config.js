@@ -22,6 +22,7 @@ module.exports = {
     keywords: 'gatsbyjs netlify typescript javascript nodejs reactjs',
     siteUrl,
     social: {
+      linkedin: `robwelan`,
       twitter: `rmwits`,
     },
   },

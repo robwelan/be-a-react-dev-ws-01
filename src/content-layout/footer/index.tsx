@@ -24,7 +24,9 @@ import LogoIcon from '../components/image-icon';
 import SocialButton from './social-button';
 //  security
 import {
+  PUBLIC_ROUTE_PAGE_ABOUT,
   PUBLIC_ROUTE_PAGE_COOKIES,
+  PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_PRICING,
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_REFUNDS,
@@ -51,7 +53,13 @@ const LayoutFooter = () => {
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
         <Center>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+            <Stack align={'flex-start'}>
+              <ListHeader>About</ListHeader>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_ABOUT}>
+                The Author Guy
+              </GatsbyLink>
+            </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Legal</ListHeader>
               <GatsbyLink to={PUBLIC_ROUTE_PAGE_COOKIES}>Cookies</GatsbyLink>
@@ -59,24 +67,26 @@ const LayoutFooter = () => {
               <GatsbyLink to={PUBLIC_ROUTE_PAGE_TERMS}>Terms</GatsbyLink>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>Follow Us</ListHeader>
-              {linksSocial.map((item, index) => {
-                const { icon: Icon } = item;
+              <ListHeader>Find Me</ListHeader>
+              <SimpleGrid columns={2} spacing={2}>
+                {linksSocial.map((item, index) => {
+                  const { icon: Icon } = item;
 
-                return (
-                  <SocialButton
-                    key={index}
-                    alt={item.alt}
-                    label={item.label}
-                    href={item.href}
-                  >
-                    {<Icon />}
-                  </SocialButton>
-                );
-              })}
+                  return (
+                    <SocialButton
+                      key={index}
+                      alt={item.alt}
+                      href={item.href}
+                      label={item.label}
+                    >
+                      {<Icon />}
+                    </SocialButton>
+                  );
+                })}
+              </SimpleGrid>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>About</ListHeader>
+              <ListHeader>Tech In Use</ListHeader>
               <SimpleGrid columns={3} spacing={2}>
                 <Link
                   href="https://www.gatsbyjs.com/"
@@ -182,10 +192,14 @@ const LayoutFooter = () => {
             ml: 8,
           }}
         >
-          <LogoIcon />
-          <Text as="b" marginLeft="1em" marginTop="0" fontSize="lg">
-            {siteMetadata.title}
-          </Text>
+          <Link as={GatsbyLink} to={PUBLIC_ROUTE_PAGE_HOME}>
+            <LogoIcon />
+          </Link>
+          <Link as={GatsbyLink} to={PUBLIC_ROUTE_PAGE_HOME}>
+            <Text as="b" marginLeft="1em" marginTop="0" fontSize="lg">
+              {siteMetadata.title}
+            </Text>
+          </Link>
         </Flex>
         <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           {`© ${new Date().getFullYear()} ${

@@ -49,7 +49,11 @@ const NavigatorTop = (props: Props) => {
                 />
               </Box>
               <Box>
-                <Link as={GatsbyLink} to={PUBLIC_ROUTE_PAGE_HOME}>
+                <Link
+                  aria-label="home"
+                  as={GatsbyLink}
+                  to={PUBLIC_ROUTE_PAGE_HOME}
+                >
                   {device.screen.isExtraSmall && <LogoIcon />}
                   {!device.screen.isExtraSmall && (
                     <>

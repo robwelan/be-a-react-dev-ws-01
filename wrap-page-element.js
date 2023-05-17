@@ -4,6 +4,7 @@ import { Router } from '@reach/router';
 //  content
 import Layout from './src/content-layout';
 //  pages
+import PageAbout from './src/pages/about';
 import PageCookies from './src/pages/legal/cookies';
 import PageHome from './src/pages/index';
 import PagePrivacy from './src/pages/legal/privacy';
@@ -12,6 +13,7 @@ import PageShop from './src/pages/shop';
 import PageTerms from './src/pages/legal/terms';
 //  security
 import {
+  PUBLIC_ROUTE_PAGE_ABOUT,
   PUBLIC_ROUTE_PAGE_COOKIES,
   PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_PRIVACY,
@@ -29,6 +31,7 @@ const wrapPageElement = ({ element, props }) => {
         <PageNotFound default />
 
         <PageHome path={PUBLIC_ROUTE_PAGE_HOME} />
+        <PageAbout path={PUBLIC_ROUTE_PAGE_ABOUT} />
         <PageCookies path={PUBLIC_ROUTE_PAGE_COOKIES} />
         <PagePrivacy path={PUBLIC_ROUTE_PAGE_PRIVACY} />
         <PageTerms path={PUBLIC_ROUTE_PAGE_TERMS} />
