@@ -23,29 +23,17 @@ import { SiGatsby } from '@react-icons/all-files/si/SiGatsby';
 import { SiReact } from '@react-icons/all-files/si/SiReact';
 //  components
 import Feature from './feature';
+//  hooks
+import useSiteMetadata from '../../hooks/use-site-meta-data';
 //  profile image
 import profileImage from '../../images/profile-pic.jpg';
 
 const SplitWithImage = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            linkedin
-            twitter
-          }
-        }
-      }
-    }
-  `);
+  const siteMetadata = useSiteMetadata();
 
-  const author = data.site.siteMetadata?.author;
-  const social = data.site.siteMetadata?.social;
+
+  const author = siteMetadata?.author;
+  const social = siteMetadata?.social;
 
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>

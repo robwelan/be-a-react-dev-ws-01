@@ -14,6 +14,10 @@ const useSiteMetadata = () => {
             icon
             keywords
             siteUrl
+            social {
+              linkedin
+              twitter
+            }
             title
           }
         }
