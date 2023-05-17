@@ -17,9 +17,6 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 //  gatsby
 import { graphql, useStaticQuery } from 'gatsby';
 //  react icons
-import { IoAnalyticsSharp } from '@react-icons/all-files/io5/IoAnalyticsSharp';
-import { IoLogoBitcoin } from '@react-icons/all-files/io5/IoLogoBitcoin';
-import { IoSearchSharp } from '@react-icons/all-files/io5/IoSearchSharp';
 import { MdDeveloperMode } from '@react-icons/all-files/md/MdDeveloperMode';
 import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
 import { SiGatsby } from '@react-icons/all-files/si/SiGatsby';
