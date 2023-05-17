@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
-import renderHTML from 'react-render-html';
 //  chakra ui
 import {
   AspectRatio,
@@ -9,6 +8,7 @@ import {
   Heading,
   HStack,
   Link,
+  Spacer,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -16,6 +16,7 @@ import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 //  components
 import Seo from '../components/seo';
 import FeaturedImage from '../components/feaured-image';
+import { asComponent } from '../components/blog-parse-html.tsx';
 //  utiltities
 import getRemoveLeadAndEndCharacter from '../utilities/strings/remove-lead-and-end-character';
 
@@ -46,7 +47,7 @@ const BlogPost = (props) => {
       <Heading as="h1" size="lg">
         {title}
       </Heading>
-      <Text color={textColorPublishDate} size="sm">
+      <Text color={textColorPublishDate} fontSize="sm">
         {date}
       </Text>
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
@@ -66,7 +67,9 @@ const BlogPost = (props) => {
           <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
         </>
       )}
-      <Box className="blog-post-content">{renderHTML(html)}</Box>
+
+      <article>{asComponent(html)}</article>
+
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
       <HStack>
         <Box>
@@ -76,6 +79,7 @@ const BlogPost = (props) => {
             </Link>
           )}
         </Box>
+        <Spacer />
         <Box>
           {next && (
             <Link as={GatsbyLink} to={next.fields.slug} rel="next">
