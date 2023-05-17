@@ -12,8 +12,6 @@ import Routes from '../security/routes';
 import WrapRoutes from './wrap-routes';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
-//  styles
-import './index.css';
 
 type Props = {
   children: Children;
