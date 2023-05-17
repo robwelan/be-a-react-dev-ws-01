@@ -26,6 +26,7 @@ type Props = {
     excerpt: string;
     fields: {
       slug: string;
+      date_updated: Date;
     };
     frontmatter: {
       date: Date;
@@ -44,7 +45,7 @@ const BlogPostCard = (props: Props) => {
   const { type } = device;
   const { isMobile } = type;
   const { excerpt, fields, frontmatter, timeToRead } = post;
-  const { slug } = fields;
+  const { date_updated, slug } = fields;
   const { date, settings_featured_image, title } = frontmatter;
   const { alt: featuredAlt = '', src: featuredSrc = '' } =
     settings_featured_image;
@@ -55,8 +56,8 @@ const BlogPostCard = (props: Props) => {
         <Box>
           <Box sx={{ marginLeft: '0.5em', marginRight: '0.5em' }}>
             <Link as={GatsbyLink} to={slug}>
-              <Text size="sm">
-                <>{date}</>
+              <Text fontSize="xs">
+                <>{date_updated}</>
               </Text>
               <Heading as="h2" size="md">
                 {title}
@@ -82,7 +83,7 @@ const BlogPostCard = (props: Props) => {
             )}
 
             <Box height="1em"></Box>
-            <Box fontSize="sm">
+            <Box fontSize="xs">
               <GatsbyLink to={slug}>{`${timeToRead} minute read`}</GatsbyLink>
             </Box>
           </Box>

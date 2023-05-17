@@ -16,6 +16,8 @@ const BlogIndex = ({ location }) => {
         edges {
           node {
             fields {
+              date_created(formatString: "DD-MMM-YYYY")
+              date_updated(formatString: "DD-MMM-YYYY")
               slug
             }
             id
