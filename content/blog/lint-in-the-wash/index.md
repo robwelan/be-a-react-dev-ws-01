@@ -48,7 +48,7 @@ My preferences for linting are as follows:
 }
 ```
 
-The above file goes in your src folder in a standard node / javascript project.
+The above file goes in your root folder in a standard node / javascript project.
 
 I find that code is easier to read when using the above settings. And slightly harder to write buggy code.
 
