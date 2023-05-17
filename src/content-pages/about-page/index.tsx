@@ -29,7 +29,7 @@ import Feature from './feature';
 //  profile image
 import profileImage from '../../images/profile-pic.jpg';
 
-export default function SplitWithImage() {
+const SplitWithImage = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -151,4 +151,6 @@ export default function SplitWithImage() {
       </Flex>
     </SimpleGrid>
   );
-}
+};
+
+export default SplitWithImage;
