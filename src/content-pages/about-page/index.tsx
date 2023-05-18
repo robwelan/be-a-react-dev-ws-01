@@ -14,8 +14,6 @@ import {
 } from '@chakra-ui/react';
 //  chakra-ui icons
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-//  gatsby
-import { graphql, useStaticQuery } from 'gatsby';
 //  react icons
 import { MdDeveloperMode } from '@react-icons/all-files/md/MdDeveloperMode';
 import { SiJavascript } from '@react-icons/all-files/si/SiJavascript';
@@ -30,7 +28,6 @@ import profileImage from '../../images/profile-pic.jpg';
 
 const SplitWithImage = () => {
   const siteMetadata = useSiteMetadata();
-
 
   const author = siteMetadata?.author;
   const social = siteMetadata?.social;
@@ -94,7 +91,8 @@ const SplitWithImage = () => {
         <Text>
           I have been using the above technology in the hopes I might gain full
           time employment with these technologies. I have been unsuccessful to
-          date in this pursuit.
+          date in this pursuit to find full time work. I do have projects though
+          which are deployed.
         </Text>
         <br />
         <Heading as="h2" size="sm">
