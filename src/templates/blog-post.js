@@ -30,7 +30,7 @@ const BlogPost = (props) => {
     html = '',
     id = '',
   } = markdownRemark;
-  const { slug } = fields;
+  const { date_updated, slug } = fields;
   const {
     title = '',
     date = '',
@@ -47,8 +47,8 @@ const BlogPost = (props) => {
       <Heading as="h1" size="lg">
         {title}
       </Heading>
-      <Text color={textColorPublishDate} fontSize="sm">
-        {date}
+      <Text color={textColorPublishDate} fontSize="xs">
+        Created: {date} | Updated: {date_updated}
       </Text>
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
       {featuredSrc !== '' && (
@@ -126,6 +126,8 @@ export const pageQuery = graphql`
         twitter_tags
       }
       fields {
+        date_created(formatString: "DD-MMM-YYYY")
+        date_updated(formatString: "DD-MMM-YYYY")
         slug
       }
     }
