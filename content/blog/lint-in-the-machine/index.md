@@ -1,5 +1,5 @@
 ---
-title: Lint In The Wash
+title: Lint In The Machine
 date: "2023-05-05T14:41:00Z"
 categories:
   - general
@@ -22,6 +22,8 @@ twitter_tags:
   - "#gatsbyjs"
   - "#reactjs"
   - "#nodejs"
+  - "#prettier"
+  - "#eslint"
 ---
 Prettier and ESLint are both popular tools used for linting and formatting JavaScript code.
 
@@ -52,6 +54,6 @@ The above file goes in your root folder in a standard node / javascript project.
 
 I find that code is easier to read when using the above settings. And slightly harder to write buggy code.
 
-What does all this have to do with lint in the wash? Meh. I was feeling playful.
+What does all this have to do with lint in the machine? Meh. I was feeling playful.
 
 (written mostly by ChatGPT)
