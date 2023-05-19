@@ -1,8 +1,8 @@
-const getRemoveLeadAndEndCharacter = (payload = {}) => {
+const getRemoveLeadOrEndCharacter = (payload = {}) => {
   const { value = '', character = {} } = payload;
   const { end = '', lead = '' } = character;
 
-  if (value === '' || end === '' || lead === '') {
+  if (value === '' || (end === '' && lead === '')) {
     return value;
   }
 
@@ -19,4 +19,4 @@ const getRemoveLeadAndEndCharacter = (payload = {}) => {
   return valueArray.join('').trim();
 };
 
-export default getRemoveLeadAndEndCharacter;
+export default getRemoveLeadOrEndCharacter;

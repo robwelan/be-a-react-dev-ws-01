@@ -4,6 +4,7 @@ import { Link as GatsbyLink, graphql } from 'gatsby';
 import {
   AspectRatio,
   Box,
+  Button,
   Divider,
   Heading,
   HStack,
@@ -13,15 +14,17 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 //  components
 import Seo from '../components/seo';
 import FeaturedImage from '../components/feaured-image';
 import { asComponent } from '../components/blog-parse-html.tsx';
 //  utiltities
 import getRemoveLeadAndEndCharacter from '../utilities/strings/remove-lead-and-end-character';
+import getTwitterButtonContent from '../utilities/strings/get-twitter-button-content';
 
 const BlogPost = (props) => {
-  const { data = {} } = props;
+  const { data = {}, location = {} } = props;
   const { markdownRemark = {}, next = {}, previous = {} } = data;
   const { fields = {}, frontmatter = {}, html = '', id = '' } = markdownRemark;
   const { date_updated, slug } = fields;
@@ -35,15 +38,37 @@ const BlogPost = (props) => {
   } = frontmatter;
   const { alt: featuredAlt, src: featuredSrc } = settings_featured_image;
   const textColorPublishDate = useColorModeValue('gray.500', 'gray.400');
+  const twitterButtonContent = getTwitterButtonContent({
+    main: meta_description || '',
+    tags: twitter_tags || '',
+    url: location.href || '',
+  });
 
   return (
     <>
-      <Heading as="h1" size="lg">
-        {title}
-      </Heading>
-      <Text color={textColorPublishDate} fontSize="xs">
-        {date}
-      </Text>
+      <HStack>
+        <Box>
+          <Heading as="h1" size="lg">
+            {title}
+          </Heading>
+          <Text color={textColorPublishDate} fontSize="xs">
+            {date}
+          </Text>
+        </Box>
+        <Spacer />
+        {twitterButtonContent && twitterButtonContent.success && (
+          <Button
+            as={Link}
+            href={twitterButtonContent.href}
+            isExternal
+            leftIcon={<FaTwitter />}
+            variant="solid"
+          >
+            Tweet
+          </Button>
+        )}
+      </HStack>
+
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
       <Text fontSize="xs">{meta_description}</Text>
       {featuredSrc !== '' && (
