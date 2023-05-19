@@ -47,10 +47,16 @@ const Seo = (props) => {
         content={site.siteMetadata?.social?.twitter || ``}
       />
       <meta name="twitter:title" content={propsTitle || 'no props title'} />
-      <meta
-        name="twitter:description"
-        content={`${metaDescription}\n${twitterTags}`}
-      />
+      {twitterTags === '' && (
+        <meta name="twitter:description" content={metaDescription} />
+      )}
+      {twitterTags !== '' && (
+        <meta
+          name="twitter:description"
+          content={`${metaDescription}\n${twitterTags}`}
+        />
+      )}
+
       {children}
     </>
   );
