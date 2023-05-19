@@ -1,17 +1,8 @@
-/* eslint-disable import/prefer-default-export */
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
-
-// You can delete this file if you're not using it
 //  Components
-import CustomElement from './wrap-page-element';
+import CustomPage from './wrap-page-element';
 import CustomRoot from './wrap-root-element';
 
-export const wrapPageElement = CustomElement;
-
+export const wrapPageElement = CustomPage;
 export const wrapRootElement = CustomRoot;
 
 /**
