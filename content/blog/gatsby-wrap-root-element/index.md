@@ -22,6 +22,7 @@ twitter_tags:
   - "#gatsbyjs"
   - "#reactjs"
   - "#nodejs"
+  - "#wrapRootElement"
 ---
 Gatsby’s wrapRootElement exists in both the browser and server side rendering APIs.
 
