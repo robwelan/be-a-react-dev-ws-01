@@ -23,13 +23,7 @@ import getRemoveLeadAndEndCharacter from '../utilities/strings/remove-lead-and-e
 const BlogPost = (props) => {
   const { data = {} } = props;
   const { markdownRemark = {}, next = {}, previous = {} } = data;
-  const {
-    excerpt = '',
-    fields = {},
-    frontmatter = {},
-    html = '',
-    id = '',
-  } = markdownRemark;
+  const { fields = {}, frontmatter = {}, html = '', id = '' } = markdownRemark;
   const { date_updated, slug } = fields;
   const {
     title = '',
@@ -51,6 +45,7 @@ const BlogPost = (props) => {
         Created: {date} | Updated: {date_updated}
       </Text>
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
+      <Text fontSize="xs">{meta_description}</Text>
       {featuredSrc !== '' && (
         <>
           <Box display="flex" justifyContent="center" alignItems="center">
@@ -70,7 +65,7 @@ const BlogPost = (props) => {
 
       <article>{asComponent(html)}</article>
 
-      <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
+      <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="2em" />
       <HStack>
         <Box>
           {previous && (
@@ -98,7 +93,9 @@ export const Head = ({ data: { markdownRemark: post } }) => {
   return (
     <Seo
       title={post.frontmatter.title || 'Blog Post'}
-      description={post.frontmatter.description || post.excerpt}
+      description={post.frontmatter.meta_description || post.excerpt}
+      keywords={post.frontmatter.meta_keywords}
+      twitter_tags={post.frontmatter.twitter_tags}
     />
   );
 };
