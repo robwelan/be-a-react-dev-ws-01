@@ -15,13 +15,8 @@ settings_featured_image:
   title: Gatsby’s Wrap Page Element
 settings_publish: true
 twitter_tags:
-  - "#rmwits"
   - "#beareactdev"
-  - "#javascript"
-  - "#typescript"
   - "#gatsbyjs"
-  - "#reactjs"
-  - "#nodejs"
   - "#wrapPageElement"
 ---
 Gatsby’s wrapPageElement exists in both the browser and server side rendering APIs.

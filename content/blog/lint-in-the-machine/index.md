@@ -15,13 +15,7 @@ settings_featured_image:
   title: 'ESLint + Prettier + Reactjs'
 settings_publish: true
 twitter_tags:
-  - "#rmwits"
   - "#beareactdev"
-  - "#javascript"
-  - "#typescript"
-  - "#gatsbyjs"
-  - "#reactjs"
-  - "#nodejs"
   - "#prettier"
   - "#eslint"
 ---

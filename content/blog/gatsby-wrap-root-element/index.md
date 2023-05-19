@@ -15,13 +15,8 @@ settings_featured_image:
   title: Gatsby’s Wrap Root Element
 settings_publish: true
 twitter_tags:
-  - "#rmwits"
   - "#beareactdev"
-  - "#javascript"
-  - "#typescript"
   - "#gatsbyjs"
-  - "#reactjs"
-  - "#nodejs"
   - "#wrapRootElement"
 ---
 Gatsby’s wrapRootElement exists in both the browser and server side rendering APIs.

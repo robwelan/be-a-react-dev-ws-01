@@ -16,14 +16,9 @@ settings_featured_image:
   title: 'Typescript + Reactjs'
 settings_publish: true
 twitter_tags:
-  - "#rmwits"
   - "#beareactdev"
-  - "#javascript"
-  - "#typescript"
   - "#gatsbyjs"
-  - "#netlify"
   - "#reactjs"
-  - "#nodejs"
 ---
 Welcome to the world of TypeScript and ReactJS here at be-a-react-dev! These two technologies are a match made in heaven for developers who want to build scalable and maintainable web applications.
 
