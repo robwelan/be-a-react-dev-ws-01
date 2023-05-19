@@ -42,7 +42,7 @@ const BlogPost = (props) => {
         {title}
       </Heading>
       <Text color={textColorPublishDate} fontSize="xs">
-        Created: {date} | Updated: {date_updated}
+        {date}
       </Text>
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
       <Text fontSize="xs">{meta_description}</Text>

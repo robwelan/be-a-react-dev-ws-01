@@ -57,7 +57,7 @@ const BlogPostCard = (props: Props) => {
           <Box sx={{ marginLeft: '0.5em', marginRight: '0.5em' }}>
             <Link as={GatsbyLink} to={slug}>
               <Text fontSize="xs">
-                <>Last updated: {date_updated}</>
+                <>{date}</>
               </Text>
               <Heading as="h2" size="md">
                 {title}
