@@ -56,16 +56,12 @@ const Seo = (props) => {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${url}${location?.pathname || '/'}`} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:creator"
-        content={site.siteMetadata?.social?.twitter || ``}
-      />
+      <meta name="twitter:creator" content={'@rmwits'} />
       {image && image.alt && (
         <meta name="twitter:image:alt" content={image.alt} />
       )}
-      {image && image.src && (
-        <meta name="twitter:image" content={imageSrc}></meta>
-      )}
+      {image && image.src && <meta name="twitter:image" content={imageSrc} />}
+      <meta name="twitter:site" content="@rmwits" />
       <meta name="twitter:title" content={propsTitle || 'no props title'} />
       {twitterTags === '' && (
         <meta name="twitter:description" content={metaDescription} />
