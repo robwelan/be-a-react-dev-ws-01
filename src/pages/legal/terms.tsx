@@ -9,4 +9,6 @@ const TermsPage: React.FC<PageProps> = () => <PageContent />;
 
 export default TermsPage;
 
-export const Head: HeadFC = () => <Seo title="Terms" />;
+export const Head: HeadFC = ({ location }) => (
+  <Seo location={location} title="Terms" />
+);

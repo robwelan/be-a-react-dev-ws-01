@@ -9,4 +9,6 @@ const CookiesPage: React.FC<PageProps> = () => <PageContent />;
 
 export default CookiesPage;
 
-export const Head: HeadFC = () => <Seo title="Cookies" />;
+export const Head: HeadFC = ({ location }) => (
+  <Seo location={location} title="Cookies" />
+);

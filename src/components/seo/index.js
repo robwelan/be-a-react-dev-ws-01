@@ -11,7 +11,14 @@ import { useStaticQuery, graphql } from 'gatsby';
 import getHeadTitle from './get-head-title';
 
 const Seo = (props) => {
-  const { children, description, title: propsTitle, twitter_tags } = props;
+  const {
+    children,
+    description,
+    image,
+    location,
+    title: propsTitle,
+    twitter_tags,
+  } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +26,7 @@ const Seo = (props) => {
           siteMetadata {
             title
             description
+            siteUrl
             social {
               twitter
             }
@@ -30,6 +38,7 @@ const Seo = (props) => {
 
   const siteTitle = site.siteMetadata?.title;
   const title = getHeadTitle({ siteTitle, propsTitle });
+  const url = site.siteMetadata?.siteUrl;
   const metaDescription = description || site.siteMetadata.description;
   const twitterTags =
     twitter_tags && twitter_tags.length > 0 ? twitter_tags.join(', ') : '';
@@ -40,8 +49,12 @@ const Seo = (props) => {
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={propsTitle || 'no props title'} />
       <meta property="og:description" content={metaDescription} />
+      {image && image.src !== '' && (
+        <meta property="og:image" content={`${url}${image?.src}`} />
+      )}
       <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
+      <meta property="og:url" content={`${url}${location?.pathname || '/'}`} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:creator"
         content={site.siteMetadata?.social?.twitter || ``}

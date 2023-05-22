@@ -14,18 +14,27 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+//  gatsby-plugin-image
+import { GatsbyImage } from 'gatsby-plugin-image';
+//  react icons
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 //  components
 import Seo from '../components/seo';
 import FeaturedImage from '../components/feaured-image';
 import { asComponent } from '../components/blog-parse-html.tsx';
 //  utiltities
+import getImage from '../utilities/graphql-content/get-image';
 import getRemoveLeadAndEndCharacter from '../utilities/strings/remove-lead-and-end-character';
 import getTwitterButtonContent from '../utilities/strings/get-twitter-button-content';
 
 const BlogPost = (props) => {
   const { data = {}, location = {} } = props;
-  const { markdownRemark = {}, next = {}, previous = {} } = data;
+  const {
+    allImageSharp = {},
+    markdownRemark = {},
+    next = {},
+    previous = {},
+  } = data;
   const { fields = {}, frontmatter = {}, html = '', id = '' } = markdownRemark;
   const { date_updated, slug } = fields;
   const {
@@ -36,12 +45,24 @@ const BlogPost = (props) => {
     settings_featured_image = {},
     twitter_tags = '',
   } = frontmatter;
-  const { alt: featuredAlt, src: featuredSrc } = settings_featured_image;
+  const {
+    alt: featuredAlt,
+    src: featuredSrc,
+    title: featuredTitle,
+  } = settings_featured_image;
   const textColorPublishDate = useColorModeValue('gray.500', 'gray.400');
   const twitterButtonContent = getTwitterButtonContent({
     main: meta_description || '',
     tags: twitter_tags || '',
     url: location.href || '',
+  });
+  const featuredImage = getImage({
+    images: allImageSharp.edges || [],
+    image: {
+      alt: featuredAlt,
+      src: featuredSrc,
+      title: featuredTitle,
+    },
   });
 
   return (
@@ -59,6 +80,7 @@ const BlogPost = (props) => {
         {twitterButtonContent && twitterButtonContent.success && (
           <Button
             as={Link}
+            colorScheme="twitter"
             href={twitterButtonContent.href}
             isExternal
             leftIcon={<FaTwitter />}
@@ -75,12 +97,11 @@ const BlogPost = (props) => {
         <>
           <Box display="flex" justifyContent="center" alignItems="center">
             <AspectRatio width="100%" maxW="700px" ratio={16 / 9}>
-              <FeaturedImage
-                alt={featuredAlt || ''}
-                filename={getRemoveLeadAndEndCharacter({
-                  value: featuredSrc,
-                  character: { end: '/', lead: '/' },
-                })}
+              <GatsbyImage
+                alt={featuredAlt}
+                image={{
+                  ...featuredImage.image,
+                }}
               />
             </AspectRatio>
           </Box>
@@ -114,13 +135,44 @@ const BlogPost = (props) => {
 
 export default BlogPost;
 
-export const Head = ({ data: { markdownRemark: post } }) => {
+export const Head = (props) => {
+  const {
+    data: { allImageSharp = {}, markdownRemark: post },
+    location,
+  } = props;
+  const { excerpt, frontmatter } = post;
+  const {
+    meta_description,
+    meta_keywords,
+    settings_featured_image,
+    twitter_tags,
+  } = frontmatter;
+  const {
+    alt: featuredAlt,
+    src: featuredSrc,
+    title: featuredTitle,
+  } = settings_featured_image;
+  const featuredImage = getImage({
+    images: allImageSharp.edges || [],
+    image: {
+      alt: featuredAlt,
+      src: featuredSrc,
+      title: featuredTitle,
+    },
+  });
+
   return (
     <Seo
+      description={meta_description || excerpt}
+      image={{
+        alt: featuredImage.alt,
+        src: featuredImage.image.images.fallback.src,
+        title: featuredImage.title,
+      }}
+      keywords={meta_keywords}
+      location={location}
       title={post.frontmatter.title || 'Blog Post'}
-      description={post.frontmatter.meta_description || post.excerpt}
-      keywords={post.frontmatter.meta_keywords}
-      twitter_tags={post.frontmatter.twitter_tags}
+      twitter_tags={twitter_tags}
     />
   );
 };
@@ -197,6 +249,21 @@ export const pageQuery = graphql`
       }
       headings {
         id
+      }
+    }
+    allImageSharp {
+      edges {
+        node {
+          gatsbyImageData
+          fluid {
+            originalName
+            src
+          }
+          fixed {
+            originalName
+            src
+          }
+        }
       }
     }
   }
