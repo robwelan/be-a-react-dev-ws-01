@@ -42,6 +42,7 @@ const Seo = (props) => {
   const metaDescription = description || site.siteMetadata.description;
   const twitterTags =
     twitter_tags && twitter_tags.length > 0 ? twitter_tags.join(', ') : '';
+  const imageSrc = `${url}${image?.src}`;
 
   return (
     <>
@@ -50,7 +51,7 @@ const Seo = (props) => {
       <meta property="og:title" content={propsTitle || 'no props title'} />
       <meta property="og:description" content={metaDescription} />
       {image && image.src !== '' && (
-        <meta property="og:image" content={`${url}${image?.src}`} />
+        <meta property="og:image" content={imageSrc} />
       )}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${url}${location?.pathname || '/'}`} />
@@ -59,6 +60,12 @@ const Seo = (props) => {
         name="twitter:creator"
         content={site.siteMetadata?.social?.twitter || ``}
       />
+      {image && image.alt && (
+        <meta name="twitter:image:alt" content={image.alt} />
+      )}
+      {image && image.src && (
+        <meta name="twitter:image" content={imageSrc}></meta>
+      )}
       <meta name="twitter:title" content={propsTitle || 'no props title'} />
       {twitterTags === '' && (
         <meta name="twitter:description" content={metaDescription} />
