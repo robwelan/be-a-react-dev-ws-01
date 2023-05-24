@@ -28,6 +28,7 @@ import { PUBLIC_ROUTE_PAGE_HOME } from '../../security/constants/routes-public';
 import NavItem from './nav-item';
 //  configurations
 import linkItemsApps from './link-items-apps';
+import linkItemsGames from './link-items-games';
 import linkItemsPages from './link-items-pages';
 
 type Props = {
@@ -69,8 +70,8 @@ const SideDrawer = (props: Props) => {
               spacing={4}
               align="stretch"
             >
-              <Box>
-                {linkItemsApps && linkItemsApps.length > 0 && (
+              {linkItemsApps && linkItemsApps.length > 0 && (
+                <Box>
                   <>
                     <Heading size="sm" sx={{ marginBottom: '0.5em' }}>
                       Apps
@@ -86,10 +87,10 @@ const SideDrawer = (props: Props) => {
                       </NavItem>
                     ))}
                   </>
-                )}
-              </Box>
-              <Box>
-                {linkItemsPages && linkItemsPages.length > 0 && (
+                </Box>
+              )}
+              {linkItemsPages && linkItemsPages.length > 0 && (
+                <Box>
                   <>
                     <Heading size="sm" sx={{ marginBottom: '0.5em' }}>
                       General
@@ -105,8 +106,27 @@ const SideDrawer = (props: Props) => {
                       </NavItem>
                     ))}
                   </>
-                )}
-              </Box>
+                </Box>
+              )}
+              {linkItemsGames && linkItemsGames.length > 0 && (
+                <Box>
+                  <>
+                    <Heading size="sm" sx={{ marginBottom: '0.5em' }}>
+                      Games
+                    </Heading>
+                    {linkItemsGames.map((link) => (
+                      <NavItem
+                        icon={link.icon}
+                        key={link.name}
+                        onClose={onClose}
+                        route={link.route}
+                      >
+                        {link.name}
+                      </NavItem>
+                    ))}
+                  </>
+                </Box>
+              )}
             </VStack>
           </DrawerBody>
         </DrawerContent>

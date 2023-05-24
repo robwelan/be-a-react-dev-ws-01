@@ -1,17 +1,22 @@
+//  games
+const PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS = '/games/rock-paper-scissors';
+//  legal
+const PUBLIC_ROUTE_PAGE_COOKIES = '/legal/cookies';
+const PUBLIC_ROUTE_PAGE_PRIVACY = '/legal/privacy';
+const PUBLIC_ROUTE_PAGE_TERMS = '/legal/terms';
+//  root
 const PUBLIC_ROUTE_PAGE_ABOUT = '/about';
 const PUBLIC_ROUTE_PAGE_AUTHENTICATE = '/authenticate';
-const PUBLIC_ROUTE_PAGE_COOKIES = '/cookies';
 const PUBLIC_ROUTE_PAGE_HOME = '/';
 const PUBLIC_ROUTE_PAGE_PRICING = '/pricing';
-const PUBLIC_ROUTE_PAGE_PRIVACY = '/legal/privacy';
 const PUBLIC_ROUTE_PAGE_REFUNDS = '/refunds';
 const PUBLIC_ROUTE_PAGE_SHOP = '/shop';
-const PUBLIC_ROUTE_PAGE_TERMS = '/legal/terms';
 
 export {
   PUBLIC_ROUTE_PAGE_ABOUT,
   PUBLIC_ROUTE_PAGE_AUTHENTICATE,
   PUBLIC_ROUTE_PAGE_COOKIES,
+  PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
   PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_PRICING,
   PUBLIC_ROUTE_PAGE_PRIVACY,

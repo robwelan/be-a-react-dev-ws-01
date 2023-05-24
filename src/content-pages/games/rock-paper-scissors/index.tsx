@@ -39,7 +39,10 @@ const ContentGameRockPaperScissors = () => {
 
   return (
     <>
-      <Heading as="h1">Rock Paper Scissors Game</Heading>
+      <Heading as="h2" size="xs">
+        Classic Game
+      </Heading>
+      <Heading as="h1">Rock Paper Scissors</Heading>
       <br />
       <SimpleGrid columns={[1, null, 2]} spacing={4}>
         <DisplayUser
