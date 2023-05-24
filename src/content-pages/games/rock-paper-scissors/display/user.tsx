@@ -14,39 +14,35 @@ import {
 import { FaHandPaper } from '@react-icons/all-files/fa/FaHandPaper';
 import { FaHandRock } from '@react-icons/all-files/fa/FaHandRock';
 import { FaHandScissors } from '@react-icons/all-files/fa/FaHandScissors';
-import { FaTrashAlt } from '@react-icons/all-files/fa/FaTrashAlt';
 //  local utilities
-import setClearAll from '../set-clear-all';
-import setClearGame from '../set-clear-game';
+import choice from '../choices';
+import setDecisionUser from '../set-decision-user';
 
 const DisplayUser = (props) => {
-  const { choice, setDecisionUser, setState, state } = props;
+  const { setState, state } = props;
 
   return (
     <>
-      <Box display="flex" justifyContent="center">
+      <Box
+        display="flex"
+        borderWidth="1px"
+        borderRadius="lg"
+        justifyContent="center"
+        minH="120px"
+        p={4}
+      >
         <VStack>
           <Box>
-            <Heading as="h2" size="sm">
-              {state.decision.user === '' ? 'Make ' : ''}Your Choice:
+            <Heading as="h2" align="center" size="sm">
+              {state.decision.user === '' ? 'Make ' : ''}Your
+              <br />
+              Choice:
             </Heading>
           </Box>
           <Box>
             <Stack direction="row" spacing={4}>
               {state.result.label === '' && (
                 <>
-                  {state.games > 0 && (
-                    <>
-                      <Tooltip label="Clear All">
-                        <IconButton
-                          aria-label="clear all"
-                          icon={<FaTrashAlt />}
-                          onClick={() => setClearAll({ setState })}
-                        />
-                      </Tooltip>{' '}
-                    </>
-                  )}
-
                   {state.decision.user === '' && (
                     <>
                       <Tooltip label={`Choose ${choice.rock.value}`}>
@@ -90,20 +86,7 @@ const DisplayUser = (props) => {
                 </>
               )}
 
-              <HStack>
-                {state.result.label !== '' && (
-                  <Tooltip label="Clear Game">
-                    <IconButton
-                      aria-label="clear game"
-                      icon={<FaTrashAlt />}
-                      onClick={() => setClearGame({ setState })}
-                    />
-                  </Tooltip>
-                )}
-                {state.decision.user !== '' && (
-                  <Text>{state.decision.user}</Text>
-                )}
-              </HStack>
+              {state.decision.user !== '' && <Text>{state.decision.user}</Text>}
             </Stack>
           </Box>
         </VStack>

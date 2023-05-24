@@ -3,13 +3,19 @@ import React, { useEffect, useState } from 'react';
 import {
   Box,
   Heading,
+  HStack,
   VStack,
-  SimpleGrid,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+//  interfaces
+import { State } from '../interfaces';
 
-const DisplayResults = (props) => {
+interface Props {
+  state: State;
+}
+
+const DisplayResults = (props: Props) => {
   const { state } = props;
   const { result } = state;
   const {
@@ -35,36 +41,45 @@ const DisplayResults = (props) => {
   }, [resultComputer, resultUser]);
 
   return (
-    <>
-      {resultLabel !== '' && (
-        <>
-          <Box display="flex" justifyContent="center" p={4}>
-            <Heading
-              as="h2"
-              size="md"
-              color={win === 'won' ? userWin : win === 'lose' ? userLose : ''}
-            >
-              {resultLabel}
-            </Heading>
-          </Box>
-          <SimpleGrid columns={[1, null, 2]} spacing={4}>
-            <Box p={4}>
-              <VStack>
-                <Text>Computer:</Text>
-                <Text>{state.win.computer}</Text>
-              </VStack>
-            </Box>
+    <Box
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      sx={{ marginBottom: '1em !important', marginTop: '1em !important' }}
+    >
+      <Box display="flex" justifyContent="center" p={4}>
+        <Heading
+          as="h2"
+          size="md"
+          color={win === 'won' ? userWin : win === 'lose' ? userLose : ''}
+        >
+          {resultLabel || 'Awaiting Play'}
+        </Heading>
+      </Box>
+      <HStack >
+        <Box p={4}>
+          <VStack>
+            <Text>Computer:</Text>
+            <Text>{state.win.computer}</Text>
+          </VStack>
+        </Box>
 
-            <Box p={4}>
-              <VStack>
-                <Text>User:</Text>
-                <Text>{state.win.user}</Text>
-              </VStack>
-            </Box>
-          </SimpleGrid>
-        </>
-      )}
-    </>
+        <Box p={4}>
+          <VStack>
+            <Text>Games:</Text>
+            <Text>{state.games}</Text>
+          </VStack>
+        </Box>
+
+        <Box p={4}>
+          <VStack>
+            <Text>User:</Text>
+            <Text>{state.win.user}</Text>
+          </VStack>
+        </Box>
+      </HStack>
+    </Box>
   );
 };
 

@@ -1,30 +1,16 @@
 import React, { useEffect, useState } from 'react';
 //  chakra-ui
-import {
-  Box,
-  Heading,
-  IconButton,
-  SimpleGrid,
-  Stack,
-  Text,
-  Tooltip,
-  VStack,
-} from '@chakra-ui/react';
-//  react icons
-import { FaHandPaper } from '@react-icons/all-files/fa/FaHandPaper';
-import { FaHandRock } from '@react-icons/all-files/fa/FaHandRock';
-import { FaHandScissors } from '@react-icons/all-files/fa/FaHandScissors';
-import { FaTrashAlt } from '@react-icons/all-files/fa/FaTrashAlt';
+import { VStack } from '@chakra-ui/react';
 //  display
-import DisplayComputer from './display/computer';
+import DisplayHeading from './display/heading';
 import DisplayResults from './display/results';
-import DisplayUser from './display/user';
+import DisplayGameControlsResets from './display/game-controls-resets';
+import DisplayPlayers from './display/players';
+import DisplayWrapper from './display/wrapper';
 //  local bits and bobs
-import choice from './choices';
 import defaultState from './default-state';
 import { State } from './interfaces';
 import setDecisionComputer from './set-decision-computer';
-import setDecisionUser from './set-decision-user';
 //  styles
 import './index.css';
 
@@ -39,21 +25,16 @@ const ContentGameRockPaperScissors = () => {
 
   return (
     <>
-      <Heading as="h2" size="xs">
-        Classic Game
-      </Heading>
-      <Heading as="h1">Rock Paper Scissors</Heading>
-      <br />
-      <SimpleGrid columns={[1, null, 2]} spacing={4}>
-        <DisplayUser
-          choice={choice}
-          setDecisionUser={setDecisionUser}
-          setState={setState}
-          state={state}
-        />
-        <DisplayComputer state={state} />
-      </SimpleGrid>
-      <DisplayResults state={state} />
+      <DisplayHeading />
+      <DisplayWrapper>
+        <VStack>
+          <DisplayPlayers setState={setState} state={state} />
+
+          <DisplayResults state={state} />
+
+          <DisplayGameControlsResets state={state} setState={setState} />
+        </VStack>
+      </DisplayWrapper>
     </>
   );
 };
