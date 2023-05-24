@@ -23,7 +23,7 @@ const DisplayComputer = (props: Props) => {
       >
         <>
           <VStack>
-            <Heading as="h2" align="center" size="sm">
+            <Heading as="h2" size="sm" textAlign="center">
               Computer’s
               <br />
               Choice:
