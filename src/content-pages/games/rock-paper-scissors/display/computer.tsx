@@ -28,10 +28,7 @@ const DisplayComputer = (props: Props) => {
               <br />
               Choice:
             </Heading>
-            {state.thinking && (
-              <Text className="blink_me">Please wait, I am thinking…</Text>
-            )}
-            {!state.thinking && <Text>{state.decision.computer}</Text>}
+            <Text>{state.decision.computer}</Text>
           </VStack>
         </>
       </Box>

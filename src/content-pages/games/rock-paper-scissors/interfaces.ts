@@ -1,13 +1,22 @@
+interface SetState {
+  setState: (value: object) => void;
+}
+
 interface State {
-  decision: { computer?: string; user?: string };
-  games: number;
+  decision: {
+    computer?: string;
+    user?: string;
+  };
+  games: {
+    computer: number;
+    total: number;
+    user: number;
+  };
   result: {
     label?: string;
     computer: boolean;
     user: boolean;
   };
-  thinking: boolean;
-  win: { computer: number; user: number };
 }
 
 interface PayloadSetDecisionComputer {
@@ -32,5 +41,6 @@ export {
   PayloadClearGame,
   PayloadSetDecisionComputer,
   PayloadSetDecisionUser,
+  SetState,
   State,
 };

@@ -3,16 +3,15 @@ const defaultState = {
     computer: '',
     user: '',
   },
-  games: 0,
+  games: {
+    computer: 0,
+    total: 0,
+    user: 0,
+  },
   result: {
     label: '',
     computer: false,
     user: false,
-  },
-  thinking: false,
-  win: {
-    computer: 0,
-    user: 0,
   },
 };
 

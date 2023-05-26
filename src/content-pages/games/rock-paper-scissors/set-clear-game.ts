@@ -5,7 +5,7 @@ import { PayloadClearGame, State } from './interfaces';
 const setClearGame = (payload: PayloadClearGame) => {
   const { setState } = payload;
 
-  setState((prevState) => ({
+  setState((prevState: State) => ({
     ...prevState,
     decision: {
       ...defaultState.decision,

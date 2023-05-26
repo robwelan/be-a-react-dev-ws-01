@@ -57,25 +57,25 @@ const DisplayResults = (props: Props) => {
           {resultLabel || 'Awaiting Play'}
         </Heading>
       </Box>
-      <HStack >
+      <HStack>
         <Box p={4}>
           <VStack>
             <Text>Computer:</Text>
-            <Text>{state.win.computer}</Text>
+            <Text>{state.games.computer}</Text>
           </VStack>
         </Box>
 
         <Box p={4}>
           <VStack>
             <Text>Games:</Text>
-            <Text>{state.games}</Text>
+            <Text>{state.games.total}</Text>
           </VStack>
         </Box>
 
         <Box p={4}>
           <VStack>
             <Text>User:</Text>
-            <Text>{state.win.user}</Text>
+            <Text>{state.games.user}</Text>
           </VStack>
         </Box>
       </HStack>

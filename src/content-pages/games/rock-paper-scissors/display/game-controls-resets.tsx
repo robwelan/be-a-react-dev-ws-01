@@ -22,7 +22,7 @@ const GameControlsResets = (props: Props) => {
 
   return (
     <>
-      {(state.result.label !== '' || state.games > 0) && (
+      {(state.result.label !== '' || state.games.total > 0) && (
         <>
           <StandardDivider />
           <SimpleGrid columns={[2, null, 2]} spacing={4}>
