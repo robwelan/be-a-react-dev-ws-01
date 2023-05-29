@@ -84,6 +84,7 @@ const options: HTMLReactParserOptions = {
             // pt={['20px', '40px']}
             // lineHeight={1}
             {...safeAttribs}
+            marginTop="1em"
             size="sm"
           >
             {domToReact(children, options)}

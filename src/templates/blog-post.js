@@ -24,8 +24,9 @@ import FeaturedImage from '../components/feaured-image';
 import { asComponent } from '../components/blog-parse-html.tsx';
 //  utiltities
 import getImage from '../utilities/graphql-content/get-image';
-import getRemoveLeadAndEndCharacter from '../utilities/strings/remove-lead-and-end-character';
 import getTwitterButtonContent from '../utilities/strings/get-twitter-button-content';
+
+//  TODO: fix tweet button on mobile
 
 const BlogPost = (props) => {
   const { data = {}, location = {} } = props;
@@ -78,16 +79,18 @@ const BlogPost = (props) => {
         </Box>
         <Spacer />
         {twitterButtonContent && twitterButtonContent.success && (
-          <Button
-            as={Link}
-            colorScheme="twitter"
-            href={twitterButtonContent.href}
-            isExternal
-            leftIcon={<FaTwitter />}
-            variant="solid"
-          >
-            Tweet
-          </Button>
+          <Box>
+            <Button
+              as={Link}
+              colorScheme="twitter"
+              href={twitterButtonContent.href}
+              isExternal
+              leftIcon={<FaTwitter />}
+              variant="solid"
+            >
+              Tweet
+            </Button>
+          </Box>
         )}
       </HStack>
 

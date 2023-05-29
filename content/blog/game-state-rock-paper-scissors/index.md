@@ -19,7 +19,15 @@ twitter_tags:
   - "#gatsbyjs"
   - "#rockpaperscissors"
 ---
+## In The Beginning...
+
 Everyone needs to start somewhere right? Well, at the end of this series we will have a working rock-paper-scissors game.
+
+## What you will be building
+
+Please check this link: <a href="https://beareact.dev/games/rock-paper-scissors/" target="_blank">Rock Paper Scissors Game</a>
+
+## State Of The Application
 
 But first, we will look at some fundamental code snippets required to get the game working.
 
@@ -33,13 +41,13 @@ const defaultState = {
   },
   games: {
     computer: 0,
-    total: 0,
     user: 0,
+    total: 0,
   },
   result: {
-    label: '',
     computer: false,
     user: false,
+    label: '',
   },
 };
 
@@ -77,8 +85,8 @@ interface State {
     user: number;
   };
   result: {
-    label?: string;
     computer: boolean;
+    label?: string;
     user: boolean;
   };
 }
