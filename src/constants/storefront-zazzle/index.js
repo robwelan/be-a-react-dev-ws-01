@@ -8,7 +8,7 @@ const store = {
 
 const storefront = {
   store,
-  products: [mugs, tshirts],
+  products: [...mugs, ...tshirts],
   mugs,
   tshirts,
 };

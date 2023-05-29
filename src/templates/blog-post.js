@@ -20,7 +20,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 //  components
 import Seo from '../components/seo';
-import FeaturedImage from '../components/feaured-image';
+import ProductPush from '../components-templates/bottom-product-push';
 import { asComponent } from '../components/blog-parse-html.tsx';
 //  utiltities
 import getImage from '../utilities/graphql-content/get-image';
@@ -113,6 +113,8 @@ const BlogPost = (props) => {
       )}
 
       <article>{asComponent(html)}</article>
+
+      <ProductPush />
 
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="2em" />
       <HStack>
