@@ -9,10 +9,8 @@ import DisplayPlayers from './display/players';
 import DisplayWrapper from './display/wrapper';
 //  local bits and bobs
 import defaultState from './default-state';
-import { State } from './interfaces';
+import { State, SetState } from './interfaces';
 import setDecisionComputer from './set-decision-computer';
-//  styles
-import './index.css';
 
 const ContentGameRockPaperScissors = () => {
   const [state, setState] = useState<State>(defaultState as State);
@@ -32,7 +30,7 @@ const ContentGameRockPaperScissors = () => {
 
           <DisplayResults state={state} />
 
-          <DisplayGameControlsResets state={state} setState={setState} />
+          <DisplayGameControlsResets setState={setState} state={state} />
         </VStack>
       </DisplayWrapper>
     </>
