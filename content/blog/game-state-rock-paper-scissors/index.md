@@ -21,7 +21,7 @@ twitter_tags:
 ---
 ## In The Beginning...
 
-Everyone needs to start somewhere right? Well, at the end of this series we will have a working rock-paper-scissors game.
+Everyone needs to start somewhere right? Well, at the end of this series we will have a working rock-paper-scissors game. We will be using TypeScript (which is really JavaScript with a typing overlay), and React.
 
 ## What you will be building
 
