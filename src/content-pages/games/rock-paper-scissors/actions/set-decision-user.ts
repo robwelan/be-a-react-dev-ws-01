@@ -1,5 +1,5 @@
 //  local utilities
-import { PayloadSetDecisionUser, State } from './interfaces';
+import { PayloadSetDecisionUser, State } from '../state/interfaces';
 
 const setDecisionUser = (payload: PayloadSetDecisionUser) => {
   const { decision, setState } = payload;

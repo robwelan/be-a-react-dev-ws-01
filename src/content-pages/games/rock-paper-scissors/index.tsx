@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 //  chakra-ui
 import { VStack } from '@chakra-ui/react';
-//  display
-import DisplayHeading from './display/heading';
-import DisplayResults from './display/results';
-import DisplayGameControlsResets from './display/game-controls-resets';
-import DisplayPlayers from './display/players';
-import DisplayWrapper from './display/wrapper';
 //  local bits and bobs
-import defaultState from './default-state';
-import { State, SetState } from './interfaces';
-import setDecisionComputer from './set-decision-computer';
+import defaultState from './state/default-state';
+import { State, SetState } from './state/interfaces';
+import setDecisionComputer from './actions/set-decision-computer';
+//  view
+import ViewGameControlsResets from './view/game-controls-resets';
+import ViewHeading from './view/heading';
+import ViewPlayers from './view/players';
+import ViewResults from './view/results';
+import ViewWrapper from './view/wrapper';
 
 const ContentGameRockPaperScissors = () => {
   const [state, setState] = useState<State>(defaultState as State);
@@ -23,16 +23,16 @@ const ContentGameRockPaperScissors = () => {
 
   return (
     <>
-      <DisplayHeading />
-      <DisplayWrapper>
+      <ViewHeading />
+      <ViewWrapper>
         <VStack>
-          <DisplayPlayers setState={setState} state={state} />
+          <ViewPlayers setState={setState} state={state} />
 
-          <DisplayResults state={state} />
+          <ViewResults state={state} />
 
-          <DisplayGameControlsResets setState={setState} state={state} />
+          <ViewGameControlsResets setState={setState} state={state} />
         </VStack>
-      </DisplayWrapper>
+      </ViewWrapper>
     </>
   );
 };

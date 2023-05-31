@@ -7,10 +7,10 @@ import { FaTrashAlt } from '@react-icons/all-files/fa/FaTrashAlt';
 //  components
 import StandardDivider from '../../../../components/standard-divider';
 //  interfaces
-import { State, PayloadClearGame } from '../interfaces';
+import { State, PayloadClearGame } from '../state/interfaces';
 //  local utilities
-import setClearAll from '../set-clear-all';
-import setClearGame from '../set-clear-game';
+import setClearAll from '../actions/set-clear-all';
+import setClearGame from '../actions/set-clear-game';
 
 interface Props {
   setState: PayloadClearGame;

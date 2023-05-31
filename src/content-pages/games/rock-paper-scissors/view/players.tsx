@@ -5,7 +5,7 @@ import { Box, SimpleGrid, useMediaQuery } from '@chakra-ui/react';
 import DisplayComputer from './computer';
 import DisplayUser from './user';
 
-import { State, SetState } from '../interfaces';
+import { State, SetState } from '../state/interfaces';
 
 interface Props {
   setState: SetState;

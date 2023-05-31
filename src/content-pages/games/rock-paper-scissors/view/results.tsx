@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 //  interfaces
-import { State } from '../interfaces';
+import { State } from '../state/interfaces';
 
 interface Props {
   state: State;

@@ -1,9 +1,9 @@
 //  random
 import random from 'random';
 //  local utilities
-import choice from './choices';
+import choice from '../state/choices';
 import getResult from './get-result';
-import { PayloadSetDecisionComputer } from './interfaces';
+import { PayloadSetDecisionComputer } from '../state/interfaces';
 
 const setDecisionComputer = (payload: PayloadSetDecisionComputer) => {
   const { setState, userDecision } = payload;

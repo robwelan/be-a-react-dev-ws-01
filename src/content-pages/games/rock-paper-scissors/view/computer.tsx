@@ -2,7 +2,7 @@ import React from 'react';
 //  chakra-ui
 import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 //  interfaces
-import { State } from '../interfaces';
+import { State } from '../state/interfaces';
 
 interface Props {
   state: State;

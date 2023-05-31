@@ -1,6 +1,6 @@
-import defaultState from './default-state';
+import defaultState from '../state/default-state';
 //  interfaces
-import { PayloadClearGame, State } from './interfaces';
+import { PayloadClearGame, State } from '../state/interfaces';
 
 const setClearGame = (payload: PayloadClearGame) => {
   const { setState } = payload;
