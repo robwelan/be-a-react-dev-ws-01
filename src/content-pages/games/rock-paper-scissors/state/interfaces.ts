@@ -1,6 +1,4 @@
-interface SetState {
-  setState: (value: object) => void;
-}
+import { Dispatch, SetStateAction } from 'react';
 
 interface State {
   decision: {
@@ -17,6 +15,10 @@ interface State {
     computer: boolean;
     user: boolean;
   };
+}
+
+interface SetState {
+  setState: Dispatch<SetStateAction<State>>;
 }
 
 interface PayloadSetDecisionComputer {

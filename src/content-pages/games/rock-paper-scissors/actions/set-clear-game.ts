@@ -1,8 +1,8 @@
 import defaultState from '../state/default-state';
 //  interfaces
-import { PayloadClearGame, State } from '../state/interfaces';
+import { SetState, State } from '../state/interfaces';
 
-const setClearGame = (payload: PayloadClearGame) => {
+const setClearGame = (payload: SetState) => {
   const { setState } = payload;
 
   setState((prevState: State) => ({

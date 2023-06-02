@@ -3,9 +3,14 @@ import random from 'random';
 //  local utilities
 import choice from '../state/choices';
 import getResult from './get-result';
-import { PayloadSetDecisionComputer } from '../state/interfaces';
+import { SetState, State } from '../state/interfaces';
 
-const setDecisionComputer = (payload: PayloadSetDecisionComputer) => {
+interface Payload {
+  setState: SetState;
+  userDecision: string;
+}
+
+const setDecisionComputer = (payload: Payload) => {
   const { setState, userDecision } = payload;
   const decision = choice[choice.index[random.int(1, 2)]];
   const result = getResult({ computerDecision: decision, userDecision });
