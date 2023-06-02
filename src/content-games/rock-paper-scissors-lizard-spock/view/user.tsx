@@ -10,14 +10,22 @@ import {
   VStack,
 } from '@chakra-ui/react';
 //  react icons
+import { FaHandLizard } from '@react-icons/all-files/fa/FaHandLizard';
 import { FaHandPaper } from '@react-icons/all-files/fa/FaHandPaper';
 import { FaHandRock } from '@react-icons/all-files/fa/FaHandRock';
 import { FaHandScissors } from '@react-icons/all-files/fa/FaHandScissors';
+import { FaHandSpock } from '@react-icons/all-files/fa/FaHandSpock';
 //  local utilities
 import choice from '../state/choices';
+import { SetState, State } from '../state/interfaces';
 import setDecisionUser from '../actions/set-decision-user';
 
-const DisplayUser = (props) => {
+interface Props {
+  setState: SetState;
+  state: State;
+}
+
+const DisplayUser = (props: Props) => {
   const { setState, state } = props;
 
   return (
@@ -44,6 +52,18 @@ const DisplayUser = (props) => {
                 <>
                   {state.decision.user === '' && (
                     <>
+                      <Tooltip label={`Choose ${choice.lizard.value}`}>
+                        <IconButton
+                          aria-label={`choose ${choice.lizard.value}`}
+                          icon={<FaHandLizard />}
+                          onClick={() =>
+                            setDecisionUser({
+                              decision: choice.lizard.value,
+                              setState,
+                            })
+                          }
+                        />
+                      </Tooltip>
                       <Tooltip label={`Choose ${choice.rock.value}`}>
                         <IconButton
                           aria-label={`choose ${choice.rock.value}`}
@@ -75,6 +95,18 @@ const DisplayUser = (props) => {
                           onClick={() =>
                             setDecisionUser({
                               decision: choice.scissors.value,
+                              setState,
+                            })
+                          }
+                        />
+                      </Tooltip>
+                      <Tooltip label={`Choose ${choice.spock.value}`}>
+                        <IconButton
+                          aria-label={`choose ${choice.spock.value}`}
+                          icon={<FaHandSpock />}
+                          onClick={() =>
+                            setDecisionUser({
+                              decision: choice.spock.value,
                               setState,
                             })
                           }

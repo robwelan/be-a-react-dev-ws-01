@@ -4,6 +4,7 @@ import { Router } from '@reach/router';
 import PageAbout from '../../pages/about';
 import PageCookies from '../../pages/legal/cookies';
 import PageGameRockPaperScissors from '../../pages/games/rock-paper-scissors';
+import PageGameRockPaperScissorsLizardSpock from '../../pages/games/rock-paper-scissors-lizard-spock';
 import PageHome from '../../pages/index';
 import PagePrivacy from '../../pages/legal/privacy';
 import PageNotFound from '../../pages/404';
@@ -14,6 +15,7 @@ import {
   PUBLIC_ROUTE_PAGE_ABOUT,
   PUBLIC_ROUTE_PAGE_COOKIES,
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
+  PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK,
   PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_TERMS,
@@ -29,6 +31,9 @@ const Routes = ({ element, location }) => {
       {/* games */}
       <PageGameRockPaperScissors
         path={PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS}
+      />
+      <PageGameRockPaperScissorsLizardSpock
+        path={PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK}
       />
       <PageAbout path={PUBLIC_ROUTE_PAGE_ABOUT} />
       {/* legal */}

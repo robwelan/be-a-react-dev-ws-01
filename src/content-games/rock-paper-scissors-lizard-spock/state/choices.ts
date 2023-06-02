@@ -8,7 +8,7 @@ const choices = {
   index: [choiceLizard, choicePaper, choiceRock, choiceScissors, choiceSpock],
   [choiceLizard]: {
     beats: [choicePaper, choiceSpock],
-    valule: choiceLizard,
+    value: choiceLizard,
   },
   [choicePaper]: {
     beats: [choiceRock, choiceSpock],
