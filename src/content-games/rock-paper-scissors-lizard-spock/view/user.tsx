@@ -3,7 +3,6 @@ import React from 'react';
 import {
   Box,
   Heading,
-  HStack,
   IconButton,
   Stack,
   Text,

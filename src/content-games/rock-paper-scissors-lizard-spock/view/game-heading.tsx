@@ -2,7 +2,7 @@ import React from 'react';
 //  chakra-ui
 import { Heading } from '@chakra-ui/react';
 //  components
-import StandardDivider from '../../../../components/standard-divider';
+import StandardDivider from '../../../components/standard-divider';
 
 const DisplayHeading = () => (
   <>

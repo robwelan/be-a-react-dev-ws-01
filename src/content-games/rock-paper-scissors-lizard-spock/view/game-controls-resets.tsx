@@ -5,7 +5,7 @@ import { Box, Button, SimpleGrid } from '@chakra-ui/react';
 import { FaGamepad } from '@react-icons/all-files/fa/FaGamepad';
 import { FaTrashAlt } from '@react-icons/all-files/fa/FaTrashAlt';
 //  components
-import StandardDivider from '../../../../components/standard-divider';
+import StandardDivider from '../../../components/standard-divider';
 //  interfaces
 import { SetState, State } from '../state/interfaces';
 //  local utilities

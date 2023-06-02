@@ -2,7 +2,7 @@ import React from 'react';
 //  components
 import Seo from '../../components/seo';
 //  content
-import ContentGameRockPaperScissors from '../../content-pages/games/rock-paper-scissors';
+import ContentGameRockPaperScissors from '../../content-games/rock-paper-scissors';
 //  hooks
 import useDeviceSize from '../../hooks/use-device-size';
 
