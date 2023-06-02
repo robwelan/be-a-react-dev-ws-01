@@ -1,7 +1,12 @@
 //  local utilities
-import { PayloadSetDecisionUser, State } from '../state/interfaces';
+import { SetState, State } from '../state/interfaces';
 
-const setDecisionUser = (payload: PayloadSetDecisionUser) => {
+interface Payload {
+  decision: string;
+  setState: SetState;
+}
+
+const setDecisionUser = (payload: Payload) => {
   const { decision, setState } = payload;
 
   setState((prevState: State) => ({

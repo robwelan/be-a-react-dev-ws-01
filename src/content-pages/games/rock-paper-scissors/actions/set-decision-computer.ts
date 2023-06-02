@@ -12,7 +12,7 @@ interface Payload {
 
 const setDecisionComputer = (payload: Payload) => {
   const { setState, userDecision } = payload;
-  const decision = choice[choice.index[random.int(1, 2)]];
+  const decision = choice[choice.index[random.int(0, 2)]];
   const result = getResult({ computerDecision: decision, userDecision });
 
   setState((prevState: State) => ({
