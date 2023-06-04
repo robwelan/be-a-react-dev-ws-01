@@ -182,7 +182,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#ffde59`,
         display: `minimal-ui`,
-        icon: `src/images/beareactdev_icon.svg`, // This path is relative to the root of the site.
+        icon: `src/images/be-a-react-dev-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],
