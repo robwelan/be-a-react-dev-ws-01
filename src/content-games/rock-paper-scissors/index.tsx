@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FunctionComponent } from 'react';
 //  chakra-ui
 import { VStack } from '@chakra-ui/react';
 //  local bits and bobs
@@ -13,7 +13,7 @@ import ViewPlayHeading from './view/play-heading';
 import ViewResults from './view/results';
 import ViewWrapper from './view/wrapper';
 
-const ContentGameRockPaperScissors = () => {
+const ContentGameRockPaperScissors: FunctionComponent = () => {
   const [state, setState] = useState<State>(defaultState as State);
 
   useEffect(() => {
