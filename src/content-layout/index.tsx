@@ -12,6 +12,7 @@ import Routes from '../security/routes';
 import WrapRoutes from './wrap-routes';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
+import useScript from '../hooks/use-script';
 
 type Props = {
   children: Children;
@@ -24,6 +25,28 @@ const ContentLayout = (props: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const device = useDeviceSize();
+
+  useScript({
+    async: true,
+    src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
+    type: 'application/javascript',
+  });
+
+  useScript({
+    async: true,
+    delay: {
+      isDelay: true,
+      timeout: 450,
+    },
+    innerHTML: `kofiWidgetOverlay.draw('beareactdev', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  })`,
+    type: 'application/javascript',
+  });
+
   //  scroll to top when path changes effect
   useEffect(() => {
     scroll.scrollToTop({

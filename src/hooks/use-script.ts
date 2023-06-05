@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-interface Props {
+interface Payload {
   async: boolean;
   delay: {
     isDelay: boolean;
@@ -12,7 +12,7 @@ interface Props {
   type: string;
 }
 
-const useScript = (props: Props) => {
+const useScript = (payload: Payload) => {
   const {
     async: isAsync = false,
     delay = {},
@@ -20,7 +20,7 @@ const useScript = (props: Props) => {
     innerHTML = '',
     src = '',
     type = '',
-  } = props;
+  } = payload;
   const { isDelay = false, timeout = 500 } = delay;
   //  url effect
   useEffect(() => {
