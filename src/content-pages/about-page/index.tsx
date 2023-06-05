@@ -123,6 +123,10 @@ const SplitWithImage = () => {
             Twitter <ExternalLinkIcon />
           </Link>
         </Text>
+        <Text>You can subscribe to exclusive content on </Text>
+        <Link href="https://patreon.com/BeAReactDev" isExternal>
+          Patreon <ExternalLinkIcon />
+        </Link>
       </Stack>
       <Flex>
         <Image
