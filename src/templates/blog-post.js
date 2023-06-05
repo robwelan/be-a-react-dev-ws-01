@@ -68,14 +68,17 @@ const BlogPost = (props) => {
     },
   });
   useScript({
+    src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
+    // type: 'text/javascript',
+  });
+  useScript({
     innerHTML: `kofiWidgetOverlay.draw('beareactdev', {
       'type': 'floating-chat',
       'floating-chat.donateButton.text': 'Support me',
       'floating-chat.donateButton.background-color': '#00b9fe',
       'floating-chat.donateButton.text-color': '#fff'
     }`,
-    src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
-    type: 'text/javascript',
+    // type: 'text/javascript',
   });
 
   return (

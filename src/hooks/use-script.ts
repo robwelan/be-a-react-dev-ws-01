@@ -1,22 +1,31 @@
 import { useEffect } from 'react';
 
 interface Url {
+  async: boolean;
   innerHTML: string;
   src: string;
   type: string;
 }
 
 const useScript = (props: Url) => {
-  const { innerHTML = '', src = '', type = '' } = props;
+  const { async: isAsync = false, innerHTML = '', src = '', type = '' } = props;
 
   //  url effect
   useEffect(() => {
     const script = document.createElement('script');
 
-    script.async = true;
-    script.innerHTML = innerHTML;
-    script.src = src;
-    script.type = type;
+    if (isAsync) {
+      script.async = true;
+    }
+    if (innerHTML !== '') {
+      script.innerHTML = innerHTML;
+    }
+    if (src !== '') {
+      script.src = src;
+    }
+    if (type !== '') {
+      script.type = type;
+    }
 
     document.body.appendChild(script);
 
