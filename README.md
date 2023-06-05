@@ -7,9 +7,9 @@
   Rob Welan's Be A React Dev Blog
 </h1>
 
-This is the place to learn about reactjs from a person who is pretter sure he is autistic (self-diagnosed).
+This is the place to learn about ReactJS from a person who is pretty passionate about ReactJS and GatsbyJS.
 
-This blog aims to teach how to ReactJS, typescript maybe, chakra-ui and bits of nodejs.
+This blog aims to teach how to ReactJS, Typescript maybe, chakra-ui and bits of NodeJS.
 
 This blog is free. Please be mindful to attribute the content if you want to share. If you like any of the code, copy it as if it were your own.
 

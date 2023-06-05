@@ -1,7 +1,7 @@
 {
   "name": "be-a-react-dev-website",
   "private": true,
-  "description": "A blog written from the perspective of a person self-diagnosed with autism who happens to be passionate about ReactJS.",
+  "description": "This is the place to learn about ReactJS from a person who is pretty passionate about ReactJS and GatsbyJS.",
   "version": "0.1.0",
   "author": "Rob Welan <rmw.its@gmail.com>",
   "bugs": {

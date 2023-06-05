@@ -17,7 +17,7 @@ module.exports = {
       name: `Rob Welan`,
       summary: `who lives and works in Ipswich Queensland building useful things.`,
     },
-    description: `Welcome to be-a-react-dev, a blog written from the perspective of a person self-diagnosed with autism who happens to be passionate about ReactJS.`,
+    description: `Welcome to be-a-react-dev, a blog written from the perspective of a person who happens to be passionate about ReactJS.`,
     icon: 'src/images/beareactdev_icon.svg',
     keywords: 'gatsbyjs netlify typescript javascript nodejs reactjs',
     siteUrl,
