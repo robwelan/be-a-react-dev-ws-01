@@ -22,6 +22,8 @@ import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 import Seo from '../components/seo';
 import ProductPush from '../components-templates/bottom-product-push';
 import { asComponent } from '../components/blog-parse-html.tsx';
+//  hooks
+import useScript from '../hooks/use-script';
 //  utiltities
 import getImage from '../utilities/graphql-content/get-image';
 import getTwitterButtonContent from '../utilities/strings/get-twitter-button-content';
@@ -64,6 +66,25 @@ const BlogPost = (props) => {
       src: featuredSrc,
       title: featuredTitle,
     },
+  });
+  useScript({
+    async: true,
+    src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
+    type: 'application/javascript',
+  });
+  useScript({
+    async: true,
+    delay: {
+      isDelay: true,
+      timeout: 450,
+    },
+    innerHTML: `kofiWidgetOverlay.draw('beareactdev', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  })`,
+    type: 'application/javascript',
   });
 
   return (

@@ -1,18 +1,31 @@
 import { useEffect } from 'react';
 
-interface Url {
+interface Props {
   async: boolean;
+  delay: {
+    isDelay: boolean;
+    timeout: number;
+  };
+  head: boolean;
   innerHTML: string;
   src: string;
   type: string;
 }
 
-const useScript = (props: Url) => {
-  const { async: isAsync = false, innerHTML = '', src = '', type = '' } = props;
-
+const useScript = (props: Props) => {
+  const {
+    async: isAsync = false,
+    delay = {},
+    head: isHead = false,
+    innerHTML = '',
+    src = '',
+    type = '',
+  } = props;
+  const { isDelay = false, timeout = 500 } = delay;
   //  url effect
   useEffect(() => {
     const script = document.createElement('script');
+    const documentTag = isHead ? 'head' : 'body';
 
     if (isAsync) {
       script.async = true;
@@ -27,12 +40,20 @@ const useScript = (props: Url) => {
       script.type = type;
     }
 
-    document.body.appendChild(script);
+    if (isDelay) {
+      setTimeout(() => {
+        document[documentTag].appendChild(script);
+      }, timeout);
+    }
+
+    if (!isDelay) {
+      document[documentTag].appendChild(script);
+    }
 
     return () => {
-      document.body.removeChild(script);
+      document[documentTag].removeChild(script);
     };
-  }, [innerHTML, src]);
+  }, [isAsync, isHead, isDelay, innerHTML, src, timeout, type]);
 };
 
 export default useScript;
