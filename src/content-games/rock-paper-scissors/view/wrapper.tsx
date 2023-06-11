@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 //  chakra-ui
 import { Box } from '@chakra-ui/react';
 
-const DisplayWrapper = (props) => {
+interface Props {
+  children: ReactElement;
+}
+
+const DisplayWrapper = (props: Props) => {
   const { children } = props;
 
   return (
