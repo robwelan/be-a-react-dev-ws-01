@@ -1,5 +1,5 @@
 ---
-title: Game View - Game Heading
+title: Game View - Game Heading Rock Paper Scissors
 date: "2023-06-05T12:22:00Z"
 categories:
   - games, typescript
@@ -12,7 +12,7 @@ settings_featured_image:
   alt: >-
     gatsbyjs plus javascript
   src: /typescript-plus-react.png
-  title: Game View Game Heading
+  title: Game View Game Heading Rock Paper Scissors
 settings_publish: true
 twitter_tags:
   - "#beareactdev"
