@@ -51,7 +51,7 @@ import { Provider } from 'jotai';
 //  chakra-ui
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
 //  theme
-import theme from './src/content-layout/theme';
+import theme from './src/@chakra-ui/gatsby-plugin/theme';
 
 const wrapRootElement = ({ element }) => (
   <Provider>
@@ -65,6 +65,12 @@ export default wrapRootElement;
 ```
 
 <br />
+
+### Updated 14-Jun-2023
+
+I was today years old when I discovered in the <a href="https://www.gatsbyjs.com/plugins/@chakra-ui/gatsby-plugin/" rel="noopener" target="_blank">@chakra-ui/gatsby-plugin</a> documentation that you had to have the theme in a specific folder within the src folder. Or else you may as well not bother trying.
+
+## Last But Not Least
 
 Oh, in case you were wondering, <a href="https://jotai.org/" rel="noopener" target="_blank">Jotai</a> is a cool state management system which is easier to learn and use than <a href="https://redux.js.org/" rel="noopener" target="_blank">Redux</a>.
 
