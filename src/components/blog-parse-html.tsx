@@ -103,14 +103,14 @@ const options: HTMLReactParserOptions = {
         }
         case 'ul': {
           return (
-            <UnorderedList lineHeight="2rem" {...safeAttribs}>
+            <UnorderedList {...safeAttribs}>
               {domToReact(children, options)}
             </UnorderedList>
           );
         }
         case 'ol': {
           return (
-            <OrderedList lineHeight="2rem" {...safeAttribs}>
+            <OrderedList {...safeAttribs}>
               {domToReact(children, options)}
             </OrderedList>
           );

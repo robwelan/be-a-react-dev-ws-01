@@ -12,6 +12,8 @@ import MainLayout from './main-layout';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
 import useScript from '../hooks/use-script';
+//  styles
+import './index.css';
 
 type Props = {
   children: Children;
