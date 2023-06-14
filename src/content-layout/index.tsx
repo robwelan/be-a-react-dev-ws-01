@@ -8,8 +8,7 @@ import { Children, Location } from '../constants/types';
 //  local components
 import ContentListeners from './listeners';
 //  local components
-import Routes from '../security/routes';
-import WrapRoutes from './wrap-routes';
+import MainLayout from './main-layout';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
 import useScript from '../hooks/use-script';
@@ -73,10 +72,7 @@ const ContentLayout = (props: Props) => {
   return (
     <>
       <ContentListeners />
-      <WrapRoutes configuration={configuration}>
-        {/* <Routes location={location} /> */}
-        <>{children}</>
-      </WrapRoutes>
+      <MainLayout configuration={configuration}>{children}</MainLayout>
     </>
   );
 };

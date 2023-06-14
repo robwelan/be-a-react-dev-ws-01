@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 
 interface Payload {
-  async: boolean;
-  delay: {
-    isDelay: boolean;
-    timeout: number;
+  async?: boolean;
+  delay?: {
+    isDelay?: boolean;
+    timeout?: number;
   };
-  head: boolean;
-  innerHTML: string;
-  src: string;
-  type: string;
+  head?: boolean;
+  innerHTML?: string;
+  src?: string;
+  type?: string;
 }
 
 const useScript = (payload: Payload) => {
