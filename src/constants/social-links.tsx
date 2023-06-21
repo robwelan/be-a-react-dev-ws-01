@@ -20,11 +20,11 @@ const linksSocial = [
     icon: () => (
       <Icon
         xmlns="http://www.w3.org/2000/svg"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        image-rendering="optimizeQuality"
-        shape-rendering="geometricPrecision"
-        text-rendering="geometricPrecision"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        imageRendering="optimizeQuality"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
         viewBox="0 0 2001 2001"
       >
         <path
