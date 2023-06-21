@@ -2,10 +2,7 @@ import { useEffect } from 'react';
 
 interface Payload {
   async?: boolean;
-  delay?: {
-    isDelay?: boolean;
-    timeout?: number;
-  };
+  dependenciesLoaded?: boolean;
   head?: boolean;
   innerHTML?: string;
   src?: string;
@@ -15,17 +12,16 @@ interface Payload {
 const useScript = (payload: Payload) => {
   const {
     async: isAsync = false,
-    delay = {},
     head: isHead = false,
     innerHTML = '',
     src = '',
     type = '',
   } = payload;
-  const { isDelay = false, timeout = 500 } = delay;
+
   //  url effect
   useEffect(() => {
-    const script = document.createElement('script');
     const documentTag = isHead ? 'head' : 'body';
+    const script = document.createElement('script');
 
     if (isAsync) {
       script.async = true;
@@ -40,20 +36,12 @@ const useScript = (payload: Payload) => {
       script.type = type;
     }
 
-    if (isDelay) {
-      setTimeout(() => {
-        document[documentTag].appendChild(script);
-      }, timeout);
-    }
-
-    if (!isDelay) {
-      document[documentTag].appendChild(script);
-    }
+    document[documentTag].appendChild(script);
 
     return () => {
       document[documentTag].removeChild(script);
     };
-  }, [isAsync, isHead, isDelay, innerHTML, src, timeout, type]);
+  }, []);
 };
 
 export default useScript;
