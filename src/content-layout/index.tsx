@@ -13,6 +13,8 @@ import IndependentScripts from './scripts-independent';
 import MainLayout from './main-layout';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
+//  utilties
+import getWindow from '../utilities/window/get-window';
 //  styles
 import './index.css';
 
@@ -29,6 +31,7 @@ const ContentLayout = (props: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const device = useDeviceSize();
+  const globalWindow = getWindow();
 
   //  mounted effect
   useEffect(() => {
@@ -41,13 +44,13 @@ const ContentLayout = (props: Props) => {
 
   useEffect(() => {
     if (mounted) {
-      if (window) {
+      if (globalWindow) {
         setTimeout(() => {
           setIsLoaded(true);
         }, 250);
       }
     }
-  }, [mounted, window]);
+  }, [globalWindow, mounted]);
 
   //  scroll to top when path changes effect
   useEffect(() => {
