@@ -140,7 +140,7 @@ We can use the values of resultComputer and resultUser to set the state of ‘wi
   color={win === 'won' ? userWin : win === 'lose' ? userLose : ''}
 ```
 
-I did something naughty here. If you are wondering what you can read this <a href="https://eslint.org/docs/latest/rules/no-nested-ternary" rel="noopener" target="_blank">no nested ternary</a>.
+I did something naughty here. If you are wondering what you can read <a href="https://eslint.org/docs/latest/rules/no-nested-ternary" rel="noopener" target="_blank">‘no nested ternary’</a>.
 
 However, sometimes it’s easier to just get shit done. That said, you should be able to look at this code and notice that it is hard to read. And that is the cruxt of why nested ternaries suck dead dog’s balls.
 
