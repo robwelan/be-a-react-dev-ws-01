@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 //  chakra-ui
 import { useColorMode, useDisclosure } from '@chakra-ui/react';
 //  react-scroll
@@ -8,10 +8,11 @@ import { Children, Location } from '../constants/types';
 //  local components
 import ContentListeners from './listeners';
 //  local components
+import DependentScripts from './scripts-dependent';
+import IndependentScripts from './scripts-independent';
 import MainLayout from './main-layout';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
-import useScript from '../hooks/use-script';
 //  styles
 import './index.css';
 
@@ -23,30 +24,30 @@ type Props = {
 const ContentLayout = (props: Props) => {
   const { children, location } = props;
   const { pathname } = location;
+  const [loaded, setIsLoaded] = useState(false);
+  const [mounted, setIsMounted] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const device = useDeviceSize();
 
-  useScript({
-    async: true,
-    src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
-    type: 'application/javascript',
-  });
+  //  mounted effect
+  useEffect(() => {
+    setIsMounted(true);
 
-  useScript({
-    async: true,
-    delay: {
-      isDelay: true,
-      timeout: 450,
-    },
-    innerHTML: `kofiWidgetOverlay.draw('beareactdev', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#00b9fe',
-    'floating-chat.donateButton.text-color': '#fff'
-  })`,
-    type: 'application/javascript',
-  });
+    return () => {
+      setIsMounted(false);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      if (window) {
+        setTimeout(() => {
+          setIsLoaded(true);
+        }, 250);
+      }
+    }
+  }, [mounted, window]);
 
   //  scroll to top when path changes effect
   useEffect(() => {
@@ -74,6 +75,8 @@ const ContentLayout = (props: Props) => {
   return (
     <>
       <ContentListeners />
+      {loaded && <DependentScripts />}
+      {!loaded && <IndependentScripts />}
       <MainLayout configuration={configuration}>{children}</MainLayout>
     </>
   );
