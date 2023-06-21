@@ -60,15 +60,10 @@ const LayoutFooter = () => {
                 The Author Guy
               </GatsbyLink>
             </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Legal</ListHeader>
-              <GatsbyLink to={PUBLIC_ROUTE_PAGE_COOKIES}>Cookies</GatsbyLink>
-              <GatsbyLink to={PUBLIC_ROUTE_PAGE_PRIVACY}>Privacy</GatsbyLink>
-              <GatsbyLink to={PUBLIC_ROUTE_PAGE_TERMS}>Terms</GatsbyLink>
-            </Stack>
+
             <Stack align={'flex-start'}>
               <ListHeader>Find Me</ListHeader>
-              <SimpleGrid columns={2} spacing={2}>
+              <SimpleGrid columns={3} spacing={2}>
                 {linksSocial.map((item, index) => {
                   const { icon: Icon } = item;
 
@@ -85,6 +80,14 @@ const LayoutFooter = () => {
                 })}
               </SimpleGrid>
             </Stack>
+
+            <Stack align={'flex-start'}>
+              <ListHeader>Legal</ListHeader>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_COOKIES}>Cookies</GatsbyLink>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_PRIVACY}>Privacy</GatsbyLink>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_TERMS}>Terms</GatsbyLink>
+            </Stack>
+
             <Stack align={'flex-start'}>
               <ListHeader>Tech In Use</ListHeader>
               <SimpleGrid columns={3} spacing={2}>
