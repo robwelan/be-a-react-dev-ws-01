@@ -19,6 +19,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 //  react icons
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 //  components
+import AmazonAffiliateLinks from '../components/blog-post/amazon-affiliate-links';
 import Seo from '../components/seo';
 import ProductPush from '../components-templates/bottom-product-push';
 import { asComponent } from '../components/blog-parse-html.tsx';
@@ -93,6 +94,9 @@ const BlogPost = (props) => {
           </Box>
         )}
       </HStack>
+      <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
+
+      <AmazonAffiliateLinks />
 
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
       <Text fontSize="xs">{meta_description}</Text>
