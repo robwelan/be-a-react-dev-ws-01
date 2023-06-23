@@ -63,7 +63,7 @@ const ProductPush = () => {
             alt={product.asset.image.alt}
           />
 
-          <Stack>
+          <Stack p={4}>
             <CardHeader>
               <Heading marginTop="0.4em" size="xs">
                 {product.asset.name}
