@@ -2,7 +2,9 @@ import React from 'react';
 //  hooks
 import useScript from '../hooks/use-script';
 
-const DependentScripts = () => {
+const DependentScripts = (props) => {
+  const { bgColorToken } = props;
+
   useScript({
     async: true,
     innerHTML: `
@@ -14,8 +16,13 @@ const DependentScripts = () => {
           'floating-chat.donateButton.background-color': '#00b9fe',
           'floating-chat.donateButton.text-color': '#fff'
         });
+
+        var iframe = document.getElementsByTagName('iframe')[0];
+        iframe.style.background = '${bgColorToken}';
+        iframe.contentWindow.document.body.style.backgroundColor = '${bgColorToken}';
       }
-    }`,
+    }
+    `,
     type: 'application/javascript',
   });
 

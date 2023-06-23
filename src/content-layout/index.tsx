@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 //  chakra-ui
-import { useColorMode, useDisclosure } from '@chakra-ui/react';
+import {
+  useColorMode,
+  useDisclosure,
+  useTheme,
+  useToken,
+} from '@chakra-ui/react';
 //  react-scroll
 import { animateScroll as scroll } from 'react-scroll';
 //  constants
@@ -30,6 +35,10 @@ const ContentLayout = (props: Props) => {
   const [mounted, setIsMounted] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const theme = useTheme();
+  const bgColorVar =
+    theme.semanticTokens.colors['chakra-body-bg'][`_${colorMode}`];
+  const bgColorToken = useToken('colors', [bgColorVar]);
   const device = useDeviceSize();
   const globalWindow = getWindow();
 
@@ -79,7 +88,7 @@ const ContentLayout = (props: Props) => {
     <>
       <ContentListeners />
       {loaded && <DependentScripts />}
-      {!loaded && <IndependentScripts />}
+      {!loaded && <IndependentScripts bgColorToken={bgColorToken} />}
       <MainLayout configuration={configuration}>{children}</MainLayout>
     </>
   );
