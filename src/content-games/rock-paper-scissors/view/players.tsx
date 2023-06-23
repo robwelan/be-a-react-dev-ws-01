@@ -36,16 +36,14 @@ const DisplayPlayers: FunctionComponent<Props> = (props: Props) => {
   });
 
   return (
-    <Box sx={{ marginBottom: '1em !important', marginTop: '1em !important' }}>
-      <SimpleGrid columns={[smallColumns, null, 2]} spacing={4}>
-        <Box>
-          <DisplayUser setState={setState} state={state} />
-        </Box>
-        <Box>
-          <DisplayComputer state={state} />
-        </Box>
-      </SimpleGrid>
-    </Box>
+    <SimpleGrid columns={[smallColumns, null, 2]} spacing={4}>
+      <Box>
+        <DisplayUser setState={setState} state={state} />
+      </Box>
+      <Box>
+        <DisplayComputer state={state} />
+      </Box>
+    </SimpleGrid>
   );
 };
 
