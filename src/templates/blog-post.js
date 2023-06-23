@@ -99,7 +99,7 @@ const BlogPost = (props) => {
       <AmazonAffiliateLinks />
 
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
-      <Text fontSize="xs">{meta_description}</Text>
+      <Text fontSize="xs" marginBottom="1em">{meta_description}</Text>
       {featuredSrc !== '' && (
         <>
           <Box display="flex" justifyContent="center" alignItems="center">
