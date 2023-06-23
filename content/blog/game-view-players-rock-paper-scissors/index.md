@@ -87,19 +87,27 @@ const DisplayPlayers: FunctionComponent<Props> = (props: Props) => {
 export default DisplayPlayers;
 ```
 
+## TypeScript Interface Definitions
+
 The first thing we have are two defined interfaces for TypeScript.
 
 The first interface is for Props where we are grabbing State and SetState from the interfaces definition file. We defined that over <a href="/game-state-rock-paper-scissors/">here</a>.
 
 The second interface is for Payload where are are defining some boolean properties expected to be passed to a helper function. I could have put this helper function in a completely external file by-the-way. If this total component file size increased enough I would bother to do that.
 
+## getSmallColumns Helper Function
+
 The helper function simply returns the required columns to display based on whether the result of two compared booleans are true. Or not.
+
+## DisplayPlayers Component Function
 
 The final function is the React component itself all dressed up in TypeScript definitions. TypeScript is cool and all but it is fucking ugly to read. The FunctionComponent type is defined by the React team, so we import it from the react library itself. That saves us time building our own.
 
 In the function we destructure setState and state from props, and isMobile from a helper hook created by Chakra-UI (we love Chakra-UI). We describe an opinion where ‘isMobile’ is any device 767px wide or less.
 
-Next we create a constant called smallColumns that checks whether the human user has played and whether the device screen size ‘isMobile’ or not.
+Next we create a constant called smallColumns that checks whether the human user has played and whether the device screen size ‘isMobile’ (true or false) or not.
+
+## Required Component Result
 
 Finally we return the required output from the component function.
 
@@ -108,3 +116,7 @@ First we include a simple grid which includes our spacing and required column co
 Next we have two Boxes which each contain the DisplayUser and the DisplayComputer components respectively. The DisplayUser component drills down the setState and state props and the DisplayComputer component drills down the state prop.
 
 And we are done for now.
+
+## For Extra Credit (LOL)
+
+Is the DisplayPlayers function a Pure Function or not? To find out what a Pure Function is, check this <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">definition</a>.
