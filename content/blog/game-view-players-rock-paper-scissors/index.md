@@ -37,7 +37,7 @@ Let’s get into the code of displaying our players.
 ```typescript
 import React, { FunctionComponent } from 'react';
 //  chakra-ui
-import { Box, SimpleGrid, useMediaQuery } from '@chakra-ui/react';
+import { SimpleGrid, useMediaQuery } from '@chakra-ui/react';
 //  local components
 import DisplayComputer from './computer';
 import DisplayUser from './user';
@@ -74,12 +74,8 @@ const DisplayPlayers: FunctionComponent<Props> = (props: Props) => {
 
   return (
     <SimpleGrid columns={[smallColumns, null, 2]} spacing={4}>
-      <Box>
-        <DisplayUser setState={setState} state={state} />
-      </Box>
-      <Box>
-        <DisplayComputer state={state} />
-      </Box>
+      <DisplayUser setState={setState} state={state} />
+      <DisplayComputer state={state} />
     </SimpleGrid>
   );
 };

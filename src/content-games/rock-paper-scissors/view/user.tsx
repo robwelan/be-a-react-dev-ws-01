@@ -15,9 +15,15 @@ import { FaHandRock } from '@react-icons/all-files/fa/FaHandRock';
 import { FaHandScissors } from '@react-icons/all-files/fa/FaHandScissors';
 //  local utilities
 import choice from '../state/choices';
+import { State, SetState } from '../state/interfaces';
 import setDecisionUser from '../actions/set-decision-user';
 
-const DisplayUser = (props) => {
+interface Props {
+  setState: SetState;
+  state: State;
+}
+
+const DisplayUser = (props: Props) => {
   const { setState, state } = props;
 
   return (
