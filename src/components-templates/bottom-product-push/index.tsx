@@ -31,12 +31,13 @@ const ProductPush = () => {
     <>
       <StandardDivider />
       <Heading as="h2" size="xs">
-        Please support the unmasked developer...
+        Get Cool Swag
       </Heading>
       <Text fontSize="xs">
         If you are finding this content useful (or maybe you are just a nice
         person or maybe you just like my merch) I would be greatful if you
-        headed over to my shop and purchase some cool merch.
+        headed over to my shop and make a purchase or two. All proceeds will go
+        towards making more courses.
       </Text>
       <Text fontSize="xs">
         If there ’s merch missing that you would like, let me know (click this:{' '}
