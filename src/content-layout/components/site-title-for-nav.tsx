@@ -7,11 +7,7 @@ import useSiteMetadata from '../../hooks/use-site-meta-data';
 const SiteTitleForNav = () => {
   const siteMetadata = useSiteMetadata();
 
-  return (
-    <Text fontSize="sm" fontWeight={200}>
-      {siteMetadata.title}
-    </Text>
-  );
+  return <Text fontSize="sm">{siteMetadata.title}</Text>;
 };
 
 export default SiteTitleForNav;
