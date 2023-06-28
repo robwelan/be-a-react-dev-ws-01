@@ -10,7 +10,7 @@ meta_description: >-
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
-    gatsbyjs plus javascript
+    gatsbyjs plus typescript
   src: /typescript-plus-react.png
   title: Game Entry Rock Paper Scissors
 settings_publish: true
@@ -21,7 +21,7 @@ twitter_tags:
 ---
 ## What do I mean by entry?
 
-This is a description of the game	’s root file. Its home page. Its index.html. Except in this case, it is an index.tsx file. So in your react project, you will need to create a file like this.
+This is a description of the game’s root file. Its home page. Its index.html. Except in this case, it is an index.tsx file. So in your react project, you will need to create a file like this.
 
 ## What you will be building
 
@@ -31,6 +31,7 @@ Please check this link: <a href="https://beareact.dev/games/rock-paper-scissors/
 I am using <a href="https://chakra-ui.com/" target="_blank">Chakra UI</a>.
 
 ## Organisation
+
 I could have separated UI from this file by creating a display only file and do deeper props drilling, but I decided not to.
 
 I have however attempted to split my code into various folders to indicate the overall purpose of the files within these folders.

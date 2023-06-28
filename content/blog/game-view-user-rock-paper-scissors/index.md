@@ -10,7 +10,7 @@ meta_description: >-
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
-    gatsbyjs plus javascript
+    gatsbyjs plus typescript
   src: /typescript-plus-react.png
   title: Game View Game Players Rock Paper Scissors
 settings_publish: true
