@@ -8,7 +8,7 @@ const SiteTitleForNav = () => {
   const siteMetadata = useSiteMetadata();
 
   return (
-    <Text fontSize="sm" fontWeight={100}>
+    <Text fontSize="sm" fontWeight={200}>
       {siteMetadata.title}
     </Text>
   );

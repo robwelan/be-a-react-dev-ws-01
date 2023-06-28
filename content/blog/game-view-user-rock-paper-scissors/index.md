@@ -291,3 +291,13 @@ First, we have the Tooltip and the label is set to the correct choice value.
 Next we have the IconButton, and within that we have the aria label set, using the correct choice value, the Icon which is set to the correct Font Awesome icon, and then the onClick action is set to use the imported function which is setDecisionUser. This function accepts the User decision (which is of course the choice.scissors.value in this case) and the setState function which has been passed into this Component from the parent Component.
 
 And now we are done.
+
+## What could be improved?
+
+I can’t remember if the state.result.label test is required. Hmmm. This means either a comment is required if the test is required as it is not immediately obvious as to why this test should be there. Or the component should be refactored by having this line remove if it is unnecessary.
+
+The three buttons are the same except for the value and the icon. So - a new component that accepts a value and an icon and setState could be made and used.
+
+Also, the individual choices could be exported from the choices file, and the constant for scissors could be used instead of choices.scissors.value for example.
+
+Food for thought.
