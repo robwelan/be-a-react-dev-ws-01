@@ -1,5 +1,5 @@
 ---
-title: Game View - Game User Rock Paper Scissors
+title: Game View - User Rock Paper Scissors
 date: "2023-06-27T09:40:00Z"
 categories:
   - games, typescript
@@ -12,7 +12,7 @@ settings_featured_image:
   alt: >-
     gatsbyjs plus typescript
   src: /typescript-plus-react.png
-  title: Game View Game Players Rock Paper Scissors
+  title: Game View User Rock Paper Scissors
 settings_publish: true
 twitter_tags:
   - "#beareactdev"
