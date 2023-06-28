@@ -4,6 +4,7 @@ import { Box } from '@chakra-ui/react';
 //  types
 import { Children, LayoutConfiguration } from '../constants/types';
 //  local components
+import ButtonScrollToTop from './components/scroll-to-top-button';
 import MediumContainer from './components/container-medium';
 import SmallContainer from './components/container-small';
 import Navigator from './navigator-top';
@@ -31,6 +32,7 @@ const MainLayout = (props: Props) => {
         {!isMobile && <MediumContainer>{children}</MediumContainer>}
       </Box>
       <LayoutFooter />
+      <ButtonScrollToTop />
     </>
   );
 };
