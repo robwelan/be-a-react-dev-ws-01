@@ -294,7 +294,7 @@ And now we are done.
 
 ## What could be improved?
 
-I can’t remember if the state.result.label test is required. Hmmm. This means either a comment is required if the test is required as it is not immediately obvious as to why this test should be there. Or the component should be refactored by having this line remove if it is unnecessary.
+I can’t remember if the state.result.label test is required. Hmmm. This means either a comment is required if the test is found to actually be necessary. It is not immediately obvious as to why this test is required. The component should be refactored by having this line removed if it is unnecessary.
 
 The three buttons are the same except for the value and the icon. So - a new component that accepts a value and an icon and setState could be made and used.
 
