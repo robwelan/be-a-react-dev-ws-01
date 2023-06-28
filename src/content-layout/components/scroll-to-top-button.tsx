@@ -38,12 +38,18 @@ const ScrollToTop = () => {
   return (
     <IconButton
       aria-label="scroll to top"
-      className="button-scroll-to-top"
       colorScheme="cyan"
       fontSize="2em"
       icon={<FaArrowCircleUp />}
       onClick={() => doScrollToTop({ globalWindow })}
-      sx={{ display: isVisible ? 'flex' : 'none' }}
+      sx={{
+        display: isVisible ? 'flex' : 'none',
+        cursor: 'pointer',
+        position: 'fixed',
+        bottom: '1.4rem',
+        right: '1.4rem',
+        zIndex: 1000,
+      }}
       variant="outline"
     />
   );
