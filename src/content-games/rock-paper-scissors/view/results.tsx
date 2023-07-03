@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Box, HStack, VStack, Text } from '@chakra-ui/react';
+import { HStack, VStack, Text } from '@chakra-ui/react';
 //  interfaces
 import { State } from '../state/interfaces';
 
@@ -12,36 +12,28 @@ const DisplayResults = (props: Props) => {
   const { state } = props;
 
   return (
-    <Box
+    <HStack
       maxW="sm"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
       sx={{ marginBottom: '1em !important', marginTop: '1em !important' }}
     >
-      <HStack>
-        <Box p={4}>
-          <VStack>
-            <Text>Computer:</Text>
-            <Text>{state.games.computer}</Text>
-          </VStack>
-        </Box>
+      <VStack p={4}>
+        <Text>Computer:</Text>
+        <Text>{state.games.computer}</Text>
+      </VStack>
 
-        <Box p={4}>
-          <VStack>
-            <Text>Games:</Text>
-            <Text>{state.games.total}</Text>
-          </VStack>
-        </Box>
+      <VStack p={4}>
+        <Text>Games:</Text>
+        <Text>{state.games.total}</Text>
+      </VStack>
 
-        <Box p={4}>
-          <VStack>
-            <Text>User:</Text>
-            <Text>{state.games.user}</Text>
-          </VStack>
-        </Box>
-      </HStack>
-    </Box>
+      <VStack p={4}>
+        <Text>User:</Text>
+        <Text>{state.games.user}</Text>
+      </VStack>
+    </HStack>
   );
 };
 
