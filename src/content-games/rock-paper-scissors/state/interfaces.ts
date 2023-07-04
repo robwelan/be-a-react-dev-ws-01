@@ -18,7 +18,7 @@ interface State {
 }
 
 interface SetState {
-  setState: Dispatch<SetStateAction<State>>;
+  setState: (value: State) => void;
 }
 
 interface PayloadSetDecisionComputer {

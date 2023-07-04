@@ -8,7 +8,7 @@ import { FaTrashAlt } from '@react-icons/all-files/fa/FaTrashAlt';
 import StandardDivider from '../../../components/standard-divider';
 //  interfaces
 import { SetState, State } from '../state/interfaces';
-//  local utilities
+//  local actions
 import setClearAll from '../actions/set-clear-all';
 import setClearGame from '../actions/set-clear-game';
 
