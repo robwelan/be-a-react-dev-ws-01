@@ -1,6 +1,6 @@
 ---
 title: Game View - Computer Rock Paper Scissors
-date: "2023-06-27T09:40:00Z"
+date: "2023-06-29T08:15:00Z"
 categories:
   - games, typescript
 meta_keywords:
