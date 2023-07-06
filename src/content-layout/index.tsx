@@ -22,6 +22,7 @@ import useDeviceSize from '../hooks/use-device-size';
 import getWindow from '../utilities/window/get-window';
 //  styles
 import './index.css';
+import './css/floating-label.css';
 
 type Props = {
   children: Children;
