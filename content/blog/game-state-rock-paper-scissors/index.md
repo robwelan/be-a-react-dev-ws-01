@@ -71,7 +71,7 @@ The result object contains label, computer and user. The computer and user keys 
 
 ## How To Type This Shit?
 
-Well, we should create an interfaces.ts file. And in that we would have the following interface declaration:
+Well, we should create an interfaces.ts file. And in that we would have the following interface declarations:
 
 ```typescript
 interface State {
@@ -90,20 +90,30 @@ interface State {
     user: boolean;
   };
 }
+
+interface SetState {
+  setState: (value: State) => void;
+}
 ```
+
+## State
 
 From the above we can determine that the State is an object made up of objects.
 
-## Type decision
+### Type decision
 
 We have computer and user, both of which are optional strings. This means we can have an empty string.
 
-## Type games
+### Type games
 
 Inside the games object we have mandatory numbers. That means that we expect maybe a zero or some other number. But not a string or some other shit.
 
-## Type result
+### Type result
 
 The label can be an optional string. And the computer and user types will be either true or false (and therefore boolean).
 
 I think this will help you understand a little bit about what we will be building.
+
+## SetState
+
+SetState expects a value of State and returns nothing, so void is declared. setState has no return.
