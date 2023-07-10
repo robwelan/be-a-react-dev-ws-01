@@ -1,9 +1,9 @@
-import React, { useEffect, useState, FunctionComponent } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 //  chakra-ui
 import { VStack } from '@chakra-ui/react';
 //  local bits and bobs
 import defaultState from './state/default-state';
-import { SetState, State } from './state/interfaces';
+import { State } from './state/interfaces';
 import setDecisionComputer from './actions/set-decision-computer';
 //  view
 import ViewGameControlsResets from './view/game-controls-resets';
@@ -13,8 +13,8 @@ import ViewPlayHeading from './view/play-heading';
 import ViewResults from './view/results';
 import ViewWrapper from './view/wrapper';
 
-const ContentGameRockPaperScissors: FunctionComponent = () => {
-  const [state, setState] = useState<State>(defaultState as State);
+const ContentGameRockPaperScissors: FC = () => {
+  const [state, setState] = useState<State>(defaultState);
 
   useEffect(() => {
     if (state.decision.user !== '') {

@@ -43,12 +43,12 @@ Also, this code pattern is separating out the concerns of displaying the user in
 Which is pretty cool.
 
 ```typescript
-import React, { useEffect, useState, FunctionComponent } from 'react';
+import React, { useEffect, useState, FC } from 'react';
 //  chakra-ui
 import { VStack } from '@chakra-ui/react';
 //  local bits and bobs
 import defaultState from './state/default-state';
-import { SetState, State } from './state/interfaces';
+import { State } from './state/interfaces';
 import setDecisionComputer from './actions/set-decision-computer';
 //  view
 import ViewGameControlsResets from './view/game-controls-resets';
@@ -58,8 +58,8 @@ import ViewPlayHeading from './view/play-heading';
 import ViewResults from './view/results';
 import ViewWrapper from './view/wrapper';
 
-const ContentGameRockPaperScissors: FunctionComponent = () => {
-  const [state, setState] = useState<State>(defaultState as State);
+const ContentGameRockPaperScissors: FC = () => {
+  const [state, setState] = useState<State>(defaultState);
 
   useEffect(() => {
     if (state.decision.user !== '') {
@@ -90,8 +90,4 @@ const ContentGameRockPaperScissors: FunctionComponent = () => {
 export default ContentGameRockPaperScissors;
 ```
 
-## Disclaimer
-
-I am still learning typescript. I am trying to write an interface for setState in my interfaces file that I can pass around. I am failing. If you want to help, my email address is [rmw.its](mailto:rmw.its@gmail.com). If your advice works and if you let me know your twitter handle, I will give you a shout out. Here and on  <a href="https://twitter.com/home" target="_blank">twitter</a>.
-
-Thank you in advance.
+The end, job done.

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 //  chakra-ui
 import { SimpleGrid, useMediaQuery } from '@chakra-ui/react';
 //  local components
@@ -27,7 +27,7 @@ const getSmallColumns = (payload: Payload) => {
   return 1;
 };
 
-const DisplayPlayers: FunctionComponent<Props> = (props: Props) => {
+const DisplayPlayers: FC<Props> = (props) => {
   const { setState, state } = props;
   const [isMobile] = useMediaQuery('(max-width: 767px)');
   const smallColumns = getSmallColumns({

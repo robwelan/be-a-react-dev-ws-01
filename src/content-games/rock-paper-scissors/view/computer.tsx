@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 //  chakra-ui
 import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 //  interfaces
@@ -8,7 +8,7 @@ interface Props {
   state: State;
 }
 
-const DisplayComputer = (props: Props) => {
+const DisplayComputer: FC<Props> = (props) => {
   const { state } = props;
 
   return (

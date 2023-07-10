@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 //  chakra-ui
 import {
   Box,
@@ -23,7 +23,7 @@ interface Props {
   state: State;
 }
 
-const DisplayUser = (props: Props) => {
+const DisplayUser: FC<Props> = (props) => {
   const { setState, state } = props;
 
   return (

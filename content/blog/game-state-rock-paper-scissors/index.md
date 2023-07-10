@@ -74,6 +74,8 @@ The result object contains label, computer and user. The computer and user keys 
 Well, we should create an interfaces.ts file. And in that we would have the following interface declarations:
 
 ```typescript
+import { Dispatch, SetStateAction } from 'react';
+
 interface State {
   decision: {
     computer?: string;
@@ -85,15 +87,15 @@ interface State {
     user: number;
   };
   result: {
-    computer: boolean;
     label?: string;
+    computer: boolean;
     user: boolean;
   };
 }
 
-interface SetState {
-  setState: (value: State) => void;
-}
+type SetState = Dispatch<SetStateAction<State>>;
+
+export { SetState, State };
 ```
 
 ## State
@@ -116,4 +118,4 @@ I think this will help you understand a little bit about what we will be buildin
 
 ## SetState
 
-SetState expects a value of State and returns nothing, so void is declared. setState has no return.
+SetState expects the setter from useState. So, we want to Dispatch the SetStateAction and pass it the State interface.
