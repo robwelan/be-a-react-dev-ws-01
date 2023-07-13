@@ -1,7 +1,7 @@
 //  random
 import random from 'random';
 //  local utilities
-import choice from '../state/choices';
+import choices from '../state/choices';
 import getResult from './get-result';
 import { SetState, State } from '../state/interfaces';
 
@@ -10,10 +10,21 @@ interface Payload {
   userDecision: string;
 }
 
+type ComputerDecision = {
+  beats: string;
+  value: string;
+};
+
 const setDecisionComputer = (payload: Payload) => {
   const { setState, userDecision } = payload;
-  const decision = choice[choice.index[random.int(0, 2)]];
-  const result = getResult({ computerDecision: decision, userDecision });
+  const randomiser = random.int(0, choices.index.length - 1);
+  const choice = choices.index.at(randomiser);
+  const decision = choices[choice as keyof typeof choices] as ComputerDecision;
+
+  const result = getResult({
+    computerDecision: decision,
+    userDecision,
+  });
 
   setState((prevState: State) => ({
     ...prevState,
