@@ -9,7 +9,7 @@ const sticker = {
       src: 'https://rlv.zcache.com.au/groovy_be_a_react_dev_stickers-r42d66cea69a748839bd6f67036eacefb_0ugmp_8byvr_325.jpg?bg=0xffffff',
     },
     name: 'Groovy Be A React Dev Stickers',
-    uri: 'https://www.zazzle.com.au/it_is_because_i_am_autistic_t_shirt-256290637434792172',
+    uri: 'https://www.zazzle.com.au/groovy_be_a_react_dev_stickers-256697741914942334',
   },
   // gender: 'male',
   name: 'be a react dev stickers',
