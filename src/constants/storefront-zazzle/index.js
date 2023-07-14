@@ -1,4 +1,5 @@
 import mugs from './mug-designs';
+import stickers from './sticker-designs';
 import tshirts from './t-shirt-designs';
 
 const store = {
@@ -8,8 +9,9 @@ const store = {
 
 const storefront = {
   store,
-  products: [...mugs, ...tshirts],
+  products: [...mugs, ...stickers, ...tshirts],
   mugs,
+  stickers,
   tshirts,
 };
 

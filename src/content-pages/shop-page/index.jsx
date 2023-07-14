@@ -18,6 +18,15 @@ const ContentShopPage = () => (
     </SimpleGrid>
     <Box height="1em" />
     <Heading as="h2" size="md">
+      Stickers
+    </Heading>
+    <SimpleGrid columns={[1, null, 4]} spacing={4}>
+      {storefrontZazzle.stickers.map((item, index) => (
+        <ProductCard key={index} data={item} />
+      ))}
+    </SimpleGrid>
+    <Box height="1em" />
+    <Heading as="h2" size="md">
       T-Shirts
     </Heading>
     <SimpleGrid columns={[1, null, 4]} spacing={4}>
