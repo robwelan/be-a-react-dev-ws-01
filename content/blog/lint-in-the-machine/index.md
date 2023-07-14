@@ -19,6 +19,8 @@ twitter_tags:
   - "#prettier"
   - "#eslint"
 ---
+This article is assuming you are using <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> as your text editor when coding. There are other text editors that are suitable for coding. If you use them, you are dead to me. Just kidding. We just can’t be friends.
+
 Prettier and ESLint are both popular tools used for linting and formatting JavaScript code.
 
 Prettier is a code formatter that automatically enforces a consistent code style across your entire codebase. It can handle a wide variety of formatting rules, including indentation, line length, and spacing, and can automatically format your code as you write it.
