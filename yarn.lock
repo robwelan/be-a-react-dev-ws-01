@@ -6424,10 +6424,10 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
-framer-motion@^10.12.16:
-  version "10.12.16"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.12.16.tgz#ccba11d216ac370c6bc65fcd9953a61deb54f071"
-  integrity sha512-w/SfWEIWJkYSgRHYBmln7EhcNo31ao8Xexol8lGXf1pR/tlnBtf1HcxoUmEiEh6pacB4/geku5ami53AAQWHMQ==
+framer-motion@^10.12.21:
+  version "10.12.21"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.12.21.tgz#ea36b8db4dbb561d5fac7a978c2cd467f6d39a1b"
+  integrity sha512-EmnP73O5+1OGm2jtQNoBPPuAJvhySl+p4/9PL7PPJHt58nkPWeFaxhCJaUDXDf6N3jSLluefxopc0FrMCQ+/tQ==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:
@@ -6861,10 +6861,10 @@ gatsby-remark-prismjs@^7.11.0:
     parse-numeric-range "^1.3.0"
     unist-util-visit "^2.0.3"
 
-gatsby-remark-responsive-iframe@^6.11.0:
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-6.11.0.tgz#2aa08231987986eeac74d099f486429374f927f7"
-  integrity sha512-mcF7xQPHZcQMXvlZQqF5XFB8WtvqfX3nuVfcKgKTQvObV/GCyCgWw6Vf+bQXVg/ckFCFEFA0uMT5ug2Mgjyksg==
+gatsby-remark-responsive-iframe@^6.11.1:
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-6.11.1.tgz#04fd68419acc8dc694057ec5f6de7dd4f99d9743"
+  integrity sha512-eFeKokvLriplDXwvjY89E1kyoX8yelT4TRdvfmD0I5GVh1uAz0eKmteHznxEj/XehD6tMpNE50x22eo4sfMAkQ==
   dependencies:
     "@babel/runtime" "^7.20.13"
     cheerio "^1.0.0-rc.10"
@@ -8434,10 +8434,10 @@ joi@^17.9.2:
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
 
-jotai@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.2.1.tgz#0a95b88c5f3ea4fd656b5f79af6f84e895f84f5a"
-  integrity sha512-Gz4tpbRQy9OiFgBwF9F7TieDn0UTE3C0IFSDuxHjOIvgn2tACH30UKz6p/wIlfoZROXSTCIxEvYEa7Y25WM+8g==
+jotai@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.2.2.tgz#1e181789dcc01ced8240b18b95d9fa10169f9366"
+  integrity sha512-Cn8hnBg1sc5ppFwEgVGTfMR5WSM0hbAasd/bdAwIwTaum0j3OUPqBSC4tyk3jtB95vicML+RRWgKFOn6gtfN0A==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -10504,10 +10504,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA==
 
-prettier@^2.8.7:
-  version "2.8.8"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
-  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
+prettier@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
+  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
 
 pretty-bytes@^5.6.0:
   version "5.6.0"
