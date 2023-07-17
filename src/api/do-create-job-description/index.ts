@@ -1,14 +1,14 @@
 import createJobDescription from './create-job-description';
 
 export default async function handler(req, res) {
-  const { jobTitle, industry, keyWords, tone, numWords } = req.body;
+  const { industry, keywords, tone, title, words } = req.body;
 
   const jobDescription = await createJobDescription({
-    jobTitle,
     industry,
-    keyWords,
+    keywords,
     tone,
-    numWords,
+    title,
+    words,
   });
 
   res.status(200).json({

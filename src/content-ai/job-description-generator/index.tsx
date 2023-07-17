@@ -1,13 +1,13 @@
 import React from 'react';
 //  view
-import ViewForm from './view/form';
+import ViewMain from './view/main';
 import ViewHeading from './view/heading';
 
 const ContentJobDescriptionGenerator = () => {
   return (
     <>
       <ViewHeading />
-      <ViewForm />
+      <ViewMain />
     </>
   );
 };

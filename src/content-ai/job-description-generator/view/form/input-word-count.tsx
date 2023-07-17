@@ -11,7 +11,14 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
 } from '@chakra-ui/react';
+//  lodash
 import { get as _Get } from 'lodash';
+//  constants
+import {
+  FORM_INPUT_WORD_MAX,
+  FORM_INPUT_WORD_MIN,
+  FORM_INPUT_WORD_STEP,
+} from '../../constants';
 //  local actions
 import setStateKeyValue from '../../actions/set-state-key-string-value';
 
@@ -30,8 +37,8 @@ const InputWordCount = (props) => {
     >
       <NumberInput
         defaultValue={value}
-        min={0}
-        max={1000}
+        min={FORM_INPUT_WORD_MIN}
+        max={FORM_INPUT_WORD_MAX}
         onChange={(valueString) =>
           setStateKeyValue({
             key,
@@ -40,7 +47,7 @@ const InputWordCount = (props) => {
           })
         }
         placeholder=" "
-        step={10}
+        step={FORM_INPUT_WORD_STEP}
         value={`${value}`}
       >
         <NumberInputField />

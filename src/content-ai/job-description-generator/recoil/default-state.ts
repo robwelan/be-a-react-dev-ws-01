@@ -1,3 +1,6 @@
+//  constants
+import { FORM_INPUT_TONE_NEUTRAL, FORM_INPUT_WORD_COUNT } from '../constants';
+
 const state = {
   arrays: {
     keywords: [],
@@ -7,13 +10,13 @@ const state = {
     isGenerating: false,
   },
   numbers: {
-    words: 100,
+    words: FORM_INPUT_WORD_COUNT,
   },
   strings: {
     description: '',
     industry: '',
     title: '',
-    tone: 'default',
+    tone: FORM_INPUT_TONE_NEUTRAL,
   },
   validation: {
     touched: false,

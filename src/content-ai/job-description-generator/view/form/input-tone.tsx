@@ -7,7 +7,15 @@ import {
   FormLabel,
   Select,
 } from '@chakra-ui/react';
+//  lodash
 import { get as _Get } from 'lodash';
+import {
+  FORM_INPUT_TONE_CASUAL,
+  FORM_INPUT_TONE_FORMAL,
+  FORM_INPUT_TONE_FRIENDLY,
+  FORM_INPUT_TONE_NEUTRAL,
+  FORM_INPUT_TONE_PROFESSIONAL,
+} from '../../constants';
 //  local actions
 import setStateKeyValue from '../../actions/set-state-key-string-value';
 
@@ -34,11 +42,11 @@ const InputTone = (props) => {
         }
         value={value}
       >
-        <option value="default">Default</option>
-        <option value="casual">Casual</option>
-        <option value="friendly">Friendly</option>
-        <option value="professional">Professional</option>
-        <option value="formal">Formal</option>
+        <option value={FORM_INPUT_TONE_NEUTRAL}>Neutral</option>
+        <option value={FORM_INPUT_TONE_CASUAL}>Casual</option>
+        <option value={FORM_INPUT_TONE_FRIENDLY}>Friendly</option>
+        <option value={FORM_INPUT_TONE_PROFESSIONAL}>Professional</option>
+        <option value={FORM_INPUT_TONE_FORMAL}>Formal</option>
       </Select>
       <FormLabel>Tone</FormLabel>
       {validation && (

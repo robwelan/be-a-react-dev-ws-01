@@ -11,46 +11,40 @@ import {
 import { get as _Get } from 'lodash';
 //  constants
 import { FORM_INPUT_KEYWORDS_ROWS } from '../../constants';
-//  local actions
-import setStateKeyValue from '../../actions/set-state-key-array-value';
 
-const InputKeywords = (props) => {
-  const { setState, state } = props;
-  const key = 'arrays.keywords';
+const InputOutput = (props) => {
+  const { state } = props;
+  const key = 'strings.description';
   const validation = _Get(state, `validation.${key}`, true);
   const value = _Get(state, key, '');
 
   return (
     <FormControl
-      id="keywords"
-      isRequired
+      id="response"
+      // isRequired
+      isDisabled={value === ''}
       isInvalid={!validation}
       variant="floating"
     >
       <Textarea
-        onChange={(e) =>
-          setStateKeyValue({
-            key,
-            setState,
-            value: e.target.value,
-          })
-        }
         placeholder=" "
         resize="vertical"
-        rows={FORM_INPUT_KEYWORDS_ROWS}
-        value={value.join('\n')}
+        rows={
+          value === ''
+            ? FORM_INPUT_KEYWORDS_ROWS
+            : value.split('\\n').length + FORM_INPUT_KEYWORDS_ROWS
+        }
+        value={value.split('\\n')}
       />
       <FormLabel>Keywords</FormLabel>
       {validation && (
-        <FormHelperText>
-          Required: the keywords that summarise this role
-        </FormHelperText>
+        <FormHelperText>Output: The response from the AI.</FormHelperText>
       )}
       {!validation && (
-        <FormErrorMessage>The keywords are not valid.</FormErrorMessage>
+        <FormErrorMessage>The output is hazy. Try again.</FormErrorMessage>
       )}
     </FormControl>
   );
 };
 
-export default InputKeywords;
+export default InputOutput;
