@@ -4,6 +4,7 @@ import { Icon } from '@chakra-ui/react';
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin';
 import { FaPatreon } from '@react-icons/all-files/fa/FaPatreon';
+import { FaRssSquare } from '@react-icons/all-files/fa/FaRssSquare';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 
 const linksSocial = [
@@ -82,6 +83,13 @@ const linksSocial = [
     icon: FaPatreon,
     label: 'Patreon',
     site: 'Patreon',
+  },
+  {
+    alt: 'read the feed',
+    href: 'https://beareact.dev/rss.xml',
+    icon: FaRssSquare,
+    label: 'RSS Feed',
+    site: 'beareact.dev',
   },
   {
     alt: 'follow me on twitter',
