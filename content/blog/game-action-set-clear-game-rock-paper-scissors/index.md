@@ -64,7 +64,13 @@ export default setClearGame;
 
 We will of course require the default state to work with and the types to work with also. These have already been defined <a href="https://beareact.dev/game-state-rock-paper-scissors/">here</a>.
 
-All that is required next is to clear the pieces that affect the current game play. So to do this, we use setState - which has been passed in, plus the default state (which we have imported because we want to set the previous state back to the default state in this case). Then all we need to do is use setState to return most of the previous state (prevState) and then we want to reset the decision and result keys back to the default states for each.
+## But what about the function?
+
+All that is required next is to clear the pieces that affect the current game play.
+
+So to do this, we use setState - which has been deconstructed from the payload which has been passed to the setClearGame function. We also need the default state (which we have imported because we want to set much of the previous state back to the default state).
+
+Within the setClearGame function we need to use setState to return most of the previous state (prevState) and then we want to reset the decision and result keys back to the default states for each.
 
 We leave the games key alone because we want to continue to tally game results.
 
