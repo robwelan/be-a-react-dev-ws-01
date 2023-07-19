@@ -7,9 +7,11 @@ const store = {
   uri: 'https://www.zazzle.com.au/store/beareactdev',
 };
 
+const getAllProducts = () => [...mugs, ...stickers, ...tshirts];
+
 const storefront = {
   store,
-  products: [...mugs, ...stickers, ...tshirts],
+  products: () => getAllProducts(),
   mugs,
   stickers,
   tshirts,

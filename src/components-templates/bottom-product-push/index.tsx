@@ -22,10 +22,8 @@ import StandardDivider from '../../components/standard-divider';
 import storefrontZazzle from '../../constants/storefront-zazzle';
 
 const ProductPush = () => {
-  const product =
-    storefrontZazzle.products[
-      random.int(0, storefrontZazzle.products.length - 1)
-    ];
+  const products = storefrontZazzle.products();
+  const product = products[random.int(0, products.length - 1)];
 
   return (
     <>
