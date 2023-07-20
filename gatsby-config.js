@@ -11,6 +11,9 @@
 const siteUrl = 'https://beareact.dev';
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `Be A React Dev`,
     author: {
