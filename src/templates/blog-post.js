@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 //  chakra ui
 import {
@@ -28,7 +28,6 @@ import getImage from '../utilities/graphql-content/get-image';
 import getTwitterButtonContent from '../utilities/strings/get-twitter-button-content';
 
 const BlogPost = (props) => {
-  const [isMounted, setIsMounted] = useState(false);
   const { data = {}, location = {} } = props;
   const {
     allImageSharp = {},
@@ -65,15 +64,6 @@ const BlogPost = (props) => {
       title: featuredTitle,
     },
   });
-
-  //  isMounted effect
-  useEffect(() => {
-    setIsMounted(true);
-
-    return () => {
-      setIsMounted(false);
-    };
-  }, []);
 
   return (
     <>
@@ -128,7 +118,7 @@ const BlogPost = (props) => {
 
       <article>{asComponent(html)}</article>
 
-      {isMounted && <ProductPush />}
+      <ProductPush />
 
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="2em" />
       <HStack>
