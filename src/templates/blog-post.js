@@ -110,7 +110,7 @@ const BlogPost = (props) => {
       <Text fontSize="xs" marginBottom="1em">
         {meta_description}
       </Text>
-      {isMounted && featuredSrc !== '' && (
+      {featuredSrc !== '' && (
         <>
           <Box display="flex" justifyContent="center" alignItems="center">
             <AspectRatio width="100%" maxW="700px" ratio={16 / 9}>
@@ -128,7 +128,7 @@ const BlogPost = (props) => {
 
       <article>{asComponent(html)}</article>
 
-      <ProductPush />
+      {isMounted && <ProductPush />}
 
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="2em" />
       <HStack>
