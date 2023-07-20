@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 //  chakra ui
 import {
@@ -27,9 +27,8 @@ import { asComponent } from '../components/blog-parse-html.tsx';
 import getImage from '../utilities/graphql-content/get-image';
 import getTwitterButtonContent from '../utilities/strings/get-twitter-button-content';
 
-//  TODO: fix tweet button on mobile
-
 const BlogPost = (props) => {
+  const [isMounted, setIsMounted] = useState(false);
   const { data = {}, location = {} } = props;
   const {
     allImageSharp = {},
@@ -67,6 +66,15 @@ const BlogPost = (props) => {
     },
   });
 
+  //  isMounted effect
+  useEffect(() => {
+    setIsMounted(true);
+
+    return () => {
+      setIsMounted(false);
+    };
+  }, []);
+
   return (
     <>
       <HStack>
@@ -99,8 +107,10 @@ const BlogPost = (props) => {
       <AmazonAffiliateLinks />
 
       <Divider borderColor="#FFDE59" marginBottom="1em" marginTop="1em" />
-      <Text fontSize="xs" marginBottom="1em">{meta_description}</Text>
-      {featuredSrc !== '' && (
+      <Text fontSize="xs" marginBottom="1em">
+        {meta_description}
+      </Text>
+      {isMounted && featuredSrc !== '' && (
         <>
           <Box display="flex" justifyContent="center" alignItems="center">
             <AspectRatio width="100%" maxW="700px" ratio={16 / 9}>
