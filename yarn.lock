@@ -2450,10 +2450,10 @@
     ufo "^1.0.0"
     unstorage "^1.0.0"
 
-"@netlify/plugin-gatsby@^3.6.3":
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-gatsby/-/plugin-gatsby-3.6.3.tgz#b9243ae38b0ed4daa48926fce93e440856ef5de9"
-  integrity sha512-i/vmZQlXwr3f2oBnyOEDS+newHbFB6oMJkp/GVA9LtqflsHVXk6lgGrqKaUumx931KVRDNcaaCvmV5xDAdRKpQ==
+"@netlify/plugin-gatsby@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-gatsby/-/plugin-gatsby-3.7.0.tgz#c9bf4f7b998a75228b0cf9b1f333365fa7a2ac50"
+  integrity sha512-K5ntO0kVWRcER2k74Pt3rMn/BJBs8p9iSOwWrNsdZcieFhHMdVyIUhK3+W4bX15TJUKSATtEsH6ygJB1gQMrPQ==
   dependencies:
     "@netlify/functions" "^1.6.0"
     "@netlify/ipx" "^1.4.1"
@@ -6426,10 +6426,10 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
-framer-motion@^10.12.22:
-  version "10.12.22"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.12.22.tgz#f1e7e36cc24fa5407ea33ccbd6d2996f50ceb503"
-  integrity sha512-bBGYPOxvxcfzS7/py9MEqDucmXBkVl2g42HNlXXPieSTSGGkr8L7+MilCnrU6uX3HrNk/tcB++1SkWE8BosHFw==
+framer-motion@^10.13.0:
+  version "10.13.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.13.0.tgz#0e0d45f693e21d23443317db12cd14c4f8d99cd2"
+  integrity sha512-xKhw9VCizmwEHbopOfluaoVunGHSZyMztGbTvsgOYqCjaKu6qtlwWY1J+6GhL41NY1P157JgEikjDm67XCFnvQ==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:
@@ -7677,10 +7677,10 @@ html-entities@^2.1.0, html-entities@^2.3.3:
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-2.3.3.tgz#117d7626bece327fc8baace8868fa6f5ef856e46"
   integrity sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==
 
-html-react-parser@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-4.0.0.tgz#a727be4539ad85b133a5071f97b8c2f835a55bdf"
-  integrity sha512-OzlOavs9lLyBxoRiXbXfODIX/nSShukMtdx3+WSMjon/FF1gJZRq0rBELoR5OswfbN56C0oKpAii7i3yzO/uVQ==
+html-react-parser@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-4.1.0.tgz#0f10f138b62126a7347050d2f28ce68ccf26de4d"
+  integrity sha512-JHzNp8EAD1kpmm9GKFZ45h8UaV1IU96xCuC3oHK43ZBHIg/bPbT0k0Ob5MvSel5sFNsboVAFyYtfwpVioVrWIw==
   dependencies:
     domhandler "5.0.3"
     html-dom-parser "4.0.0"
