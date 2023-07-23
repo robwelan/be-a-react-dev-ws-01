@@ -1,4 +1,4 @@
-import * as ReactDOM from 'react-dom/client';
+// import * as ReactDOM from 'react-dom/client';
 //  components
 import CustomPage from './wrap-page-element';
 import CustomRoot from './wrap-root-element';
@@ -12,12 +12,12 @@ export const onClientEntry = () => {
   }
 };
 
-export const replaceHydrateFunction = () => {
-  return (element, container) => {
-    const root = ReactDOM.createRoot(container);
-    root.render(element);
-  };
-};
+// export const replaceHydrateFunction = () => {
+//   return (element, container) => {
+//     const root = ReactDOM.createRoot(container);
+//     root.render(element);
+//   };
+// };
 
 export const wrapPageElement = CustomPage;
 export const wrapRootElement = CustomRoot;
