@@ -1,4 +1,3 @@
-// import * as ReactDOM from 'react-dom/client';
 //  components
 import CustomPage from './wrap-page-element';
 import CustomRoot from './wrap-root-element';
@@ -13,13 +12,6 @@ export const onClientEntry = () => {
     import('intersection-observer');
   }
 };
-
-// export const replaceHydrateFunction = () => {
-//   return (element, container) => {
-//     const root = ReactDOM.createRoot(container);
-//     root.render(element);
-//   };
-// };
 
 export const replaceHydrateFunction = browserHydrateFunction;
 export const wrapPageElement = CustomPage;
