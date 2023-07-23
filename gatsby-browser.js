@@ -4,6 +4,8 @@ import CustomPage from './wrap-page-element';
 import CustomRoot from './wrap-root-element';
 // highlighting for code blocks
 import 'prismjs/themes/prism.css';
+//  utilities
+import browserHydrateFunction from './src/utilities/gatsby/browser-hydrate-function';
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -19,5 +21,6 @@ export const onClientEntry = () => {
 //   };
 // };
 
+export const replaceHydrateFunction = browserHydrateFunction;
 export const wrapPageElement = CustomPage;
 export const wrapRootElement = CustomRoot;
