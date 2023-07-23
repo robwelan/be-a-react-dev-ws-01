@@ -28,7 +28,7 @@ This app uses components from <a href="https://chakra-ui.com/" rel="noopener" ta
 
 ## Reference
 
-We first looked at setClearGame <a href="https://beareact.dev/game-view-controlsresets-rock-paper-scissors/">here</a>.
+We first looked at setClearAll <a href="https://beareact.dev/game-view-controlsresets-rock-paper-scissors/">here</a>.
 
 Let’s get going.
 
