@@ -3,7 +3,6 @@ import React from 'react';
 import {
   Button,
   Icon,
-  IconButton,
   List,
   ListItem,
   ListIcon,
@@ -21,6 +20,8 @@ import { FaHandPaper } from '@react-icons/all-files/fa/FaHandPaper';
 import { FaHandRock } from '@react-icons/all-files/fa/FaHandRock';
 import { FaHandScissors } from '@react-icons/all-files/fa/FaHandScissors';
 import { FaHandSpock } from '@react-icons/all-files/fa/FaHandSpock';
+//  local components
+import HelpItem from './help-item';
 
 interface Props {
   isOpen: boolean;
@@ -44,47 +45,146 @@ const GameHelp = (props: Props) => {
           <ModalCloseButton />
           <ModalBody>
             <List spacing={3}>
-              <ListItem>
-                <ListIcon aria-label="scissors" as={FaHandScissors} />
-                cuts <Icon aria-label="paper" as={FaHandPaper} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="paper" as={FaHandPaper} />
-                covers <Icon aria-label="rock" as={FaHandRock} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="rock" as={FaHandRock} />
-                crushes <Icon aria-label="lizard" as={FaHandLizard} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="lizard" as={FaHandLizard} />
-                poisons <Icon aria-label="spock" as={FaHandSpock} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="spock" as={FaHandSpock} />
-                smashes <Icon aria-label="scissors" as={FaHandScissors} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="scissors" as={FaHandScissors} />
-                decapitates <Icon aria-label="lizard" as={FaHandLizard} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="lizard" as={FaHandLizard} />
-                eats <Icon aria-label="paper" as={FaHandPaper} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="paper" as={FaHandPaper} />
-                disproves <Icon aria-label="spock" as={FaHandSpock} />
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="spock" as={FaHandSpock} />
-                vaporizes <Icon aria-label="rock" as={FaHandRock} />; and as it
-                always has
-              </ListItem>
-              <ListItem>
-                <ListIcon aria-label="rock" as={FaHandRock} />
-                crushes <Icon aria-label="scissors" as={FaHandScissors} />
-              </ListItem>
+              <HelpItem
+                action="cuts"
+                icons={{
+                  loser: {
+                    icon: FaHandPaper,
+                    label: 'paper',
+                  },
+                  winner: {
+                    icon: FaHandScissors,
+                    label: 'scissors',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="covers"
+                icons={{
+                  loser: {
+                    icon: FaHandRock,
+                    label: 'rock',
+                  },
+                  winner: {
+                    icon: FaHandPaper,
+                    label: 'paper',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="crushes"
+                icons={{
+                  loser: {
+                    icon: FaHandLizard,
+                    label: 'lizard',
+                  },
+                  winner: {
+                    icon: FaHandRock,
+                    label: 'rock',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="poisons"
+                icons={{
+                  loser: {
+                    icon: FaHandSpock,
+                    label: 'spock',
+                  },
+                  winner: {
+                    icon: FaHandLizard,
+                    label: 'lizard',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="smashes"
+                icons={{
+                  loser: {
+                    icon: FaHandScissors,
+                    label: 'scissors',
+                  },
+                  winner: {
+                    icon: FaHandSpock,
+                    label: 'spock',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="decapitates"
+                icons={{
+                  loser: {
+                    icon: FaHandLizard,
+                    label: 'lizard',
+                  },
+                  winner: {
+                    icon: FaHandScissors,
+                    label: 'scissors',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="eats"
+                icons={{
+                  loser: {
+                    icon: FaHandPaper,
+                    label: 'paper',
+                  },
+                  winner: {
+                    icon: FaHandLizard,
+                    label: 'lizard',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="disproves"
+                icons={{
+                  loser: {
+                    icon: FaHandSpock,
+                    label: 'spock',
+                  },
+                  winner: {
+                    icon: FaHandPaper,
+                    label: 'paper',
+                  },
+                }}
+              />
+
+              <HelpItem
+                action="vaporizes"
+                icons={{
+                  loser: {
+                    icon: FaHandRock,
+                    label: 'rock',
+                  },
+                  winner: {
+                    icon: FaHandSpock,
+                    label: 'spock',
+                  },
+                }}
+                show={{ final: true }}
+              />
+
+              <HelpItem
+                action="crushes"
+                icons={{
+                  loser: {
+                    icon: FaHandScissors,
+                    label: 'scissors',
+                  },
+                  winner: {
+                    icon: FaHandRock,
+                    label: 'rock',
+                  },
+                }}
+              />
             </List>
           </ModalBody>
           <ModalFooter>
