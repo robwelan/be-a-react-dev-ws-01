@@ -9,11 +9,11 @@ import {
 } from '../../security/constants/routes-public';
 
 const linkItems = [
-  // {
-  //   icon: FiInfo,
-  //   name: 'About',
-  //   route: PUBLIC_ROUTE_PAGE_ABOUT,
-  // },
+  {
+    icon: FiInfo,
+    name: 'About',
+    route: PUBLIC_ROUTE_PAGE_ABOUT,
+  },
   {
     icon: AiOutlineShop,
     name: 'Shop',
