@@ -5,7 +5,8 @@ import {
   Link,
   List,
   ListItem,
-  ListIcon,Text,
+  ListIcon,
+  Text,
   VStack,
 } from '@chakra-ui/react';
 //  chakra-ui icons
@@ -18,7 +19,10 @@ const MyProjects = () => (
     <Heading as="h2" size="sm">
       GatsbyJS Projects
     </Heading>
-    <Text>The following are projects I have designed, developed, host and manage on behalf of clients.</Text>
+    <Text>
+      The following are projects I have designed, developed, host and manage on
+      behalf of clients.
+    </Text>
     <List spacing={2}>
       <ListItem>
         <ListIcon as={FaGlobe} color="green.700" />
@@ -31,6 +35,13 @@ const MyProjects = () => (
         <ListIcon as={FaGlobe} color="green.700" />
         <Link href="https://ipswicho2.com.au/" isExternal>
           Ipswich O2 <ExternalLinkIcon />
+        </Link>
+      </ListItem>
+
+      <ListItem>
+        <ListIcon as={FaGlobe} color="green.700" />
+        <Link href="https://skillsetbuilding.com.au/" isExternal>
+          Skill Set Building Pty Ltd <ExternalLinkIcon />
         </Link>
       </ListItem>
 
