@@ -15,6 +15,6 @@ export default PageAI;
  */
 export const Head = ({ location }) => (
   <Seo location={location} title="Job Description Generator">
-    <meta name="description" content="A job desciption generator that is using artificial intelligence." />
+    <meta name="description" content="A job description generator that is using artificial intelligence." />
   </Seo>
 );
