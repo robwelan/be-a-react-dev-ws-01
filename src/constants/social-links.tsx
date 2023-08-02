@@ -3,6 +3,7 @@ import { Icon } from '@chakra-ui/react';
 
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin';
+import { FaMedium } from '@react-icons/all-files/fa/FaMedium';
 import { FaPatreon } from '@react-icons/all-files/fa/FaPatreon';
 import { FaRssSquare } from '@react-icons/all-files/fa/FaRssSquare';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
@@ -76,6 +77,13 @@ const linksSocial = [
     icon: FaLinkedin,
     label: 'LinkedIn',
     site: 'LinkedIn',
+  },
+  {
+    alt: 'read me on Medium',
+    href: 'https://medium.com/@rmw.its',
+    icon: FaMedium,
+    label: 'Medium',
+    site: 'Medium',
   },
   {
     alt: 'join on patreon',
