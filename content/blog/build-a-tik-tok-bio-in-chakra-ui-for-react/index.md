@@ -6,7 +6,7 @@ categories:
 meta_keywords:
   - typescript, content
 meta_description: >-
-  This is a basic tutorial on making a Tik Tok Bio page - presumably on your own personal web site.
+  This is a basic tutorial on making a Tik Tok Bio page - presumably on your own personal web site. Which would need to be Gatsby to be just like me. But does not need to be. Really.
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
@@ -26,7 +26,7 @@ Please check this link: <a href="https://beareact.dev/tik-tok-bio/" target="_bla
 
 This app uses components from <a href="https://chakra-ui.com/" rel="noopener" target="_blank">Chakra UI</a>. You should check it out.
 
-## What you will need in Gatsby
+## What you will need in your Gatsby set up
 
 Make sure you have a page called tik-tok-bio.js (or extension ts if you prefer) in your pages directory.
 
