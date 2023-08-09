@@ -2,7 +2,7 @@ import React from 'react';
 //  components
 import Seo from '../../components/seo';
 //  content
-import ContentJAT from '../../content-job-hunting/job-application-tracker';
+import ContentJAT from '../../content-apps/job-application-tracker';
 
 const PageJAT = ({ location }) => <ContentJAT location={location} />;
 
