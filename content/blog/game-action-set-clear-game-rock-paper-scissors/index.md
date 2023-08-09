@@ -10,7 +10,7 @@ meta_description: >-
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
-    gatsbyjs plus typescript
+    typescript plus react
   src: /typescript-plus-react.png
   title: Game Action Set Clear Game Rock Paper Scissors
 settings_publish: true

@@ -11,7 +11,7 @@ meta_description: >-
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
-    typescript plus reactjs
+    typescript plus react
   src: /typescript-plus-react.png
   title: 'Typescript + Reactjs'
 settings_publish: true
