@@ -2,13 +2,13 @@ import React from 'react';
 //  components
 import Seo from '../components/seo';
 //  content
-import ContentTikTokBioPage from '../content-pages/tik-tok-bio';
+import ContentTikTokBio from '../content-pages/tik-tok-bio';
 
-const PageAbout = ({ location }) => (
-  <ContentTikTokBioPage location={location} />
+const PageTikTokBio = ({ location }) => (
+  <ContentTikTokBio location={location} />
 );
 
-export default PageAbout;
+export default PageTikTokBio;
 
 /**
  * Head export to define metadata for the page
