@@ -11,7 +11,7 @@ import PagePrivacy from '../../pages/legal/privacy';
 import PageNotFound from '../../pages/404';
 import PageShop from '../../pages/shop';
 import PageTerms from '../../pages/legal/terms';
-import PageTikTokLinks from '../../pages/tik-tok-links';
+import PageTikTokBio from '../../pages/tik-tok-bio';
 //  security
 import {
   PUBLIC_ROUTE_PAGE_ABOUT,
@@ -23,7 +23,7 @@ import {
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_TERMS,
   PUBLIC_ROUTE_PAGE_SHOP,
-  PUBLIC_ROUTE_PAGE_TIKTOKLINKS,
+  PUBLIC_ROUTE_PAGE_TIKTOKBIO,
 } from '../../security/constants/routes-public';
 
 const Routes = ({ element, location }) => {
@@ -48,7 +48,7 @@ const Routes = ({ element, location }) => {
       <PagePrivacy path={PUBLIC_ROUTE_PAGE_PRIVACY} />
       <PageShop path={PUBLIC_ROUTE_PAGE_SHOP} />
       <PageTerms path={PUBLIC_ROUTE_PAGE_TERMS} />
-      <PageTikTokLinks path={PUBLIC_ROUTE_PAGE_TIKTOKLINKS} />
+      <PageTikTokBio path={PUBLIC_ROUTE_PAGE_TIKTOKBIO} />
       {element}
     </Router>
   );

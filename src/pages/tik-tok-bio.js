@@ -2,10 +2,10 @@ import React from 'react';
 //  components
 import Seo from '../components/seo';
 //  content
-import ContentTikTokLinksPage from '../content-pages/tik-tok-links';
+import ContentTikTokBioPage from '../content-pages/tik-tok-bio';
 
 const PageAbout = ({ location }) => (
-  <ContentTikTokLinksPage location={location} />
+  <ContentTikTokBioPage location={location} />
 );
 
 export default PageAbout;
