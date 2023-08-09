@@ -35,7 +35,7 @@
     "@emotion/styled": "^11.11.0",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "@react-icons/all-files": "^4.1.0",
-    "framer-motion": "^10.13.0",
+    "framer-motion": "^10.15.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-feed": "^5.11.0",
     "gatsby-plugin-google-gtag": "^5.11.0",
@@ -52,9 +52,8 @@
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-remark": "^6.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
-    "html-react-parser": "^4.1.0",
+    "html-react-parser": "^4.2.0",
     "intersection-observer": "^0.12.2",
-    "jotai": "^2.2.2",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
     "random": "^4.1.0",
@@ -63,12 +62,12 @@
     "react-render-html": "^0.6.0",
     "react-scroll": "^1.8.9",
     "recoil": "^0.7.7",
-    "rxdb": "^14.15.1",
+    "signaldb": "^0.1.6",
     "stream": "^0.0.2",
     "util": "^0.12.5"
   },
   "devDependencies": {
-    "@netlify/plugin-gatsby": "^3.7.0",
-    "prettier": "^3.0.0"
+    "@netlify/plugin-gatsby": "^3.7.1",
+    "prettier": "^3.0.1"
   }
 }
