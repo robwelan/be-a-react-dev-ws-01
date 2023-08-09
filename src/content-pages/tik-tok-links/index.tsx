@@ -4,7 +4,7 @@ import { Center } from '@chakra-ui/react';
 import CardForTikTok from './card';
 
 const TikTokLinks = () => (
-  <Center>
+  <Center p={4}>
     <CardForTikTok />
   </Center>
 );

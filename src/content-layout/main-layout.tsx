@@ -1,5 +1,5 @@
 import React from 'react';
-//  chakra ui
+//  chakra-ui
 import { Box } from '@chakra-ui/react';
 //  types
 import { Children, LayoutConfiguration } from '../constants/types';
@@ -14,14 +14,19 @@ import LayoutFooter from './footer';
 type Props = {
   children: Children;
   configuration: LayoutConfiguration;
+  isRouteTikTokLinks: boolean;
 };
 
 const MainLayout = (props: Props) => {
-  const { children, configuration } = props;
+  const { children, configuration, isRouteTikTokLinks } = props;
   const { device, disclosure } = configuration;
   const { type } = device;
   const { isMobile } = type;
   const { isOpen, onOpen, onClose } = disclosure;
+
+  if (isRouteTikTokLinks) {
+    return <>{children}</>;
+  }
 
   return (
     <>

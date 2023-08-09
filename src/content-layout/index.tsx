@@ -18,7 +18,10 @@ import IndependentScripts from './scripts-independent';
 import MainLayout from './main-layout';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
-//  utilties
+//  security
+import { PUBLIC_ROUTE_PAGE_TIKTOKLINKS } from '../security/constants/routes-public';
+//  utilities
+import replaceAll from '../utilities/strings/replace-all';
 import getWindow from '../utilities/window/get-window';
 //  styles
 import './index.css';
@@ -42,6 +45,18 @@ const ContentLayout = (props: Props) => {
   const bgColorToken = useToken('colors', [bgColorVar]);
   const device = useDeviceSize();
   const globalWindow = getWindow();
+
+  const cleanPath = replaceAll({
+    string: pathname,
+    search: '/',
+    replaceWith: '',
+  });
+  const cleanRouteTikTokLinks = replaceAll({
+    string: PUBLIC_ROUTE_PAGE_TIKTOKLINKS,
+    search: '/',
+    replaceWith: '',
+  });
+  const isRouteTikTokLinks = cleanPath === cleanRouteTikTokLinks;
 
   //  mounted effect
   useEffect(() => {
@@ -88,9 +103,16 @@ const ContentLayout = (props: Props) => {
   return (
     <>
       <ContentListeners />
-      {loaded && <DependentScripts />}
-      {!loaded && <IndependentScripts bgColorToken={bgColorToken} />}
-      <MainLayout configuration={configuration}>{children}</MainLayout>
+      {loaded && !isRouteTikTokLinks && <DependentScripts />}
+      {!loaded && !isRouteTikTokLinks && (
+        <IndependentScripts bgColorToken={bgColorToken} />
+      )}
+      <MainLayout
+        configuration={configuration}
+        isRouteTikTokLinks={isRouteTikTokLinks}
+      >
+        {children}
+      </MainLayout>
     </>
   );
 };
