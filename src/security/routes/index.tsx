@@ -6,11 +6,12 @@ import PageCookies from '../../pages/legal/cookies';
 import PageGameRockPaperScissors from '../../pages/games/rock-paper-scissors';
 import PageGameRockPaperScissorsLizardSpock from '../../pages/games/rock-paper-scissors-lizard-spock';
 import PageHome from '../../pages/index';
-import PageJAT from '../../pages/job-hunting/job-application-tracking';
+import PageJAT from '../../pages/apps/job-application-tracking';
 import PagePrivacy from '../../pages/legal/privacy';
 import PageNotFound from '../../pages/404';
 import PageShop from '../../pages/shop';
 import PageTerms from '../../pages/legal/terms';
+import PageTikTokLinks from '../../pages/tik-tok-links';
 //  security
 import {
   PUBLIC_ROUTE_PAGE_ABOUT,
@@ -22,6 +23,7 @@ import {
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_TERMS,
   PUBLIC_ROUTE_PAGE_SHOP,
+  PUBLIC_ROUTE_PAGE_TIKTOKLINKS,
 } from '../../security/constants/routes-public';
 
 const Routes = ({ element, location }) => {
@@ -44,8 +46,9 @@ const Routes = ({ element, location }) => {
       {/* legal */}
       <PageCookies path={PUBLIC_ROUTE_PAGE_COOKIES} />
       <PagePrivacy path={PUBLIC_ROUTE_PAGE_PRIVACY} />
-      <PageTerms path={PUBLIC_ROUTE_PAGE_TERMS} />
       <PageShop path={PUBLIC_ROUTE_PAGE_SHOP} />
+      <PageTerms path={PUBLIC_ROUTE_PAGE_TERMS} />
+      <PageTikTokLinks path={PUBLIC_ROUTE_PAGE_TIKTOKLINKS} />
       {element}
     </Router>
   );

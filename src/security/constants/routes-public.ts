@@ -3,8 +3,7 @@ const PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS = '/games/rock-paper-scissors';
 const PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK =
   '/games/rock-paper-scissors-lizard-spock';
 //  job hunting
-const PUBLIC_ROUTE_PAGE_JOB_HUNTING_JAT =
-  '/job-hunting/job-application-tracking';
+const PUBLIC_ROUTE_PAGE_JOB_HUNTING_JAT = '/apps/job-application-tracking';
 //  legal
 const PUBLIC_ROUTE_PAGE_COOKIES = '/legal/cookies';
 const PUBLIC_ROUTE_PAGE_PRIVACY = '/legal/privacy';
@@ -16,6 +15,7 @@ const PUBLIC_ROUTE_PAGE_HOME = '/';
 const PUBLIC_ROUTE_PAGE_PRICING = '/pricing';
 const PUBLIC_ROUTE_PAGE_REFUNDS = '/refunds';
 const PUBLIC_ROUTE_PAGE_SHOP = '/shop';
+const PUBLIC_ROUTE_PAGE_TIKTOKLINKS = '/tik-tok-links';
 
 export {
   PUBLIC_ROUTE_PAGE_ABOUT,
@@ -30,4 +30,5 @@ export {
   PUBLIC_ROUTE_PAGE_REFUNDS,
   PUBLIC_ROUTE_PAGE_SHOP,
   PUBLIC_ROUTE_PAGE_TERMS,
+  PUBLIC_ROUTE_PAGE_TIKTOKLINKS,
 };
