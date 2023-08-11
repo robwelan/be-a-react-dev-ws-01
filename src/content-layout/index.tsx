@@ -19,7 +19,7 @@ import MainLayout from './main-layout';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
 //  security
-import { PUBLIC_ROUTE_PAGE_TIKTOKLINKS } from '../security/constants/routes-public';
+import { PUBLIC_ROUTE_PAGE_TIKTOKBIO } from '../security/constants/routes-public';
 //  utilities
 import replaceAll from '../utilities/strings/replace-all';
 import getWindow from '../utilities/window/get-window';
@@ -52,7 +52,7 @@ const ContentLayout = (props: Props) => {
     replaceWith: '',
   });
   const cleanRouteTikTokLinks = replaceAll({
-    string: PUBLIC_ROUTE_PAGE_TIKTOKLINKS,
+    string: PUBLIC_ROUTE_PAGE_TIKTOKBIO,
     search: '/',
     replaceWith: '',
   });
