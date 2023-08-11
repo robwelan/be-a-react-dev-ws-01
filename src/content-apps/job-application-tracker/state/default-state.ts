@@ -27,6 +27,7 @@ const defaultState = {
     notes: '',
     status: '',
     title: '',
+    uri: '',
   },
 };
 

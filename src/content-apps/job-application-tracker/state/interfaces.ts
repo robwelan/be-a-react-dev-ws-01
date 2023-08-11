@@ -1,10 +1,24 @@
 import { Dispatch, SetStateAction } from 'react';
 
+interface DateConstructor {
+  new (): Date;
+  new (value: number | string): Date;
+  new (
+    year: number,
+    month: number,
+    date?: number,
+    hours?: number,
+    minutes?: number,
+    seconds?: number,
+    ms?: number,
+  ): Date;
+}
+
 interface DefaultInterview {
   id: string;
   dates: {
-    followup?: Date;
-    interview?: Date;
+    followup: DateConstructor | null;
+    interview: DateConstructor | null;
   };
   research: string;
   thankyou: string;
@@ -14,13 +28,13 @@ interface DefaultInterview {
 interface State {
   id: string;
   dates: {
-    applied?: Date;
-    deadline?: Date;
-    followup?: Date;
-    found?: Date;
+    applied: DateConstructor | null;
+    deadline: DateConstructor | null;
+    followup: DateConstructor | null;
+    found: DateConstructor | null;
   };
   company: string;
-  interviews?: [DefaultInterview];
+  interviews: Array<DefaultInterview>;
   position: {
     contact: string;
     description: string;
