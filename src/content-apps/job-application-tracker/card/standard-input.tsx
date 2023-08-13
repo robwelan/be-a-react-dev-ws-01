@@ -5,9 +5,29 @@ import {
   FormHelperText,
   Input,
 } from '@chakra-ui/react';
+//  components
+import InputForFloatingFormControl from '../../../components/input-for-floating-form-control';
 
-const StandardInput = (props) => {
-  const { handler = () => {}, field = {} } = props;
+type PayloadHandleOnChange = {
+  target: {
+    value: string;
+  };
+};
+
+type PropsStandardInput = {
+  field: {
+    key?: string;
+    helper?: string;
+    label?: string;
+    placeholder?: string;
+    type?: string;
+    value?: string;
+  };
+  handler: Function;
+};
+
+const StandardInput = (props: PropsStandardInput) => {
+  const { field = {}, handler = () => {} } = props;
   const {
     key = '',
     helper = '',
@@ -17,6 +37,17 @@ const StandardInput = (props) => {
     value = '',
   } = field;
 
+  const handleOnChange = (payload: PayloadHandleOnChange) => {
+    const { target } = payload;
+    const { value } = target;
+
+    handler({
+      key,
+      type,
+      value,
+    });
+  };
+
   return (
     <>
       <FormControl
@@ -25,21 +56,13 @@ const StandardInput = (props) => {
         // isInvalid={!validation}
         variant="floating"
       >
-        <Input
-          placeholder=" "
+        <InputForFloatingFormControl
+          label={label}
+          onChange={handleOnChange}
+          placeholder={placeholder}
           type="text"
-          onChange={(e) =>
-            handler({
-              key,
-              type,
-              value: e.target.value,
-            })
-          }
-          // placeholder={placeholder}
           value={value}
         />
-        <FormLabel>{label}</FormLabel>
-        {placeholder !== '' && <FormHelperText>{placeholder}</FormHelperText>}
       </FormControl>
     </>
   );
