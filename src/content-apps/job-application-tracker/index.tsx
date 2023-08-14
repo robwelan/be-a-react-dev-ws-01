@@ -27,7 +27,7 @@ const ContentJAT = () => {
     setState((prevState) => {
       const newState = JSON.parse(JSON.stringify(prevState));
 
-      if (type === 'string') {
+      if (type === 'select' || type === 'text' || type === 'url') {
         _Set(newState, key, value);
       }
 

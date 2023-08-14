@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   FormControl,
   FormLabel,
@@ -14,11 +14,19 @@ type PayloadHandleOnChange = {
   };
 };
 
+type PropsOptionsOption = {
+  label: string;
+  value: string;
+};
+
 type PropsStandardInput = {
+  as?: FC;
   field: {
+    defaultValue?: string;
     key?: string;
     helper?: string;
     label?: string;
+    options?: Array<PropsOptionsOption>;
     placeholder?: string;
     type?: string;
     value?: string;
@@ -27,13 +35,15 @@ type PropsStandardInput = {
 };
 
 const StandardInput = (props: PropsStandardInput) => {
-  const { field = {}, handler = () => {} } = props;
+  const { as = undefined, field = {}, handler = () => {} } = props;
   const {
+    defaultValue = '',
     key = '',
     helper = '',
     label = '',
+    options = [],
     placeholder = '',
-    type = 'string',
+    type = 'text',
     value = '',
   } = field;
 
@@ -51,16 +61,19 @@ const StandardInput = (props: PropsStandardInput) => {
   return (
     <>
       <FormControl
+        as={as}
         id={key}
         // isRequired
         // isInvalid={!validation}
         variant="floating"
       >
         <InputForFloatingFormControl
+          defaultValue={defaultValue}
           label={label}
           onChange={handleOnChange}
+          options={options}
           placeholder={placeholder}
-          type="text"
+          type={type}
           value={value}
         />
       </FormControl>

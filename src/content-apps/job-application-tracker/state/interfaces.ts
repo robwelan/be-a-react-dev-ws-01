@@ -41,6 +41,7 @@ interface State {
     notes: string;
     status: string;
     title: string;
+    uri: string;
   };
 }
 
