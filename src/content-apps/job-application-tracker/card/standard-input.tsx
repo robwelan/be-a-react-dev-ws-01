@@ -7,6 +7,12 @@ import {
 } from '@chakra-ui/react';
 //  components
 import InputForFloatingFormControl from '../../../components/input-for-floating-form-control';
+// types and interfaces
+import {
+  Control,
+  DataType,
+  PropsOptionsOption,
+} from '../../../components/input-for-floating-form-control/define-types-and-interfaces';
 
 type PayloadHandleOnChange = {
   target: {
@@ -14,36 +20,40 @@ type PayloadHandleOnChange = {
   };
 };
 
-type PropsOptionsOption = {
-  label: string;
-  value: string;
+type Field = {
+  defaultValue?: string;
+  key?: string;
+  helper?: string;
+  isRequired?: boolean;
+  isInvalid?: boolean;
+  label?: string;
+  options?: Array<PropsOptionsOption>;
+  placeholder?: string;
+  type: {
+    control: Control;
+    data: DataType;
+  };
+  value?: string;
 };
 
 type PropsStandardInput = {
   as?: FC;
-  field: {
-    defaultValue?: string;
-    key?: string;
-    helper?: string;
-    label?: string;
-    options?: Array<PropsOptionsOption>;
-    placeholder?: string;
-    type?: string;
-    value?: string;
-  };
+  field: Field;
   handler: Function;
 };
 
 const StandardInput = (props: PropsStandardInput) => {
-  const { as = undefined, field = {}, handler = () => {} } = props;
+  const { as = undefined, field = {} as any, handler = () => {} } = props;
   const {
     defaultValue = '',
     key = '',
     helper = '',
+    isRequired = false,
+    isInvalid = false,
     label = '',
     options = [],
     placeholder = '',
-    type = 'text',
+    type,
     value = '',
   } = field;
 
@@ -63,8 +73,8 @@ const StandardInput = (props: PropsStandardInput) => {
       <FormControl
         as={as}
         id={key}
-        // isRequired
-        // isInvalid={!validation}
+        isRequired={isRequired}
+        isInvalid={isInvalid}
         variant="floating"
       >
         <InputForFloatingFormControl
@@ -81,4 +91,5 @@ const StandardInput = (props: PropsStandardInput) => {
   );
 };
 
+export { Field };
 export default StandardInput;

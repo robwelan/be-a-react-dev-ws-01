@@ -12,8 +12,22 @@ import {
 } from '@chakra-ui/react';
 //  local components
 import StandardInput from './standard-input';
+import { Field } from './standard-input';
 
-const JobCard = (props) => {
+type Props = {
+  fields: {
+    company: Field;
+    position: {
+      contact: Field;
+      title: Field;
+      uri: Field;
+      status: Field;
+    };
+  };
+  handler: Function;
+};
+
+const JobCard = (props: Props) => {
   const { fields, handler } = props;
 
   return (

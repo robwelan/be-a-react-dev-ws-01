@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { FocusEventHandler } from 'react';
 //  chakra-ui
 import { Select } from '@chakra-ui/react';
+//  types and interfaces
+import { PropsOptionsOption } from './define-types-and-interfaces';
 
-const SelectControlType = (props) => {
+type ContentOptionsIndex = number;
+
+type ContentOptionsOption = {
+  label: string;
+  value: string;
+};
+
+type Props = {
+  defaultValue?: string;
+  onBlur?: FocusEventHandler;
+  onChange?: Function;
+  onFocus?: FocusEventHandler;
+  options: Array<PropsOptionsOption>;
+  placeholder?: string;
+  value?: string;
+};
+
+const SelectControlType = (props: Props) => {
   const {
     defaultValue = '',
     onBlur: handleOnBlur = () => {},
@@ -22,15 +41,17 @@ const SelectControlType = (props) => {
       value={value || defaultValue}
     >
       {options &&
-        options.map((option, index) => {
-          const { label = '', value = '' } = option;
+        options.map(
+          (option: ContentOptionsOption, index: ContentOptionsIndex) => {
+            const { label = '', value = '' } = option;
 
-          return (
-            <option key={index} value={value}>
-              {label}
-            </option>
-          );
-        })}
+            return (
+              <option key={index} value={value}>
+                {label}
+              </option>
+            );
+          },
+        )}
     </Select>
   );
 };

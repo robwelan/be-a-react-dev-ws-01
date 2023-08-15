@@ -4,19 +4,24 @@ import { FormHelperText, FormLabel, Input } from '@chakra-ui/react';
 //  local components
 import InputControlType from './control-type-input';
 import SelectControlType from './control-type-select';
+// types and interfaces
+import {
+  Control,
+  DataType,
+  PropsOptionsOption,
+} from './define-types-and-interfaces';
 
-type SelectOption = {
-  label: string;
-  value: string;
-};
 type Props = {
   defaultValue?: string;
   helperText?: string;
   label?: string;
   onChange?: Function;
-  options: Array<SelectOption>;
+  options: Array<PropsOptionsOption>;
   placeholder?: string;
-  type?: string;
+  type: {
+    control: Control;
+    data: DataType;
+  };
   value?: string;
 };
 
@@ -28,7 +33,7 @@ const InputForFloatingFormControl = (props: Props) => {
     placeholder: propPlaceholder = '',
     onChange = () => {},
     options = [],
-    type = 'text',
+    type,
     value = '',
   } = props;
   const [hasFocus, setHasFocus] = useState(false);
@@ -37,7 +42,7 @@ const InputForFloatingFormControl = (props: Props) => {
   const handleOnBlur = () => {
     setHasFocus(false);
 
-    if (type === 'select' && value === '') {
+    if (type.control === 'select' && value === '') {
       setPlaceholder(propPlaceholder);
       return;
     }
@@ -48,12 +53,12 @@ const InputForFloatingFormControl = (props: Props) => {
 
   const handleOnFocus = () => {
     setHasFocus(true);
-    if (type === 'select') {
+    if (type.control === 'select') {
       setPlaceholder(propPlaceholder);
       return;
     }
 
-    if (type === 'text' && value === '' && propPlaceholder !== '') {
+    if (type.control === 'text' && value === '' && propPlaceholder !== '') {
       setPlaceholder(propPlaceholder);
       return;
     }
@@ -63,33 +68,31 @@ const InputForFloatingFormControl = (props: Props) => {
 
   return (
     <>
-      {type === 'select' && (
+      {type.control === 'select' && (
         <SelectControlType
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
           options={options}
           placeholder={hasFocus ? placeholder : label}
-          type={type}
           value={value || defaultValue}
         />
       )}
-      {(type === 'text' || type === 'url') && (
+      {(type.control === 'text' || type.control === 'url') && (
         <InputControlType
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
           placeholder={placeholder}
-          type={type}
+          type={type.control}
           value={value || defaultValue}
         />
       )}
-      {type === 'select' && hasFocus && <FormLabel>{label}</FormLabel>}
-      {type === 'select' && !hasFocus && value !== '' && (
+      {type.control === 'select' && hasFocus && <FormLabel>{label}</FormLabel>}
+      {type.control === 'select' && !hasFocus && value !== '' && (
         <FormLabel>{label}</FormLabel>
       )}
-
-      {type === 'text' && <FormLabel>{label}</FormLabel>}
+      {type.control === 'text' && <FormLabel>{label}</FormLabel>}
       {helperText !== '' && <FormHelperText>{helperText}</FormHelperText>}
     </>
   );

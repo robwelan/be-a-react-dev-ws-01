@@ -1,5 +1,4 @@
 import { State } from '../state/interfaces';
-
 interface Payload {
   state: State;
 }
@@ -13,7 +12,10 @@ const getFieldsFromState = (payload: Payload) => {
       key: 'company',
       label: 'Company Name:',
       placeholder: 'ENTER company name',
-      type: 'text',
+      type: {
+        control: 'text',
+        data: 'string',
+      },
       value: company,
     },
     position: {
@@ -21,7 +23,10 @@ const getFieldsFromState = (payload: Payload) => {
         key: 'position.contact',
         label: 'Main Contact:',
         placeholder: 'ENTER main contact’s name',
-        type: 'text',
+        type: {
+          control: 'text',
+          data: 'string',
+        },
         value: position.contact,
       },
       status: {
@@ -39,21 +44,30 @@ const getFieldsFromState = (payload: Payload) => {
           { label: 'Won', value: 'won' },
         ],
         placeholder: '--ENTER a Status--',
-        type: 'select',
+        type: {
+          control: 'select',
+          data: 'string',
+        },
         value: position.status,
       },
       title: {
         key: 'position.title',
         label: 'Position Title:',
         placeholder: 'ENTER position title per the job ad',
-        type: 'text',
+        type: {
+          control: 'text',
+          data: 'string',
+        },
         value: position.title,
       },
       uri: {
         key: 'position.uri',
         label: 'Link to Job Advertisement',
         placeholder: 'ENTER link to job advertisement',
-        type: 'url',
+        type: {
+          control: 'url',
+          data: 'string',
+        },
         value: position.uri,
       },
     },

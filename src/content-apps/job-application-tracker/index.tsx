@@ -10,10 +10,18 @@ import defaultState from './state/default-state';
 import { State } from './state/interfaces';
 //  local utilities
 import getFieldsFromState from './utilities/get-fields-from-state';
+//  types and interfaces
+import {
+  Control,
+  DataType,
+} from '../../components/input-for-floating-form-control/define-types-and-interfaces';
 
 type handleState = {
   key: string;
-  type: string;
+  type: {
+    control: Control;
+    data: DataType;
+  };
   value: string;
 };
 
@@ -27,7 +35,7 @@ const ContentJAT = () => {
     setState((prevState) => {
       const newState = JSON.parse(JSON.stringify(prevState));
 
-      if (type === 'select' || type === 'text' || type === 'url') {
+      if (type.data === 'string') {
         _Set(newState, key, value);
       }
 
