@@ -6,21 +6,22 @@ import InputControlType from './control-type-input';
 import SelectControlType from './control-type-select';
 // types and interfaces
 import {
-  Control,
-  DataType,
-  PropsOptionsOption,
+  Controls,
+  DataTypesForHtml,
+  SelectOptionsOption,
 } from './define-types-and-interfaces';
 
 type Props = {
   defaultValue?: string;
+  key: string;
   helperText?: string;
   label?: string;
   onChange?: Function;
-  options: Array<PropsOptionsOption>;
+  options: Array<SelectOptionsOption>;
   placeholder?: string;
   type: {
-    control: Control;
-    data: DataType;
+    control: string;
+    data: string;
   };
   value?: string;
 };
@@ -28,6 +29,7 @@ type Props = {
 const InputForFloatingFormControl = (props: Props) => {
   const {
     defaultValue = '',
+    key,
     label = '',
     helperText = '',
     placeholder: propPlaceholder = '',
@@ -42,7 +44,7 @@ const InputForFloatingFormControl = (props: Props) => {
   const handleOnBlur = () => {
     setHasFocus(false);
 
-    if (type.control === 'select' && value === '') {
+    if (type.control === Controls.Select && value === '') {
       setPlaceholder(propPlaceholder);
       return;
     }
@@ -53,12 +55,16 @@ const InputForFloatingFormControl = (props: Props) => {
 
   const handleOnFocus = () => {
     setHasFocus(true);
-    if (type.control === 'select') {
+    if (type.control === Controls.Select) {
       setPlaceholder(propPlaceholder);
       return;
     }
 
-    if (type.control === 'text' && value === '' && propPlaceholder !== '') {
+    if (
+      type.control === Controls.Text &&
+      value === '' &&
+      propPlaceholder !== ''
+    ) {
       setPlaceholder(propPlaceholder);
       return;
     }
@@ -68,8 +74,9 @@ const InputForFloatingFormControl = (props: Props) => {
 
   return (
     <>
-      {type.control === 'select' && (
+      {type.control === Controls.Select && (
         <SelectControlType
+          key={key}
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
@@ -78,8 +85,9 @@ const InputForFloatingFormControl = (props: Props) => {
           value={value || defaultValue}
         />
       )}
-      {(type.control === 'text' || type.control === 'url') && (
+      {(type.control === Controls.Text || type.control === Controls.URL) && (
         <InputControlType
+          key={key}
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
@@ -88,11 +96,13 @@ const InputForFloatingFormControl = (props: Props) => {
           value={value || defaultValue}
         />
       )}
-      {type.control === 'select' && hasFocus && <FormLabel>{label}</FormLabel>}
-      {type.control === 'select' && !hasFocus && value !== '' && (
+      {type.control === Controls.Select && hasFocus && (
         <FormLabel>{label}</FormLabel>
       )}
-      {type.control === 'text' && <FormLabel>{label}</FormLabel>}
+      {type.control === Controls.Select && !hasFocus && value !== '' && (
+        <FormLabel>{label}</FormLabel>
+      )}
+      {type.control === Controls.Text && <FormLabel>{label}</FormLabel>}
       {helperText !== '' && <FormHelperText>{helperText}</FormHelperText>}
     </>
   );

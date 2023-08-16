@@ -10,17 +10,18 @@ import defaultState from './state/default-state';
 import { State } from './state/interfaces';
 //  local utilities
 import getFieldsFromState from './utilities/get-fields-from-state';
+import getIsExpectedType from './utilities/get-is-expected-type';
 //  types and interfaces
 import {
-  Control,
-  DataType,
+  Controls,
+  DataTypesForHtml,
 } from '../../components/input-for-floating-form-control/define-types-and-interfaces';
 
 type handleState = {
   key: string;
   type: {
-    control: Control;
-    data: DataType;
+    control: Controls;
+    data: DataTypesForHtml;
   };
   value: string;
 };
@@ -35,7 +36,12 @@ const ContentJAT = () => {
     setState((prevState) => {
       const newState = JSON.parse(JSON.stringify(prevState));
 
-      if (type.data === 'string') {
+      if (
+        getIsExpectedType({
+          value: type.data,
+          type: DataTypesForHtml.String,
+        })
+      ) {
         _Set(newState, key, value);
       }
 

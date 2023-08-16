@@ -3,7 +3,11 @@
   https://stackoverflow.com/questions/26855423/how-to-require-a-specific-string-in-typescript-interface
   */
 
-export enum ControlDates {
+export enum enumControlCheckbox {
+  CheckBox = 'checkbox',
+}
+
+export enum enumControlDates {
   Date = 'date',
   DateTime = 'datetime-local',
   Month = 'month',
@@ -11,54 +15,51 @@ export enum ControlDates {
   Week = 'week',
 }
 
-export interface InterfaceControlDates {
-  param: ControlDates;
+export enum enumControlNumber {
+  Number = 'number',
 }
 
-type ControlCheckbox = 'checkbox';
-type ControlDate = 'date' | 'datetime-local' | 'month' | 'time' | 'week';
-type ControlNumber = 'number';
-type ControlRadio = 'radio';
-type ControlSelect = 'select';
-type ControlString = 'email' | 'password' | 'search' | 'tel' | 'text' | 'url';
-type Control =
-  | ControlCheckbox
-  | ControlDate
-  | ControlRadio
-  | ControlSelect
-  | ControlString;
+export enum enumControlRadio {
+  Radio = 'radio',
+}
 
-type DataTypeDate = 'date';
-type DataTypeDateTime = 'datetime';
-type DataTypeNumber = 'number';
-type DataTypeString = 'string';
-type DataTypeTime = 'time';
+export enum enumControlSelect {
+  Select = 'select',
+}
 
-type DataType =
-  | DataTypeDate
-  | DataTypeDateTime
-  | DataTypeNumber
-  | DataTypeString
-  | DataTypeTime;
+export enum enumControlStrings {
+  Email = 'email',
+  Password = 'password',
+  Search = 'search',
+  Telephone = 'tel',
+  Text = 'text',
+  URL = 'url',
+}
 
-type PropsOptionsOption = {
+export enum enumDataTypesForHtml {
+  Date = 'date',
+  DateTime = 'datetime',
+  Number = 'number',
+  String = 'string',
+  Time = 'time',
+}
+
+export const Controls = {
+  ...enumControlCheckbox,
+  ...enumControlDates,
+  ...enumControlNumber,
+  ...enumControlRadio,
+  ...enumControlSelect,
+  ...enumControlStrings,
+};
+export type Controls = keyof typeof Controls;
+
+export const DataTypesForHtml = {
+  ...enumDataTypesForHtml,
+};
+export type DataTypesForHtml = keyof typeof DataTypesForHtml;
+
+export type SelectOptionsOption = {
   label: string;
   value: string;
-};
-
-export {
-  Control,
-  ControlCheckbox,
-  ControlDate,
-  ControlNumber,
-  ControlRadio,
-  ControlSelect,
-  ControlString,
-  DataType,
-  DataTypeDate,
-  DataTypeDateTime,
-  DataTypeNumber,
-  DataTypeString,
-  DataTypeTime,
-  PropsOptionsOption,
 };

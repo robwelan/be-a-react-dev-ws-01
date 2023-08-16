@@ -9,9 +9,9 @@ import {
 import InputForFloatingFormControl from '../../../components/input-for-floating-form-control';
 // types and interfaces
 import {
-  Control,
-  DataType,
-  PropsOptionsOption,
+  Controls,
+  DataTypesForHtml,
+  SelectOptionsOption,
 } from '../../../components/input-for-floating-form-control/define-types-and-interfaces';
 
 type PayloadHandleOnChange = {
@@ -27,11 +27,11 @@ type Field = {
   isRequired?: boolean;
   isInvalid?: boolean;
   label?: string;
-  options?: Array<PropsOptionsOption>;
+  options?: Array<SelectOptionsOption>;
   placeholder?: string;
   type: {
-    control: Control;
-    data: DataType;
+    control: string;
+    data: string;
   };
   value?: string;
 };
@@ -79,6 +79,7 @@ const StandardInput = (props: PropsStandardInput) => {
       >
         <InputForFloatingFormControl
           defaultValue={defaultValue}
+          key={key}
           label={label}
           onChange={handleOnChange}
           options={options}

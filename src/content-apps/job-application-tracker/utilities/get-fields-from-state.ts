@@ -1,4 +1,10 @@
 import { State } from '../state/interfaces';
+//  destination types and interfaces
+import {
+  Controls,
+  DataTypesForHtml,
+} from '../../../components/input-for-floating-form-control/define-types-and-interfaces';
+
 interface Payload {
   state: State;
 }
@@ -13,8 +19,8 @@ const getFieldsFromState = (payload: Payload) => {
       label: 'Company Name:',
       placeholder: 'ENTER company name',
       type: {
-        control: 'text',
-        data: 'string',
+        control: Controls.Text,
+        data: DataTypesForHtml.String,
       },
       value: company,
     },
@@ -24,8 +30,8 @@ const getFieldsFromState = (payload: Payload) => {
         label: 'Main Contact:',
         placeholder: 'ENTER main contact’s name',
         type: {
-          control: 'text',
-          data: 'string',
+          control: Controls.Text,
+          data: DataTypesForHtml.String,
         },
         value: position.contact,
       },
@@ -45,8 +51,8 @@ const getFieldsFromState = (payload: Payload) => {
         ],
         placeholder: '--ENTER a Status--',
         type: {
-          control: 'select',
-          data: 'string',
+          control: Controls.Select,
+          data: DataTypesForHtml.String,
         },
         value: position.status,
       },
@@ -55,8 +61,8 @@ const getFieldsFromState = (payload: Payload) => {
         label: 'Position Title:',
         placeholder: 'ENTER position title per the job ad',
         type: {
-          control: 'text',
-          data: 'string',
+          control: Controls.Text,
+          data: DataTypesForHtml.String,
         },
         value: position.title,
       },
@@ -65,8 +71,8 @@ const getFieldsFromState = (payload: Payload) => {
         label: 'Link to Job Advertisement',
         placeholder: 'ENTER link to job advertisement',
         type: {
-          control: 'url',
-          data: 'string',
+          control: Controls.URL,
+          data: DataTypesForHtml.String,
         },
         value: position.uri,
       },
