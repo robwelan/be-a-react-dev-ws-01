@@ -20,8 +20,8 @@ import {
 type handleState = {
   key: string;
   type: {
-    control: Controls;
-    data: DataTypesForHtml;
+    control: string;
+    data: string;
   };
   value: string;
 };
@@ -43,6 +43,22 @@ const ContentJAT = () => {
         })
       ) {
         _Set(newState, key, value);
+      }
+
+      if (
+        getIsExpectedType({
+          value: type.data,
+          type: DataTypesForHtml.Date,
+        })
+      ) {
+        if (value) {
+          _Set(newState, key, value);
+        }
+
+        if (!value) {
+          //  TODO: check if this is required here
+          _Set(newState, key, '');
+        }
       }
 
       return newState;

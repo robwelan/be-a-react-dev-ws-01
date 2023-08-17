@@ -11,7 +11,7 @@ interface Payload {
 
 const getFieldsFromState = (payload: Payload) => {
   const { state } = payload;
-  const { company, position } = state;
+  const { company, dates, position } = state;
 
   return {
     company: {
@@ -23,6 +23,48 @@ const getFieldsFromState = (payload: Payload) => {
         data: DataTypesForHtml.String,
       },
       value: company,
+    },
+    dates: {
+      applied: {
+        key: 'dates.applied',
+        label: 'Application Sent:',
+        placeholder: 'ENTER the date you applied for this role',
+        type: {
+          control: Controls.Date,
+          data: DataTypesForHtml.Date,
+        },
+        value: dates.applied,
+      },
+      deadline: {
+        key: 'dates.deadline',
+        label: 'Application Deadline:',
+        placeholder: 'ENTER the deadline to apply for this role',
+        type: {
+          control: Controls.Date,
+          data: DataTypesForHtml.Date,
+        },
+        value: dates.deadline,
+      },
+      followup: {
+        key: 'dates.followup',
+        label: 'Follow Up:',
+        placeholder: 'ENTER the date to follow up your application’s progress',
+        type: {
+          control: Controls.Date,
+          data: DataTypesForHtml.Date,
+        },
+        value: dates.followup,
+      },
+      found: {
+        key: 'dates.found',
+        label: 'Date Found:',
+        placeholder: 'ENTER the date you found this job',
+        type: {
+          control: Controls.Date,
+          data: DataTypesForHtml.Date,
+        },
+        value: dates.found,
+      },
     },
     position: {
       contact: {

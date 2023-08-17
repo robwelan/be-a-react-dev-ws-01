@@ -1,10 +1,11 @@
+import { format as dateFormat } from 'date-fns';
 import { v4 as uuidv4 } from 'uuid';
 
 const defaultInterview = {
   id: uuidv4(),
   dates: {
-    followup: null,
-    interview: null,
+    followup: '',
+    interview: '',
   },
   research: '',
   thankyou: '',
@@ -14,10 +15,10 @@ const defaultInterview = {
 const defaultState = {
   id: uuidv4(),
   dates: {
-    applied: null,
-    deadline: null,
-    followup: null,
-    found: null,
+    applied: '',
+    deadline: '',
+    followup: '',
+    found: dateFormat(new Date(), 'yyyy-MM-dd'),
   },
   company: '',
   interviews: [defaultInterview],

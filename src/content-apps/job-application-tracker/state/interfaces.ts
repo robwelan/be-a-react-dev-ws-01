@@ -17,8 +17,8 @@ interface DateConstructor {
 interface DefaultInterview {
   id: string;
   dates: {
-    followup: DateConstructor | null;
-    interview: DateConstructor | null;
+    followup: '';
+    interview: '';
   };
   research: string;
   thankyou: string;
@@ -28,10 +28,10 @@ interface DefaultInterview {
 interface State {
   id: string;
   dates: {
-    applied: DateConstructor | null;
-    deadline: DateConstructor | null;
-    followup: DateConstructor | null;
-    found: DateConstructor | null;
+    applied: '';
+    deadline: '';
+    followup: '';
+    found: '';
   };
   company: string;
   interviews: Array<DefaultInterview>;

@@ -4,7 +4,6 @@ import { Input } from '@chakra-ui/react';
 
 type Props = {
   defaultValue?: string;
-  key: string;
   onBlur?: FocusEventHandler;
   onChange?: Function;
   onFocus?: FocusEventHandler;
@@ -16,7 +15,6 @@ type Props = {
 const InputControlType = (props: Props) => {
   const {
     defaultValue = '',
-    key,
     onBlur: handleOnBlur = () => {},
     onChange: handleOnChange = () => {},
     onFocus: handleOnFocus = () => {},
@@ -27,8 +25,6 @@ const InputControlType = (props: Props) => {
 
   return (
     <Input
-      id={key}
-      name={key}
       onBlur={handleOnBlur}
       onChange={(e) => handleOnChange(e)}
       onFocus={handleOnFocus}

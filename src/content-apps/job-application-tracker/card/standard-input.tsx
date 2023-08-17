@@ -79,7 +79,6 @@ const StandardInput = (props: PropsStandardInput) => {
       >
         <InputForFloatingFormControl
           defaultValue={defaultValue}
-          key={key}
           label={label}
           onChange={handleOnChange}
           options={options}

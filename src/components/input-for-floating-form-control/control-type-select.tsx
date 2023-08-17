@@ -13,7 +13,6 @@ type ContentOptionsOption = {
 
 type Props = {
   defaultValue?: string;
-  key: string;
   onBlur?: FocusEventHandler;
   onChange?: Function;
   onFocus?: FocusEventHandler;
@@ -25,7 +24,6 @@ type Props = {
 const SelectControlType = (props: Props) => {
   const {
     defaultValue = '',
-    key,
     onBlur: handleOnBlur = () => {},
     onChange: handleOnChange = () => {},
     onFocus: handleOnFocus = () => {},
@@ -36,8 +34,6 @@ const SelectControlType = (props: Props) => {
 
   return (
     <Select
-      id={key}
-      name={key}
       onBlur={handleOnBlur}
       onChange={(e) => handleOnChange(e)}
       onFocus={handleOnFocus}

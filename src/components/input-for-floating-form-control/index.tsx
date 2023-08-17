@@ -13,7 +13,6 @@ import {
 
 type Props = {
   defaultValue?: string;
-  key: string;
   helperText?: string;
   label?: string;
   onChange?: Function;
@@ -29,7 +28,6 @@ type Props = {
 const InputForFloatingFormControl = (props: Props) => {
   const {
     defaultValue = '',
-    key,
     label = '',
     helperText = '',
     placeholder: propPlaceholder = '',
@@ -76,7 +74,6 @@ const InputForFloatingFormControl = (props: Props) => {
     <>
       {type.control === Controls.Select && (
         <SelectControlType
-          key={key}
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
@@ -85,9 +82,10 @@ const InputForFloatingFormControl = (props: Props) => {
           value={value || defaultValue}
         />
       )}
-      {(type.control === Controls.Text || type.control === Controls.URL) && (
+      {(type.control === Controls.Date ||
+        type.control === Controls.Text ||
+        type.control === Controls.URL) && (
         <InputControlType
-          key={key}
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
@@ -102,7 +100,9 @@ const InputForFloatingFormControl = (props: Props) => {
       {type.control === Controls.Select && !hasFocus && value !== '' && (
         <FormLabel>{label}</FormLabel>
       )}
-      {type.control === Controls.Text && <FormLabel>{label}</FormLabel>}
+      {(type.control === Controls.Date ||
+        type.control === Controls.Text ||
+        type.control === Controls.URL) && <FormLabel>{label}</FormLabel>}
       {helperText !== '' && <FormHelperText>{helperText}</FormHelperText>}
     </>
   );
