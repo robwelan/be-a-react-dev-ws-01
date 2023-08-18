@@ -21,6 +21,7 @@ import { SiGatsby } from '@react-icons/all-files/si/SiGatsby';
 import { SiReact } from '@react-icons/all-files/si/SiReact';
 //  components
 import Feature from './feature';
+import MyCodePens from './my-codepens';
 import MyProjects from './my-projects';
 //  hooks
 import useSiteMetadata from '../../hooks/use-site-meta-data';
@@ -136,6 +137,7 @@ const SplitWithImage = () => {
       </SimpleGrid>
 
       <MyProjects />
+      <MyCodePens />  
     </>
   );
 };
