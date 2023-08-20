@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 //  chakra-ui
-import { FormHelperText, FormLabel, Input } from '@chakra-ui/react';
+import { FormHelperText, FormLabel } from '@chakra-ui/react';
 //  local components
 import InputControlType from './control-type-input';
 import RichTextControlType from './control-type-rich-text';

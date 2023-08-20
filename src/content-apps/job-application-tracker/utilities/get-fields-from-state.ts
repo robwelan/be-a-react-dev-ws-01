@@ -98,6 +98,16 @@ const getFieldsFromState = (payload: Payload) => {
         },
         value: position.keywords,
       },
+      notes: {
+        key: 'position.notes',
+        label: 'My Notes',
+        placeholder: 'ENTER any notes you may need to help you prepare',
+        type: {
+          control: Controls.Text,
+          data: DataTypesForHtml.RichText,
+        },
+        value: position.notes,
+      },
       status: {
         defaultValue: '',
         key: 'position.status',

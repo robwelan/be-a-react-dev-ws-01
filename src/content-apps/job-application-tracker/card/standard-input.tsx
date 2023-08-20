@@ -1,18 +1,9 @@
 import React, { FC } from 'react';
-import {
-  FormControl,
-  FormLabel,
-  FormHelperText,
-  Input,
-} from '@chakra-ui/react';
+import { FormControl } from '@chakra-ui/react';
 //  components
 import InputForFloatingFormControl from '../../../components/input-for-floating-form-control';
 // types and interfaces
-import {
-  Controls,
-  DataTypesForHtml,
-  SelectOptionsOption,
-} from '../../../components/input-for-floating-form-control/define-types-and-interfaces';
+import { SelectOptionsOption } from '../../../components/input-for-floating-form-control/define-types-and-interfaces';
 
 type PayloadHandleOnChange = {
   target: {
