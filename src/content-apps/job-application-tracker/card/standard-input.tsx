@@ -30,6 +30,7 @@ type Field = {
   options?: Array<SelectOptionsOption>;
   placeholder?: string;
   type: {
+    display?: string;
     control: string;
     data: string;
   };

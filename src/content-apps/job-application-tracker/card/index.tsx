@@ -127,7 +127,13 @@ const JobCard = (props: Props) => {
 
           <StandardInput
             as={GridItem}
-            field={fields.position.keywords}
+            field={{
+              ...fields.position.keywords,
+              type: {
+                ...fields.position.keywords.type,
+                display: 'list',
+              },
+            }}
             handler={handler}
           />
         </Grid>

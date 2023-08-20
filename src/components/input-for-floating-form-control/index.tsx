@@ -21,6 +21,7 @@ type Props = {
   options: Array<SelectOptionsOption>;
   placeholder?: string;
   type: {
+    display?: string;
     control: string;
     data: string;
   };
@@ -110,6 +111,7 @@ const InputForFloatingFormControl = (props: Props) => {
         )}
       {type.control === Controls.TextArea && (
         <TextAreaControlType
+          display={type.display}
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}
