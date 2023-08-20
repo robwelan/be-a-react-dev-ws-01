@@ -33,13 +33,16 @@ export enum enumControlStrings {
   Search = 'search',
   Telephone = 'tel',
   Text = 'text',
+  TextArea = 'textarea',
   URL = 'url',
 }
 
 export enum enumDataTypesForHtml {
   Date = 'date',
   DateTime = 'datetime',
+  ListString = 'liststring',
   Number = 'number',
+  RichText = 'richtext',
   String = 'string',
   Time = 'time',
 }

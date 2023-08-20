@@ -14,6 +14,8 @@ import {
 //  local components
 import StandardInput from './standard-input';
 import { Field } from './standard-input';
+//  styles
+import 'react-quill/dist/quill.snow.css';
 
 type Props = {
   fields: {
@@ -26,6 +28,8 @@ type Props = {
     };
     position: {
       contact: Field;
+      description: Field;
+      keywords: Field;
       title: Field;
       uri: Field;
       status: Field;
@@ -89,19 +93,41 @@ const JobCard = (props: Props) => {
             field={fields.dates.found}
             handler={handler}
           />
+
           <StandardInput
             as={GridItem}
             field={fields.dates.deadline}
             handler={handler}
           />
+
           <StandardInput
             as={GridItem}
             field={fields.dates.applied}
             handler={handler}
           />
+
           <StandardInput
             as={GridItem}
             field={fields.dates.followup}
+            handler={handler}
+          />
+        </Grid>
+      </Box>
+      <Box>
+        <Grid
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+          columnGap={{ base: 4 }}
+          rowGap={{ base: 4 }}
+        >
+          <StandardInput
+            as={GridItem}
+            field={fields.position.description}
+            handler={handler}
+          />
+
+          <StandardInput
+            as={GridItem}
+            field={fields.position.keywords}
             handler={handler}
           />
         </Grid>

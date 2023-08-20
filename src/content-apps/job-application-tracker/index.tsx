@@ -12,10 +12,7 @@ import { State } from './state/interfaces';
 import getFieldsFromState from './utilities/get-fields-from-state';
 import getIsExpectedType from './utilities/get-is-expected-type';
 //  types and interfaces
-import {
-  Controls,
-  DataTypesForHtml,
-} from '../../components/input-for-floating-form-control/define-types-and-interfaces';
+import { DataTypesForHtml } from '../../components/input-for-floating-form-control/define-types-and-interfaces';
 
 type handleState = {
   key: string;
@@ -39,7 +36,7 @@ const ContentJAT = () => {
       if (
         getIsExpectedType({
           value: type.data,
-          type: DataTypesForHtml.String,
+          type: DataTypesForHtml.Date,
         })
       ) {
         _Set(newState, key, value);
@@ -48,17 +45,28 @@ const ContentJAT = () => {
       if (
         getIsExpectedType({
           value: type.data,
-          type: DataTypesForHtml.Date,
+          type: DataTypesForHtml.ListString,
         })
       ) {
-        if (value) {
-          _Set(newState, key, value);
-        }
+        _Set(newState, key, value);
+      }
 
-        if (!value) {
-          //  TODO: check if this is required here
-          _Set(newState, key, '');
-        }
+      if (
+        getIsExpectedType({
+          value: type.data,
+          type: DataTypesForHtml.RichText,
+        })
+      ) {
+        _Set(newState, key, value);
+      }
+
+      if (
+        getIsExpectedType({
+          value: type.data,
+          type: DataTypesForHtml.String,
+        })
+      ) {
+        _Set(newState, key, value);
       }
 
       return newState;

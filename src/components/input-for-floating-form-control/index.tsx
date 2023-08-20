@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { FormHelperText, FormLabel, Input } from '@chakra-ui/react';
 //  local components
 import InputControlType from './control-type-input';
+import RichTextControlType from './control-type-rich-text';
 import SelectControlType from './control-type-select';
+import TextAreaControlType from './control-type-text-area';
 // types and interfaces
 import {
   Controls,
@@ -84,8 +86,30 @@ const InputForFloatingFormControl = (props: Props) => {
       )}
       {(type.control === Controls.Date ||
         type.control === Controls.Text ||
-        type.control === Controls.URL) && (
-        <InputControlType
+        type.control === Controls.URL) &&
+        type.data !== DataTypesForHtml.RichText && (
+          <InputControlType
+            onBlur={handleOnBlur}
+            onChange={(e) => onChange(e)}
+            onFocus={handleOnFocus}
+            placeholder={placeholder}
+            type={type.control}
+            value={value || defaultValue}
+          />
+        )}
+      {type.control === Controls.Text &&
+        type.data === DataTypesForHtml.RichText && (
+          <RichTextControlType
+            onBlur={handleOnBlur}
+            onChange={(e) => onChange(e)}
+            onFocus={handleOnFocus}
+            placeholder={placeholder}
+            type={type.control}
+            value={value || defaultValue}
+          />
+        )}
+      {type.control === Controls.TextArea && (
+        <TextAreaControlType
           onBlur={handleOnBlur}
           onChange={(e) => onChange(e)}
           onFocus={handleOnFocus}

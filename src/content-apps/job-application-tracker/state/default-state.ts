@@ -25,6 +25,7 @@ const defaultState = {
   position: {
     contact: '',
     description: '',
+    keywords: '',
     notes: '',
     status: '',
     title: '',

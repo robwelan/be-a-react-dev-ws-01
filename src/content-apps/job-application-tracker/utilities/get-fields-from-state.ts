@@ -77,6 +77,27 @@ const getFieldsFromState = (payload: Payload) => {
         },
         value: position.contact,
       },
+      description: {
+        key: 'position.description',
+        label: 'Position Description',
+        placeholder:
+          'ENTER the position description from the job advertisement',
+        type: {
+          control: Controls.Text,
+          data: DataTypesForHtml.RichText,
+        },
+        value: position.description,
+      },
+      keywords: {
+        key: 'position.keywords',
+        label: 'Keywords in Job Description',
+        placeholder: 'ENTER important keywords from Job Description',
+        type: {
+          control: Controls.TextArea,
+          data: DataTypesForHtml.ListString,
+        },
+        value: position.keywords,
+      },
       status: {
         defaultValue: '',
         key: 'position.status',
