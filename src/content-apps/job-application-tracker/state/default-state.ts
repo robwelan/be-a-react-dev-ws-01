@@ -3,24 +3,22 @@ import { v4 as uuidv4 } from 'uuid';
 
 const defaultInterview = {
   id: uuidv4(),
-  dates: {
-    followup: '',
-    interview: '',
-  },
+  jobId: '',
+  date: dateFormat(new Date(), 'yyyy-MM-dd'),
   research: '',
   thankyou: '',
-  type: '',
+  type: 'interview', // or 'followup'
 };
 
 const defaultState = {
   id: uuidv4(),
+  company: '',
   dates: {
     applied: '',
     deadline: '',
     followup: '',
     found: dateFormat(new Date(), 'yyyy-MM-dd'),
   },
-  company: '',
   interviews: [defaultInterview],
   position: {
     contact: '',

@@ -56,6 +56,7 @@ const InputForFloatingFormControl = (props: Props) => {
 
   const handleOnFocus = () => {
     setHasFocus(true);
+
     if (type.control === Controls.Select) {
       setPlaceholder(propPlaceholder);
       return;
@@ -63,6 +64,15 @@ const InputForFloatingFormControl = (props: Props) => {
 
     if (
       type.control === Controls.Text &&
+      value === '' &&
+      propPlaceholder !== ''
+    ) {
+      setPlaceholder(propPlaceholder);
+      return;
+    }
+
+    if (
+      type.control === Controls.TextArea &&
       value === '' &&
       propPlaceholder !== ''
     ) {
@@ -128,6 +138,7 @@ const InputForFloatingFormControl = (props: Props) => {
       )}
       {(type.control === Controls.Date ||
         type.control === Controls.Text ||
+        type.control === Controls.TextArea ||
         type.control === Controls.URL) && <FormLabel>{label}</FormLabel>}
       {helperText !== '' && <FormHelperText>{helperText}</FormHelperText>}
     </>

@@ -1,38 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { FormControl } from '@chakra-ui/react';
 //  components
 import InputForFloatingFormControl from '../../../components/input-for-floating-form-control';
-// types and interfaces
-import { SelectOptionsOption } from '../../../components/input-for-floating-form-control/define-types-and-interfaces';
-
-type PayloadHandleOnChange = {
-  target: {
-    value: string;
-  };
-};
-
-type Field = {
-  defaultValue?: string;
-  key?: string;
-  helper?: string;
-  isRequired?: boolean;
-  isInvalid?: boolean;
-  label?: string;
-  options?: Array<SelectOptionsOption>;
-  placeholder?: string;
-  type: {
-    display?: string;
-    control: string;
-    data: string;
-  };
-  value?: string;
-};
-
-type PropsStandardInput = {
-  as?: FC;
-  field: Field;
-  handler: Function;
-};
+//  interfaces and types
+import {
+  PayloadHandleOnChange,
+  PropsStandardInput,
+} from './interfaces-and-types';
 
 const StandardInput = (props: PropsStandardInput) => {
   const { as = undefined, field = {} as any, handler = () => {} } = props;
@@ -83,5 +57,4 @@ const StandardInput = (props: PropsStandardInput) => {
   );
 };
 
-export { Field };
 export default StandardInput;

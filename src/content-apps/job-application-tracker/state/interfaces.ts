@@ -14,12 +14,10 @@ interface DateConstructor {
   ): Date;
 }
 
-interface DefaultInterview {
+export interface DefaultInterview {
   id: string;
-  dates: {
-    followup: string;
-    interview: string;
-  };
+  jobId: string;
+  dates: string;
   research: string;
   thankyou: string;
   type: string;

@@ -11,7 +11,7 @@ interface Payload {
 
 const getFieldsFromState = (payload: Payload) => {
   const { state } = payload;
-  const { company, dates, position } = state;
+  const { company, dates, interviews, position } = state;
 
   return {
     company: {
@@ -23,6 +23,16 @@ const getFieldsFromState = (payload: Payload) => {
         data: DataTypesForHtml.String,
       },
       value: company,
+    },
+    interviews: {
+      key: 'interviews',
+      label: 'Interviews',
+      placeholder: '',
+      type: {
+        control: 'array',
+        data: 'array',
+      },
+      value: interviews,
     },
     dates: {
       applied: {
