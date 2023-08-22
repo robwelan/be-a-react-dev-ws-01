@@ -59,7 +59,7 @@ const BlogPostCard = (props: Props) => {
               <Text fontSize="xs">
                 <>{date}</>
               </Text>
-              <Heading as="h2" size="md">
+              <Heading as="h2" size="50%">
                 {title}
               </Heading>
             </Link>
@@ -71,7 +71,7 @@ const BlogPostCard = (props: Props) => {
             {!isMobile && (
               <>
                 <Box height="1em"></Box>
-                <Box as="span" fontSize="sm">
+                <Box as="span" fontSize="90%">
                   <Text>{excerpt}</Text>
                 </Box>
                 <Box height="1em"></Box>
@@ -83,7 +83,7 @@ const BlogPostCard = (props: Props) => {
             )}
 
             <Box height="1em"></Box>
-            <Box fontSize="xs">
+            <Box fontSize="80%">
               <GatsbyLink to={slug}>{`${timeToRead} minute read`}</GatsbyLink>
             </Box>
           </Box>
