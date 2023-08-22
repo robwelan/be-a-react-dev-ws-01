@@ -14,7 +14,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 //  gatsby
 import { Link as GatsbyLink } from 'gatsby';
 //  recoil
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { FiMenu } from '@react-icons/all-files/fi/FiMenu';
 //  local components
 import LogoImage from '../components/image-logo';
@@ -40,7 +40,7 @@ const NavigatorTop = (props: Props) => {
   const { color, device, disclosure } = configuration;
   const { colorMode, toggleColorMode } = color;
   const { onOpen } = disclosure;
-  const [, setFontSize] = useRecoilState(fontSizeState);
+  const setFontSize = useSetRecoilState(fontSizeState);
 
   return (
     <>
@@ -86,13 +86,17 @@ const NavigatorTop = (props: Props) => {
               <Box>
                 <ButtonGroup isAttached variant="outline" size="sm">
                   <Button
-                    onClick={() => setFontSize((size) => size - INCREMENT_FONT_SIZE)}
+                    onClick={() =>
+                      setFontSize((size) => size - INCREMENT_FONT_SIZE)
+                    }
                   >
                     A-
                   </Button>
                   <Button onClick={() => setFontSize(1)}>A</Button>
                   <Button
-                    onClick={() => setFontSize((size) => size + INCREMENT_FONT_SIZE)}
+                    onClick={() =>
+                      setFontSize((size) => size + INCREMENT_FONT_SIZE)
+                    }
                   >
                     A+
                   </Button>

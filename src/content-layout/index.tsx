@@ -9,7 +9,7 @@ import {
 //  react-scroll
 import { animateScroll as scroll } from 'react-scroll';
 //  recoil
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 //  constants
 import { Children, Location } from '../constants/types';
 //  local components
@@ -64,7 +64,7 @@ const ContentLayout = (props: Props) => {
     replaceWith: '',
   });
   const isRouteTikTokLinks = cleanPath === cleanRouteTikTokLinks;
-  const [fontSize] = useRecoilState(fontSizeState);
+  const fontSize = useRecoilValue(fontSizeState);
   //  mounted effect
   useEffect(() => {
     setIsMounted(true);
