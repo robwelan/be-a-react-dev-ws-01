@@ -1,3 +1,27 @@
 ol, ul {
   list-style-position: inside;
 }
+
+.be-a-react-dev h1 {
+  font-size: 130%;
+}
+
+.be-a-react-dev h2 {
+  font-size: 125%;
+}
+
+.be-a-react-dev h3 {
+  font-size: 120%;
+}
+
+.be-a-react-dev h4 {
+  font-size: 115%;
+}
+
+.be-a-react-dev h5 {
+  font-size: 110%;
+}
+
+.be-a-react-dev h6 {
+  font-size: 105%;
+}

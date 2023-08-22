@@ -8,6 +8,8 @@ import {
 } from '@chakra-ui/react';
 //  react-scroll
 import { animateScroll as scroll } from 'react-scroll';
+//  recoil
+import { useRecoilState } from 'recoil';
 //  constants
 import { Children, Location } from '../constants/types';
 //  local components
@@ -16,16 +18,21 @@ import ContentListeners from './listeners';
 import DependentScripts from './scripts-dependent';
 import IndependentScripts from './scripts-independent';
 import MainLayout from './main-layout';
+import StyledComponent from './styled-component';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
 //  security
 import { PUBLIC_ROUTE_PAGE_TIKTOKBIO } from '../security/constants/routes-public';
+//  state
+import { fontSizeState } from '../state';
 //  utilities
 import replaceAll from '../utilities/strings/replace-all';
 import getWindow from '../utilities/window/get-window';
 //  styles
 import './index.css';
 import './css/floating-label.css';
+
+const NUMBER_BASE_FONT_SIZE = 1;
 
 type Props = {
   children: Children;
@@ -57,7 +64,7 @@ const ContentLayout = (props: Props) => {
     replaceWith: '',
   });
   const isRouteTikTokLinks = cleanPath === cleanRouteTikTokLinks;
-
+  const [fontSize] = useRecoilState(fontSizeState);
   //  mounted effect
   useEffect(() => {
     setIsMounted(true);
@@ -107,12 +114,18 @@ const ContentLayout = (props: Props) => {
       {!loaded && !isRouteTikTokLinks && (
         <IndependentScripts bgColorToken={bgColorToken} />
       )}
-      <MainLayout
-        configuration={configuration}
-        isRouteTikTokLinks={isRouteTikTokLinks}
+      <StyledComponent
+        className="animated be-a-react-dev"
+        fontSize={`${fontSize}rem`}
+        scale={`${fontSize / NUMBER_BASE_FONT_SIZE}`}
       >
-        {children}
-      </MainLayout>
+        <MainLayout
+          configuration={configuration}
+          isRouteTikTokLinks={isRouteTikTokLinks}
+        >
+          {children}
+        </MainLayout>
+      </StyledComponent>
     </>
   );
 };
