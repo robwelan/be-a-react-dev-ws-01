@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Flex,
   HStack,
   IconButton,
   Link,
@@ -44,82 +45,67 @@ const NavigatorTop = (props: Props) => {
 
   return (
     <>
-      <Box px={4} w="100%" sx={{ borderBottom: '1px solid gray' }}>
-        <SimpleGrid columns={2} spacing={4}>
-          <Box p={4}>
-            <HStack>
-              <Box>
-                <IconButton
-                  variant="outline"
-                  colorScheme="black"
-                  aria-label="Open menu"
-                  icon={<FiMenu />}
-                  onClick={onOpen}
-                />
-              </Box>
-              <Box>
-                <Link
-                  aria-label="home"
-                  as={GatsbyLink}
-                  to={PUBLIC_ROUTE_PAGE_HOME}
-                >
-                  {device.screen.isExtraSmall && <LogoIcon />}
-                  {!device.screen.isExtraSmall && (
-                    <>
-                      <HStack>
-                        <Box>
-                          <LogoImage />
-                        </Box>
-                        <Box>
-                          <SiteTitleForNav />
-                        </Box>
-                      </HStack>
-                    </>
-                  )}
-                </Link>
-              </Box>
-            </HStack>
-          </Box>
-          <Box p={4}>
-            <HStack>
-              <Spacer />
-              <Box>
-                <ButtonGroup isAttached variant="outline" size="sm">
-                  <Button
-                    onClick={() =>
-                      setFontSize((size) => size - INCREMENT_FONT_SIZE)
-                    }
-                  >
-                    A-
-                  </Button>
-                  <Button onClick={() => setFontSize(1)}>A</Button>
-                  <Button
-                    onClick={() =>
-                      setFontSize((size) => size + INCREMENT_FONT_SIZE)
-                    }
-                  >
-                    A+
-                  </Button>
-                </ButtonGroup>
-              </Box>
-              <Box height="1em" width="1em" />
-              <Box>
-                <IconButton
-                  aria-label="Open menu"
-                  colorScheme="black"
-                  icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                  onClick={toggleColorMode}
-                  size="sm"
-                  variant="outline"
-                />
-              </Box>
-              {/* <Box height="1em" width="2em" /> */}
-              {/* <Box>
-                {/* USER MENU */}
-              {/* <UserMenu /> */}
-              {/* </Box> */}
-            </HStack>
-          </Box>
+      <Box p={4} w="100%" sx={{ borderBottom: '1px solid gray' }}>
+        <SimpleGrid columns={2} spacing={4} width="100%">
+          <HStack>
+            <IconButton
+              variant="outline"
+              colorScheme="black"
+              aria-label="Open menu"
+              icon={<FiMenu />}
+              onClick={onOpen}
+            />
+            <Link aria-label="home" as={GatsbyLink} to={PUBLIC_ROUTE_PAGE_HOME}>
+              {device.screen.isExtraSmall && <LogoIcon />}
+              {!device.screen.isExtraSmall && (
+                <>
+                  <HStack>
+                    <Box>
+                      <LogoImage />
+                    </Box>
+                    <Box>
+                      <SiteTitleForNav />
+                    </Box>
+                  </HStack>
+                </>
+              )}
+            </Link>
+          </HStack>
+
+          <Flex>
+            <Spacer />
+            <ButtonGroup isAttached variant="outline" size="sm">
+              <Button
+                onClick={() =>
+                  setFontSize((size) => size - INCREMENT_FONT_SIZE)
+                }
+              >
+                A-
+              </Button>
+              <Button onClick={() => setFontSize(1)}>A</Button>
+              <Button
+                onClick={() =>
+                  setFontSize((size) => size + INCREMENT_FONT_SIZE)
+                }
+              >
+                A+
+              </Button>
+            </ButtonGroup>
+            <Box height="1em" width="1em" />
+            <IconButton
+              aria-label="Open menu"
+              colorScheme="black"
+              icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              onClick={toggleColorMode}
+              size="sm"
+              variant="outline"
+            />
+
+            {/* <Box>
+          {/* USER MENU */}
+            {/* <UserMenu /> */}
+            {/* </Box> */}
+          </Flex>
         </SimpleGrid>
       </Box>
     </>
