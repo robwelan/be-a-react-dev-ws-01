@@ -37,9 +37,9 @@ const TodoListStatistics = () => {
 
   return (
     <>
-      <BasicContainer>
+      <BasicContainer marginTop="">
         <Heading as="h6">Statistics:</Heading>
-        <SimpleGrid columns={[2, null, 4]} marginTop="0.5em" spacing="40px">
+        <SimpleGrid columns={[1, null, 4]} gap={2} marginTop="0.5em">
           <Center>
             <Tag color={colorAll} size="sm" variant="outline">
               <TagLeftIcon boxSize="12px" as={BsListTask} />

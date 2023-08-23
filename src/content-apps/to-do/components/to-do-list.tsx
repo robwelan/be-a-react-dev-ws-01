@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, useBreakpointValue } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  local components
@@ -14,12 +14,21 @@ import { filteredTodoListState } from '../state';
 
 const TodoList = () => {
   const todoList = useRecoilValue(filteredTodoListState);
+  const flexBreak = useBreakpointValue(
+    {
+      base: 'wrap',
+      md: 'no-wrap',
+    },
+    {
+      fallback: 'md',
+    },
+  );
 
   return (
     <>
       <TodoListStatistics />
       <BasicContainer marginTop="0.5em">
-        <Flex gap={4}>
+        <Flex gap={4} wrap={flexBreak}>
           <TodoItemCreator />
           <TodoListFilters />
         </Flex>
