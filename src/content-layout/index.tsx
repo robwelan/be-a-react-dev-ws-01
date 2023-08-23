@@ -115,7 +115,6 @@ const ContentLayout = (props: Props) => {
         <IndependentScripts bgColorToken={bgColorToken} />
       )}
       <StyledComponent
-        className="animated be-a-react-dev"
         fontSize={`${fontSize}rem`}
         scale={`${fontSize / NUMBER_BASE_FONT_SIZE}`}
       >
