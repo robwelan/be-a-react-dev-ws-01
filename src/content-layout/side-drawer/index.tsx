@@ -38,7 +38,7 @@ type Props = {
 };
 
 const SideDrawer = (props: Props) => {
-  const { isOpen, onClose, onOpen } = props;
+  const { isOpen, onClose } = props;
 
   return (
     <>

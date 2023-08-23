@@ -30,9 +30,9 @@ const MainLayout = (props: Props) => {
 
   return (
     <>
+      <SideDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       <Box minH="100vh">
         <Navigator configuration={configuration} />
-        <SideDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
         {isMobile && <SmallContainer>{children}</SmallContainer>}
         {!isMobile && <MediumContainer>{children}</MediumContainer>}
       </Box>
