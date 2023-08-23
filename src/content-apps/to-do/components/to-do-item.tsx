@@ -51,7 +51,7 @@ const TodoItem = (payload: Payload) => {
         value={item.text}
       />
       <Checkbox
-        checked={item.isComplete}
+        isChecked={item.isComplete}
         onChange={() =>
           toggleItemCompletion({
             index, //
