@@ -3,6 +3,8 @@ import React from 'react';
 import Seo from '../components/seo';
 //  content
 import ContentTikTokBio from '../content-pages/tik-tok-bio';
+//  content-seo
+import descriptionSeo from '../content-pages/tik-tok-bio/seo/description';
 
 const PageTikTokBio = ({ location }) => (
   <ContentTikTokBio location={location} />
@@ -16,5 +18,5 @@ export default PageTikTokBio;
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = ({ location }) => (
-  <Seo location={location} title="Tik Tok Bio" />
+  <Seo description={descriptionSeo} location={location} title="Tik Tok Bio" />
 );

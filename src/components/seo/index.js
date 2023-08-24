@@ -19,22 +19,20 @@ const Seo = (props) => {
     title: propsTitle,
     twitter_tags,
   } = props;
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            siteUrl
-            social {
-              twitter
-            }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+          social {
+            twitter
           }
         }
       }
-    `,
-  );
+    }
+  `);
 
   const siteTitle = site.siteMetadata?.title;
   const title = getHeadTitle({ siteTitle, propsTitle });
