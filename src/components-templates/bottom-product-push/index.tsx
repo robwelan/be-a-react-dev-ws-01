@@ -28,17 +28,17 @@ const ProductPush = () => {
   return (
     <>
       <StandardDivider />
-      <Heading as="h2" size="xs">
+      <Heading as="h2" fontSize="125%">
         Get Cool Swag
       </Heading>
-      <Text fontSize="xs">
+      <Text fontSize="80%">
         If you are finding this content useful (or maybe you are just a nice
         person or maybe you just like my merch) I would be greatful if you
         headed over to my shop and make a purchase or two. All proceeds will go
         towards making more courses.
       </Text>
-      <Text fontSize="xs">
-        If there ’s merch missing that you would like, let me know (click this:{' '}
+      <Text fontSize="80%">
+        If there’s merch missing that you would like, let me know (click this:{' '}
         <Link
           href="mailto:rmw.its@gmail.com?subject=beareactdev-make-this-product"
           isExternal
@@ -64,12 +64,12 @@ const ProductPush = () => {
 
           <Stack p={4}>
             <CardHeader>
-              <Heading marginTop="0.4em" size="xs">
+              <Heading as="h2" fontSize="125%" marginTop="0.4em">
                 {product.asset.name}
               </Heading>
             </CardHeader>
             <CardBody>
-              <Text fontSize="xs" py="2">
+              <Text fontSize="80%" py="2">
                 You can buy this product or you can check out my shop of
                 products.
               </Text>

@@ -47,7 +47,7 @@ const SplitWithImage = () => {
               text={{ color: '', value: `About ${author.name}` }}
             />
           </Heading>
-          <Text color={'gray.500'} fontSize={'lg'}>
+          <Text color="gray.500" fontSize="110%">
             I am a developer who has worked predominantly in two languages:
             Visual Basic and JavaScript. And some PHP. Please don't make me use
             PHP.
@@ -91,7 +91,7 @@ const SplitWithImage = () => {
             have projects though which are deployed.
           </Text>
           <br />
-          <Heading as="h2" size="sm">
+          <Heading as="h2" fontSize="125%">
             Why Gatsby?
           </Heading>
           <Text>
@@ -137,7 +137,7 @@ const SplitWithImage = () => {
       </SimpleGrid>
 
       <MyProjects />
-      <MyCodePens />  
+      <MyCodePens />
     </>
   );
 };

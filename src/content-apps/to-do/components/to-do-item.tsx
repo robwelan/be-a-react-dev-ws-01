@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Checkbox, HStack, IconButton, Input } from '@chakra-ui/react';
+import { Checkbox, HStack, IconButton } from '@chakra-ui/react';
 //  chakra-ui icons
 import { DeleteIcon } from '@chakra-ui/icons';
 //  actions

@@ -40,7 +40,7 @@ const DisplayUser = (props: Props) => {
       >
         <VStack>
           <Box>
-            <Heading as="h2" size="sm" textAlign="center">
+            <Heading as="h4" fontSize="115%" textAlign="center">
               {state.decision.user === '' ? 'Make ' : ''}Your
               <br />
               Choice:

@@ -14,10 +14,15 @@ const DisplayHeading = () => {
   return (
     <>
       <GameHelp isOpen={isOpen} onClose={onClose} />
-      <Heading as="h2" color="gray.500" size="xs" textAlign="center">
+      <Heading
+        as="h2"
+        fontSize="125%"
+        color="gray.500"
+        textAlign="center"
+      >
         Classic Yet Modern Game
       </Heading>
-      <Heading as="h1" textAlign="center">
+      <Heading as="h1" fontSize="130%" textAlign="center">
         Rock Paper Scissors Lizard Spock{' '}
         <IconButton
           aria-label="help"

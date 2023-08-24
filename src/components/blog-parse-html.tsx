@@ -84,8 +84,8 @@ const options: HTMLReactParserOptions = {
             // pt={['20px', '40px']}
             // lineHeight={1}
             {...safeAttribs}
-            marginTop="1em"
-            size="sm"
+            marginTop="1.5em"
+            fontSize="110%"
           >
             {domToReact(children, options)}
           </Heading>
@@ -124,7 +124,7 @@ const options: HTMLReactParserOptions = {
         }
         case 'p': {
           return (
-            <Text {...safeAttribs} sx={{ marginBottom: '0.5em' }}>
+            <Text {...safeAttribs} sx={{ marginTop: '0.8em' }}>
               {domToReact(children, options)}
             </Text>
           );

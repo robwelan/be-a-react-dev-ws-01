@@ -59,9 +59,7 @@ const BlogPostCard = (props: Props) => {
               <Text fontSize="xs">
                 <>{date}</>
               </Text>
-              <Heading as="h2" size="50%">
-                {title}
-              </Heading>
+              <Heading as="h2" fontSize="140%">{title}</Heading>
             </Link>
             <Divider
               borderColor="#FFDE59"

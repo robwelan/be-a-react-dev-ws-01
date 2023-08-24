@@ -5,6 +5,8 @@ import { Container, Divider, Heading } from '@chakra-ui/react';
 import { Children } from '../../constants/types';
 //  hooks
 import useDeviceSize from '../../hooks/use-device-size';
+//  utilities
+import getHeadingElementFontSize from '../../utilities/styles/get-heading-element-font-size';
 
 type Props = {
   as?: string;
@@ -15,11 +17,14 @@ type Props = {
 const StandardPageContent = (props: Props) => {
   const { as = 'h1', children, title = 'What Is The Title?' } = props;
   const deviceSize = useDeviceSize();
+  const fontSize = getHeadingElementFontSize({ element: as });
 
   return (
     <Container maxW={deviceSize.container}>
       <>
-        <Heading as={as}>{title}</Heading>
+        <Heading as={as} fontSize={fontSize}>
+          {title}
+        </Heading>
         <Divider borderColor="#FFDE59" marginBottom="2em" marginTop="1em" />
         {children}
       </>

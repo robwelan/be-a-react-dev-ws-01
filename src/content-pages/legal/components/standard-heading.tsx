@@ -1,6 +1,8 @@
 import React from 'react';
 //  chakra-ui
 import { Heading } from '@chakra-ui/react';
+//  utilities
+import getHeadingElementFontSize from '../../../utilities/styles/get-heading-element-font-size';
 
 type Props = {
   children: string;
@@ -20,10 +22,17 @@ const StandardText = (props: Props) => {
     size = 'md',
     sx = {},
   } = props;
+  const fontSize = getHeadingElementFontSize({ element: as });
 
   return (
     <>
-      <Heading as={as} id={id} marginTop={marginTop} size={size} sx={{ ...sx }}>
+      <Heading
+        as={as}
+        fontSize={fontSize}
+        id={id}
+        marginTop={marginTop}
+        sx={{ ...sx }}
+      >
         {children}
       </Heading>
     </>

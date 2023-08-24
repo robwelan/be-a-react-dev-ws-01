@@ -35,7 +35,9 @@ const TodoList = () => {
       </BasicContainer>
       {todoList && todoList.length > 0 && (
         <BasicContainer marginTop="0.5em">
-          <Heading as="h6">List:</Heading>
+          <Heading as="h6" fontSize="105%">
+            List:
+          </Heading>
           {todoList.map((todoItem) => (
             <TodoItem item={todoItem} key={todoItem.id} />
           ))}

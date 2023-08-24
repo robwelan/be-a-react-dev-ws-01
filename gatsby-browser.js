@@ -5,6 +5,9 @@ import CustomRoot from './wrap-root-element';
 import 'prismjs/themes/prism.css';
 //  utilities
 import browserHydrateFunction from './src/utilities/gatsby/browser-hydrate-function';
+// styles
+import './src/content-layout/css/site.css';
+import './src/content-layout/css/floating-label.css';
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)

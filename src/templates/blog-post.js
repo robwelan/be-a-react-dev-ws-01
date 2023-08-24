@@ -69,7 +69,7 @@ const BlogPost = (props) => {
     <>
       <HStack>
         <Box>
-          <Heading as="h1" size="lg">
+          <Heading as="h1" fontSize="130%">
             {title}
           </Heading>
           <Text color={textColorPublishDate} fontSize="xs">

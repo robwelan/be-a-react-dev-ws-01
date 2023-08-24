@@ -28,9 +28,9 @@ import { fontSizeState } from '../state';
 //  utilities
 import replaceAll from '../utilities/strings/replace-all';
 import getWindow from '../utilities/window/get-window';
-//  styles
-import './index.css';
-import './css/floating-label.css';
+// //  styles
+// import './index.css';
+// import './css/floating-label.css';
 
 const NUMBER_BASE_FONT_SIZE = 1;
 

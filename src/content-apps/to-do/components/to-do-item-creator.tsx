@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 //  chakra-ui
-import { Button, HStack, Input } from '@chakra-ui/react';
+import { Button, HStack } from '@chakra-ui/react';
 //  recoil
 import { useSetRecoilState } from 'recoil';
 //  actions

@@ -23,7 +23,7 @@ const DisplayComputer: FC<Props> = (props) => {
       >
         <>
           <VStack>
-            <Heading as="h2" size="sm" textAlign="center">
+            <Heading as="h4" fontSize="115%" textAlign="center">
               Computer’s
               <br />
               Choice:

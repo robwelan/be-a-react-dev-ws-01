@@ -58,7 +58,7 @@ const DisplayComputer = (props: Props) => {
       >
         <>
           <VStack>
-            <Heading as="h2" size="sm" textAlign="center">
+            <Heading as="h2" fontSize="125%" textAlign="center">
               Computer’s
               <br />
               Choice:
