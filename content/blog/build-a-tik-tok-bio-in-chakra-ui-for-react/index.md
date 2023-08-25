@@ -34,7 +34,7 @@ Make sure you have a folder called content-pages and within that a folder called
 
 ## src/pages/tik-tok-bio.js
 
-```typescript
+```language-typescript
 import React from 'react';
 //  components
 import Seo from '../components/seo';
@@ -65,7 +65,7 @@ Now we get to talk about the content.
 
 ## src/content-pages/tik-tok-bio/index.tsx
 
-```typescript
+```language-typescript
 import React from 'react';
 import { Center } from '@chakra-ui/react';
 //  local components
@@ -88,7 +88,7 @@ Then the function is defined which simply returns the content. There are no inte
 
 ## src/content-pages/tik-tok-bio/card/index.tsx
 
-```typescript
+```language-typescript
 import React from 'react';
 //  chakra-ui
 import {
@@ -241,7 +241,7 @@ And then after that is the CardBody which contains a Flex wrapper for the button
 
 A typical button looks like this:
 
-```typescript
+```language-typescript
   <Button
     as={Link}
     href="https://twitter.com/rmwits"

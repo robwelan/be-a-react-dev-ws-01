@@ -30,7 +30,7 @@ So... when you find errors in your production browser console you think “What 
 
 This is what I saw:
 
-```terminal
+```apacheconf
 23 framework-b1001c4c8ff5bb910d05.js:2 Uncaught Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
     at sa (framework-b1001c4c8ff5bb910d05.js:2:49240)
     at Ei (framework-b1001c4c8ff5bb910d05.js:2:122286)
@@ -63,7 +63,7 @@ framework-b1001c4c8ff5bb910d05.js:2 Uncaught Error: Minified React error #423; v
 
 ## And What Do You See in The Development Browser Console?
 
-```terminal
+```apacheconf
 >
 ```
 

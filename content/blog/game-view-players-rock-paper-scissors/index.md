@@ -34,7 +34,7 @@ Let’s get into the code of displaying our players.
 
 ### view/players.tsx
 
-```typescript
+```language-typescript
 import React, { FunctionComponent } from 'react';
 //  chakra-ui
 import { SimpleGrid, useMediaQuery } from '@chakra-ui/react';

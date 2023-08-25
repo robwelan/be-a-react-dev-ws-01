@@ -73,7 +73,7 @@ The result object contains label, computer and user. The computer and user keys 
 
 Well, we should create an interfaces.ts file. And in that we would have the following interface declarations:
 
-```typescript
+```language-typescript
 import { Dispatch, SetStateAction } from 'react';
 
 interface State {

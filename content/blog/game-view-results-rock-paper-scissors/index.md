@@ -30,7 +30,7 @@ Let’s get right into it. Here is the file you will need.
 
 ## view/results.tsx
 
-```typescript
+```language-typescript
 import React from 'react';
 //  chakra-ui
 import { HStack, VStack, Text } from '@chakra-ui/react';

@@ -32,7 +32,7 @@ We first looked at setDecisionComputer <a href="https://beareact.dev/game-entry-
 
 ## actions/set-decision-computer.ts
 
-```typescript
+```language-typescript
 //  random
 import random from 'random';
 //  local utilities

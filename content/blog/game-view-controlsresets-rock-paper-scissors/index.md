@@ -34,7 +34,7 @@ First, here is the code.
 
 ## view/game-controls-resets.tsx
 
-```typescript
+```language-typescript
 import React, { useEffect, useState } from 'react';
 //  chakra-ui
 import { Box, Button, SimpleGrid } from '@chakra-ui/react';

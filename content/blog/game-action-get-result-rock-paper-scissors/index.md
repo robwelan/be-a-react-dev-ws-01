@@ -34,7 +34,7 @@ Let’s get right into it.
 
 ## actions/get-result.ts
 
-```typescript
+```language-typescript
 interface Payload {
   computerDecision: {
     beats: string;

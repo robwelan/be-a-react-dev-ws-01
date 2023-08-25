@@ -42,7 +42,7 @@ Also, this code pattern is separating out the concerns of displaying the user in
 
 Which is pretty cool.
 
-```typescript
+```language-typescript
 import React, { useEffect, useState, FC } from 'react';
 //  chakra-ui
 import { VStack } from '@chakra-ui/react';
