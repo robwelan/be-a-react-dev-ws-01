@@ -20,8 +20,6 @@ twitter_tags:
   - "#todoapptutorial"
 ---
 
-
-
 ## Introduction
 
 Are you tired of juggling multiple tasks and struggling to stay organized? Is your productivity taking a hit because of scattered thoughts and forgotten to-dos? Fret not, because we have an exciting solution coming your way! Introducing our brand-new Todo App tutorial.
@@ -46,4 +44,8 @@ But why wait? You can already dive into the finished product right here: <a href
 
 Are you excited to unleash your productivity potential? Keep an eye out for the upcoming tutorial, and remember to share your excitement using the hashtags #ElevateProductivity #ReactTodoMagic. Get ready to conquer your tasks like a pro! 📝🚀
 
+<p/>
+
+<span style="font-size:10px">
 Photo by <a href="https://unsplash.com/@thomasbormans?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Thomas Bormans</a> on <a href="https://unsplash.com/photos/pcpsVsyFp_s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</span>
