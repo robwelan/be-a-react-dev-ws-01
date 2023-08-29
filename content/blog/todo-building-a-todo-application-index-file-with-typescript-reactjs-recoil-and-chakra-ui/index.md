@@ -6,7 +6,7 @@ categories:
 meta_keywords:
   - todo app tutorial, typescript, react, recoil, coding tutorial
 meta_description: >-
-  Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we'll focus on the pivotal index file of your Todo app, exploring how to construct it using a powerful tech stack: GatsbyJS, TypeScript, ReactJS, Recoil, and Chakra-UI. Join us as we create a foundation that's not only functional but also primed for SEO success. Let's dive in! 🚀
+  Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we’ll focus on the pivotal index file of your Todo app, exploring how to construct it using a powerful tech stack: GatsbyJS, TypeScript, ReactJS, Recoil, and Chakra-UI. Let’s dive in! 🚀
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
@@ -22,11 +22,11 @@ twitter_tags:
 
 ## Introduction
 
-Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we'll focus on the pivotal index file of your Todo app, exploring how to construct it using a powerful tech stack: GatsbyJS, TypeScript, ReactJS, Recoil, and Chakra-UI. Join us as we create a foundation that's not only functional but also primed for SEO success.
+Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we’ll focus on the pivotal index file of your Todo app, exploring how to construct it using a powerful tech stack: GatsbyJS, TypeScript, ReactJS, Recoil, and Chakra-UI.
 
 <a href="https://beareact.dev/apps/to-do/" target="_blank">Click here to find out what you will be building.</a>
 
-Now, Let's dive in! 🚀
+Now, Let’s dive in! 🚀
 
 ## Create a Gatsby Site:
 
@@ -90,7 +90,7 @@ Thank you for reading thus far.
 
 Happy coding and creating! 🌟🎉
 
-#GatsbyJS #TypeScript #ReactJS #Recoil #ChakraUI #TodoApp #FrontendDev #WebDev #SEO #CodingTips
+\#GatsbyJS #TypeScript #ReactJS #Recoil #ChakraUI #TodoApp #FrontendDev #WebDev #CodingTips
 
 <p/>
 
