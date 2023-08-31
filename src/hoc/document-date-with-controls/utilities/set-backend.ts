@@ -3,11 +3,31 @@ import setDocumentByRef from '../../../lib/actions/set-document-by-ref';
 //  utilities
 import getIsObjectValid from '../../../utilities/objects/get-is-object-valid';
 
-const setBackend = async (payload) => {
+type Payload = {
+  allFields: object;
+  autoSave?: boolean;
+  backend?: {
+    ref?: object;
+  };
+  dirtyFields: object;
+};
+
+type DirtyValues = {
+  error: {
+    message?: string;
+  };
+  dirtyObject?: object;
+  success?: boolean;
+};
+
+const setBackend = async (payload: Payload) => {
   const { allFields, autoSave = true, backend = {}, dirtyFields } = payload;
 
   try {
-    const dirtyValues = getDirtyValues({ allFields, dirtyFields });
+    const dirtyValues = getDirtyValues({
+      allFields,
+      dirtyFields,
+    }) as DirtyValues;
 
     if (dirtyValues.success && autoSave) {
       const { ref: docRef } = backend;
@@ -32,6 +52,7 @@ const setBackend = async (payload) => {
         success: true,
       };
     }
+
     if (!dirtyValues.success) {
       throw new Error(
         dirtyValues.error.message ||
