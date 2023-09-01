@@ -1,15 +1,14 @@
 import getDirtyValues from './get-dirty-values';
-import setDocumentByRef from '../../../lib/actions/set-document-by-ref';
+// import setDocumentByRef from '../../../lib/actions/set-document-by-ref';
 //  utilities
 import getIsObjectValid from '../../../utilities/objects/get-is-object-valid';
 
 type Payload = {
   allFields: object;
   autoSave?: boolean;
-  backend?: {
-    ref?: object;
-  };
+  doc: object;
   dirtyFields: object;
+  set: Function;
 };
 
 type DirtyValues = {
@@ -21,7 +20,13 @@ type DirtyValues = {
 };
 
 const setBackend = async (payload: Payload) => {
-  const { allFields, autoSave = true, backend = {}, dirtyFields } = payload;
+  const {
+    allFields,
+    autoSave = true,
+    doc = {},
+    dirtyFields,
+    set = () => {},
+  } = payload;
 
   try {
     const dirtyValues = getDirtyValues({
@@ -30,19 +35,15 @@ const setBackend = async (payload: Payload) => {
     }) as DirtyValues;
 
     if (dirtyValues.success && autoSave) {
-      const { ref: docRef } = backend;
-      const isValidRef = getIsObjectValid({ object: docRef });
+      const isValidDoc = getIsObjectValid({ object: doc });
 
-      if (!isValidRef) {
+      if (!isValidDoc) {
         throw new Error(
-          'The docRef passed in to updateBackend is not a valid object.',
+          'The doc passed in to updateBackend is not a valid object.',
         );
       }
 
-      const result = await setDocumentByRef({
-        docRef,
-        updates: dirtyValues.dirtyObject,
-      });
+      const result = await set({ doc, updates: dirtyValues.dirtyObject });
 
       if (!result.success) {
         throw new Error('set document by ref failed in update backend');

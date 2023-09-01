@@ -1,4 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, {
+  FC,
+  PropsWithChildren,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { useFieldArray, useForm, useFormState } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 //  hooks
@@ -8,11 +14,60 @@ import utilitySetBackend from './utilities/set-backend';
 import utilitySetValue from './utilities/set-value';
 import getIsObjectValid from '../../utilities/objects/get-is-object-valid';
 
-const DocumentDataWithControls = (props) => {
+type ReactHookForm = {
+  reactHookForm: {
+    clearErrors: any;
+    control: any;
+    errors: object;
+    getValues: Function;
+    isDirty: boolean;
+    isValid: boolean;
+    register: Function;
+    reset: Function;
+    setValue: Function;
+    fields: { touched: object };
+    trigger: any;
+    useFieldArray: Function;
+    watch: object;
+  };
+};
+
+type Props = {
+  controls: {
+    auto: {
+      save?: boolean;
+    };
+    doc: {
+      backend: object;
+      data: object;
+    };
+    functions: {
+      setBackend?: Function;
+    };
+    schema: {
+      cast: Function;
+    };
+  };
+  wrapped: {
+    component: FC<PropsWithChildren<ReactHookForm>>;
+    injections: object;
+  };
+};
+
+type Data = object;
+
+type HandleSetValuePayload = {
+  target?: string;
+  value: any;
+  shouldDirty?: boolean;
+  shouldValidate?: boolean;
+};
+
+const DocumentDataWithControls = (props: Props) => {
   const { controls, wrapped } = props;
-  const { injections: wrappedInjections, component: WrappedComponent } =
+  const { component: WrappedComponent, injections: wrappedInjections } =
     wrapped;
-  const { doc, schema, settings } = controls;
+  const { doc, functions, schema } = controls;
   const [mounted, setMounted] = useState(false);
   const resolver = yupResolver(schema);
   const defaultValues = useMemo(() => schema.cast(doc.data), [doc.data]);
@@ -30,20 +85,8 @@ const DocumentDataWithControls = (props) => {
   });
 
   const {
-    // formState: {
-    //   dirtyFields,
-    //   errors: formStateErrors,
-    //   isDirty,
-    //   isSubmitted,
-    //   isSubmitSuccessful,
-    //   isValid,
-    //   isValidating,
-    //   submitCount,
-    //   touchedFields,
-    // },
     clearErrors,
     getValues,
-    // formState: { dirtyFields, errors, isDirty, isValid, touchedFields },
     reset,
     trigger,
     control,
@@ -56,22 +99,25 @@ const DocumentDataWithControls = (props) => {
   );
 
   // eslint-disable-next-line no-console
-  const onSubmit = (data) => console.error(data);
+  const onSubmit = (data: Data) => console.error(data);
 
   const handleSetBackend = () => {
     const isObjectValid = getIsObjectValid({ object: dirtyFields });
 
     if (isObjectValid) {
-      utilitySetBackend({
-        allFields: watch(),
-        autoSave: controls.auto.save || true,
-        backend: doc.backend,
-        dirtyFields,
-      });
+      if (typeof functions.setBackend === 'function') {
+        utilitySetBackend({
+          allFields: watch(),
+          autoSave: controls.auto.save || true,
+          doc,
+          dirtyFields,
+          set: functions.setBackend,
+        });
+      }
     }
   };
 
-  const handleSetValue = (payload) => {
+  const handleSetValue = (payload: HandleSetValuePayload) => {
     const {
       target = '',
       value,
