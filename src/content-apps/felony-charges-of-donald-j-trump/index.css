@@ -1,0 +1,13 @@
+:root {
+  --grand-old-party-red-color: #e81b23;
+
+  --united-states-president-blue-color: #0f1633;
+
+  --united-states-president-red-color: #de0029;
+}
+
+.grid-container {
+  background: var(--united-states-president-blue-color);
+  color: white;
+  padding-bottom: 1em;
+}

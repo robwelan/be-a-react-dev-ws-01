@@ -6,6 +6,7 @@ import PageCookies from '../../pages/legal/cookies';
 import PageGameRockPaperScissors from '../../pages/games/rock-paper-scissors';
 import PageGameRockPaperScissorsLizardSpock from '../../pages/games/rock-paper-scissors-lizard-spock';
 import PageHome from '../../pages/index';
+import PageAppFelonyChargesDJT from '../../pages/apps/felony-charges-of-donald-j-trump';
 import PageAppJAT from '../../pages/apps/job-application-tracking';
 import PageAppToDo from '../../pages/apps/to-do';
 import PagePrivacy from '../../pages/legal/privacy';
@@ -20,6 +21,7 @@ import {
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK,
   PUBLIC_ROUTE_PAGE_HOME,
+  PUBLIC_ROUTE_APPS_FELONY_CHARGES_DJT,
   PUBLIC_ROUTE_PAGE_APPS_JOB_HUNTING_JAT,
   PUBLIC_ROUTE_PAGE_APPS_TO_DO,
   PUBLIC_ROUTE_PAGE_PRIVACY,
@@ -42,6 +44,7 @@ const Routes = ({ element, location }) => {
         path={PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK}
       />
       {/* apps */}
+      <PageAppFelonyChargesDJT path={PUBLIC_ROUTE_APPS_FELONY_CHARGES_DJT} />
       <PageAppJAT path={PUBLIC_ROUTE_PAGE_APPS_JOB_HUNTING_JAT} />
       <PageAppToDo path={PUBLIC_ROUTE_PAGE_APPS_TO_DO} />
       {/* other */}

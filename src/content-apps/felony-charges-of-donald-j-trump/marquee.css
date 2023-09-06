@@ -1,0 +1,52 @@
+.marquee-wrapper {
+  overflow: hidden;
+  height: 60vh;
+  margin-top: -1em;
+}
+
+.marquee-block {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.marquee-inner {
+  display: block;
+  position: absolute;
+}
+
+.marquee-inner.to-top {
+  animation: marqueeTop 25s linear infinite;
+  padding-top: 110%;
+}
+
+.marquee-inner.to-bottom {
+  animation: marqueeBottom 25s linear infinite;
+  padding-bottom: 110%;
+}
+
+.marquee-item {
+  width: 100%;
+  display: block;
+  padding: 1em;
+  transition: all 0.2s ease-out;
+}
+
+@keyframes marqueeTop {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+@keyframes marqueeBottom {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
