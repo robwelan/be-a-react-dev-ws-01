@@ -61,6 +61,7 @@
     "prismjs": "^1.29.0",
     "random": "^4.1.0",
     "react": "^18.1.0",
+    "react-container-dimensions": "^1.4.1",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
