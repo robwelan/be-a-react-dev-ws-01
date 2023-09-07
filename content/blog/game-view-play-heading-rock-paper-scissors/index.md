@@ -33,7 +33,7 @@ Let’s dive in to the code:
 
 ### view/play-heading.tsx file
 
-```language-typescript
+```typescript
 import React, { useEffect, useState } from 'react';
 //  chakra-ui
 import { Box, Heading, useColorModeValue } from '@chakra-ui/react';

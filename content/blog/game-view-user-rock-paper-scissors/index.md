@@ -38,7 +38,7 @@ The choices file describes how the the rock paper scissors game works.
 
 ## state/choices.ts
 
-```language-typescript
+```typescript
 const choicePaper = 'paper';
 const choiceRock = 'rock';
 const choiceScissors = 'scissors';
@@ -68,7 +68,7 @@ The cool thing we have within this file are the basic rules of rock paper scisso
 
 ## actions/set-decision-user.ts
 
-```language-typescript
+```typescript
 //  local utilities
 import { SetState, State } from '../state/interfaces';
 
@@ -98,7 +98,7 @@ It is nice and simples.
 
 ## view/user.tsx
 
-```language-typescript
+```typescript
 import React from 'react';
 //  chakra-ui
 import {

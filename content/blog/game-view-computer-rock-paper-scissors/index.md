@@ -32,7 +32,7 @@ Consider the following code:
 
 ## view/computer.tsx
 
-```language-typescript
+```typescript
 import React from 'react';
 //  chakra-ui
 import { Box, Heading, Text, VStack } from '@chakra-ui/react';

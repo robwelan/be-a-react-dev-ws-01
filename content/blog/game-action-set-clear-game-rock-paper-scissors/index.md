@@ -34,7 +34,7 @@ Let’s get right into it.
 
 ## actions/set-clear-game.ts
 
-```language-typescript
+```typescript
 import defaultState from '../state/default-state';
 //  interfaces
 import { SetState, State } from '../state/interfaces';

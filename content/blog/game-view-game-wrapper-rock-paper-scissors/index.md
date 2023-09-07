@@ -29,7 +29,7 @@ The game wrapper is a simple view component used to provide an encasement around
 
 ## view/wrapper.tsx file
 
-```language-typescript
+```typescript
 import React, { ReactElement } from 'react';
 //  chakra-ui
 import { Box } from '@chakra-ui/react';

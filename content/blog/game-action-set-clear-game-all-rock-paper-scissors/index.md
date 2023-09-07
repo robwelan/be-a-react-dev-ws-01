@@ -34,7 +34,7 @@ Let’s get going.
 
 ## actions/set-clear-all.ts
 
-```language-typescript
+```typescript
 import defaultState from '../state/default-state';
 //  interfaces
 import { SetState } from '../state/interfaces';

@@ -32,7 +32,7 @@ We first looked at setDecisionUser <a href="https://beareact.dev/game-view-user-
 
 ## actions/set-decision-user.ts
 
-```language-typescript
+```typescript
 //  local utilities
 import { SetState, State } from '../state/interfaces';
 

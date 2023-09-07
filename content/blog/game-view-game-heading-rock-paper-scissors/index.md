@@ -31,7 +31,7 @@ This page uses a component, so I'm adding that here too so that you know what is
 
 ### constants/colors.ts file
 
-```language-typescript
+```typescript
 const colors = {
   brand: {
     yellow: '#FFDE59',
@@ -43,7 +43,7 @@ export default colors;
 
 ### components/standard-divider.tsx file
 
-```language-typescript
+```typescript
 import React from 'react';
 //  chakra-ui
 import { Divider } from '@chakra-ui/react';
@@ -76,7 +76,7 @@ export default StandardDivider;
 
 ### view/game-heading.tsx file
 
-```language-typescript
+```typescript
 import React from 'react';
 //  chakra-ui
 import { Heading } from '@chakra-ui/react';

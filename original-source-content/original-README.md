@@ -18,7 +18,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the blog starter.
 
-    ```shell
+    ```powershell
     # create a new Gatsby site using the blog starter
     gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
     ```
@@ -27,7 +27,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Navigate into your new site’s directory and start it up.
 
-    ```shell
+    ```powershell
     cd my-blog-starter/
     gatsby develop
     ```
