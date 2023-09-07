@@ -16,6 +16,10 @@
   position: absolute;
 }
 
+.marquee-halfer {
+  height: 50%;
+}
+
 .marquee-inner.to-top {
   animation: marqueeTop 25s linear infinite;
   padding-top: 110%;
