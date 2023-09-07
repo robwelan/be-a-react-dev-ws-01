@@ -1,3 +1,9 @@
+export type Case = {
+  case: string;
+  headline: string;
+  id: number;
+};
+
 export const cases = [
   {
     case: 'SUPREME COURT OF THE STATE OF NEW YORK COUNTY OF NEW YORK THE PEOPLE OF THE STATE OF NEW YORK - against DONALD J. TRUMP, Defendant',

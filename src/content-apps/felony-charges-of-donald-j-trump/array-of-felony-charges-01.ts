@@ -7,7 +7,13 @@
     }
 */
 
-export const arrayOfFelonyCharges = [
+export type Felony = {
+  caseId: number;
+  count: number;
+  what: string;
+};
+
+export const felonies = [
   {
     caseId: 1,
     count: 1,
