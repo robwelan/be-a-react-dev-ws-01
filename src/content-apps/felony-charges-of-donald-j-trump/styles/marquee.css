@@ -1,12 +1,16 @@
-.marquee-wrapper {
+.marquee-wrapper .marquee-block .marquee-inner {
   overflow: hidden;
-  height: 60vh;
+}
+
+.marquee-wrapper {
+  /* overflow: hidden; */
+  /* height: 60vh; */
   margin-top: -1em;
 }
 
 .marquee-block {
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-sizing: border-box;
   position: relative;
 }
