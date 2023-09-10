@@ -9,7 +9,6 @@
 .grid-container {
   background: var(--united-states-president-blue-color);
   color: white;
-  height: 60vh;
+  height: 70vh;
   overflow: hidden;
-  padding-bottom: 1em;
 }

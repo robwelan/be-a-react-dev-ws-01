@@ -21,8 +21,8 @@ import { felonyHeight } from '../../state';
 
 const arrayOfFelonyCharges = [...arrayOfFelonies01];
 
-const ColumnRight = () => {
-  const [mounted, setMounted] = useState(false);
+const ColumnRight = (props) => {
+  const { children } = props;
   const valueFelonyHeight = useRecoilValue(felonyHeight);
   const setFelonyHeight = useSetRecoilState(felonyHeight);
   const combinedFelonies = getCombinedArrays({
@@ -30,21 +30,10 @@ const ColumnRight = () => {
     items: arrayOfFelonyCharges,
   });
 
-  //  mounted effect
-  useEffect(() => {
-    setMounted(true);
-
-    return () => {
-      setMounted(false);
-    };
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <>
       <Box className="container">
-        <Marquee />
+        <Marquee>{children}</Marquee>
       </Box>
     </>
   );

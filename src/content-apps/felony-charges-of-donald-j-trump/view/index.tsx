@@ -22,25 +22,17 @@ import '../styles/marquee.css';
 //  local components
 import ColumnLeft from './column-left';
 import ColumnRight from './column-right';
+import SizedOutput from '../charges/sized-charges';
 
 const arrayOfFelonyCharges = [...arrayOfFelonies01];
 
-const ViewIndex = () => {
-  const [mounted, setMounted] = useState(false);
+const ViewIndex = (props) => {
+  const { children } = props;
   const [spanHeight, setSpanHeight] = useState(0);
   const combinedFelonies = getCombinedArrays({
     headings: arrayOfCases,
     items: arrayOfFelonyCharges,
   });
-
-  //  mounted effect
-  useEffect(() => {
-    setMounted(true);
-
-    return () => {
-      setMounted(false);
-    };
-  }, []);
 
   return (
     <>
@@ -54,7 +46,7 @@ const ViewIndex = () => {
           <ColumnLeft />
         </Box>
         <Box flex={1}>
-          <ColumnRight />
+          <ColumnRight>{children}</ColumnRight>
         </Box>
       </Flex>
     </>
