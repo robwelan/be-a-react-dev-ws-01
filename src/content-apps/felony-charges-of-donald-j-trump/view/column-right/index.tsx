@@ -8,7 +8,6 @@ import {
   ListItem,
   SimpleGrid,
 } from '@chakra-ui/react';
-import ContainerDimensions from 'react-container-dimensions';
 //  recoil
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 //  cases
@@ -16,7 +15,7 @@ import { cases as arrayOfCases } from '../../constants/array-of-cases';
 import { felonies as arrayOfFelonies01 } from '../../constants/array-of-felonies-01';
 import getCombinedArrays from '../../utilities/get-combined-array';
 //  local components
-import Halfer from './halfer';
+import Marquee from './marquee';
 //  state
 import { felonyHeight } from '../../state';
 
@@ -44,13 +43,8 @@ const ColumnRight = () => {
 
   return (
     <>
-      <Box className="marquee-wrapper">
-        <Box
-          className="marquee-block"
-          style={{ height: `${valueFelonyHeight}px` }}
-        >
-          <Box className="marquee-inner to-top">{mounted && <Halfer />}</Box>
-        </Box>
+      <Box className="container">
+        <Marquee />
       </Box>
     </>
   );
