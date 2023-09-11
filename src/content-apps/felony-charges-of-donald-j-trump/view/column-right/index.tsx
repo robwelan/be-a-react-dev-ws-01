@@ -1,37 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 //  chakra-ui
-import {
-  Box,
-  Heading,
-  Image,
-  List,
-  ListItem,
-  SimpleGrid,
-} from '@chakra-ui/react';
+import { Box, Heading, Divider } from '@chakra-ui/react';
 //  recoil
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-//  cases
-import { cases as arrayOfCases } from '../../constants/array-of-cases';
-import { felonies as arrayOfFelonies01 } from '../../constants/array-of-felonies-01';
-import getCombinedArrays from '../../utilities/get-combined-array';
+import { useSetRecoilState } from 'recoil';
 //  local components
 import Marquee from './marquee';
 //  state
 import { felonyHeight } from '../../state';
 
-const arrayOfFelonyCharges = [...arrayOfFelonies01];
-
 const ColumnRight = (props) => {
   const { children } = props;
-  const valueFelonyHeight = useRecoilValue(felonyHeight);
   const setFelonyHeight = useSetRecoilState(felonyHeight);
-  const combinedFelonies = getCombinedArrays({
-    headings: arrayOfCases,
-    items: arrayOfFelonyCharges,
-  });
 
   return (
     <>
+      <Box className="container-heading">
+        <Heading as="h1" display="block">
+          Trump’s 91 Felony Charges
+        </Heading>
+        <Divider />
+      </Box>
       <Box className="container">
         <Marquee>{children}</Marquee>
       </Box>

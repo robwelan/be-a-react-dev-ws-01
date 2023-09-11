@@ -1,5 +1,4 @@
 import { Case } from '../constants/array-of-cases';
-import { Felony } from './array-of-felonies-01';
 
 type Payload = {
   headings: Array<Case>;
