@@ -34,17 +34,17 @@
   padding-top: 100%;
   position: relative;
   box-sizing: border-box;
-  animation: marquee 30s linear infinite;
+  animation: marquee 300s linear infinite;
 }
 
 .marquee h2 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   padding-bottom: 0.5em;
   padding-right: 1em;
 }
 
 .marquee h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding-bottom: 1em;
   padding-right: 1em;
 }

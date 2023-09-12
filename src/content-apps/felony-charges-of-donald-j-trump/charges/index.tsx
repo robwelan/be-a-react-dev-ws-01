@@ -17,9 +17,21 @@ const Charges = () => (
             <Fragment key={index}>
               <Heading as="h2">{caseAgainst}</Heading>
               <Heading as="h3">{headline}</Heading>
-              {list.map(({ count = 0, what = '' }, index) => (
-                <Text key={index}>{`${count}. ${what}`}</Text>
-              ))}
+              {list.map((item, index) => {
+                const { count = 0, show = {}, what = '' } = item;
+                const { count: showCount = true } = show;
+
+                return (
+                  <>
+                    {showCount && (
+                      <Text key={index}>{`${count}. ${what}`}</Text>
+                    )}
+                    {!showCount && (
+                      <Text key={index} align="center">{`${what}`}</Text>
+                    )}
+                  </>
+                );
+              })}
             </Fragment>
           );
         }
