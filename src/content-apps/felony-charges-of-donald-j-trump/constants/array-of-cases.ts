@@ -1,16 +1,18 @@
-export type Case = {
-  case: string;
-  headline: string;
-  id: number;
-};
-
 /*
     {
       case: '',
       headline: '',
       id: 1,
+      total: 0,
     }
 */
+
+export const totals = {
+  felonyTotal01: 34, // business records - stormy daniels
+  felonyTotal02: 13, // georgia
+  felonyTotal03: 4, // efforts to hold on to power following his loss in the 2020 election, including his actions leading to the Jan. 6, 2021, insurrection at the Capitol
+  felonyTotal04: 37, // secret docs
+};
 
 export const cases = [
   {
@@ -20,9 +22,14 @@ export const cases = [
     id: 1,
   },
   {
-    case: 'THE STATE OF GEORGIA V. DONALD JOHN TRUMP',
-    headline: 'Counts 1,5, 9, 11, 13, 15, 17, 19, 2729, 38-39',
+    case: 'THE STATE OF GEORGIA v. DONALD JOHN TRUMP, Defendant.',
+    headline: 'Counts 1, 5, 9, 11, 13, 15, 17, 19, 27-29, 38-39',
     id: 2,
+  },
+  {
+    case: 'UNITED STATES OF AMERICA v. DONALD J . TRUMP, Defendant.',
+    headline: `The Grand Jury charges that, at all times material to this Indictment, on or about the dates and at the approximate times stated below:`,
+    id: 3,
   },
 ];
 
@@ -31,5 +38,6 @@ export const cases = [
     case: '',
     headline: '',
     id: 1,
+    total: 0,
   },
 */

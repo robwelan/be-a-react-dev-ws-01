@@ -1,0 +1,33 @@
+Case 9:23-cr-80101-AMC Document 85 Entered on FLSD Docket 07/27/2023 Page 6 of 60
+
+b. Information was classified as SECRET if the unauthorized disclosure of that
+information reasonably could be expected to cause serious damage to the
+national security that the original classification authority was able to
+identify or describe.
+
+C. Information was classified as CONFIDENTIAL if the unauthorized
+disclosure of that information reasonably could be expected to cause
+damage to the national security that the original classification authority was
+able to identify or describe.
+
+15. The classification marking “NOFORN” stood for “Not Releasable to Foreign
+Nationals” and denoted that dissemination of that information was limited to United States
+persons.
+
+16. Classified information related to intelligence sources, methods, and analytical
+processes was designated as Sensitive Compartmented Information (“SCI”). SCI was to be
+processed, stored, used, or discussed in an accredited Sensitive Compartmented Information
+Facility (“SCIF”), and only individuals with the appropriate security clearance and additional SCI
+permissions were authorized to have access to such national security information.
+
+17. When the vulnerability of, or threat to, specific classified information was
+exceptional, and the normal criteria for determining eligibility for access to classified information
+were insufficient to protect the information from unauthorized disclosure, the United States could
+establish Special Access Programs (“SAPs”) to further protect the classified information. The
+number of these programs was to be kept to an absolute minimum and limited to programs in
+which the number of persons who ordinarily would have access would be reasonably small and
+commensurate with the objective of providing enhanced protection for the information involved.
+Only individuals with the appropriate security clearance and additional SAP permissions were
+authorized to have access to such national security information, which was subject to enhanced
+
+handling and storage requirements.

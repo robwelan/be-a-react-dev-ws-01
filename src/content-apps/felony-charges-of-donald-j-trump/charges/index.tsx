@@ -1,16 +1,9 @@
 import React, { Fragment } from 'react';
 //  chakra-ui
 import { Heading, Text } from '@chakra-ui/react';
-//  cases
-import { cases as arrayOfCases } from '../constants/array-of-cases';
-import { felonies as arrayOfFelonies01 } from '../constants/array-of-felonies-01';
-import { felonies as arrayOfFelonies02 } from '../constants/array-of-felonies-02';
 import getCombinedArrays from '../utilities/get-combined-array';
 
-const combinedFelonies = getCombinedArrays({
-  headings: arrayOfCases,
-  items: [...arrayOfFelonies01, ...arrayOfFelonies02],
-});
+const combinedFelonies = getCombinedArrays();
 
 const Charges = () => (
   <>

@@ -3,19 +3,20 @@
 */
 
 .container-heading {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
   padding-right: 1em;
 }
 
 .container-heading h1 {
   font-size: 1.6em;
   margin-bottom: 0.2em;
-  margin-top: 0.2em;
 }
 
 .container-heading hr {
   border-bottom: 0px solid;
   border-top: 3px solid var(--united-states-president-red-color);
-  margin-bottom: 0.5em;
+
 }
 
 .container {

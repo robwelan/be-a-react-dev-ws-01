@@ -16,7 +16,7 @@ const ColumnRight = (props) => {
     <>
       <Box className="container-heading">
         <Heading as="h1" display="block">
-          Trump’s 91 Felony Charges
+          Trump’s 88 Felony Charges
         </Heading>
         <Divider />
       </Box>
