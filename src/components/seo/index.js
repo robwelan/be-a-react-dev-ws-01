@@ -14,6 +14,7 @@ const Seo = (props) => {
   const {
     children,
     description,
+    keywords,
     image,
     location,
     title: propsTitle,
@@ -38,6 +39,7 @@ const Seo = (props) => {
   const title = getHeadTitle({ siteTitle, propsTitle });
   const url = site.siteMetadata?.siteUrl;
   const metaDescription = description || site.siteMetadata.description;
+  const metaKeywords = keywords || '';
   const twitterTags =
     twitter_tags && twitter_tags.length > 0 ? twitter_tags.join(', ') : '';
   const imageSrc = `${url}${image?.src}`;
@@ -46,6 +48,7 @@ const Seo = (props) => {
     <>
       <title>{title}</title>
       <meta name="description" content={metaDescription} />
+      {/* {metaKeywords !== '' && <meta name="keywords" content={metaKeywords} />} */}
       <meta property="og:title" content={propsTitle || 'no props title'} />
       <meta property="og:description" content={metaDescription} />
       {image && image.src !== '' && (
