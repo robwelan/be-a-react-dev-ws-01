@@ -22,7 +22,10 @@ import StyledComponent from './styled-component';
 //  hooks
 import useDeviceSize from '../hooks/use-device-size';
 //  security
-import { PUBLIC_ROUTE_PAGE_TIKTOKBIO } from '../security/constants/routes-public';
+import {
+  PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
+  PUBLIC_ROUTE_PAGE_TIKTOKBIO,
+} from '../security/constants/routes-public';
 //  state
 import { fontSizeState } from '../state';
 //  utilities
@@ -58,13 +61,21 @@ const ContentLayout = (props: Props) => {
     search: '/',
     replaceWith: '',
   });
+  const cleanRouteFelonyChargesDJT = replaceAll({
+    string: PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
+    search: '/',
+    replaceWith: '',
+  });
   const cleanRouteTikTokLinks = replaceAll({
     string: PUBLIC_ROUTE_PAGE_TIKTOKBIO,
     search: '/',
     replaceWith: '',
   });
+  const isRouteFelonyChargesDJT = cleanPath === cleanRouteFelonyChargesDJT;
   const isRouteTikTokLinks = cleanPath === cleanRouteTikTokLinks;
   const fontSize = useRecoilValue(fontSizeState);
+  const isLayoutRequired = !isRouteFelonyChargesDJT && !isRouteTikTokLinks;
+
   //  mounted effect
   useEffect(() => {
     setIsMounted(true);
@@ -110,8 +121,8 @@ const ContentLayout = (props: Props) => {
   return (
     <>
       <ContentListeners />
-      {loaded && !isRouteTikTokLinks && <DependentScripts />}
-      {!loaded && !isRouteTikTokLinks && (
+      {loaded && isLayoutRequired && <DependentScripts />}
+      {!loaded && isLayoutRequired && (
         <IndependentScripts bgColorToken={bgColorToken} />
       )}
       <StyledComponent
@@ -120,7 +131,7 @@ const ContentLayout = (props: Props) => {
       >
         <MainLayout
           configuration={configuration}
-          isRouteTikTokLinks={isRouteTikTokLinks}
+          isLayoutRequired={isLayoutRequired}
         >
           {children}
         </MainLayout>

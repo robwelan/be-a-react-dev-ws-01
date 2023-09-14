@@ -1,10 +1,10 @@
 import React from 'react';
 //  components
-import Seo from '../../components/seo';
+import Seo from '../components/seo';
 //  content
-import ContentJAT from '../../content-apps/felony-charges-of-donald-j-trump';
+import ContentJAT from '../content-apps/felony-charges-of-donald-j-trump';
 //  styles
-import '../../content-apps/felony-charges-of-donald-j-trump/styles/app.css';
+import '../content-apps/felony-charges-of-donald-j-trump/styles/page.css';
 
 const PageJAT = ({ location }) => <ContentJAT location={location} />;
 

@@ -14,32 +14,32 @@ import LayoutFooter from './footer';
 type Props = {
   children: Children;
   configuration: LayoutConfiguration;
-  isRouteTikTokLinks: boolean;
+  isLayoutRequired: boolean;
 };
 
 const MainLayout = (props: Props) => {
-  const { children, configuration, isRouteTikTokLinks } = props;
+  const { children, configuration, isLayoutRequired } = props;
   const { device, disclosure } = configuration;
   const { type } = device;
   const { isMobile } = type;
   const { isOpen, onOpen, onClose } = disclosure;
 
-  if (isRouteTikTokLinks) {
-    return <>{children}</>;
+  if (isLayoutRequired) {
+    return (
+      <>
+        <SideDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+        <Box minH="100vh">
+          <Navigator configuration={configuration} />
+          {isMobile && <SmallContainer>{children}</SmallContainer>}
+          {!isMobile && <MediumContainer>{children}</MediumContainer>}
+        </Box>
+        <LayoutFooter />
+        <ButtonScrollToTop />
+      </>
+    );
   }
 
-  return (
-    <>
-      <SideDrawer isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
-      <Box minH="100vh">
-        <Navigator configuration={configuration} />
-        {isMobile && <SmallContainer>{children}</SmallContainer>}
-        {!isMobile && <MediumContainer>{children}</MediumContainer>}
-      </Box>
-      <LayoutFooter />
-      <ButtonScrollToTop />
-    </>
-  );
+  return <>{children}</>;
 };
 
 export default MainLayout;
