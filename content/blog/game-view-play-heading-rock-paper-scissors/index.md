@@ -29,7 +29,7 @@ This app uses components from <a href="https://chakra-ui.com/" rel="noopener" ta
 
 The game play heading is distinct from the game heading. The game heading is simply a page title. The play heading is feedback to the client about where the client is in the game play cycle. To communicate this, we will use some React hooks to help control the display of information to the client.
 
-Let’s dive in to the code:
+Let’s dive in to the code 🤿:
 
 ### view/play-heading.tsx file
 

@@ -1,7 +1,7 @@
 Title: Welcome to my Ko-fi Page: Exploring React, TypeScript, Gatsby, and Node.js
 
 Introduction:
-Hey there! Welcome to my Ko-fi page dedicated to all things React, TypeScript, Gatsby, and Node.js. I'm thrilled to have you here, and I can't wait to share my knowledge and experiences in these technologies with you. Whether you're a beginner or an experienced developer, this page is designed to cater to everyone's needs. So grab a cup of coffee, sit back, and let's dive into the wonderful world of web development!
+Hey there! Welcome to my Ko-fi page dedicated to all things React, TypeScript, Gatsby, and Node.js. I'm thrilled to have you here, and I can't wait to share my knowledge and experiences in these technologies with you. Whether you're a beginner or an experienced developer, this page is designed to cater to everyone's needs. So grab a cup of coffee, sit back, and let's dive in to the wonderful world of web development!
 
 About Me:
 Hi, I'm [Your Name], and I'm passionate about building web applications using cutting-edge technologies. With several years of experience in the field, I've had the opportunity to work extensively with React, TypeScript, Gatsby, and Node.js. I believe in the power of open-source and love sharing my learnings and insights with the community. On this Ko-fi page, I'll be writing articles, tutorials, and providing code samples to help you master these technologies.

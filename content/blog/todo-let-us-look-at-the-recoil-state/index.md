@@ -6,7 +6,7 @@ categories:
 meta_keywords:
   - todo app tutorial, typescript, react, recoil, coding tutorial
 meta_description: >-
-  Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we’ll focus on the necessary state files of your Todo app in the context of this powerful tech stack: GatsbyJS, TypeScript, ReactJS, Recoil, and Chakra-UI. Let’s dive in! 🚀
+  Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we’ll focus on the necessary state files of your Todo app in the context of this powerful tech stack: GatsbyJS, TypeScript, ReactJS, Recoil, and Chakra-UI. Let’s dive in! 🤿
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-

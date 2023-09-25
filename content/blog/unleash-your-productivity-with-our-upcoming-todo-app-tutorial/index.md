@@ -40,7 +40,7 @@ What’s life without a sprinkle of uniqueness? Our Todo App tutorial utilizes t
 
 Get ready to embark on a journey toward unparalleled efficiency. Our Todo App tutorial equips you with the skills to construct your very own task management system from scratch. Stay tuned as we guide you through every step, from setting up your coding environment to deploying the final masterpiece.
 
-But why wait? You can already dive into the finished product right here: <a href="https://beareact.dev/apps/to-do/" target="_blank">Todo App</a>. Witness firsthand how the synergy of React, TypeScript, Recoil, and uuid produces a seamless and robust task management solution.
+But why wait? You can already dive in 🤿 to the finished product right here: <a href="https://beareact.dev/apps/to-do/" target="_blank">Todo App</a>. Witness firsthand how the synergy of React, TypeScript, Recoil, and uuid produces a seamless and robust task management solution.
 
 Are you excited to unleash your productivity potential? Keep an eye out for the upcoming tutorial, and remember to share your excitement using the hashtags #ElevateProductivity #ReactTodoMagic. Get ready to conquer your tasks like a pro! 📝🚀
 

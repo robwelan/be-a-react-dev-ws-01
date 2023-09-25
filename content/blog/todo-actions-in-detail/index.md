@@ -6,7 +6,7 @@ categories:
 meta_keywords:
   - todo app tutorial, typescript, react, recoil, coding tutorial
 meta_description: >-
-  Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we’ll introduce the concept of actions. Our powerful tech stack: #GatsbyJS, #TypeScript, #ReactJS, #Recoil, and #ChakraUI. Let’s dive in! 🚀
+  Building a Todo application is a logical way to delve into the world of modern web development. In this guide, we’ll introduce the concept of actions. Our powerful tech stack: #GatsbyJS, #TypeScript, #ReactJS, #Recoil, and #ChakraUI. Let’s dive in! 🤿
 settings_include_in_fti: true
 settings_featured_image:
   alt: >-
@@ -26,7 +26,7 @@ Building a Todo application is a logical way to delve into the world of modern w
 
 <a href="https://beareact.dev/apps/to-do/" target="_blank">Click here to find out what you will be building.</a>
 
-Now, Let’s dive in! 🚀
+Now, Let’s dive in! 🤿
 
 ## A Quick Revision
 
