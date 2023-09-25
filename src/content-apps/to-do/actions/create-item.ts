@@ -8,7 +8,7 @@ type Payload = {
   setTodoList: Function;
 };
 
-const addItem = (payload: Payload) => {
+const createItem = (payload: Payload) => {
   const { inputValue, setInputValue, setTodoList } = payload;
 
   setTodoList((oldTodoList: TodoList) => [
@@ -23,4 +23,4 @@ const addItem = (payload: Payload) => {
   setInputValue('');
 };
 
-export default addItem;
+export default createItem;

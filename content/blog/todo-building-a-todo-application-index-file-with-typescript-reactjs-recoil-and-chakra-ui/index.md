@@ -84,7 +84,7 @@ export default ContentRecoilToDo;
 
 ## What Now?
 
-Ah, you will have to wait for the next exciting installment dear coder.
+Ah, you’ll have to wait for the next exciting installment dear coder.
 
 Thank you for reading thus far.
 

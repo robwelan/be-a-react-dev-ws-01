@@ -4,7 +4,7 @@ import { Button, HStack } from '@chakra-ui/react';
 //  recoil
 import { useSetRecoilState } from 'recoil';
 //  actions
-import addItem from '../actions/add-item';
+import createItem from '../actions/create-item';
 //  local components
 import BasicInput from './basic-input';
 //  state
@@ -30,9 +30,9 @@ const TodoItemCreator = () => {
   return (
     <HStack width="100%">
       <Button
-        onClick={() => addItem({ inputValue, setInputValue, setTodoList })}
+        onClick={() => createItem({ inputValue, setInputValue, setTodoList })}
       >
-        Add
+        Create
       </Button>
       <BasicInput
         handleOnChange={(event: EventPayload) => onChange(event)}

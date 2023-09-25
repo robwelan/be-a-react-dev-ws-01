@@ -4,9 +4,9 @@ import { Checkbox, HStack, IconButton } from '@chakra-ui/react';
 //  chakra-ui icons
 import { DeleteIcon } from '@chakra-ui/icons';
 //  actions
-import deleteItem from '../actions/delete-item';
-import editItemText from '../actions/edit-item-text';
-import toggleItemCompletion from '../actions/toggle-item-completion';
+import deleteStateItem from '../actions/delete-state-item';
+import updateItem from '../actions/update-item';
+import updateStateItem from '../actions/update-state-item';
 //  local components
 import BasicInput from './basic-input';
 //  recoil
@@ -30,17 +30,17 @@ const TodoItem = (payload: Payload) => {
   const { item } = payload;
   const [todoList, setTodoList] = useRecoilState(todoListState);
   const index = todoList.findIndex((listItem) => listItem === item);
-
+  
   const onChange = (event: EventPayload) => {
     const { target = {} } = event;
     const { value = '' } = target;
 
-    editItemText({
-      index,
-      item,
-      setTodoList,
-      todoList,
-      value,
+    const updatedItem = updateItem({ item, key: 'text', value });
+
+    updateStateItem({
+      item: updatedItem,
+      key: 'id',
+      setState: setTodoList,
     });
   };
 
@@ -52,23 +52,28 @@ const TodoItem = (payload: Payload) => {
       />
       <Checkbox
         isChecked={item.isComplete}
-        onChange={() =>
-          toggleItemCompletion({
-            index, //
+        onChange={() => {
+          const updatedItem = updateItem({
             item,
-            setTodoList,
-            todoList,
-          })
-        }
+            key: 'isComplete',
+            value: !item.isComplete,
+          });
+
+          updateStateItem({
+            item: updatedItem,
+            key: 'id',
+            setState: setTodoList,
+          });
+        }}
       />
       <IconButton
         aria-label="delete item"
         icon={<DeleteIcon />}
         onClick={() =>
-          deleteItem({
-            todoList, //
-            index,
-            setTodoList,
+          deleteStateItem({
+            key: 'id', //
+            setState: setTodoList,
+            value: item.id,
           })
         }
       />
