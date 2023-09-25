@@ -107,7 +107,7 @@ It has a type definition for Payload and it expects an item (defined as TodoItem
 
 The setState function is actually a Recoil function under the hood, and it works quite a bit like setState from React’s useState hook.
 
-So we use setState to expose the previous state (and we are calling it prevState and typeing it as TodoList). The exposed anonymous function returns an updated array - which is whatever inside the prevState array (the splat of prevState "...prevState"), and the item itself is appended to this returned array.
+So we use setState to expose the previous state (and we are calling it prevState and typeing it as TodoList). The exposed anonymous function returns an updated array - which is whatever is inside the prevState array (the splat of prevState "...prevState"), and then the item itself is appended to this returned array.
 
 ### src/content-apps/to-do/actions/delete-state-item.ts
 
@@ -243,15 +243,15 @@ export default updateStateItem;
 
 **An explanation of update state item**: As usual I like to define what to expect in the Payload using a type definition. The updateStateItem expects an item, a key and a function.
 
-Once we have destructured payload by exposing its contents, we can then define the keyItemValue that we want to match inside the state array.
+Once we have destructured the payload by exposing its contents, we can then define the keyItemValue that we want to match inside the state array.
 
-Next we call setState to expose an anonymous function that has the previous state (prevState) passed into it. The prevState argument is a expected to be a TodoList type.
+Next we call setState to expose an anonymous function that has the previous state (prevState) passed into it. The prevState argument is expected to be a TodoList type.
 
-Next we want to create a newState constant using the map function which is an array property in JavaScript.
+Then we want to create a newState constant using the map function which is an array property in JavaScript.
 
 Within the anonymous function that is exposed by the map function, the items within the array are exposed as prevItem in this case (you can name this argument with nearly any way you like). Again we need to get the key item value (as keyPrevItemValue).
 
-If the keyPrevItemValue is exactly equal to the keyItemValue then we want to return an updated array item. We do this by returning a new object that has the prevItem splatted in as the first item in the object, and then the item passed in is splatted in as the second item in the object.
+If the keyPrevItemValue is exactly equal to the keyItemValue then we want to return an updated array item. We do this by returning a new object that has the prevItem splatted in as the first item in the object, and then the item passed in to the updateStateItem function is splatted in as the second item in the object.
 
 The beauty of this approach is that it does not matter what key value pairs have changed inside the object. JavaScript handles that for us using this method.
 
