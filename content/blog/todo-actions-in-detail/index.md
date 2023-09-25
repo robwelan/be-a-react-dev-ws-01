@@ -41,7 +41,7 @@ In the last article we introduced the concept of performing actions. Specificall
 
 OK so you will need to have the following dependency installed:
 
-uiid (yarn add uiid OR npm i uuid).
+uiid (yarn add uuid OR npm i uuid).
 
 And you may want to read this article: <a href="https://beareact.dev/todo-let-us-look-at-the-recoil-state/" target="_blank">Let Us Look At The Recoil State</a>
 
