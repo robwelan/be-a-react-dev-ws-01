@@ -57,24 +57,21 @@ import { v4 as uuidv4 } from 'uuid';
 import { TodoList } from '../state/interfaces-and-types';
 
 type Payload = {
-  inputValue: string;
-  setInputValue: Function;
   setState: Function;
+  value: string;
 };
 
 const createItem = (payload: Payload) => {
-  const { inputValue, setInputValue, setTodoList } = payload;
+  const { setState, value } = payload;
 
-  setState((oldTodoList: TodoList) => [
-    ...oldTodoList,
+  setState((prevState: TodoList) => [
+    ...prevState,
     {
       id: uuidv4(),
-      text: inputValue,
+      text: value,
       isComplete: false,
     },
   ]);
-
-  setInputValue('');
 };
 
 export default createItem;
@@ -86,15 +83,13 @@ The type definition has been defined previously, and you can review the document
 
 This action will also need its own typed definition of what to expect in the Payload.
 
-The payload requires the input value (the to do), a function to set the input item, and a function to set the to do list itself. We will worry about where the fuck do we get these things later. For the time being, let us worry about the logistics of dealing with our user data.
+The payload requires the input value (the to do), and a function to set the state with the new item.
 
-setToDoList will be used first, and here we are assuming we are using a recoil function. Because this ToDo app is using Recoil under the hood. Similar to the setState hook, Recoil will provide a previous state if we ask for it. I have called it oldToDoList. But call it what you want. If you want.
+Because this ToDo app is using Recoil under the hood setState will work similarly to the React setState hook. Recoil will provide a previous state if we ask for it. I have called it prevState. But call it what you want. If you want.
 
 The function automagically returns an array, the first values being whatever is in the oldToDoList splatted into the first array item space.
 
-Next we create an object defining the new array item we want. The object contains a unique id provided by uuid, the text of the todo item inputValue itself, and whether or not the item is complete. By default no, it is not complete we only just added it.
-
-The next thing we will want to do now that we have added our todo item into our todo database table (our recoil state really) is to clear the input. In order to do this, we use our setInputValue function to an empty string. Nifty.
+Next we create an object defining the new todo item we want. The object contains a unique id provided by uuid, the text of the todo item value itself, and whether or not the item is complete. By default no, it is not complete because we only just added this todo.
 
 ### src/content-apps/to-do/actions/delete-item.ts
 
