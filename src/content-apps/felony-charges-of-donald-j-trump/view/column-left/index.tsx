@@ -11,7 +11,7 @@ const ColumnLeft = () => (
       alignItems: 'flex-end',
     }}
   >
-    <Image src={imageProudTrump} alt="President Donald J Trump" />
+    <Image maxHeight="50%" src={imageProudTrump} alt="President Donald J Trump" />
   </Box>
 );
 
