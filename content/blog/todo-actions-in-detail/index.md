@@ -154,6 +154,59 @@ The idea is: if the id (key) is not equal to the (id) value we want to delete, t
 
 Finally, we return the newState to the setState function which will set the Recoil state.
 
+### src/content-apps/to-do/actions/update-item.ts
+
+```typescript
+//  interfaces and types
+import { TodoItem, TodoList } from '../state/interfaces-and-types';
+
+type Payload = {
+  item: TodoItem;
+  key: string;
+  value: any;
+};
+
+const updateItem = (payload: Payload) => {
+  const { item, key, value } = payload;
+
+  return {
+    ...item,
+    [key]: value,
+  };
+};
+
+export default updateItem;
+```
+
+**An explanation of update item**: Here we have a function that updates an object by key. By defining a key and passing it in, we can modify any item in the object using bracket notation.
+
+NOTE: in javascript, if an object does not contain whatever key is, a new key value pair is created with whatever key is as the key part. What we want to do is carefully use a key that exists in the item (for example, id, isComplete or text).
+
+The update function returns the existing item splatted (...item) into a new object. The key is assigned with a value of value.
+
+For example if key was 'text' and value was 'hello', the item would contain:
+
+```javascript
+{
+  id,
+  isComplete,
+  text: 'hello',
+}
+```
+
+For example if key was 'banana' and value was 'yellow', the item would contain:
+
+```javascript
+{
+  banana: 'yellow',
+  id,
+  isComplete,
+  text,
+}
+```
+
+NOTE: in the examples above I am not giving values for id, isComplete and text in all cases because it does not matter relative to the purpose of the examples.
+
 ## What Now?
 
 Ah, you’ll have to wait for the next exciting installment dear coder.
