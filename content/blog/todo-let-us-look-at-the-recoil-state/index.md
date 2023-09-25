@@ -138,7 +138,7 @@ The ToDoList is a description of the default atom array needed (our database of 
 
 Then we export them to use everywhere else they are needed.
 
-Finally you will need to create an index file to tie all this stuff up in a neat boy. So now create this last file:
+Finally you will need to create an index file to tie all this stuff up in a neat bow 🎀. So now create this last file:
 
 ### src/content-apps/to-do/state/index.ts
 
