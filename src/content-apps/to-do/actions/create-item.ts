@@ -7,11 +7,13 @@ type Payload = {
 const createItem = (payload: Payload) => {
   const { value } = payload;
 
-  return {
+  const todo = {
     id: uuidv4(),
-    text: value,
     isComplete: false,
+    text: value,
   };
+
+  return todo;
 };
 
 export default createItem;
