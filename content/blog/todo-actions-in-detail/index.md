@@ -207,6 +207,54 @@ For example if key was 'banana' and value was 'yellow', the item would contain:
 
 NOTE: in the examples above I am not giving values for id, isComplete and text in all cases because it does not matter relative to the purpose of the examples.
 
+### src/content-apps/to-do/actions/update-state-item.ts
+
+```typescript
+//  interfaces and types
+import { TodoItem, TodoList } from '../state/interfaces-and-types';
+
+type Payload = {
+  item: TodoItem;
+  key: string;
+  setState: Function;
+};
+
+const updateStateItem = (payload: Payload) => {
+  const { item, key, setState } = payload;
+  const keyItemValue = item[key as keyof typeof item];
+
+  setState((prevState: TodoList) => {
+    const newState = prevState.map((prevItem) => {
+      const keyPrevItemValue = prevItem[key as keyof typeof prevItem];
+
+      if (keyItemValue === keyPrevItemValue) {
+        return { ...prevItem, ...item };
+      }
+
+      return prevItem;
+    });
+
+    return newState;
+  });
+};
+
+export default updateStateItem;
+```
+
+**An explanation of update state item**: As usual I like to define what to expect in the Payload using a type definition. The updateStateItem expects an item, a key and a function.
+
+Once we have destructured payload by exposing its contents, we can then define the keyItemValue that we want to match inside the state array.
+
+Next we call setState to expose an anonymous function that has the previous state (prevState) passed into it. The prevState argument is a expected to be a TodoList type.
+
+Next we want to create a newState constant using the map function which is an array property in JavaScript.
+
+Within the anonymous function that is exposed by the map function, the items within the array are exposed as prevItem in this case (you can name this argument with nearly any way you like). Again we need to get the key item value (as keyPrevItemValue).
+
+If the keyPrevItemValue is exactly equal to the keyItemValue then we want to return an updated array item. We do this by returning a new object that has the prevItem splatted in as the first item in the object, and then the item passed in is splatted in as the second item in the object.
+
+The beauty of this approach is that it does not matter what key value pairs have changed inside the object. JavaScript handles that for us using this method.
+
 ## What Now?
 
 Ah, you’ll have to wait for the next exciting installment dear coder.
