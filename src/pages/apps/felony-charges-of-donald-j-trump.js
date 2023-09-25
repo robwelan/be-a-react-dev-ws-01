@@ -3,8 +3,6 @@ import React from 'react';
 import Seo from '../../components/seo';
 //  content
 import ContentJAT from '../../content-apps/felony-charges-of-donald-j-trump';
-//  styles
-import '../../content-apps/felony-charges-of-donald-j-trump/styles/app.css';
 
 const PageJAT = ({ location }) => <ContentJAT location={location} />;
 

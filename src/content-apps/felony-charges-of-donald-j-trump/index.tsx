@@ -11,7 +11,9 @@ import './styles/marquee.css';
 //  view
 import ViewIndex from './view';
 
-const ContentFelonyCountsDJT = () => {
+const ContentFelonyCountsDJT = (props) => {
+  const { location } = props;
+  
   const height = useRecoilValue(felonyHeight);
 
   if (height === 0) {
@@ -24,7 +26,7 @@ const ContentFelonyCountsDJT = () => {
 
   return (
     <>
-      <ViewIndex>
+      <ViewIndex location={location}>
         <Charges />
       </ViewIndex>
     </>
