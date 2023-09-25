@@ -81,6 +81,40 @@ The const todo is an object and it contains a unique id provided by uuid, the te
 
 This function returns the todo object and does nothing else.
 
+### src/content-apps/to-do/actions/create-state-item.ts
+
+```typescript
+//  interfaces and types
+import { TodoItem, TodoList } from '../state/interfaces-and-types';
+
+type Payload = {
+  item: TodoItem;
+  setState: Function;
+};
+
+const createStateItem = (payload: Payload) => {
+  const { item, setState } = payload;
+
+  setState((prevState: TodoList) => [...prevState, item]);
+};
+
+export default createStateItem;
+```
+
+**An explanation of create state item**: This function attempts to be nice and simple.
+
+It has a type definition for Payload and it expects an item (defined as TodoItem) and setState (defined as a function).
+
+The setState function is actually a Recoil function under the hood, and it works quite a bit like setState from React’s useState hook.
+
+So we use setState to expose the previous state (and we are calling it prevState and typeing it as TodoList). The exposed anonymous function returns an updated array - which is whatever inside the prevState array (the splat of prevState "...prevState"), and the item itself is appended to this returned array.
+
+### src/content-apps/to-do/actions/delete-state-item.ts
+
+```typescript
+
+```
+
 
 ## What Now?
 
