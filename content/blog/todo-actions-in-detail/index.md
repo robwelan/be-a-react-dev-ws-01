@@ -53,174 +53,34 @@ These actions will make a lot more sense in the context of the user interface an
 
 ```typescript
 import { v4 as uuidv4 } from 'uuid';
-//  interfaces and types
-import { TodoList } from '../state/interfaces-and-types';
 
 type Payload = {
-  setState: Function;
   value: string;
 };
 
 const createItem = (payload: Payload) => {
-  const { setState, value } = payload;
+  const { value } = payload;
 
-  setState((prevState: TodoList) => [
-    ...prevState,
-    {
-      id: uuidv4(),
-      text: value,
-      isComplete: false,
-    },
-  ]);
+  const todo = {
+    id: uuidv4(),
+    isComplete: false,
+    text: value,
+  };
+
+  return todo;
 };
 
 export default createItem;
 ```
 
-**An explanation of create item**: When adding a ToDo list record or document or item (these definitions are interchangeable), you will need to assign a unique Id. You could use the index of the array - but the problem with this is - what if the array gets sorted and the item is moved? Array indexes are not safe.
+**An explanation of create item**: When adding a ToDo list record or document or item (these definitions are interchangeable but in your own documentation you should choose one to avoid confusion), you will need to assign a unique Id. You could use the index of the array - but the problem with this is - what if the array gets sorted and the item is moved? Array indexes are not safe.
 
-The type definition has been defined previously, and you can review the document referenced above if you want.
+This action expects a value with a string type to be included in the Payload.
 
-This action will also need its own typed definition of what to expect in the Payload.
+The const todo is an object and it contains a unique id provided by uuid, the text of the todo item value itself, and whether or not the item is complete. By default no, it is not complete because we only just added this todo.
 
-The payload requires the input value (the to do), and a function to set the state with the new item.
+This function returns the todo object and does nothing else.
 
-Because this ToDo app is using Recoil under the hood setState will work similarly to the React setState hook. Recoil will provide a previous state if we ask for it. I have called it prevState. But call it what you want. If you want.
-
-The function automagically returns an array, the first values being whatever is in the oldToDoList splatted into the first array item space.
-
-Next we create an object defining the new todo item we want. The object contains a unique id provided by uuid, the text of the todo item value itself, and whether or not the item is complete. By default no, it is not complete because we only just added this todo.
-
-### src/content-apps/to-do/actions/delete-item.ts
-
-```typescript
-import removeItemAtIndex from './remove-item-at-index';
-//  interfaces and types
-import { TodoList } from '../state/interfaces-and-types';
-
-type Payload = {
-  index: string;
-  setTodoList: Function;
-  todoList: TodoList;
-};
-
-const deleteItem = (payload: Payload) => {
-  const { index, setTodoList, todoList } = payload;
-  const newList = removeItemAtIndex(todoList, index);
-
-  setTodoList(newList);
-};
-
-export default deleteItem;
-```
-
-**An explanation of delete item**: So we need to delete shit we have completed or don’t want any more - at some point anyway.
-
-The imports in this action are another function and a type.
-
-Next we define the types expected in the Payload passed into this function. The index is a string because uiid value is a complex string value.
-
-The bits coming from the payload get sent to a child function - removeItemAtIndex and a new list is returned. The child function accepts the todoList and the index. The function removeItemAtIndex is discussed in more detail further below.
-
-Once the newList is arrived at byt he removeItemAtIndex function, the new list is set by the setToDoList function which will replace the recoil state.
-
-### src/content-apps/to-do/actions/edit-item-text.ts
-
-```typescript
-import replaceItemAtIndex from './replace-item-at-index';
-//  interfaces and types
-import { TodoItem, TodoList } from '../state/interfaces-and-types';
-
-type Payload = {
-  index: string;
-  item: TodoItem;
-  setTodoList: Function;
-  todoList: TodoList;
-  value: string;
-};
-
-const editItemText = (payload: Payload) => {
-  const { index, item, setTodoList, todoList, value } = payload;
-  const newList = replaceItemAtIndex(todoList, index, {
-    ...item,
-    text: value,
-  });
-
-  setTodoList(newList);
-};
-
-export default editItemText;
-```
-
-**An explanation of edit item**: Ah so what if we need to change an item record - how do we do this? In a simple to do all we need to do is change one value - and that is the text of the todo.
-
-This action imports a replaceItemAtIndex function and some types. The replaceItemAtIndex function is described further below.
-
-The first thing defined in this function is the expected types in the Payload passed to the editItemText function. The index and the value are the location in the array to make the change at (the id of the record to update), and, the actual value to change. If our app was more complicated the value might be an object maybe rather than a primitive string.
-
-The replaceItemAtIndex accepts three arguments it turns out. The array of todos (todoList), the index (which item in the array to find and change) and the actual updated item as a new object. The item is splatted out into an object, and the text value is included in that object, effectively replacing what was there.
-
-Lastly the setTodoList function accepts the newList and replaces that in Recoil state.
-
-### src/content-apps/to-do/actions/remove-item-at-index.ts
-
-```typescript
-//  interfaces and types
-import { TodoItem } from '../state/interfaces-and-types';
-
-const removeItemAtIndex = (arr: Array<TodoItem>, index: string) => {
-  return [...arr.slice(0, index), ...arr.slice(index + 1)];
-};
-
-export default removeItemAtIndex;
-```
-
-### src/content-apps/to-do/actions/replace-item-at-index.ts
-
-```typescript
-//  interfaces and types
-import { TodoItem } from '../state/interfaces-and-types';
-
-const replaceItemAtIndex = (
-  arr: Array<TodoItem>,
-  index: string,
-  newValue: TodoItem,
-) => [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
-
-export default replaceItemAtIndex;
-```
-
-**An explanation of replaceItemAtIndex function**: This is a helper function. In this case the function accepts multiple arguments and thus each individual argument is type defined, rather than a single Payload object containing expected keys and types. Which style do you prefer?
-
-This function returns an array. The Array is sliced
-
-### src/content-apps/to-do/actions/toggle-item-completion.ts
-
-```typescript
-import replaceItemAtIndex from './replace-item-at-index';
-//  interfaces and types
-import { TodoItem, TodoList } from '../state/interfaces-and-types';
-
-type Payload = {
-  index: string;
-  item: TodoItem;
-  setTodoList: Function;
-  todoList: TodoList;
-};
-
-const toggleItemCompletion = (payload: Payload) => {
-  const { index, item, setTodoList, todoList } = payload;
-
-  const newList = replaceItemAtIndex(todoList, index, {
-    ...item,
-    isComplete: !item.isComplete,
-  });
-
-  setTodoList(newList);
-};
-
-export default toggleItemCompletion;
-```
 
 ## What Now?
 
