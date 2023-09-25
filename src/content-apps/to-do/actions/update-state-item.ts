@@ -9,13 +9,13 @@ type Payload = {
 
 const updateStateItem = (payload: Payload) => {
   const { item, key, setState } = payload;
+  const keyItemValue = item[key as keyof typeof item];
 
   setState((prevState: TodoList) => {
     const newState = prevState.map((prevItem) => {
       const keyPrevItemValue = prevItem[key as keyof typeof prevItem];
-      const keyItemValue = item[key as keyof typeof item];
 
-      if (keyPrevItemValue === keyItemValue) {
+      if (keyItemValue === keyPrevItemValue) {
         return { ...prevItem, ...item };
       }
 
