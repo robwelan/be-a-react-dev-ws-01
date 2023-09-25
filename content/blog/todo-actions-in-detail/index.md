@@ -112,9 +112,47 @@ So we use setState to expose the previous state (and we are calling it prevState
 ### src/content-apps/to-do/actions/delete-state-item.ts
 
 ```typescript
+//  interfaces and types
+import { TodoList } from '../state/interfaces-and-types';
 
+type Payload = {
+  key: string;
+  setState: Function;
+  value: string;
+};
+
+const deleteStateItem = (payload: Payload) => {
+  const { key, setState, value } = payload;
+
+  setState((prevState: TodoList) => {
+    const newState = prevState.filter((prevItem) => {
+      const keyPrevItemValue = prevItem[key as keyof typeof prevItem];
+
+      return keyPrevItemValue !== value;
+    });
+
+    return newState;
+  });
+};
+
+export default deleteStateItem;
 ```
 
+**An explanation of delete state item**: We need to be able to delete a todo from the application state. This function serves that purpose.
+
+As usual we define what to expect in the payload. In this case we expect a key as as string, a function setState and a value, also a string.
+
+We can use setState to expose the prevState (which is a TodoList type).
+
+Within the anonymous function which has been exposed within setState, we define a const of newState which we want to be different to prevState (the argument magically delivered to the anonymous function).
+
+The const newState is a filtered state - meaning we want to return a state that matches conditions.
+
+Next, within the anonymous filter function which has been exposed, we define the key item value which we are looking for to delete. Each prevItem has a key value. In this case the key should have a value of 'id' which will have to be set in the feature that calls this function. But, this function has been designed to look for whatever is passed in and pass or fail based on its equality to value.
+
+The idea is: if the id (key) is not equal to the (id) value we want to delete, then return the item to the newState. Otherwise do not return it, which effectively eliminates the item with the targeted id from the newState.
+
+Finally, we return the newState to the setState function which will set the Recoil state.
 
 ## What Now?
 
