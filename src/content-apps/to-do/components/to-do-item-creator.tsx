@@ -30,7 +30,10 @@ const TodoItemCreator = () => {
   return (
     <HStack width="100%">
       <Button
-        onClick={() => createItem({ inputValue, setInputValue, setTodoList })}
+        onClick={() => {
+          createItem({ setState: setTodoList, value: inputValue });
+          setInputValue('');
+        }}
       >
         Create
       </Button>

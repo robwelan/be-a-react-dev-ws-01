@@ -49,7 +49,7 @@ uuid creates nice and unique ids. A unique id is important for tracking discreet
 
 These actions will make a lot more sense in the context of the user interface and how they are consumed. But for now, just enjoy beauty of the raw code.
 
-### src/content-apps/to-do/actions/add-item.ts
+### src/content-apps/to-do/actions/create-item.ts
 
 ```typescript
 import { v4 as uuidv4 } from 'uuid';
@@ -59,13 +59,13 @@ import { TodoList } from '../state/interfaces-and-types';
 type Payload = {
   inputValue: string;
   setInputValue: Function;
-  setTodoList: Function;
+  setState: Function;
 };
 
-const addItem = (payload: Payload) => {
+const createItem = (payload: Payload) => {
   const { inputValue, setInputValue, setTodoList } = payload;
 
-  setTodoList((oldTodoList: TodoList) => [
+  setState((oldTodoList: TodoList) => [
     ...oldTodoList,
     {
       id: uuidv4(),
@@ -77,10 +77,10 @@ const addItem = (payload: Payload) => {
   setInputValue('');
 };
 
-export default addItem;
+export default createItem;
 ```
 
-**An explanation of add item**: When adding a ToDo list record or document or item (these definitions are interchangeable), you will need to assign a unique Id. You could use the index of the array - but the problem with this is - what if the array gets sorted and the item is moved? Array indexes are not safe.
+**An explanation of create item**: When adding a ToDo list record or document or item (these definitions are interchangeable), you will need to assign a unique Id. You could use the index of the array - but the problem with this is - what if the array gets sorted and the item is moved? Array indexes are not safe.
 
 The type definition has been defined previously, and you can review the document referenced above if you want.
 
@@ -197,7 +197,7 @@ export default replaceItemAtIndex;
 
 **An explanation of replaceItemAtIndex function**: This is a helper function. In this case the function accepts multiple arguments and thus each individual argument is type defined, rather than a single Payload object containing expected keys and types. Which style do you prefer?
 
-This function returns an array. The Array is sliced 
+This function returns an array. The Array is sliced
 
 ### src/content-apps/to-do/actions/toggle-item-completion.ts
 

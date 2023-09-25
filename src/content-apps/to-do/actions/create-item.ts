@@ -3,24 +3,21 @@ import { v4 as uuidv4 } from 'uuid';
 import { TodoList } from '../state/interfaces-and-types';
 
 type Payload = {
-  inputValue: string;
-  setInputValue: Function;
-  setTodoList: Function;
+  setState: Function;
+  value: string;
 };
 
 const createItem = (payload: Payload) => {
-  const { inputValue, setInputValue, setTodoList } = payload;
+  const { setState, value } = payload;
 
-  setTodoList((oldTodoList: TodoList) => [
-    ...oldTodoList,
+  setState((prevState: TodoList) => [
+    ...prevState,
     {
       id: uuidv4(),
-      text: inputValue,
+      text: value,
       isComplete: false,
     },
   ]);
-
-  setInputValue('');
 };
 
 export default createItem;

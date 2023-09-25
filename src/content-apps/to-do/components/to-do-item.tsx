@@ -10,7 +10,7 @@ import updateStateItem from '../actions/update-state-item';
 //  local components
 import BasicInput from './basic-input';
 //  recoil
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 //  interfaces and types
 import { TodoItem as TodoItemType } from '../state/interfaces-and-types';
 //  state
@@ -28,9 +28,8 @@ type Payload = {
 
 const TodoItem = (payload: Payload) => {
   const { item } = payload;
-  const [todoList, setTodoList] = useRecoilState(todoListState);
-  const index = todoList.findIndex((listItem) => listItem === item);
-  
+  const setTodoList = useSetRecoilState(todoListState);
+
   const onChange = (event: EventPayload) => {
     const { target = {} } = event;
     const { value = '' } = target;
