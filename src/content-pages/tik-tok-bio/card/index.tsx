@@ -21,7 +21,8 @@ import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin';
 import { FaMedium } from '@react-icons/all-files/fa/FaMedium';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
-import useSiteMetadata from '../../../hooks/use-site-meta-data';
+import { TbAffiliate } from 'react-icons/tb';
+                                            import useSiteMetadata from '../../../hooks/use-site-meta-data';
 //  images
 import header from '../../../images/tik-tok-links/header.jpg';
 import logo from '../../../images/beareactdev_icon.svg';
@@ -125,6 +126,19 @@ const CardForTikTok = () => {
             size="md"
           >
             Follow me on X
+          </Button>
+
+          <Button
+            as={Link}
+            href="https://www.digistore24.com/redir/511379/rmwits/"
+            isExternal
+            rel="nofollow sponsored"
+            variant="outline"
+            leftIcon={<TbAffiliate />}
+            rightIcon={<ExternalLinkIcon />}
+            size="md"
+          >
+            Anyone Can Learn To Code!
           </Button>
 
           <Button

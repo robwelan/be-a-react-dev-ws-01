@@ -11,7 +11,7 @@ const AffiliateLink = (props: Props) => {
   const { href = '', label = '' } = props;
 
   return (
-    <Link href={href} fontSize="xs" rel="sponsored" target="_blank">
+    <Link href={href} fontSize="xs" rel="nofollow sponsored" target="_blank">
       {label} <ExternalLinkIcon mx="2px" />
     </Link>
   );

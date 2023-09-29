@@ -17,7 +17,7 @@ const ProductCard = (props) => {
 
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Link href={uri} isExternal rel="sponsored">
+      <Link href={uri} isExternal rel="nofollow sponsored">
         {src && (
           <>
             <Image alt={alt} src={src} />
