@@ -27,6 +27,7 @@ import { PUBLIC_ROUTE_PAGE_HOME } from '../../security/constants/routes-public';
 //  siblings
 import NavItem from './nav-item';
 //  configurations
+import linkItemsAffiliateCourses from './link-items-affiliate-courses';
 import linkItemsApps from './link-items-apps';
 import linkItemsGames from './link-items-games';
 import linkItemsPages from './link-items-pages';
@@ -89,6 +90,27 @@ const SideDrawer = (props: Props) => {
                   </>
                 </Box>
               )}
+              {linkItemsAffiliateCourses &&
+                linkItemsAffiliateCourses.length > 0 && (
+                  <Box>
+                    <>
+                      <Heading size="sm" sx={{ marginBottom: '0.5em' }}>
+                        Courses
+                      </Heading>
+
+                      {linkItemsAffiliateCourses.map((link) => (
+                        <NavItem
+                          icon={link.icon}
+                          key={link.name}
+                          onClose={onClose}
+                          route={link.route}
+                        >
+                          {link.name}
+                        </NavItem>
+                      ))}
+                    </>
+                  </Box>
+                )}
               {linkItemsPages && linkItemsPages.length > 0 && (
                 <Box>
                   <>

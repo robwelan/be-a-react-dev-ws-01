@@ -22,11 +22,18 @@ import { FaMedium } from '@react-icons/all-files/fa/FaMedium';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
 import { TbAffiliate } from 'react-icons/tb';
-                                            import useSiteMetadata from '../../../hooks/use-site-meta-data';
+//  affiliate things
+import { helloCodingAnyoneCanLearnToCode } from '../../../constants/affiliate-marketing-digistore24/courses';
 //  images
 import header from '../../../images/tik-tok-links/header.jpg';
 import logo from '../../../images/beareactdev_icon.svg';
 import KoFi from '../../../images/third-party-icons/kofi-icon';
+//  hooks
+import useSiteMetadata from '../../../hooks/use-site-meta-data';
+
+/*
+  TODO: make landing page funnel for the affiliate link thing
+*/
 
 const CardForTikTok = () => {
   const siteMetadata = useSiteMetadata();
@@ -130,7 +137,8 @@ const CardForTikTok = () => {
 
           <Button
             as={Link}
-            href="https://www.digistore24.com/redir/511379/rmwits/"
+            href={helloCodingAnyoneCanLearnToCode.uri}
+            // href="https://www.digistore24.com/redir/511379/rmwits/"
             isExternal
             rel="nofollow sponsored"
             variant="outline"

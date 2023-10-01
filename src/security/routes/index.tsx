@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router } from '@reach/router';
 //  pages
+import PageAffiliateCoursesHelloCodingAnyoneCanLearnToCode from '../../pages/affiliate/courses/hello-coding-anyone-can-learn-to-code.js';
 import PageAbout from '../../pages/about';
 import PageCookies from '../../pages/legal/cookies';
 import PageGameRockPaperScissors from '../../pages/games/rock-paper-scissors';
@@ -17,6 +18,7 @@ import PageTerms from '../../pages/legal/terms';
 import PageTikTokBio from '../../pages/tik-tok-bio';
 //  security
 import {
+  PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE,
   PUBLIC_ROUTE_PAGE_ABOUT,
   PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT,
   PUBLIC_ROUTE_PAGE_APPS_JOB_HUNTING_JAT,
@@ -45,6 +47,10 @@ const Routes = ({ element, location }) => {
       />
       <PageGameRockPaperScissorsLizardSpock
         path={PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK}
+      />
+      {/* affiliate courses */}
+      <PageAffiliateCoursesHelloCodingAnyoneCanLearnToCode
+        path={PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE}
       />
       {/* apps */}
       <PageAppFelonyChargesDJT

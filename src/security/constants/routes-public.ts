@@ -1,3 +1,6 @@
+//  affiliate links
+const PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE =
+  '/affiliate/courses/hello-coding-anyone-can-learn-to-code';
 //  apps
 const PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT =
   '/apps/felony-charges-of-donald-j-trump';
@@ -23,6 +26,7 @@ const PUBLIC_ROUTE_PAGE_SHOP = '/shop';
 const PUBLIC_ROUTE_PAGE_TIKTOKBIO = '/tik-tok-bio';
 
 export {
+  PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE,
   PUBLIC_ROUTE_PAGE_ABOUT,
   PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT,
   PUBLIC_ROUTE_PAGE_APPS_JOB_HUNTING_JAT,
