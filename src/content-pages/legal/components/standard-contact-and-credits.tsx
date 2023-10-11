@@ -20,7 +20,7 @@ const StandardContactAndCredits = () => (
       </Link>
       . If you have any questions about our Privacy Policy, please contact us
       via{' '}
-      <Link href="mailto:rmw.its@gmail.com">
+      <Link href="mailto:rob.welan@beareact.dev">
         email <EmailIcon mx="2px" />
       </Link>
       .

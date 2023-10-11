@@ -73,6 +73,7 @@ const LayoutFooter = () => {
                       alt={item.alt}
                       href={item.href}
                       label={item.label}
+                      type={item.type}
                     >
                       {<Icon />}
                     </SocialButton>

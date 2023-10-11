@@ -244,10 +244,10 @@ const LegalTerms = () => {
           interested in linking to our website, you must notify us by sending an
           e-mail to{' '}
           <Link
-            href="mailto:rmw.its@gmail.com"
-            title="send an email to rmw.its@gmail.com"
+            href="mailto:rob.welan@beareact.dev"
+            title="send an email to rob.welan@beareact.dev"
           >
-            rmw.its@gmail.com <EmailIcon mx="2px" />
+            rob.welan@beareact.dev <EmailIcon mx="2px" />
           </Link>
           . Please include your name, your organization name, contact
           information (such as a phone number and/or e-mail address) as well as

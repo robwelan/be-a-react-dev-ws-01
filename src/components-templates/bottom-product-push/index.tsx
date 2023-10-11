@@ -40,7 +40,7 @@ const ProductPush = () => {
       <Text fontSize="80%">
         If there’s merch missing that you would like, let me know (click this:{' '}
         <Link
-          href="mailto:rmw.its@gmail.com?subject=beareactdev-make-this-product"
+          href="mailto:rob.welan@beareact.dev?subject=beareactdev-make-this-product"
           isExternal
         >
           Make Something For Me <ExternalLinkIcon />

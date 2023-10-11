@@ -9,10 +9,11 @@ type Props = {
   children: Children;
   href: string;
   label: string;
+  type?: string;
 };
 
 const SocialButton = (props: Props) => {
-  const { alt, children, href, label } = props;
+  const { alt, children, href, label, type } = props;
 
   return (
     <chakra.button
@@ -26,8 +27,8 @@ const SocialButton = (props: Props) => {
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
-      rel="noopener noreferrer"
-      target="_blank"
+      rel={type === 'contact' ? '' : 'noopener noreferrer'}
+      target={type === 'contact' ? '' : '_blank'}
       transition={'background 0.3s ease'}
       _hover={{
         bg: useColorModeValue('blackAlpha.400', 'whiteAlpha.400'),
