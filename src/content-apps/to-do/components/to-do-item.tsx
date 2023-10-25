@@ -22,12 +22,12 @@ type EventPayload = {
   };
 };
 
-type Payload = {
+type Props = {
   item: TodoItemType;
 };
 
-const TodoItem = (payload: Payload) => {
-  const { item } = payload;
+const TodoItem = (props: Props) => {
+  const { item } = props;
   const setTodoList = useSetRecoilState(todoListState);
 
   const onChange = (event: EventPayload) => {
@@ -47,6 +47,7 @@ const TodoItem = (payload: Payload) => {
     <HStack marginTop="0.5em" gap={4}>
       <BasicInput
         handleOnChange={(event: EventPayload) => onChange(event)}
+        placeholder="ENTER something to do"
         value={item.text}
       />
       <Checkbox

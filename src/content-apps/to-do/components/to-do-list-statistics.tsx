@@ -27,7 +27,6 @@ const TodoListStatistics = () => {
     totalCompletedNum,
     totalUncompletedNum,
     percentCompleted,
-    allText,
   } = useRecoilValue(todoListStatsState);
   const colorAll = useColorModeValue('black.900', 'black.100');
   const colorComplete = useColorModeValue('green.500', 'green.200');
@@ -70,9 +69,11 @@ const TodoListStatistics = () => {
           </Center>
         </SimpleGrid>
 
-        {/* <List fontSize="90%">
-        <li>Text not completed: {allText}</li>
-      </List> */}
+        {/*
+            <List fontSize="90%">
+              <li>Text not completed: {allText}</li>
+            </List>
+        */}
       </BasicContainer>
     </>
   );

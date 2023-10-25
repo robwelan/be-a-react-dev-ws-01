@@ -1,5 +1,5 @@
 //  interfaces and types
-import { TodoItem, TodoList } from '../state/interfaces-and-types';
+import { TodoItem } from '../state/interfaces-and-types';
 
 type Payload = {
   item: TodoItem;

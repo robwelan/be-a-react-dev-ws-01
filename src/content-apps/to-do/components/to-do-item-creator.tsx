@@ -41,6 +41,7 @@ const TodoItemCreator = () => {
       </Button>
       <BasicInput
         handleOnChange={(event: EventPayload) => onChange(event)}
+        placeholder="ENTER something to do"
         value={inputValue}
       />
     </HStack>

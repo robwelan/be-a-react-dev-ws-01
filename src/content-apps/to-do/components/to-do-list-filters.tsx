@@ -12,7 +12,7 @@ type EventPayload = {
   };
 };
 
-function TodoListFilters() {
+const TodoListFilters = () => {
   const [filter, setFilter] = useRecoilState(todoListFilterState);
 
   const updateFilter = (payload: EventPayload) => {
@@ -32,6 +32,6 @@ function TodoListFilters() {
       </Select>
     </HStack>
   );
-}
+};
 
 export default TodoListFilters;
