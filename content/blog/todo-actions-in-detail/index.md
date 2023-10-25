@@ -26,7 +26,7 @@ Building a Todo application is a logical way to delve into the world of modern w
 
 <a href="https://beareact.dev/apps/to-do/" target="_blank">Click here to find out what you will be building.</a>
 
-Now, Let’s dive in! 🤿
+Now, let’s dive in! 🤿
 
 ## A Quick Revision
 
@@ -107,7 +107,7 @@ It has a type definition for Payload and it expects an item (defined as TodoItem
 
 The setState function is actually a Recoil function under the hood, and it works quite a bit like setState from React’s useState hook.
 
-So we use setState to expose the previous state (and we are calling it prevState and typeing it as TodoList). The exposed anonymous function returns an updated array - which is whatever is inside the prevState array (the splat of prevState "...prevState"), and then the item itself is appended to this returned array.
+So we use setState to expose the previous state (and we are calling it prevState and typing it as TodoList). The exposed anonymous function returns an updated array - which is whatever is inside the prevState array (the splat of prevState "...prevState"), and then the item itself is appended to this returned array.
 
 ### src/content-apps/to-do/actions/delete-state-item.ts
 

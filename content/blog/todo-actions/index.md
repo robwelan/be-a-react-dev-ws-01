@@ -26,7 +26,7 @@ Building a Todo application is a logical way to delve into the world of modern w
 
 <a href="https://beareact.dev/apps/to-do/" target="_blank">Click here to find out what you will be building.</a>
 
-Now, Let’s dive in! 🤿
+Now, let’s dive in! 🤿
 
 ## A Background In Doing Stuff
 
