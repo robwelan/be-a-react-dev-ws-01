@@ -524,7 +524,7 @@ Each Center component has a Tag component as its child. Each Tag describes a sta
 ```typescript
 import React from 'react';
 //  chakra-ui
-import { Flex, Heading, useBreakpointValue } from '@chakra-ui/react';
+import {BoxProps, Flex, Heading, useBreakpointValue } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  local components
@@ -536,12 +536,24 @@ import TodoItem from './to-do-item';
 //  state
 import { filteredTodoListState } from '../state';
 
+/*
+    Out of interest, the type and interface in <FlexWrap> assigned
+    to useBreakpointValue has been suggested by ChatGPT.
+    It seems to work.
+*/
+
+type FlexWrap = 'wrap' | 'nowrap' | 'wrap-reverse';
+
+interface MyFlexProps extends BoxProps {
+  wrap?: FlexWrap;
+}
+
 const TodoList = () => {
   const todoList = useRecoilValue(filteredTodoListState);
-  const flexBreak = useBreakpointValue(
+  const flexBreak = useBreakpointValue<FlexWrap>(
     {
       base: 'wrap',
-      md: 'no-wrap',
+      md: 'nowrap',
     },
     {
       fallback: 'md',
@@ -584,7 +596,7 @@ And filteredTodoListState from the state.
 
 Inside the TodoList function we will get our ToDo list from the filteredTodoListState Recoil state and call it todoList.
 
-And we will create flexBreak value using the useBreakpointValue hook. What it does is decide whether to wrap or not the content of the Flex Chakra-UI component. Oh, Flex has a typing error here and I cannot figure out how to type it correctly yet. Sigh.
+And we will create flexBreak value using the useBreakpointValue hook. What it does is decide whether to wrap or not the content of the Flex Chakra-UI component.
 
 The function first returns the shorthand version of React.Fragment.
 
