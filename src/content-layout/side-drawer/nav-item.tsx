@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ElementType } from 'react';
 //  chakra ui
 import { Box, Link, Icon } from '@chakra-ui/react';
 //  gatsby
@@ -7,8 +7,8 @@ import { Link as GatsbyLink } from 'gatsby';
 import { Children } from '../../constants/types';
 
 type Props = {
-  children: Children;
-  icon: any;
+  children?: Children;
+  icon?: ElementType;
   onClose: any;
   route: string;
 };

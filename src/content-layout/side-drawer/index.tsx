@@ -23,7 +23,10 @@ import LogoImage from '../components/image-logo';
 //  local components
 import SiteTitleForNav from '../components/site-title-for-nav';
 //  routes
-import { PUBLIC_ROUTE_PAGE_HOME } from '../../security/constants/routes-public';
+import {
+  PUBLIC_ROUTE_PAGE_HOME,
+  PUBLIC_ROUTE_PAGE_TUTORIALS,
+} from '../../security/constants/routes-public';
 //  siblings
 import NavItem from './nav-item';
 //  configurations
@@ -149,7 +152,18 @@ const SideDrawer = (props: Props) => {
                   </>
                 </Box>
               )}
+              <Box>
+                <Heading size="sm" sx={{ marginBottom: '0.5em' }}>
+                  <NavItem
+                    onClose={onClose}
+                    route={PUBLIC_ROUTE_PAGE_TUTORIALS}
+                  >
+                    Tutorials
+                  </NavItem>
+                </Heading>
+              </Box>
             </VStack>
+            <Box height="4em"></Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

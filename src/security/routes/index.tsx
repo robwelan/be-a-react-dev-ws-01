@@ -16,6 +16,10 @@ import PageNotFound from '../../pages/404';
 import PageShop from '../../pages/shop';
 import PageTerms from '../../pages/legal/terms';
 import PageTikTokBio from '../../pages/tik-tok-bio';
+import PageTutorials from '../../pages/tutorials';
+import PageTutorialsAppToDo from '../../pages/tutorials/todo-app-with-recoil.js';
+import PageTutorialsGameRockPaperScissors from '../../pages/tutorials/rock-paper-scissors-game-with-react.js';
+
 //  security
 import {
   PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE,
@@ -32,6 +36,9 @@ import {
   PUBLIC_ROUTE_PAGE_TERMS,
   PUBLIC_ROUTE_PAGE_SHOP,
   PUBLIC_ROUTE_PAGE_TIKTOKBIO,
+  PUBLIC_ROUTE_PAGE_TUTORIALS,
+  PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
+  PUBLIC_ROUTE_PAGE_TUTORIALS_GAME_ROCK_PAPER_SCISSORS,
 } from '../../security/constants/routes-public';
 
 const Routes = ({ element, location }) => {
@@ -62,6 +69,11 @@ const Routes = ({ element, location }) => {
       <PageAbout path={PUBLIC_ROUTE_PAGE_ABOUT} />
       <PageFelonyChargesDJT path={PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT} />
       <PageTikTokBio path={PUBLIC_ROUTE_PAGE_TIKTOKBIO} />
+      <PageTutorials path={PUBLIC_ROUTE_PAGE_TUTORIALS} />
+      <PageTutorialsAppToDo path={PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO} />
+      <PageTutorialsGameRockPaperScissors
+        path={PUBLIC_ROUTE_PAGE_TUTORIALS_GAME_ROCK_PAPER_SCISSORS}
+      />
       {/* legal */}
       <PageCookies path={PUBLIC_ROUTE_PAGE_COOKIES} />
       <PagePrivacy path={PUBLIC_ROUTE_PAGE_PRIVACY} />
