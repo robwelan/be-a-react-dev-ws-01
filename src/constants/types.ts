@@ -1,9 +1,6 @@
-type Children =
-  | null
-  | string
-  | JSX.Element
-  | JSX.Element[]
-  | (() => JSX.Element);
+import { ReactNode } from 'react';
+
+type Children = null | string | ReactNode;
 
 type Location = {
   hash: string;
