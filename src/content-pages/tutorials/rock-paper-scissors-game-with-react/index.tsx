@@ -1,12 +1,11 @@
 import React from 'react';
 //  chakra-ui
 import { Box, Center, Heading, List, Text } from '@chakra-ui/react';
-//  gatsby
-import { Link as GatsbyLink } from 'gatsby';
 //  react icons
 import { RiGameLine } from 'react-icons/ri';
 //  components
 import ListItemWithLink from '../../../components/list-item-with-link';
+import LinkToTutorials from '../components/link-to-tutorials';
 
 const ContentTutorial = () => (
   <>
@@ -99,6 +98,7 @@ const ContentTutorial = () => (
         route="/game-action-set-clear-game-all-rock-paper-scissors/"
       />
     </List>
+    <LinkToTutorials />
   </>
 );
 

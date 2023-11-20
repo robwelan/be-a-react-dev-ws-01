@@ -7,6 +7,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import { LuListTodo } from 'react-icons/lu';
 //  components
 import ListItemWithLink from '../../../components/list-item-with-link';
+import LinkToTutorials from '../components/link-to-tutorials';
 
 const ContentTutorial = () => (
   <>
@@ -49,7 +50,7 @@ const ContentTutorial = () => (
           and Chakra-UI"
         route="/todo-view-components-in-detail/"
       />
-    </List>
+    </List><LinkToTutorials />
   </>
 );
 
