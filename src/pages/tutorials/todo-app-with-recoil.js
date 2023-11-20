@@ -16,5 +16,5 @@ export default PageTutorial;
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = ({ location }) => (
-  <Seo description={descriptionSeo} location={location} title="Tutorial: build a ToDo with Recoil" />
+  <Seo description={descriptionSeo} location={location} title="Tutorial: build a ToDo App with Recoil" />
 );
