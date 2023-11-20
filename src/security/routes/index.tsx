@@ -19,6 +19,7 @@ import PageTikTokBio from '../../pages/tik-tok-bio';
 import PageTutorials from '../../pages/tutorials';
 import PageTutorialsAppToDo from '../../pages/tutorials/todo-app-with-recoil.js';
 import PageTutorialsGameRockPaperScissors from '../../pages/tutorials/rock-paper-scissors-game-with-react.js';
+import PageTutorialBuildTikTokBioPage from '../../pages/tutorials/build-a-tik-tok-bio-page.js';
 //  security
 import {
   PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE,
@@ -38,8 +39,13 @@ import {
   PUBLIC_ROUTE_PAGE_TUTORIALS,
   PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
   PUBLIC_ROUTE_PAGE_TUTORIALS_GAME_ROCK_PAPER_SCISSORS,
+  PUBLIC_ROUTE_PAGE_TUTORIALS_MISC_TIKTOKBIOPAGE,
 } from '../../security/constants/routes-public';
-console.log('PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO',PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO )
+
+console.log(
+  'PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO',
+  PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
+);
 const Routes = ({ element, location }) => {
   return (
     <Router basepath={PUBLIC_ROUTE_PAGE_HOME}>
@@ -73,6 +79,9 @@ const Routes = ({ element, location }) => {
       <PageTutorialsAppToDo path={PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO} />
       <PageTutorialsGameRockPaperScissors
         path={PUBLIC_ROUTE_PAGE_TUTORIALS_GAME_ROCK_PAPER_SCISSORS}
+      />
+      <PageTutorialBuildTikTokBioPage
+        path={PUBLIC_ROUTE_PAGE_TUTORIALS_MISC_TIKTOKBIOPAGE}
       />
       {/* legal */}
       <PageCookies path={PUBLIC_ROUTE_PAGE_COOKIES} />

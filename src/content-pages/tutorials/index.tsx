@@ -1,19 +1,14 @@
 import React from 'react';
 //  chakra-ui
-import {
-  Box,
-  Center,
-  Heading,
-  List,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Center, Heading, List, Text } from '@chakra-ui/react';
 //  react icons
 import { LuListTodo } from 'react-icons/lu';
-import { RiGameLine } from 'react-icons/ri';
+import { RiGameLine } from 'react-icons/ri';import { FaTiktok } from "react-icons/fa6";
 //  routes
 import {
   PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
   PUBLIC_ROUTE_PAGE_TUTORIALS_GAME_ROCK_PAPER_SCISSORS,
+  PUBLIC_ROUTE_PAGE_TUTORIALS_MISC_TIKTOKBIOPAGE,
 } from '../../security/constants/routes-public';
 //  components
 import ListItemWithLink from '../../components/list-item-with-link';
@@ -65,6 +60,16 @@ const ContentTutorial = () => (
         icon={RiGameLine}
         label="Build a Rock Paper Scissors Game with React and TypeScript"
         route={PUBLIC_ROUTE_PAGE_TUTORIALS_GAME_ROCK_PAPER_SCISSORS}
+      />
+    </List>
+    <Heading as="h3" fontSize="100%" marginTop="0.5em">
+      Miscellaneous
+    </Heading>
+    <List>
+      <ListItemWithLink
+        icon={FaTiktok}
+        label="Build a Tik Tok Bio in chakra-ui for React"
+        route={PUBLIC_ROUTE_PAGE_TUTORIALS_MISC_TIKTOKBIOPAGE}
       />
     </List>
   </>
