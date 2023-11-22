@@ -24,6 +24,15 @@ const ContentShopPage = () => (
       </>
     )}
     <Heading as="h2" size="md">
+      Christmas
+    </Heading>
+    <SimpleGrid columns={[1, null, 4]} spacing={4}>
+      {storefrontZazzle.xmas.map((item, index) => (
+        <ProductCard key={index} data={item} />
+      ))}
+    </SimpleGrid>
+    <Box height="1em" />
+    <Heading as="h2" size="md">
       Mugs
     </Heading>
     <SimpleGrid columns={[1, null, 4]} spacing={4}>
