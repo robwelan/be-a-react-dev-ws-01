@@ -17,7 +17,7 @@ import { FaCodepen } from '@react-icons/all-files/fa/FaCodepen';
 
 const MyCodePens = () => (
   <VStack alignItems="flex-start" marginTop="4em" spacing={2} w="100%">
-    <Heading as="h2" fontSize="125%">
+    <Heading as="h2" fontSize="125%" sx={{ width: '100%' }}>
       CodePens
     </Heading>
     <Text>The following are little scratchings of mine.</Text>

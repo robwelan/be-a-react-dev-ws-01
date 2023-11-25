@@ -38,7 +38,7 @@ const SplitWithImage = () => {
     <>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          <Heading>
+          <Heading as="h1" fontSize="135%"  sx={{ width: '100%' }}>
             <Feature
               icon={
                 <Icon as={MdDeveloperMode} color={'green.500'} w={5} h={5} />
@@ -91,7 +91,7 @@ const SplitWithImage = () => {
             have projects though which are deployed.
           </Text>
           <br />
-          <Heading as="h2" fontSize="125%">
+          <Heading as="h2" fontSize="125%" sx={{ width: '100%' }}>
             Why Gatsby?
           </Heading>
           <Text>

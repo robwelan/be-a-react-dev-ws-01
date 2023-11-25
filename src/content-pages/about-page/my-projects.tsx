@@ -16,7 +16,7 @@ import { FaGlobe } from '@react-icons/all-files/fa/FaGlobe';
 
 const MyProjects = () => (
   <VStack alignItems="flex-start" marginTop="4em" spacing={2} w="100%">
-    <Heading as="h2" fontSize="125%">
+    <Heading as="h2" fontSize="125%" sx={{ width: '100%' }}>
       GatsbyJS Projects
     </Heading>
     <Text>
