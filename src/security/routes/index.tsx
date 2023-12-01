@@ -42,10 +42,6 @@ import {
   PUBLIC_ROUTE_PAGE_TUTORIALS_MISC_TIKTOKBIOPAGE,
 } from '../../security/constants/routes-public';
 
-console.log(
-  'PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO',
-  PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
-);
 const Routes = ({ element, location }) => {
   return (
     <Router basepath={PUBLIC_ROUTE_PAGE_HOME}>
