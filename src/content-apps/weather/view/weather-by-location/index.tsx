@@ -27,8 +27,6 @@ const WeatherByLocation = () => {
   const forecast = useRecoilValue(weatherLocationForecast);
   const locale = useRecoilValue(weatherLocationLocale);
 
-  // console.log('locale', locale);
-  // console.log('forecast', forecast);
   if (locale.loading) {
     return null;
   }

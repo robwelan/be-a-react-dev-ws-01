@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, HStack } from '@chakra-ui/react';
+import { Box, Flex, Text, VStack } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  helpers
@@ -64,17 +64,18 @@ const MainForecast = () => {
   }, [minutely]);
 
   return (
-    <HStack>
-      <Box>
-        <WeatherIcon code={weatherCodeMinutely} day={daylight} size="400%" />
+    <Flex alignContent="flex-start" justifyContent="center" gap={0}>
+      <Box flex="1" sx={{ position: 'relative', right: '-1em' }}>
+        <WeatherIcon code={weatherCodeMinutely} day={daylight} size="800%" />
       </Box>
-      <Box>
+      <Box flex="1" sx={{ position: 'relative', left: '-1em' }}>
         <WeatherTemperature
+          code={weatherCodeMinutely}
           temperature={temperatureMinutely}
-          size={{ sizeTemperature: '800%', sizeUnits: '200%' }}
+          size={{ sizeTemperature: '500%', sizeUnits: '150%' }}
         />
       </Box>
-    </HStack>
+    </Flex>
   );
 };
 
