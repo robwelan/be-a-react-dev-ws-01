@@ -13,7 +13,7 @@ const MainForecast = () => {
   const { units, weather } = state;
   const { code, daylight } = weather;
   const weatherUnits = weather[units as keyof typeof weather];
-  const { temperature } = weatherUnits;
+  const { temperature, temperatureApparent } = weatherUnits;
 
   return (
     <Flex alignContent="flex-start" justifyContent="center" gap={0}>
@@ -24,6 +24,7 @@ const MainForecast = () => {
         <WeatherTemperature
           code={code}
           temperature={temperature}
+          temperatureApparent={temperatureApparent}
           size={{ sizeTemperature: '500%', sizeUnits: '150%' }}
         />
       </Box>

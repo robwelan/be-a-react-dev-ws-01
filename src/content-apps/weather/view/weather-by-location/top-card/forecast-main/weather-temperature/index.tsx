@@ -5,12 +5,15 @@ import { Box, Flex, HStack, Link, Text, VStack } from '@chakra-ui/react';
 import { expandedWeatherCode } from '../../../../../constants/weather-code';
 //  local helpers
 import getAsset from './get-asset';
-//  utilities
-import getRounded from '../../../../../../../utilities/numbers/get-number-rounded-to-decimal-place';
 
 type Props = {
   code: number;
-  temperature: number;
+  temperature: {
+    now: number;
+  };
+  temperatureApparent: {
+    now: number;
+  };
   size: {
     sizeTemperature: string;
     sizeUnits: string;
@@ -18,7 +21,9 @@ type Props = {
 };
 
 const WeatherTemperature = (props: Props) => {
-  const { code = 0, temperature = 0, size } = props;
+  const { code = 0, temperature = {}, temperatureApparent = {}, size } = props;
+  const { now: temperatureNow } = temperature;
+  const { now: temperatureApparentNow } = temperatureApparent;
   const { sizeTemperature = '1em', sizeUnits = '1em' } = size;
   const asset = getAsset({ icons: expandedWeatherCode, code });
 
@@ -32,7 +37,7 @@ const WeatherTemperature = (props: Props) => {
               lineHeight={1}
               sx={{ position: 'relative', left: '-3px', marginTop: '-4.6%' }}
             >
-              {getRounded({ value: temperature, places: 1 })}
+              {temperatureNow}
             </Text>
           </Box>
           <Box flex="1">
@@ -52,6 +57,11 @@ const WeatherTemperature = (props: Props) => {
       </Box>
       <Box>
         <Text sx={{ position: 'relative', top: '-1em' }}>{asset.label}</Text>
+        {temperatureApparentNow !== temperatureNow && (
+          <Text fontSize="80%" sx={{ position: 'relative', top: '-1.8em' }}>
+            Feels like: {temperatureApparentNow}
+          </Text>
+        )}
       </Box>
     </VStack>
   );
