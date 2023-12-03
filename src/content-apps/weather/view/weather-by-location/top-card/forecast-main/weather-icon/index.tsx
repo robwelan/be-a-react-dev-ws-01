@@ -2,7 +2,7 @@ import React from 'react';
 //  chakra-ui
 import { Icon, useColorModeValue } from '@chakra-ui/react';
 //  constants
-import { expandedWeatherCode } from '../../../../constants/weather-code';
+import { expandedWeatherCode } from '../../../../../constants/weather-code';
 //  local helpers
 import getAsset from './get-asset';
 
@@ -23,7 +23,7 @@ const WeatherIcon = (props: Props) => {
       as={asset.icon}
       color={color}
       fontSize={size}
-      sx={{ marginTop: '-10%',marginRight: '-4em'}}
+      sx={{ marginTop: '-10%', marginRight: '-4em' }}
     />
   );
 };

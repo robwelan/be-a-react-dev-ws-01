@@ -2,11 +2,11 @@ import React from 'react';
 //  chakra-ui
 import { Box, Flex, HStack, Link, Text, VStack } from '@chakra-ui/react';
 //  constants
-import { expandedWeatherCode } from '../../../../constants/weather-code';
+import { expandedWeatherCode } from '../../../../../constants/weather-code';
 //  local helpers
 import getAsset from './get-asset';
 //  utilities
-import getRounded from '../../../../../../utilities/numbers/get-number-rounded-to-decimal-place';
+import getRounded from '../../../../../../../utilities/numbers/get-number-rounded-to-decimal-place';
 
 type Props = {
   code: number;

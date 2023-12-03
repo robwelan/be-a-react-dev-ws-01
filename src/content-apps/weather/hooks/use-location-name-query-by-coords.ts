@@ -5,8 +5,9 @@ import { useQuery } from '@tanstack/react-query';
 import { useSetRecoilState } from 'recoil';
 //  helpers
 import getLocationByCoordinatesUri from '../helpers/get-location-by-coordinates-uri';
+import setTopCardLocale from '../helpers/set-recoil-state-top-card-locale';
 //  recoil
-import { weatherLocationLocale } from '../state/atoms';
+import { weatherLocationLocale, weatherLocationTopCard } from '../state/atoms';
 //  types
 import { Coordinates } from '../types';
 
@@ -41,6 +42,7 @@ const useLocationNameQuery = (payload: Payload) => {
         }),
   });
   const setLocale = useSetRecoilState(weatherLocationLocale);
+  const setTopCardLocaleRecoil = useSetRecoilState(weatherLocationTopCard);
 
   //  error effect
   useEffect(() => {
@@ -49,7 +51,7 @@ const useLocationNameQuery = (payload: Payload) => {
         error: true,
         message: `An error has occurred: ${error.message}`,
       };
-      
+
       setLocale({ data: errorData, loaded: true, loading: false });
     }
   }, [error]);
@@ -62,6 +64,7 @@ const useLocationNameQuery = (payload: Payload) => {
         loaded: true,
         loading: false,
       });
+      setTopCardLocale({ data, setState: setTopCardLocaleRecoil });
     }
   }, [error, isPending, data]);
 

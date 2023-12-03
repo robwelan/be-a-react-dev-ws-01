@@ -5,8 +5,12 @@ import { useQuery } from '@tanstack/react-query';
 import { useSetRecoilState } from 'recoil';
 //  helpers
 import getWeatherDataUri from '../helpers/get-weather-data-uri';
+import setTopCardWeather from '../helpers/set-recoil-state-top-card-weather';
 //  recoil
-import { weatherLocationForecast } from '../state/atoms';
+import {
+  weatherLocationForecast,
+  weatherLocationTopCard,
+} from '../state/atoms';
 //  types
 import { Coordinates } from '../types';
 
@@ -41,6 +45,7 @@ const useWeatherForecastQuery = (payload: Payload) => {
         }),
   });
   const setForecast = useSetRecoilState(weatherLocationForecast);
+  const setTopCardWeatherRecoil = useSetRecoilState(weatherLocationTopCard);
 
   //  error effect
   useEffect(() => {
@@ -62,6 +67,7 @@ const useWeatherForecastQuery = (payload: Payload) => {
         loaded: true,
         loading: false,
       });
+      setTopCardWeather({ data, setState: setTopCardWeatherRecoil });
     }
   }, [error, isPending, data]);
 
