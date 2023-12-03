@@ -1,10 +1,20 @@
 import React from 'react';
+//  recoil
+import { useSetRecoilState } from 'recoil';
 //  chakra-ui
 import { Box, Flex, HStack, Link, Text, VStack } from '@chakra-ui/react';
 //  constants
+import {
+  UNITS_OF_MEASUREMENT_IMPERIAL,
+  UNITS_OF_MEASUREMENT_METRIC,
+} from '../../../../../constants';
 import { expandedWeatherCode } from '../../../../../constants/weather-code';
 //  local helpers
 import getAsset from './get-asset';
+import setImperial from './set-imperial';
+import setMetric from './set-metric';
+//  state
+import { weatherLocationTopCard } from '../../../../../state/atoms';
 
 type Props = {
   code: number;
@@ -18,14 +28,26 @@ type Props = {
     sizeTemperature: string;
     sizeUnits: string;
   };
+  units: string;
 };
 
 const WeatherTemperature = (props: Props) => {
-  const { code = 0, temperature = {}, temperatureApparent = {}, size } = props;
+  const {
+    code = 0,
+    temperature = {},
+    temperatureApparent = {},
+    size,
+    units,
+  } = props;
+  const setStateTopCard = useSetRecoilState(weatherLocationTopCard);
   const { now: temperatureNow } = temperature;
   const { now: temperatureApparentNow } = temperatureApparent;
   const { sizeTemperature = '1em', sizeUnits = '1em' } = size;
   const asset = getAsset({ icons: expandedWeatherCode, code });
+  const isImperial = units === UNITS_OF_MEASUREMENT_IMPERIAL;
+  const isMetric = units === UNITS_OF_MEASUREMENT_METRIC;
+  const degreesCelsius = '°C';
+  const degreesFahrenheit = '°F';
 
   return (
     <VStack align="left">
@@ -44,12 +66,34 @@ const WeatherTemperature = (props: Props) => {
             <HStack
               sx={{ position: 'relative', left: '-5px', marginTop: '0px' }}
             >
-              <Text fontSize={sizeUnits} lineHeight={1}>
-                <Link>°C</Link>
+              <Text
+                color={isImperial ? 'gray.500' : ''}
+                fontSize={sizeUnits}
+                lineHeight={1}
+              >
+                {isImperial && (
+                  <Link
+                    onClick={() => setMetric({ setState: setStateTopCard })}
+                  >
+                    {degreesCelsius}
+                  </Link>
+                )}
+                {isMetric && degreesCelsius}
               </Text>
-              <Text>|</Text>
-              <Text fontSize={sizeUnits} lineHeight={1}>
-                <Link>°F</Link>
+              <Text color="orange.500">|</Text>
+              <Text
+                color={isMetric ? 'gray.500' : ''}
+                fontSize={sizeUnits}
+                lineHeight={1}
+              >
+                {isImperial && degreesFahrenheit}
+                {isMetric && (
+                  <Link
+                    onClick={() => setImperial({ setState: setStateTopCard })}
+                  >
+                    {degreesFahrenheit}
+                  </Link>
+                )}
               </Text>
             </HStack>
           </Box>

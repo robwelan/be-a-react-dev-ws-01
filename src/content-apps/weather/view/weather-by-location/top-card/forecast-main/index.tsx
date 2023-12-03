@@ -26,6 +26,7 @@ const MainForecast = () => {
           temperature={temperature}
           temperatureApparent={temperatureApparent}
           size={{ sizeTemperature: '500%', sizeUnits: '150%' }}
+          units={units}
         />
       </Box>
     </Flex>

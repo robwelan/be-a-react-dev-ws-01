@@ -3,7 +3,6 @@ import React from 'react';
 import { useRecoilValue } from 'recoil';
 //  chakra-ui
 import { Box, HStack, Icon, Tooltip, VStack } from '@chakra-ui/react';
-import { format } from 'date-fns';
 //  react-icons
 import {
   WiHumidity,
@@ -16,6 +15,7 @@ import {
   WiWindDeg,
 } from 'react-icons/wi';
 //  helpers
+import getTemperatureTooltip from './get-temperature-tooltip';
 import getBeaufortWindScaleIcon from '../../../../helpers/get-beaufort-wind-scale';
 import getWeatherTime from '../../../../helpers/get-weather-time';
 //  state
@@ -95,7 +95,7 @@ const WeatherSummary = () => {
           </Box>
         </Tooltip>
       </HStack>
-      <Tooltip label={`Min: ${temperature.min}° Max: ${temperature.max}°`}>
+      <Tooltip label={getTemperatureTooltip({ units, temperature })}>
         <HStack spacing={0}>
           <Box sx={{ ...sxVerticalCenter }}>
             <Icon as={WiThermometerExterior} w={8} h={8} color="blue.500" />
