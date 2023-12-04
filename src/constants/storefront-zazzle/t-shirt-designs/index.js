@@ -8,6 +8,7 @@ import tshirtMenMerryEverything from './tshirt-men-merry-everything';
 import tshirtMenNSFW from './tshirt-men-nsfw';
 import tshirtMenTheSystemIsFixed from './tshirt-men-the-system-is-fixed';
 import tshirtMenWistful from './tshirt-men-wistful';
+
 import tshirtWomenAutisticAsFuck from './tshirt-women-autistic-as-fuck';
 import tshirtWomenDoomScroller from './tshirt-women-doom-scroller';
 import tshirtWomenItIsBecauseIAmAutistic from './tshirt-women-it-is-because-i-am-autistic';
@@ -15,6 +16,8 @@ import tshirtWomenMerryEverything from './tshirt-women-merry-everything';
 import tshirtWomenNSFW from './tshirt-women-nsfw';
 import tshirtWomenTheSystemIsFixed from './tshirt-women-the-system-is-fixed';
 import tshirtWomenWistful from './tshirt-women-wistful';
+
+import tshirtUnisexInfiniteDarkness from './tshirt-unisex-infinite-darkness';
 
 const products = [
   tshirtBoyItIsBecauseIAmAutistic,
@@ -25,7 +28,6 @@ const products = [
   tshirtMenItIsBecauseIAmAutistic,
   tshirtMenMerryEverything,
   tshirtMenNSFW,
-
   tshirtMenTheSystemIsFixed,
   tshirtMenWistful,
 
@@ -36,6 +38,8 @@ const products = [
   tshirtWomenNSFW,
   tshirtWomenTheSystemIsFixed,
   tshirtWomenWistful,
+
+  tshirtUnisexInfiniteDarkness,
 ];
 
 export default products;
