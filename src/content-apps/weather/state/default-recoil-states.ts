@@ -4,6 +4,7 @@ const stateWeatherLocationTopCard = {
   location: {
     countryCode: '',
     date: '',
+    licence: '',
     place: '',
   },
   weather: {
