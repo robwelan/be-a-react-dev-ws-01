@@ -1,3 +1,4 @@
+import magnets from './magnet-designs';
 import mugs from './mug-designs';
 import sports from './sports-designs';
 import stickers from './sticker-designs';
@@ -10,6 +11,7 @@ const store = {
 };
 
 const getAllProducts = () => [
+  ...magnets,
   ...mugs,
   ...sports,
   ...stickers,
@@ -20,6 +22,7 @@ const getAllProducts = () => [
 const storefront = {
   store,
   products: () => getAllProducts(),
+  magnets,
   mugs,
   sports,
   stickers,
