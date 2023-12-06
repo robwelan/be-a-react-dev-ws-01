@@ -14,6 +14,7 @@ import {
   WiThermometerExterior,
   WiWindDeg,
 } from 'react-icons/wi';
+import { TbUvIndex } from 'react-icons/tb';
 //  helpers
 import getTemperatureTooltip from './get-temperature-tooltip';
 import getBeaufortWindScaleIcon from '../../../../helpers/get-beaufort-wind-scale';
@@ -31,6 +32,7 @@ const WeatherSummary = () => {
     moonsetTime,
     sunriseTime,
     sunsetTime,
+    uv,
     windDirection,
   } = weather;
   const weatherUnits = weather[units as keyof typeof weather];
@@ -59,6 +61,7 @@ const WeatherSummary = () => {
 
   return (
     <VStack spacing={0} alignItems="flex-end">
+      {/* Humidity */}
       <Tooltip label="Humidity">
         <HStack spacing={0}>
           <Box sx={{ ...sxVerticalCenter }}>
@@ -68,6 +71,7 @@ const WeatherSummary = () => {
         </HStack>
       </Tooltip>
       <HStack spacing={0}>
+        {/* Wind */}
         <HStack>
           <Tooltip label={beaufort.specifications}>
             <HStack>
@@ -95,6 +99,7 @@ const WeatherSummary = () => {
           </Box>
         </Tooltip>
       </HStack>
+      {/* Temperature */}
       <Tooltip label={getTemperatureTooltip({ units, temperature })}>
         <HStack spacing={0}>
           <Box sx={{ ...sxVerticalCenter }}>
@@ -107,32 +112,45 @@ const WeatherSummary = () => {
           <Box sx={{ ...sxVerticalCenter }}> {temperature.max}°</Box>
         </HStack>
       </Tooltip>
+      {/* UV */}
+      <Tooltip label={`UV min: ${uv.min}, index: ${uv.index}, max: ${uv.max}`}>
+        <HStack spacing={0}>
+          <Box sx={{ ...sxVerticalCenter }}>
+            <Icon as={TbUvIndex} w={8} h={8} color="purple.500" />
+          </Box>
+          <Box sx={{ ...sxVerticalCenter }}>min: {uv.min}</Box>
+          <Box sx={{ ...sxVerticalCenter }}>&nbsp;index: {uv.index}&nbsp;</Box>
+          <Box sx={{ ...sxVerticalCenter }}>max: {uv.max}</Box>
+        </HStack>
+      </Tooltip>
+      {/* Sun */}
       <Tooltip
         label={`Sunrise: ${formatSunriseTime} Sunset: ${formatSunsetTime}`}
       >
-        <HStack>
-          <Box>
+        <HStack spacing={0}>
+          <Box sx={{ ...sxVerticalCenter }}>
             <Icon as={WiSunrise} w={8} h={8} color="orange.500" />
           </Box>
-          <Box>{formatSunriseTime}</Box>
-          <Box>
+          <Box sx={{ ...sxVerticalCenter }}>{formatSunriseTime}</Box>
+          <Box sx={{ ...sxVerticalCenter }}>
             <Icon as={WiSunset} w={8} h={8} color="orange.500" />
           </Box>
-          <Box>{formatSunsetTime}</Box>
+          <Box sx={{ ...sxVerticalCenter }}>{formatSunsetTime}</Box>
         </HStack>
-      </Tooltip>{' '}
+      </Tooltip>
+      {/* Moon */}
       <Tooltip
         label={`Moonrise: ${formatMoonriseTime} Moonset: ${formatMoonsetTime}`}
       >
-        <HStack>
-          <Box>
+        <HStack spacing={0}>
+          <Box sx={{ ...sxVerticalCenter }}>
             <Icon as={WiMoonrise} w={8} h={8} color="gray.500" />
           </Box>
-          <Box>{formatMoonriseTime}</Box>
-          <Box>
+          <Box sx={{ ...sxVerticalCenter }}>{formatMoonriseTime}</Box>
+          <Box sx={{ ...sxVerticalCenter }}>
             <Icon as={WiMoonset} w={8} h={8} color="gray.500" />
           </Box>
-          <Box>{formatMoonsetTime}</Box>
+          <Box sx={{ ...sxVerticalCenter }}>{formatMoonsetTime}</Box>
         </HStack>
       </Tooltip>
     </VStack>
