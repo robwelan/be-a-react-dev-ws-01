@@ -34,8 +34,8 @@ type Props = {
 const WeatherTemperature = (props: Props) => {
   const {
     code = 0,
-    temperature = {},
-    temperatureApparent = {},
+    temperature,
+    temperatureApparent,
     size,
     units,
   } = props;

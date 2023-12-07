@@ -1,4 +1,4 @@
- /*
+/*
     return {
       description: '',
       icon: ,
@@ -6,7 +6,7 @@
       value: ,
     }
   */
- 
+
 import {
   WiWindBeaufort0,
   WiWindBeaufort1,
@@ -26,13 +26,16 @@ import {
 import { MAGIC_NUMBER_METERS_PER_SECOND_TO_KILOMETERS_PER_HOUR } from '../constants/magic-numbers';
 
 type Payload = {
-  speed: number;
+  speed: {
+    value: number;
+  };
 };
 
 const getBeaufortWindScaleIcon = (payload: Payload) => {
   const { speed } = payload;
+
   const beaufortSpeed =
-    speed * MAGIC_NUMBER_METERS_PER_SECOND_TO_KILOMETERS_PER_HOUR;
+    speed.value * MAGIC_NUMBER_METERS_PER_SECOND_TO_KILOMETERS_PER_HOUR;
 
   if (beaufortSpeed >= 1 && beaufortSpeed < 6) {
     return {

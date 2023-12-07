@@ -7,14 +7,55 @@ import getMetersPerSecondToMilesPerHour from './get-meters-per-second-to-miles-p
 //  utilities
 import getNumberRounded from '../../../utilities/numbers/get-number-rounded-to-decimal-place';
 
+type FirstDaily = {
+  values: {
+    moonriseTime: string;
+    moonsetTime: string;
+    sunriseTime: string;
+    sunsetTime: string;
+    temperatureApparentAvg: number;
+    temperatureApparentMax: number;
+    temperatureApparentMin: number;
+    temperatureAvg: number;
+    temperatureMax: number;
+    temperatureMin: number;
+    uvHealthConcernAvg: number;
+    uvHealthConcernMax: number;
+    uvHealthConcernMin: number;
+    uvIndexAvg: number;
+    uvIndexMax: number;
+    uvIndexMin: number;
+  };
+};
+
+type Minutely = {
+  time: string;
+  values: {
+    dewPoint: number;
+    humidity: number;
+    temperature: number;
+    temperatureApparent: number;
+    uvHealthConcern: number;
+    uvIndex: number;
+    weatherCode: number;
+    windDirection: number;
+    windGust: number;
+    windSpeed: number;
+  };
+};
+
 type Payload = {
   data: {
     timelines: {
-      daily: [];
-      minutely: [];
+      daily: Array<{}>;
+      minutely: Array<{}>;
     };
   };
   setState: Function;
+};
+
+type State = {
+  weather: {};
 };
 
 const setTopCardWeather = (payload: Payload) => {
@@ -24,8 +65,8 @@ const setTopCardWeather = (payload: Payload) => {
 
   const [firstDaily] = stateDaily;
   const minutely = [...stateMinutely].pop();
-  const { values: valuesDaily } = firstDaily;
-  const { time: timeMinutely, values: valuesMinutely } = minutely;
+  const { values: valuesDaily } = firstDaily as FirstDaily;
+  const { time: timeMinutely, values: valuesMinutely } = minutely as Minutely;
   const {
     moonriseTime,
     moonsetTime,
@@ -63,7 +104,7 @@ const setTopCardWeather = (payload: Payload) => {
     sunset: sunsetTime,
   });
 
-  setState((prevState) => ({
+  setState((prevState: State) => ({
     ...stateWeatherLocationTopCard,
     ...prevState,
     weather: {

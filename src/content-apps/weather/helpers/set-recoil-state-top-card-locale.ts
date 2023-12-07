@@ -14,13 +14,17 @@ type Payload = {
   setState: Function;
 };
 
+type State = {
+  location: {};
+};
+
 const setTopCardLocale = (payload: Payload) => {
   const { data, setState } = payload;
   const { address, licence = '', name = '' } = data;
   const { country_code = '' } = address;
   const datePresentation = format(new Date(), 'cccc, d MMMM yyyy');
 
-  setState((prevState) => ({
+  setState((prevState: State) => ({
     ...stateWeatherLocationTopCard,
     ...prevState,
     location: {

@@ -1,6 +1,11 @@
 import { format as dateFormat } from 'date-fns';
 
-const getWeatherTime = (payload) => {
+type Payload = {
+  time: string;
+  format: string;
+};
+
+const getWeatherTime = (payload: Payload) => {
   const { time, format } = payload;
 
   if (time === '') return '';

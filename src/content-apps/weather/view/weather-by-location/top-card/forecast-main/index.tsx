@@ -8,12 +8,21 @@ import WeatherTemperature from './weather-temperature';
 //  state
 import { weatherLocationTopCard } from '../../../../state/atoms';
 
+type WeatherUnits = {
+  temperature: {
+    now: number;
+  };
+  temperatureApparent: {
+    now: number;
+  };
+};
+
 const MainForecast = () => {
   const state = useRecoilValue(weatherLocationTopCard);
   const { units, weather } = state;
   const { code, daylight } = weather;
   const weatherUnits = weather[units as keyof typeof weather];
-  const { temperature, temperatureApparent } = weatherUnits;
+  const { temperature, temperatureApparent } = weatherUnits as WeatherUnits;
 
   return (
     <Flex alignContent="flex-start" justifyContent="center" gap={0}>

@@ -10,17 +10,14 @@ const useGetTime = () => {
    *
    * @returns {string} The formatted time string.
    */
-  const formatTime = () => {
+
+  /**
+   * Function to update the clock display.
+   */
+  const updateClock = () => {
     const now = new Date();
 
     setState(format(now, 'hh:mm:ss a'));
-  };
-
-  /**
-   * Function to update the clock display every second.
-   */
-  const updateClock = () => {
-    formatTime();
   };
 
   useEffect(() => {

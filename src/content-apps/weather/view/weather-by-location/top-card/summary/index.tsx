@@ -22,6 +22,18 @@ import getWeatherTime from '../../../../helpers/get-weather-time';
 //  state
 import { weatherLocationTopCard } from '../../../../state/atoms';
 
+type WeatherUnits = {
+  temperature: {
+    avg: number;
+    max: number;
+    min: number;
+  };
+  windSpeed: {
+    unit: string;
+    value: number;
+  };
+};
+
 const WeatherSummary = () => {
   const state = useRecoilValue(weatherLocationTopCard);
   const { units, weather } = state;
@@ -36,7 +48,7 @@ const WeatherSummary = () => {
     windDirection,
   } = weather;
   const weatherUnits = weather[units as keyof typeof weather];
-  const { temperature, windSpeed } = weatherUnits;
+  const { temperature, windSpeed } = weatherUnits as WeatherUnits;
   const beaufort = getBeaufortWindScaleIcon({ speed: windSpeed });
   const sxVerticalCenter = {
     display: 'flex',
