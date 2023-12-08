@@ -38,6 +38,7 @@
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "@react-icons/all-files": "^4.1.0",
     "@tanstack/react-query": "^5.12.2",
+    "copy-to-clipboard": "^3.3.3",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.15",
     "gatsby": "^5.12.12",
