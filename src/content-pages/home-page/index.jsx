@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Container, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 //  posts
 import BlogPosts from './posts';
 
