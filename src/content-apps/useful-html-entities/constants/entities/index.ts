@@ -32,6 +32,7 @@ import singleLowQuote from './single-low-quote';
 import singleQuoteLeft from './single-quote-left';
 import singleQuoteRight from './single-quote-right';
 import trademark from './trademark';
+import wordJoiner from './word-joiner';
 
 const entities = [
   almostEqualTo,
@@ -68,6 +69,7 @@ const entities = [
   singleQuoteLeft,
   singleQuoteRight,
   trademark,
+  wordJoiner,
 ];
 
 export default entities;

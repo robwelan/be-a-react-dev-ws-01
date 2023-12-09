@@ -5,7 +5,7 @@ import { Box, HStack, Tr, Td } from '@chakra-ui/react';
 import CopyTool from './copy-tool';
 
 type Footnote = {
-  key: number;
+  key: string;
   value: number;
 };
 
@@ -36,12 +36,18 @@ const TableRow = (props: Props) => {
   return (
     <Tr>
       <Td>
-        <HStack spacing={1}>
+        <HStack spacing={0}>
           <Box>{character}</Box>
           {footnotes &&
             footnotes.length > 0 &&
-            footnotes.map((footnote) => (
-              <Box key={footnote.key}>{footnote.value}</Box>
+            footnotes.map((footnote, index) => (
+              <Box
+                key={footnote.key}
+                sx={{ position: 'relative', top: '-0.5em', fontSize: '80%' }}
+              >
+                {index > 0 ? ', ' : ''}
+                {footnote.value}
+              </Box>
             ))}
         </HStack>
       </Td>

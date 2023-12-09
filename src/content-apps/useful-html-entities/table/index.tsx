@@ -2,6 +2,8 @@ import React from 'react';
 //  chakra-ui
 import {
   Box,
+  HStack,
+  Spacer,
   Table,
   Thead,
   Tbody,
@@ -10,10 +12,13 @@ import {
   Th,
   TableCaption,
   TableContainer,
+  VStack,
 } from '@chakra-ui/react';
+import { ArrowUpDownIcon } from '@chakra-ui/icons';
 //  constants
 import entities from '../constants/entities';
 //  local components
+import SortTool from './sort-tool';
 import TableRow from './row';
 
 const Content = () => (
@@ -24,18 +29,58 @@ const Content = () => (
       </TableCaption>
       <Thead>
         <Tr>
-          <Th>Character</Th>
-          <Th>Literal</Th>
           <Th>
-            <Box>Alphanumeric</Box>
-            <Box>Value</Box>
+            <HStack>
+              <Box>Character</Box>
+              <Spacer />
+              <Box>
+                <SortTool ariaLabel="Sort by Character" />
+              </Box>
+            </HStack>
           </Th>
           <Th>
-            <Box>Unicode</Box>
-            <Box>Value</Box>
+            <HStack>
+              <Box>Literal</Box>
+              <Spacer />
+              <Box>
+                <SortTool ariaLabel="Sort by Literal" />
+              </Box>
+            </HStack>
+          </Th>
+          <Th>
+            <HStack>
+              <VStack>
+                <Box>Alphanumeric</Box>
+                <Box>Value</Box>
+              </VStack>
+              <Spacer />
+              <Box>
+                <SortTool ariaLabel="Sort by Alphanumeric" />
+              </Box>
+            </HStack>
+          </Th>
+          <Th>
+            <HStack>
+              <VStack>
+                <Box>Unicode</Box>
+                <Box>Value</Box>
+              </VStack>
+              <Spacer />
+              <Box>
+                <SortTool ariaLabel="Sort by Unicode" />
+              </Box>
+            </HStack>
           </Th>
           <Th>Prefer To</Th>
-          <Th>Type</Th>
+          <Th>
+            <HStack>
+              <Box>Type</Box>
+              <Spacer />
+              <Box>
+                <SortTool ariaLabel="Sort by Type" />
+              </Box>
+            </HStack>
+          </Th>
         </Tr>
       </Thead>
       <Tbody>
