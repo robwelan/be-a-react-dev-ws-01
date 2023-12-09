@@ -3,14 +3,14 @@ import React from 'react';
 import { Checkbox, HStack, IconButton } from '@chakra-ui/react';
 //  chakra-ui icons
 import { DeleteIcon } from '@chakra-ui/icons';
+//  recoil
+import { useSetRecoilState } from 'recoil';
 //  actions
 import deleteStateItem from '../actions/delete-state-item';
 import updateItem from '../actions/update-item';
 import updateStateItem from '../actions/update-state-item';
 //  local components
 import BasicInput from './basic-input';
-//  recoil
-import { useSetRecoilState } from 'recoil';
 //  interfaces and types
 import { TodoItem as TodoItemType } from '../state/interfaces-and-types';
 //  state
