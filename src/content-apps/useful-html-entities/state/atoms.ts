@@ -13,11 +13,17 @@ export const htmlEntitiesFootnotesState = atom({
   default: footnotes,
 });
 
+/*
+  tells everyone what the order is.
+*/
 export const htmlEntitiesSortState = atom({
   key: 'htmlEntitiesSortState',
   default: { column: 'Character', order: 'ascending' },
 });
 
+/*
+  record an order of the footnotes that will then apply back to the entities
+*/
 export const htmlEntitiesOrderState = atom({
   key: 'htmlEntitiesFootnotesOrderState',
   default: [],
