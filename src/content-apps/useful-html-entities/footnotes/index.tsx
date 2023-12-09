@@ -1,12 +1,16 @@
 import React from 'react';
 //  chakra-ui
 import { Heading, OrderedList } from '@chakra-ui/react';
-//  constants
-import footnotes from '../constants/footnotes';
+//  recoil
+import { useRecoilValue } from 'recoil';
 //  local components
 import ListItem from './list-item';
+//  state
+import { htmlEntitiesFootnotesState } from '../state/atoms';
 
 const Footnotes = () => {
+  const footnotes = useRecoilValue(htmlEntitiesFootnotesState);
+
   if (footnotes && footnotes.length > 0) {
     return (
       <>
