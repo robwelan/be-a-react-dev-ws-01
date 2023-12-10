@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 //  recoil
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
+//  constants
+import {
+  DATA_SET_SORT_STEP_SORT,
+  DATA_SET_SORT_STEP_ENTITIES,
+  DATA_SET_SORT_STEP_FOOTNOTE_VALUES,
+  DATA_SET_SORT_STEP_COMPLETE,
+} from '../constants/sorting';
 //  local components
 import View from '../view';
 //  state
@@ -26,14 +33,14 @@ const Data: React.FC = () => {
   //  entities effect
   useEffect(() => {
     if (entitiesState.sorted) {
-      setSort((prevState) => ({ ...prevState, step: 'sort' }));
+      setSort((prevState) => ({ ...prevState, step: DATA_SET_SORT_STEP_SORT }));
     }
   }, [entitiesState.sorted]);
 
   //  do work effect
   useEffect(() => {
     if (!sortState.sorted) {
-      if (sortState.step === 'entities') {
+      if (sortState.step === DATA_SET_SORT_STEP_ENTITIES) {
         sortEntitiesTableColumn({
           entities: entitiesState.entities,
           setEntities,
@@ -41,7 +48,7 @@ const Data: React.FC = () => {
         });
       }
 
-      if (sortState.step === 'sort') {
+      if (sortState.step === DATA_SET_SORT_STEP_SORT) {
         buildSortState({
           entities: entitiesState.entities,
           order: orderState,
@@ -49,7 +56,7 @@ const Data: React.FC = () => {
         });
       }
 
-      if (sortState.step === 'footnote-values') {
+      if (sortState.step === DATA_SET_SORT_STEP_FOOTNOTE_VALUES) {
         adjustFootnoteValues({
           entities: entitiesState.entities,
           footnotes: {
@@ -69,7 +76,7 @@ const Data: React.FC = () => {
       setSort((prevState) => ({
         ...prevState,
         sorted: true,
-        step: 'complete',
+        step: DATA_SET_SORT_STEP_COMPLETE,
       }));
     }
   }, [footnotesState.sorted]);
@@ -77,7 +84,10 @@ const Data: React.FC = () => {
   //  sort effect
   useEffect(() => {
     if (orderState.sorted) {
-      setSort((prevState) => ({ ...prevState, step: 'footnote-values' }));
+      setSort((prevState) => ({
+        ...prevState,
+        step: DATA_SET_SORT_STEP_FOOTNOTE_VALUES,
+      }));
     }
   }, [orderState.sorted]);
 

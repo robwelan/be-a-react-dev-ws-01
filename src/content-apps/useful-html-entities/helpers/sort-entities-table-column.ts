@@ -29,8 +29,7 @@ type Payload = {
 
 const sortEntitiesTableColumn = (payload: Payload) => {
   const { entities, setEntities, sort } = payload;
-  const { column: columnInProperCase, order, sorted } = sort;
-  const column = columnInProperCase.toLowerCase();
+  const { column, order, sorted } = sort;
   const newEntities = [...entities];
 
   //  no need to sort if the full job is done

@@ -2,6 +2,10 @@ import { atom } from 'recoil';
 //  constants
 import entities from '../constants/entities';
 import footnotes from '../constants/footnotes';
+import {
+  SORT_BY_COLUMN_CHARACTER,
+  SORT_BY_ORDER_ASCENDING,
+} from '../constants/sorting';
 
 export const htmlEntitiesState = atom({
   key: 'htmlEntitiesState',
@@ -19,8 +23,8 @@ export const htmlEntitiesFootnotesState = atom({
 export const htmlEntitiesSortState = atom({
   key: 'htmlEntitiesSortState',
   default: {
-    column: 'Character',
-    order: 'ascending',
+    column: SORT_BY_COLUMN_CHARACTER,
+    order: SORT_BY_ORDER_ASCENDING,
     sorted: false,
     step: 'entities',
   },

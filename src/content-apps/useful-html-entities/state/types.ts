@@ -26,4 +26,11 @@ type EntitiesState = {
   sorted: boolean;
 };
 
-export { Entities, EntitiesState, Entity, Footnote, SortColumns };
+type SortState = {
+  column: string;
+  order: string;
+  sorted: boolean;
+  step: string;
+};
+
+export { Entities, EntitiesState, Entity, Footnote, SortColumns, SortState };
