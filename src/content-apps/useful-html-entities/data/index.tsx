@@ -11,6 +11,7 @@ import {
   htmlEntitiesSortState,
 } from '../state/atoms';
 //  helpers
+import adjustFootnoteValues from '../helpers/adjust-footnote-values';
 import buildSortState from '../helpers/build-sort-state';
 import sortEntitiesTableColumn from '../helpers/sort-entities-table-column';
 
@@ -41,16 +42,44 @@ const Data: React.FC = () => {
       }
 
       if (sortState.step === 'sort') {
-        buildSortState({ entities: entitiesState.entities, setOrder });
+        buildSortState({
+          entities: entitiesState.entities,
+          order: orderState,
+          setOrder,
+        });
+      }
+
+      if (sortState.step === 'footnote-values') {
+        adjustFootnoteValues({
+          entities: entitiesState.entities,
+          footnotes: {
+            state: footnotesState,
+            setState: setFootnotes,
+          },
+          list: orderState.list,
+          setEntities,
+        });
       }
     }
-  }, [
-    sortState.sorted,
-    sortState.step,
-    entitiesState.entities,
-    setEntities,
-    setOrder,
-  ]);
+  }, [sortState.sorted, sortState.step]);
+
+  //  footnotes effect
+  useEffect(() => {
+    if (footnotesState.sorted) {
+      setSort((prevState) => ({
+        ...prevState,
+        sorted: true,
+        step: 'complete',
+      }));
+    }
+  }, [footnotesState.sorted]);
+
+  //  sort effect
+  useEffect(() => {
+    if (orderState.sorted) {
+      setSort((prevState) => ({ ...prevState, step: 'footnote-values' }));
+    }
+  }, [orderState.sorted]);
 
   return (
     <>

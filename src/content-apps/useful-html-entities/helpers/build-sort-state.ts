@@ -13,13 +13,24 @@ type PrevState = {
 
 type Payload = {
   entities: Array<Entity>;
+  order: PrevState;
   setOrder: React.Dispatch<React.SetStateAction<PrevState>>;
 };
 
 const buildSortState = (payload: Payload): void => {
-  const { entities, setOrder } = payload;
+  const { entities, order, setOrder } = payload;
   const final: Array<string> = [];
   const sets: Record<string, Array<string>> = {};
+
+  //  no need to sort if the full job is done
+  if (order.sorted) {
+    //  if we get called here, there is a bug
+    console.error(
+      'Function buildSortState was called but order.sorted is TRUE.',
+    );
+
+    return;
+  }
 
   entities.forEach((entity) => {
     const { footnotes } = entity;

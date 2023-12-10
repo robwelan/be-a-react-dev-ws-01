@@ -26,4 +26,4 @@ type EntitiesState = {
   sorted: boolean;
 };
 
-export { Entities, EntitiesState, Entity, SortColumns };
+export { Entities, EntitiesState, Entity, Footnote, SortColumns };

@@ -4,7 +4,7 @@
     column: Character, Alphanumeric, Unicode, Type
     order: ascending, descending
 */
-import { useRecoilValue } from 'recoil';
+
 //constants
 import {
   SORT_BY_COLUMN_ALPHANUMERIC,
@@ -40,10 +40,7 @@ const sortEntitiesTableColumn = (payload: Payload) => {
       'Function sortEntitiesTableColumn was called but sortState.sorted is TRUE.',
     );
 
-    setEntities((prevState: PrevState) => ({
-      ...prevState,
-      sorted: true,
-    }));
+    return;
   }
 
   newEntities.sort((a: SortColumns, b: SortColumns) => {
