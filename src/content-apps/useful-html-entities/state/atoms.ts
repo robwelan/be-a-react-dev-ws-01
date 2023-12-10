@@ -5,12 +5,12 @@ import footnotes from '../constants/footnotes';
 
 export const htmlEntitiesState = atom({
   key: 'htmlEntitiesState',
-  default: entities,
+  default: { entities, sorted: false },
 });
 
 export const htmlEntitiesFootnotesState = atom({
   key: 'htmlEntitiesFootnotesState',
-  default: footnotes,
+  default: { footnotes, sorted: false },
 });
 
 /*
@@ -18,7 +18,12 @@ export const htmlEntitiesFootnotesState = atom({
 */
 export const htmlEntitiesSortState = atom({
   key: 'htmlEntitiesSortState',
-  default: { column: 'Character', order: 'ascending' },
+  default: {
+    column: 'Character',
+    order: 'ascending',
+    sorted: false,
+    step: 'entities',
+  },
 });
 
 /*
@@ -26,5 +31,8 @@ export const htmlEntitiesSortState = atom({
 */
 export const htmlEntitiesOrderState = atom({
   key: 'htmlEntitiesFootnotesOrderState',
-  default: [],
+  default: {
+    list: [''],
+    sorted: false,
+  },
 });

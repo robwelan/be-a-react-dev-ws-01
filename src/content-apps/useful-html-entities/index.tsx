@@ -1,12 +1,10 @@
 import React from 'react';
 //  local components
-import Footnotes from './footnotes';
-import TableOfEntities from './table';
+import Data from './data';
 
 const Content = () => (
   <>
-    <TableOfEntities />
-    <Footnotes />
+    <Data />
   </>
 );
 

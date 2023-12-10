@@ -9,18 +9,18 @@ import ListItem from './list-item';
 import { htmlEntitiesFootnotesState } from '../state/atoms';
 
 const Footnotes = () => {
-  const footnotes = useRecoilValue(htmlEntitiesFootnotesState);
+  const state = useRecoilValue(htmlEntitiesFootnotesState);
 
-  if (footnotes && footnotes.length > 0) {
+  if (state.footnotes && state.footnotes.length > 0) {
     return (
       <>
         <Heading as="h2" fontSize="120%">
           Footnotes
         </Heading>
         <OrderedList>
-          {footnotes &&
-            footnotes.length > 0 &&
-            footnotes.map((footnote) => (
+          {state.footnotes &&
+            state.footnotes.length > 0 &&
+            state.footnotes.map((footnote) => (
               <ListItem key={footnote.key} footnote={footnote} />
             ))}
         </OrderedList>

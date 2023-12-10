@@ -12,7 +12,7 @@ import TableRow from './row';
 import { htmlEntitiesState } from '../state/atoms';
 
 const Content = () => {
-  const entities = useRecoilValue(htmlEntitiesState);
+  const state = useRecoilValue(htmlEntitiesState);
 
   return (
     <TableContainer>
@@ -20,9 +20,9 @@ const Content = () => {
         <TableCaption />
         <TableHeader />
         <Tbody>
-          {entities &&
-            entities.length > 0 &&
-            entities.map((entity, index) => (
+          {state.entities &&
+            state.entities.length > 0 &&
+            state.entities.map((entity, index) => (
               <TableRow key={index} entity={entity} />
             ))}
         </Tbody>
