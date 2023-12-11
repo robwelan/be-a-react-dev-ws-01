@@ -2,7 +2,7 @@ import React from 'react';
 //  chakra-ui
 import { Box, HStack, Thead, Tr, Th, VStack } from '@chakra-ui/react';
 //  recoil
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 //  constants
 import {
   SORT_BY_COLUMN_ALPHANUMERIC,

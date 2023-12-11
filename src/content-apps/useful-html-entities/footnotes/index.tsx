@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Heading, OrderedList } from '@chakra-ui/react';
+import { Box, Heading, OrderedList } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  local components
@@ -14,6 +14,7 @@ const Footnotes = () => {
   if (state.footnotes && state.footnotes.length > 0) {
     return (
       <>
+        <Box height="2em" />
         <Heading as="h2" fontSize="120%">
           Footnotes
         </Heading>

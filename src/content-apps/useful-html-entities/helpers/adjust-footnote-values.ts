@@ -5,6 +5,11 @@ type Footnote = {
   key: string;
 };
 
+type Footnotes = {
+  footnotes: Array<Footnote>;
+  sorted: boolean;
+};
+
 type Payload = {
   entities: Entities;
   footnotes: {
@@ -12,7 +17,7 @@ type Payload = {
       footnotes: Array<Footnote>;
       sorted: boolean;
     };
-    setState: React.Dispatch<React.SetStateAction<EntitiesState>>;
+    setState: React.Dispatch<React.SetStateAction<Footnotes>>;
   };
   list: Array<string>;
   setEntities: React.Dispatch<React.SetStateAction<EntitiesState>>;
