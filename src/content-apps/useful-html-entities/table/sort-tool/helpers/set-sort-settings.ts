@@ -1,6 +1,7 @@
 import React from 'react';
 //  constants
 import {
+  DATA_SET_SORT_STEP_ENTITIES,
   SORT_BY_COLUMN_ALPHANUMERIC,
   SORT_BY_COLUMN_CHARACTER,
   SORT_BY_COLUMN_TYPE,
@@ -18,21 +19,30 @@ import { PayloadResetSetters, PayloadSetSortSettings } from './types';
 const setSortSettings = (payload: PayloadSetSortSettings) => {
   const { main, setters } = payload;
   const { control, state, setState } = main;
+  const { setEntitiesState, setFootnotesState, setOrderState } = setters;
+  let correctOrder = SORT_BY_ORDER_ASCENDING;
 
   const isCurrentColumn = checkIsCurrentColumn({
     column: state.column,
     control,
   });
 
-  const correctOrder = getCorrectOrder({ order: state.order });
+  //  reset setters
+  resetSetters({ setEntitiesState, setFootnotesState, setOrderState });
 
   if (isCurrentColumn) {
     //  only the order needs to change
+    correctOrder = getCorrectOrder({ order: state.order });
   }
 
-  if (!isCurrentColumn) {
-    //  column needs to change and order needs to be set to ascending
-  }
+  setState((prevState) => ({
+    ...prevState,
+
+    column: control,
+    order: correctOrder,
+    sorted: false,
+    step: DATA_SET_SORT_STEP_ENTITIES,
+  }));
 };
 
 export default setSortSettings;

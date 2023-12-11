@@ -43,7 +43,12 @@ const TableRow = (props: Props) => {
             footnotes.map((footnote, index) => (
               <Box
                 key={footnote.key}
-                sx={{ position: 'relative', top: '-0.5em', fontSize: '80%' }}
+                sx={{
+                  position: 'relative',
+                  marginLeft: index === 0 ? '0.2em' : '',
+                  top: '-0.5em',
+                  fontSize: '80%',
+                }}
               >
                 {index > 0 ? ', ' : ''}
                 {footnote.value}

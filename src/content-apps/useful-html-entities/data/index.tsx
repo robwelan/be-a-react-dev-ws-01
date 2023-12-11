@@ -39,33 +39,35 @@ const Data: React.FC = () => {
 
   //  do work effect
   useEffect(() => {
-    if (!sortState.sorted) {
-      if (sortState.step === DATA_SET_SORT_STEP_ENTITIES) {
-        sortEntitiesTableColumn({
-          entities: entitiesState.entities,
-          setEntities,
-          sort: sortState,
-        });
-      }
+    if (sortState.step !== DATA_SET_SORT_STEP_COMPLETE) {
+      if (!sortState.sorted) {
+        if (sortState.step === DATA_SET_SORT_STEP_ENTITIES) {
+          sortEntitiesTableColumn({
+            entities: entitiesState.entities,
+            setEntities,
+            sort: sortState,
+          });
+        }
 
-      if (sortState.step === DATA_SET_SORT_STEP_SORT) {
-        buildSortState({
-          entities: entitiesState.entities,
-          order: orderState,
-          setOrder,
-        });
-      }
+        if (sortState.step === DATA_SET_SORT_STEP_SORT) {
+          buildSortState({
+            entities: entitiesState.entities,
+            order: orderState,
+            setOrder,
+          });
+        }
 
-      if (sortState.step === DATA_SET_SORT_STEP_FOOTNOTE_VALUES) {
-        adjustFootnoteValues({
-          entities: entitiesState.entities,
-          footnotes: {
-            state: footnotesState,
-            setState: setFootnotes,
-          },
-          list: orderState.list,
-          setEntities,
-        });
+        if (sortState.step === DATA_SET_SORT_STEP_FOOTNOTE_VALUES) {
+          adjustFootnoteValues({
+            entities: entitiesState.entities,
+            footnotes: {
+              state: footnotesState,
+              setState: setFootnotes,
+            },
+            list: orderState.list,
+            setEntities,
+          });
+        }
       }
     }
   }, [sortState.sorted, sortState.step]);

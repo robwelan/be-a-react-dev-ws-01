@@ -3,6 +3,7 @@ import { atom } from 'recoil';
 import entities from '../constants/entities';
 import footnotes from '../constants/footnotes';
 import {
+  DATA_SET_SORT_STEP_ENTITIES,
   SORT_BY_COLUMN_CHARACTER,
   SORT_BY_ORDER_ASCENDING,
 } from '../constants/sorting';
@@ -26,7 +27,7 @@ export const htmlEntitiesSortState = atom({
     column: SORT_BY_COLUMN_CHARACTER,
     order: SORT_BY_ORDER_ASCENDING,
     sorted: false,
-    step: 'entities',
+    step: DATA_SET_SORT_STEP_ENTITIES,
   },
 });
 
