@@ -2,16 +2,17 @@ import React from 'react';
 //  chakra-ui
 import { Box, Card, CardBody, Link, SimpleGrid, Text } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-//  hooks
-import useDeviceSize from '../../../../../hooks/use-device-size';
+import { useRecoilValue } from 'recoil';
 //  local components
 import MainForecast from './forecast-main';
 import Place from './place';
 import Summary from './summary';
+//  recoil state
+import { siteConfiguration } from '../../../../../state';
 
-//  local components
 const WeatherByLocation = () => {
-  const device = useDeviceSize();
+  const configuration = useRecoilValue(siteConfiguration);
+  const { device } = configuration;
   const { type } = device;
   const { isMobile } = type;
 

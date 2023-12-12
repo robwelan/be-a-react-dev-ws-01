@@ -1,15 +1,18 @@
 import React from 'react';
+//  recoil
+import { useRecoilValue } from 'recoil';
 //  components
 import Seo from '../../components/seo';
 //  content
 import ContentGameRockPaperScissorsLizardSpock from '../../content-games/rock-paper-scissors-lizard-spock';
 //  content-seo
 import descriptionSeo from '../../content-games/rock-paper-scissors-lizard-spock/seo/description';
-//  hooks
-import useDeviceSize from '../../hooks/use-device-size';
+//  recoil state
+import { siteConfiguration } from '../../state';
 
 const PageGameRockPaperScissorsLizardSpock = ({ location }) => {
-  const device = useDeviceSize();
+  const configuration = useRecoilValue(siteConfiguration);
+  const { device } = configuration;
 
   return (
     <ContentGameRockPaperScissorsLizardSpock

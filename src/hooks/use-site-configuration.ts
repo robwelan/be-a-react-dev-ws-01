@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 //  hooks
 import useDeviceSize from './use-device-size';
-//  state
+//  recoil state
 import { siteConfiguration } from '../state';
 import { SiteConfiguration } from '../state/types';
 
 const useSiteConfiguration = () => {
   const [mounted, setMounted] = useState(false);
   const setSiteConfiguration = useSetRecoilState(siteConfiguration);
+  //  NOTE: this is the only place useDeviceSize is allowed...
   const device = useDeviceSize();
 
   const configuration = {

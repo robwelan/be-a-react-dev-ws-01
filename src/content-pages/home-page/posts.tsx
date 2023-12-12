@@ -1,11 +1,14 @@
 import React from 'react';
 //  chakra ui
 import { Grid, GridItem } from '@chakra-ui/react';
+//  recoil
+import { useRecoilValue } from 'recoil';
 //  hooks
-import useDeviceSize from '../../hooks/use-device-size';
 import useSiteMetadata from '../../hooks/use-site-meta-data';
 //  components
 import BlogPostCard from './post-card';
+//  recoil state
+import { siteConfiguration } from '../../state';
 
 type Edge = {
   node: {
@@ -19,7 +22,8 @@ type Props = {
 
 const BlogPosts = (props: Props) => {
   const { data } = props;
-  const device = useDeviceSize();
+  const configuration = useRecoilValue(siteConfiguration);
+  const { device } = configuration;
   const siteMetadata = useSiteMetadata();
   const { title = '' } = siteMetadata;
 
