@@ -1,11 +1,9 @@
-import PropType from 'prop-types';
 import React from 'react';
 //  chakra ui
 import {
   Box,
   Drawer,
   DrawerBody,
-  // DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -16,17 +14,18 @@ import {
   StackDivider,
   VStack,
 } from '@chakra-ui/react';
+//  recoil
+import { useRecoilState } from 'recoil';
 //  gatsby
 import { Link as GatsbyLink } from 'gatsby';
 //  images
 import LogoImage from '../components/image-logo';
 //  local components
 import SiteTitleForNav from '../components/site-title-for-nav';
+//  recoil state
+import { siteConfiguration } from '../../state';
 //  routes
-import {
-  PUBLIC_ROUTE_PAGE_HOME,
-  PUBLIC_ROUTE_PAGE_TUTORIALS,
-} from '../../security/constants/routes-public';
+import { PUBLIC_ROUTE_PAGE_HOME } from '../../security/constants/routes-public';
 //  siblings
 import NavItem from './nav-item';
 //  configurations
@@ -38,7 +37,6 @@ import linkItemsPages from './link-items-pages';
 type Props = {
   isOpen: boolean;
   onClose: Function;
-  onOpen: Function;
 };
 
 const SideDrawer = (props: Props) => {
@@ -159,11 +157,6 @@ const SideDrawer = (props: Props) => {
       </Drawer>
     </>
   );
-};
-
-SideDrawer.propTypes = {
-  isOpen: PropType.bool.isRequired,
-  onClose: PropType.func.isRequired,
 };
 
 export default SideDrawer;

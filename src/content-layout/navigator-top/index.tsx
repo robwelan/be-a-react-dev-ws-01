@@ -10,12 +10,14 @@ import {
   Link,
   SimpleGrid,
   Spacer,
+  useColorMode,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 //  gatsby
 import { Link as GatsbyLink } from 'gatsby';
 //  recoil
-import { useSetRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { FiMenu } from '@react-icons/all-files/fi/FiMenu';
 //  local components
 import LogoImage from '../components/image-logo';
@@ -26,21 +28,19 @@ import { PUBLIC_ROUTE_PAGE_HOME } from '../../security/constants/routes-public';
 //  siblings
 // import UserMenu from './user-menu';
 //  state
-import { fontSizeState } from '../../state';
-//  types
-import { LayoutConfiguration } from '../../constants/types';
+import { fontSizeState, siteConfiguration } from '../../state';
 
 const INCREMENT_FONT_SIZE = 0.05;
 
 type Props = {
-  configuration: LayoutConfiguration;
+  onOpen: Function;
 };
 
 const NavigatorTop = (props: Props) => {
-  const { configuration } = props;
-  const { color, device, disclosure } = configuration;
-  const { colorMode, toggleColorMode } = color;
-  const { onOpen } = disclosure;
+  const { onOpen } = props;
+  const configuration = useRecoilValue(siteConfiguration);
+  const { device } = configuration;
+  const { colorMode, toggleColorMode } = useColorMode();
   const setFontSize = useSetRecoilState(fontSizeState);
 
   return (
@@ -53,7 +53,7 @@ const NavigatorTop = (props: Props) => {
               colorScheme="black"
               aria-label="Open menu"
               icon={<FiMenu />}
-              onClick={onOpen}
+              onClick={() => onOpen()}
             />
             <Link aria-label="home" as={GatsbyLink} to={PUBLIC_ROUTE_PAGE_HOME}>
               {device.screen.isExtraSmall && <LogoIcon />}
@@ -96,7 +96,7 @@ const NavigatorTop = (props: Props) => {
               aria-label="Open menu"
               colorScheme="black"
               icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              onClick={toggleColorMode}
+              onClick={() => toggleColorMode()}
               size="sm"
               variant="outline"
             />

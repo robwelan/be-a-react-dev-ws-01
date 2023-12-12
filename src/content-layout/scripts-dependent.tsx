@@ -1,9 +1,10 @@
 import React from 'react';
 //  hooks
+import useBackgroundColorToken from '../hooks/use-background-color-token';
 import useScript from '../hooks/use-script';
 
-const DependentScripts = (props) => {
-  const { bgColorToken } = props;
+const DependentScripts = () => {
+  const { bgColorToken } = useBackgroundColorToken();
 
   useScript({
     async: true,

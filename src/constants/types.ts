@@ -18,36 +18,5 @@ type Location = {
   };
 };
 
-type LayoutConfiguration = {
-  color: {
-    colorMode: string;
-    toggleColorMode: any;
-  };
-  device: {
-    container: string;
-    screen: {
-      isExtraLarge: boolean;
-      isExtraSmall: boolean;
-      isLarge: boolean;
-      isMedium: boolean;
-      isSmall: boolean;
-      isTwoExtraLarge: boolean;
-    };
-    type: {
-      isDesktop: boolean;
-      isMobile: boolean;
-      isTablet: boolean;
-    };
-    window: {
-      height: number;
-      width: number;
-    };
-  };
-  disclosure: {
-    isOpen: boolean;
-    onClose: any;
-    onOpen: any;
-  };
-};
 
-export { Children, LayoutConfiguration, Location };
+export { Children, Location };

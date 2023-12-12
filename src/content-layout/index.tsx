@@ -1,11 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//  chakra-ui
-import {
-  useColorMode,
-  useDisclosure,
-  useTheme,
-  useToken,
-} from '@chakra-ui/react';
 //  react-scroll
 import { animateScroll as scroll } from 'react-scroll';
 //  recoil
@@ -15,12 +8,11 @@ import { Children, Location } from '../constants/types';
 //  local components
 import ContentListeners from './listeners';
 //  local components
+import BrowserOnly from './browser-only';
 import DependentScripts from './scripts-dependent';
 import IndependentScripts from './scripts-independent';
 import MainLayout from './main-layout';
 import StyledComponent from './styled-component';
-//  hooks
-import useDeviceSize from '../hooks/use-device-size';
 //  security
 import {
   PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
@@ -47,13 +39,6 @@ const ContentLayout = (props: Props) => {
   const { pathname } = location;
   const [loaded, setIsLoaded] = useState(false);
   const [mounted, setIsMounted] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
-  const theme = useTheme();
-  const bgColorVar =
-    theme.semanticTokens.colors['chakra-body-bg'][`_${colorMode}`];
-  const bgColorToken = useToken('colors', [bgColorVar]);
-  const device = useDeviceSize();
   const globalWindow = getWindow();
 
   const cleanPath = replaceAll({
@@ -105,36 +90,17 @@ const ContentLayout = (props: Props) => {
     });
   }, [pathname]);
 
-  const configuration = {
-    color: {
-      colorMode,
-      toggleColorMode,
-    },
-    device,
-    disclosure: {
-      isOpen,
-      onOpen,
-      onClose,
-    },
-  };
-
   return (
     <>
       <ContentListeners />
       {loaded && isLayoutRequired && <DependentScripts />}
-      {!loaded && isLayoutRequired && (
-        <IndependentScripts bgColorToken={bgColorToken} />
-      )}
+      {!loaded && isLayoutRequired && <IndependentScripts />}
+      {globalWindow && <BrowserOnly />}
       <StyledComponent
         fontSize={`${fontSize}rem`}
         scale={`${fontSize / NUMBER_BASE_FONT_SIZE}`}
       >
-        <MainLayout
-          configuration={configuration}
-          isLayoutRequired={isLayoutRequired}
-        >
-          {children}
-        </MainLayout>
+        <MainLayout isLayoutRequired={isLayoutRequired}>{children}</MainLayout>
       </StyledComponent>
     </>
   );

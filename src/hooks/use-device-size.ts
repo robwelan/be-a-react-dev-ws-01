@@ -76,6 +76,7 @@ const useDeviceSize = () => {
       isMobile,
       isTablet,
     },
+    
     window: windowSize,
   };
 };
