@@ -27,6 +27,8 @@ const BlogPosts = (props: Props) => {
   const siteMetadata = useSiteMetadata();
   const { title = '' } = siteMetadata;
 
+  if (!configuration.loaded) return null;
+
   return (
     <Grid
       templateColumns={{
