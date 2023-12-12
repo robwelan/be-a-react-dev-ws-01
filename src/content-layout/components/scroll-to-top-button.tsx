@@ -24,15 +24,25 @@ const ScrollToTop = () => {
   const globalWindow = getWindow();
 
   useEffect(() => {
+    let listener = () => {};
+
     if (globalWindow) {
-      globalWindow.addEventListener('scroll', () => {
+      listener = () => {
         if (globalWindow.scrollY > 100) {
           setIsVisible(true);
         } else {
           setIsVisible(false);
         }
-      });
+      };
+
+      globalWindow.addEventListener('scroll', listener);
     }
+
+    return () => {
+      if (globalWindow) {
+        globalWindow.removeEventListener('scroll', listener);
+      }
+    };
   }, [globalWindow]);
 
   return (
