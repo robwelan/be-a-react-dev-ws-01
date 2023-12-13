@@ -1,12 +1,12 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Image, Link } from '@chakra-ui/react';
+import { Box, Center, Image, Link } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const ProductCard = (props) => {
   const { data = {} } = props;
-  const { asset = {} } = data;
-  const { image = {}, name = '', uri = '' } = asset;
+  const { asset = {}, name = '' } = data;
+  const { image = {}, uri = '' } = asset;
   const { alt = '', src = '' } = image;
 
   return (
@@ -17,22 +17,18 @@ const ProductCard = (props) => {
             <Image alt={alt} src={src} />
           </>
         )}
-        <Box p={4} w="100%">
+        <Box alignItems="center" display="flex" justifyContent="center" p={2}>
           {name !== '' && (
             <>
-              <Box alignItems="baseline" display="flex" w="100%">
-                <Box
-                  color="gray.500"
-                  fontWeight="semibold"
-                  letterSpacing="wide"
-                  fontSize="xs"
-                  textAlign="center"
-                  textTransform="uppercase"
-                  ml="2"
-                  w="100%"
-                >
-                  {name} <ExternalLinkIcon />
-                </Box>
+              <Box
+                color="gray.500"
+                fontWeight="semibold"
+                letterSpacing="wide"
+                fontSize="xs"
+                textAlign="center"
+                textTransform="uppercase"
+              >
+                {name}&nbsp;<ExternalLinkIcon />
               </Box>
             </>
           )}
