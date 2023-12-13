@@ -1,3 +1,4 @@
+import glasses from './glass-designs';
 import magnets from './magnet-designs';
 import mugs from './mug-designs';
 import sports from './sports-designs';
@@ -11,6 +12,7 @@ const store = {
 };
 
 const getAllProducts = () => [
+  ...glasses,
   ...magnets,
   ...mugs,
   ...sports,
@@ -22,6 +24,7 @@ const getAllProducts = () => [
 const storefront = {
   store,
   products: () => getAllProducts(),
+  glasses,
   magnets,
   mugs,
   sports,

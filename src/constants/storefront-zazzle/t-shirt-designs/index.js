@@ -17,6 +17,7 @@ import tshirtWomenNSFW from './tshirt-women-nsfw';
 import tshirtWomenTheSystemIsFixed from './tshirt-women-the-system-is-fixed';
 import tshirtWomenWistful from './tshirt-women-wistful';
 
+import tshirtThatSuxDeadDogsBalls from './tshirt-unisex-dead-dogs-balls';
 import tshirtUnisexInfiniteDarkness from './tshirt-unisex-infinite-darkness';
 
 const products = [
@@ -39,6 +40,7 @@ const products = [
   tshirtWomenTheSystemIsFixed,
   tshirtWomenWistful,
 
+  tshirtThatSuxDeadDogsBalls,
   tshirtUnisexInfiniteDarkness,
 ];
 
