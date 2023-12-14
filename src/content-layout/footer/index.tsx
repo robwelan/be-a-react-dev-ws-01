@@ -10,7 +10,6 @@ import {
   Stack,
   Text,
   Flex,
-  Tag,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -39,6 +38,7 @@ import iconNetlify from '../../images/netlify_icon.svg';
 import iconNodeDark from '../../images/nodejs_icon_dark.svg';
 import iconNodeLight from '../../images/nodejs_icon_light.svg';
 import iconReact from '../../images/react_icon.svg';
+import iconRecoil from '../../images/react-recoil-js-icon.svg';
 import iconTypescript from '../../images/typescript_icon.svg';
 
 const LayoutFooter = () => {
@@ -63,7 +63,7 @@ const LayoutFooter = () => {
 
             <Stack align={'flex-start'}>
               <ListHeader>Find Me</ListHeader>
-              <SimpleGrid columns={3} spacing={2}>
+              <SimpleGrid columns={4} spacing={2}>
                 {linksSocial.map((item, index) => {
                   const { icon: Icon } = item;
 
@@ -155,6 +155,19 @@ const LayoutFooter = () => {
                   <Image
                     alt=""
                     src={colorMode === 'light' ? iconReact : iconReact}
+                    sx={{ height: '1.2em' }}
+                  />
+                </Link>
+
+                <Link
+                  href="https://recoiljs.org/"
+                  isExternal
+                  marginBottom="0.4em"
+                  target="_blank"
+                >
+                  <Image
+                    alt=""
+                    src={colorMode === 'light' ? iconRecoil : iconRecoil}
                     sx={{ height: '1.2em' }}
                   />
                 </Link>
