@@ -1,12 +1,7 @@
 import React, { lazy, Suspense } from 'react';
+import { Text } from '@chakra-ui/react';
 import { ErrorBoundary } from 'react-error-boundary';
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 //  components
 import LoadingScreen from '../../components/loading-screen';
 //  local components
@@ -16,7 +11,7 @@ const queryClient = new QueryClient();
 
 const Content = () => {
   return (
-    <ErrorBoundary fallback={<div>Something went wrong</div>}>
+    <ErrorBoundary fallback={<Text>Something went wrong</Text>}>
       <QueryClientProvider client={queryClient}>
         <Suspense fallback={<LoadingScreen />}>
           <GeoLocation />

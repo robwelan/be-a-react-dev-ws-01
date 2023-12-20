@@ -4,7 +4,7 @@ date: "2023-12-08T16:49:00Z"
 categories:
   - tutorial
 meta_keywords:
-  - weather app tutorial, typescript, react, recoil, coding tutorial
+  - weather app tutorial, typescript, react, react lazy, react-query, react suspense, recoil, coding tutorial
 meta_description: >-
   In this tutorial, we're going to create a simple weather app together! 🌦️⚛️
 settings_include_in_fti: true
