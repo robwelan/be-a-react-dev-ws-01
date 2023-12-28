@@ -22,7 +22,7 @@ twitter_tags:
 
 ## Introduction
 
-Building a web app is a useful way to learn how to consume an API endpoint. If you can consume a public api like this, then you can work with a back end developer who is providing data to you from a database for example.
+Building an internet hosted weather app is a useful way to learn how to consume an API endpoint. If you can consume a public api like this, then you can work with a back end developer who is providing data to you from a database for example.
 
 ## Our first bits of code
 
