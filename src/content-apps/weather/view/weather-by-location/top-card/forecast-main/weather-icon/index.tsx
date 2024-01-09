@@ -23,10 +23,7 @@ const WeatherIcon = (props: Props) => {
   const asset = getAsset({ icons: expandedWeatherCode, code, icon: timeOfDay });
   const colorMode = getColorMode({ timeOfDay, theme: asset.theme });
 
-  const color = useColorModeValue(
-    colorMode['light'],
-    colorMode['dark'],
-  );
+  const color = useColorModeValue(colorMode['light'], colorMode['dark']);
 
   return (
     <Icon
