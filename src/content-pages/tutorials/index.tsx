@@ -14,7 +14,7 @@ const ContentTutorial = () => (
       </Heading>
     </Center>
     <Box sx={{ height: '1em' }} />
-    <SimpleGrid columns={[1, null, 3]}>
+    <SimpleGrid columns={[1, null, 3]} spacing={4}>
       {tutorials.map((tutorial) => (
         <PageCard data={tutorial} />
       ))}
