@@ -13,12 +13,16 @@ const ContentTutorial = () => (
         Tutorials at Be A React Dev
       </Heading>
     </Center>
-    <Box sx={{ height: '1em' }} />
-    <SimpleGrid columns={[1, null, 3]} spacing={4}>
-      {tutorials.map((tutorial) => (
-        <PageCard data={tutorial} />
-      ))}
-    </SimpleGrid>
+    {tutorials && tutorials.length > 0 && (
+      <>
+        <Box sx={{ height: '1em' }} />
+        <SimpleGrid columns={[1, null, 3]} spacing={4}>
+          {tutorials.map((tutorial, index) => (
+            <PageCard key={index} data={tutorial} />
+          ))}
+        </SimpleGrid>
+      </>
+    )}
   </>
 );
 
