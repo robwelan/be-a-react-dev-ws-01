@@ -81,7 +81,7 @@ I like to separate my content to a different directory set because the pages dir
 
 The content is a little special. I am experimenting with React.lazy and React.Suspense in order to improve app performance. The reason why this can be good is because this app relies on external data, and the lazy Suspence features will help reduce apparent lag to the end-user when getting data from the api service.
 
-I am also wrapping everything in an ErrorBoundary so that if something goes wrong in the underlying code, the end-user will be notified of that and not some shit instead.
+I am also wrapping everything in an ErrorBoundary so that if something goes wrong in the underlying code, the end-user will be notified of that and not some other shit instead.
 
 And all of our data is being grabbed using <a href="https://github.com/TanStack/query" target="_blank">react-query</a>.
 
