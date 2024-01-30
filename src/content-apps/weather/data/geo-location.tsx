@@ -3,13 +3,13 @@ import React from 'react';
 import { useGeolocated } from 'react-geolocated';
 //  recoil
 import { useRecoilValue } from 'recoil';
-//  higher order component
-import WeatherByLocationCard from '../view/weather-by-location';
 //  local components
 import UtilizeCoordinatesForecast from './utilize-coordinates-forecast';
 import UtilizeCoordinatesLocale from './utilize-coordinates-locale';
 //  state
 import { weatherLocationForecast, weatherLocationLocale } from '../state/atoms';
+//  view
+import WeatherByLocationCard from '../view/weather-by-location';
 
 const GeoLocatedWeather = () => {
   const forecast = useRecoilValue(weatherLocationForecast);
