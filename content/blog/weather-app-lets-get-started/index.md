@@ -24,6 +24,10 @@ twitter_tags:
 
 Building an internet hosted weather app is a useful way to learn how to consume an API endpoint. If you can consume a public api like this, then you can work with a back end developer who is providing data to you from a database for example.
 
+## You need GatsbyJS
+
+Wait! If you have never used GatsbyJS you will need to install it first. Please head to <a href="https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/" target="blank"><strong>this page</strong></a> and set up your system with the necessary tooling (GatsbyJS and so on) before you attempt this tutorial. Thanks!
+
 ## Our first bits of code
 
 ### src/pages/apps/weather.js

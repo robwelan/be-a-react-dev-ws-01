@@ -106,7 +106,6 @@ The final return statement passes coordinates data to UtilizeCoordinatesForecast
 
 And the WeatherByLocationCard is also rendered.
 
-
 ## What Now?
 
 Ah, you will have to wait for the next exciting installment dear coder.
