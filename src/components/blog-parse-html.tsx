@@ -93,6 +93,15 @@ const options: HTMLReactParserOptions = {
       }
       switch (tagName) {
         case 'a': {
+          if (safeAttribs.target !== '_blank') {
+            const { href, ...restSafeHrefs } = safeAttribs;
+            return (
+              <GatsbyLink {...restSafeHrefs} to={safeAttribs.href}>
+                {domToReact(children, options)}
+              </GatsbyLink>
+            );
+          }
+
           return (
             <Link {...safeAttribs}>
               {domToReact(children, options)}
