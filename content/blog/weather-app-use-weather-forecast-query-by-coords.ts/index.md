@@ -1,6 +1,6 @@
 ---
-title: Use Coordinates To Get The Location Name In A Weather App with GatsbyJS, TypeScript, Recoil and React!
-date: "2024-02-12T20:21:00Z"
+title: Use Coordinates To Get The Forecast In A Weather App with GatsbyJS, TypeScript, Recoil and React!
+date: "2024-02-14T08:58:00Z"
 categories:
   - tutorial
 meta_keywords:
@@ -12,7 +12,7 @@ settings_featured_image:
   alt: >-
     weather app tutorial
   src: /bjark-DZ975EkUJH0-unsplash.jpg
-  title: Use Coordinates To Get The Location Name In A Weather App with GatsbyJS, TypeScript, Recoil and React!
+  title: Use Coordinates To Get The Forecast In A Weather App with GatsbyJS, TypeScript, Recoil and React!
 settings_publish: true
 twitter_tags:
   - "#beareactdev"
@@ -22,11 +22,11 @@ twitter_tags:
 
 ## Introduction
 
-In the <a href="/weather-app-utilize-coordinates/"><strong>previous article</strong></a> we looked at passing coordingates into a couple of “dumb components”. What these components really do we will look at in a bit more detail here.
+In a <a href="/weather-app-utilize-coordinates/"><strong>previous article</strong></a> we looked at passing coordingates into a couple of “dumb components”. What these components really do we will look at in a bit more detail here.
 
-This post details the hook used in the <strong>src/content-apps/weather/data/utilize-coordinates-locale.tsx</strong> file.
+This post details the hook used in the <strong>src/content-apps/weather/data/utilize-coordinates-forecast.tsx</strong> file.
 
-## src/content-apps/weather/hooks/use-location-name-query-by-coords.ts
+## src/content-apps/weather/hooks/use-weather-forecast-query-by-coords.ts
 
 ```typescript
 import { useEffect } from 'react';
@@ -35,10 +35,13 @@ import { useQuery } from '@tanstack/react-query';
 //  recoil
 import { useSetRecoilState } from 'recoil';
 //  helpers
-import getLocationByCoordinatesUri from '../helpers/get-location-by-coordinates-uri';
-import setTopCardLocale from '../helpers/set-recoil-state-top-card-locale';
+import getWeatherDataUri from '../helpers/get-weather-data-uri';
+import setTopCardWeather from '../helpers/set-recoil-state-top-card-weather';
 //  recoil
-import { weatherLocationLocale, weatherLocationTopCard } from '../state/atoms';
+import {
+  weatherLocationForecast,
+  weatherLocationTopCard,
+} from '../state/atoms';
 //  types
 import { Coordinates } from '../types';
 
@@ -46,13 +49,13 @@ interface Payload extends Coordinates {
   dev?: boolean;
 }
 
-const useLocationNameQuery = (payload: Payload) => {
+const useWeatherForecastQuery = (payload: Payload) => {
   const { latitude, longitude } = payload;
   const { data, error, isPending } = useQuery({
-    queryKey: ['weather-location-name'],
+    queryKey: ['weather-forecast'],
     queryFn: () =>
       fetch(
-        getLocationByCoordinatesUri({
+        getWeatherDataUri({
           latitude,
           longitude,
         }),
@@ -72,8 +75,8 @@ const useLocationNameQuery = (payload: Payload) => {
           return result;
         }),
   });
-  const setLocale = useSetRecoilState(weatherLocationLocale);
-  const setTopCardLocaleRecoil = useSetRecoilState(weatherLocationTopCard);
+  const setForecast = useSetRecoilState(weatherLocationForecast);
+  const setTopCardWeatherRecoil = useSetRecoilState(weatherLocationTopCard);
 
   //  error effect
   useEffect(() => {
@@ -83,33 +86,33 @@ const useLocationNameQuery = (payload: Payload) => {
         message: `An error has occurred: ${error.message}`,
       };
 
-      setLocale({ data: errorData, loaded: true, loading: false });
+      setForecast({ data: errorData, loaded: true, loading: false });
     }
   }, [error]);
 
   //  data effect
   useEffect(() => {
     if (!error && !isPending && data) {
-      setLocale({
+      setForecast({
         data: { ...data, error: false },
         loaded: true,
         loading: false,
       });
-      setTopCardLocale({ data, setState: setTopCardLocaleRecoil });
+      setTopCardWeather({ data, setState: setTopCardWeatherRecoil });
     }
   }, [error, isPending, data]);
 
   //  isPending effect
   useEffect(() => {
     if (isPending) {
-      setLocale({ data: { error: false }, loaded: false, loading: true });
+      setForecast({ data: { error: false }, loaded: false, loading: true });
     }
   }, [isPending]);
 
   return null;
 };
 
-export default useLocationNameQuery;
+export default useWeatherForecastQuery;
 ```
 
 ## Imports
@@ -125,19 +128,19 @@ The hook itself expects latitude and longitude to be passed into it via the payl
 
 ## Variables
 
-Next the hook defines the useQuery, which uses fetch to return data from a URI provided by a helper (getLocationByCoordinatesUri). The fetch query is set up to ensure if an error occurs, something icky happens, but not too icky. Otherwise, it simply awaits the data which we hope to retrieve from the URI.
+Next the hook defines the useQuery, which uses fetch to return data from a URI provided by a helper (getWeatherDataUri). The fetch query is set up to ensure if an error occurs, something icky happens, but not too icky. Otherwise, it simply awaits the data which we hope to retrieve from the URI.
 
-After that we define our setStates of recoil (setLocale and setTopCardLocaleRecoil).
+After that we define our setStates of recoil (setForecast and setTopCardWeatherRecoil).
 
 ## Effects
 
 Now we can start defining our useEffects. I like to put them in alphabetical order by basic action. In this case error handling comes first.
 
-The error effect simply responds to the error provided (maybe) by the useQuery error. Should an error occur, the setLocale state is set accordingly. You can see that an object is set, with data set with errorData, and loaded set to true and loading set to false. I like to be verbose with loaded and loading. I could just use loaded being true or false but I find I do not get the granular control I like to have most times when working with APIs.
+The error effect simply responds to the error provided (maybe) by the useQuery error. Should an error occur, the setForecast state is set accordingly. You can see that an object is set, with data set with errorData, and loaded set to true and loading set to false. I like to be verbose with loaded and loading. I could just use loaded being true or false but I find I do not get the granular control I like to have most times when working with APIs.
 
-The next effect uses relies on error, isPending and data from useQuery to respond to. Within it, assuming certain conditions are met, setLocale and setTopCardLocale are given data.
+The next effect uses relies on error, isPending and data from useQuery to respond to. Within it, assuming certain conditions are met, setForecast and setTopCardWeatherRecoil are given data.
 
-The last effect uses isPending to respond to which comes from useQuery. If the data isPending, I set the setLocale state with loaded and and loading flags appropriately, and set data a little bit.
+The last effect uses isPending to respond to which comes from useQuery. If the data isPending, I set the setForecast state with loaded and and loading flags appropriately, and set data a little bit.
 
 ## Return
 
