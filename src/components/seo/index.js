@@ -43,6 +43,7 @@ const Seo = (props) => {
   const twitterTags =
     twitter_tags && twitter_tags.length > 0 ? twitter_tags.join(', ') : '';
   const imageSrc = `${url}${image?.src}`;
+  const uri = `${url}${location?.pathname || '/'}`;
 
   return (
     <>
@@ -55,7 +56,7 @@ const Seo = (props) => {
         <meta property="og:image" content={imageSrc} />
       )}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${url}${location?.pathname || '/'}`} />
+      <meta property="og:url" content={uri} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={'@rmwits'} />
       {image && image.alt && (
@@ -73,7 +74,9 @@ const Seo = (props) => {
           content={`${metaDescription}\n${twitterTags}`}
         />
       )}
-
+      {/* canonical authority */}
+      <link rel="canonical" href={uri}></link>
+      {/* children */}
       {children}
     </>
   );
