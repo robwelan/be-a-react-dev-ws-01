@@ -1,13 +1,14 @@
 //  react icons
 import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
+const { email } = require('../../constants/site-settings.ts');
 
- const link = {
-  alt: 'email me using rob.welan@beareact.dev',
-  href: 'mailto:rob.welan@beareact.dev',
+const link = {
+  alt: `email me using ${email}`,
+  href: `mailto:${email}`,
   icon: FaEnvelope,
-  label: 'Rob Welan <rob.welan@beareact.dev>',
+  label: `Rob Welan <${email}>`,
   site: 'email',
   type: 'contact',
 };
 
-export default link
+export default link;

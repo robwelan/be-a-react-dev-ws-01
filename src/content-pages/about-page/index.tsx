@@ -26,7 +26,7 @@ import MyProjects from './my-projects';
 //  hooks
 import useSiteMetadata from '../../hooks/use-site-meta-data';
 //  profile image
-import profileImage from '../../images/profile-pic.jpg';
+import profileImage from '../../images/rob_welan_20240215.jpg';
 
 const SplitWithImage = () => {
   const siteMetadata = useSiteMetadata();

@@ -8,7 +8,8 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-const siteUrl = 'https://beareact.dev';
+// const siteUrl = 'https://beareact.dev';
+const { email, siteUrl } = require('./src/constants/site-settings.ts');
 
 module.exports = {
   flags: {
@@ -25,6 +26,7 @@ module.exports = {
     keywords: 'gatsbyjs netlify typescript javascript nodejs reactjs',
     siteUrl,
     social: {
+      email,
       linkedin: `robwelan`,
       twitter: `rmwits`,
     },
