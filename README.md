@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/68f7e631-ea6c-40b7-94ba-47733b2ee676/deploy-status)](https://app.netlify.com/sites/be-a-react-dev-ws-v01/deploys)
+
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
