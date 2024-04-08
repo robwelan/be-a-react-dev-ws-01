@@ -1,7 +1,7 @@
 //  date-fns
 import { format } from 'date-fns';
 //  default state
-import { stateWeatherLocationTopCard } from '../state/default-recoil-states';
+import { stateWeatherLocationTopCard } from '../state/default-weather-location-top-card-state';
 
 type Payload = {
   data: {

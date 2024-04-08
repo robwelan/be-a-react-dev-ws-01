@@ -1,6 +1,6 @@
 import getDaylight from './get-daylight';
 //  default state
-import { stateWeatherLocationTopCard } from '../state/default-recoil-states';
+import { stateWeatherLocationTopCard } from '../state/default-weather-location-top-card-state';
 //  helpers
 import getCelsiusToFahrenheit from './get-temperature-celsius-to-fahrenheit';
 import getMetersPerSecondToMilesPerHour from './get-meters-per-second-to-miles-per-hour';

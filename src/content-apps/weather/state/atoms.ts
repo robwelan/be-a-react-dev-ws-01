@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 //  default states
-import { stateWeatherLocationTopCard } from './default-recoil-states';
+import { stateWeatherLocationTopCard } from './default-weather-location-top-card-state';
 
 export const weatherLocationLocale = atom({
   key: 'weatherLocationLocale',

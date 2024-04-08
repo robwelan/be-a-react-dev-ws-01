@@ -26,11 +26,11 @@ const stateWeatherLocationTopCard = {
         now: 0,
       },
       windGust: {
-        unit: 'mph',
+        unit: 'kph',
         value: 0,
       },
       windSpeed: {
-        unit: 'mph',
+        unit: 'kph',
         value: 0,
       },
     },
