@@ -23,14 +23,14 @@ const WeatherByLocation = () => {
           <SimpleGrid columns={1}>
             <Place />
             <Box height="1em" />
-            <MainForecast />
+            <MainForecast isMobile={isMobile}/>
             <Summary />
           </SimpleGrid>
         )}
         {!isMobile && (
           <SimpleGrid columns={3}>
             <Place />
-            <MainForecast />
+            <MainForecast isMobile={isMobile}/>
             <Summary />
           </SimpleGrid>
         )}
