@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Divider, Heading, SimpleGrid } from '@chakra-ui/react';
 //  constants
 import { shopAmazon } from '../../constants/affiliate-marketing-amazon/links';
 import storefrontZazzle from '../../constants/storefront-zazzle';
@@ -23,6 +23,26 @@ const ContentShopPage = () => (
         <Box height="1em" />
       </>
     )}
+    <Heading as="h2" size="md">
+      New Store!
+    </Heading>
+    <Box minHeight="2em">
+      <div id="my-store-102418506"></div>
+      <div>
+        <script
+          data-cfasync="false"
+          type="text/javascript"
+          src="https://app.ecwid.com/script.js?102418506&data_platform=code&data_date=2024-04-16"
+          charSet="utf-8"
+        ></script>
+        <script type="text/javascript">
+          {' '}
+          xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60)
+          table(60)","categoryView=grid","searchView=list","id=my-store-102418506");
+        </script>
+      </div>
+    </Box>
+    <Divider orientation="horizontal" />
     <Heading as="h2" size="md">
       Christmas
     </Heading>
