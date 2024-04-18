@@ -51,7 +51,7 @@ export {
 
 The constants file is a set of values that do not change that may be used in various places around an app - or - may be useful to keep with other values that do not change. Sometimes having a library of things is better than putting things in the only place they might be used. One has a big list of things. But you know where they are at least. The other is you have lots of things. But where did you put the thing that you need ritht now?
 
-## src/content-apps/weather/state/default-weather-location-top-card-states.ts.ts
+## src/content-apps/weather/state/default-weather-location-top-card-states.ts
 
 ```typescript
 import { UNITS_OF_MEASUREMENT_METRIC } from '../constants';
@@ -137,7 +137,7 @@ export { stateWeatherLocationTopCard };
 
 ## About Weather Location Top Card State
 
-The idea of the this object is to provide place for the api data to be dropped into. It has no other purpose but to house api data. The shape is more or less determined by the api data. You need to read the api documentation (of whatever it is you are building) - or - you need to acquire data from the api - in order to build the shape of the object.
+The idea of the this object is to provide place for the api data to be dropped into. It has no other purpose but to house api data. The shape is more or less determined by the api data. You need to read the api documentation (of whatever api it is you are using) - or - you need to acquire data from the api - in order to build the shape of the object.
 
 ## src/content-apps/weather/state/atoms.ts
 
@@ -168,7 +168,7 @@ First the default weather location top card state is imported because it will be
 
 Because we are using <a href="https://recoiljs.org/" target="_blank">Recoil</a>, the atom shapes follow the pattern described in that documentation.
 
-As you can see the default for both weatherLocationLocale and weatherLocationForecast is simply and empty object ( or {}).
+As you can see the default for both weatherLocationLocale and weatherLocationForecast is simply an empty object ( or {}).
 
 The weatherLocationTopCard is using the stateWeatherLocationTopCard state import.
 
