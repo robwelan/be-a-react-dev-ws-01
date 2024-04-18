@@ -90,7 +90,7 @@ module.exports = {
         // String value for your clarity project id
         // Project id is found in your clarity dashboard url
         // https://clarity.microsoft.com/projects/view/{clarity_project_id}/
-        clarity_project_id: 'lyaid6vzxr',
+        clarity_project_id: 'lybwc1833h',
         // Boolean value for enabling clarity while developing
         // true will enable clarity tracking code on both development and production environments
         // false will enable clarity tracking code on production environment only
