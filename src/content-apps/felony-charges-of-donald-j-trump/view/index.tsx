@@ -4,6 +4,7 @@ import { Box, Flex } from '@chakra-ui/react';
 //  local components
 import ColumnLeft from './column-left';
 import ColumnRight from './column-right';
+import Inspiration from './inspiration';
 //  routes
 import { PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT } from '../../../security/constants/routes-public';
 //  styles
@@ -43,6 +44,7 @@ const ViewIndex = (props) => {
           <ColumnRight>{children}</ColumnRight>
         </Box>
       </Flex>
+      <Inspiration />
     </>
   );
 };

@@ -13,7 +13,7 @@ import ViewIndex from './view';
 
 const ContentFelonyCountsDJT = (props) => {
   const { location } = props;
-  
+
   const height = useRecoilValue(felonyHeight);
 
   if (height === 0) {
