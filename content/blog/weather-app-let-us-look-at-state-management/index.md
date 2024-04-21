@@ -22,7 +22,7 @@ twitter_tags:
 
 ## Introduction
 
-In a <a href="/weather-app-use-weather-forecast-query-by-coords.ts/"><strong>previous article</strong></a> we looked at using coordingates to get weather data.
+In the <a href="/weather-app-use-weather-forecast-query-by-coords.ts/"><strong>previous article</strong></a> we looked at using coordingates to get weather data.
 
 This post looks at the state which is used to store the retrieved data. Buckle up. This is going to be a bumpy ride.
 
