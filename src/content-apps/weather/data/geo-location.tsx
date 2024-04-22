@@ -21,8 +21,15 @@ const GeoLocatedWeather = () => {
       },
       userDecisionTimeout: 5000,
     });
+  const latitude = coords?.latitude;
+  const longitude = coords?.longitude;
+  const { loaded: forecastLoaded } = forecast;
+  const { loaded: localeLoaded } = locale;
+  const checkLatLon = coords && latitude && longitude;
+  const isNotForecastLoaded = checkLatLon && !forecastLoaded;
+  const isNotLocaleLoaded = checkLatLon && !localeLoaded;
 
-  if (!isGeolocationAvailable && !isGeolocationEnabled && !coords) {
+  if (!isGeolocationAvailable && !isGeolocationEnabled) {
     return <div>Getting the location data&hellip;</div>;
   }
 
@@ -34,15 +41,19 @@ const GeoLocatedWeather = () => {
     return <div>Geolocation is not enabled.</div>;
   }
 
+  if (!coords) {
+    return <div>Waiting for coordinates...</div>;
+  }
+
   return (
     <>
-      {coords && coords.latitude && coords.longitude && !forecast.loaded && (
+      {isNotForecastLoaded && (
         <UtilizeCoordinatesForecast
           latitude={coords.latitude}
           longitude={coords.longitude}
         />
       )}
-      {coords && coords.latitude && coords.longitude && !locale.loaded && (
+      {isNotLocaleLoaded && (
         <UtilizeCoordinatesLocale
           latitude={coords.latitude}
           longitude={coords.longitude}
