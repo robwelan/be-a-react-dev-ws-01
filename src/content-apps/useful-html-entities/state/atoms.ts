@@ -13,6 +13,11 @@ export const htmlEntitiesState = atom({
   default: { entities, sorted: false },
 });
 
+export const htmlEntitiesFilterState = atom({
+  key: 'htmlEntitiesFilterState',
+  default: '',
+});
+
 export const htmlEntitiesFootnotesState = atom({
   key: 'htmlEntitiesFootnotesState',
   default: { footnotes, sorted: false },
