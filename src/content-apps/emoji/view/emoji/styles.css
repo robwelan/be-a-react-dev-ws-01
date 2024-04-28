@@ -1,0 +1,16 @@
+div.emoji-box {
+  position: relative;
+  height: 4em;
+  margin-bottom: 2em;
+}
+
+div.emoji-box::before {
+  font-size: 4em;
+  position: absolute;
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
