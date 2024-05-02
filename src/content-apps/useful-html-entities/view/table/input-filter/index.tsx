@@ -28,7 +28,7 @@ const InputFilter = () => {
     <InputFilterComponent
       functions={{ onChange: handleInputChange, onClear: handleClearFilter }}
       iconLeft={{ color: 'gray.300', pointer: 'none' }}
-      iconRight={{ color: 'gray.300', sx: { cursor: 'pointer' } }}
+      iconRight={{ color: 'gray.300' }}
       placeholder="filter..."
       value={filter}
     />
