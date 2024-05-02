@@ -8,6 +8,8 @@ import {
   ResponsiveValue,
 } from '@chakra-ui/react';
 import { CloseIcon, Search2Icon } from '@chakra-ui/icons';
+//  styles
+import './index.css';
 
 type PointerEvents =
   | 'auto'
@@ -35,7 +37,6 @@ type PropsInputFilter = {
   };
   iconRight?: {
     color?: string;
-    sx?: { cursor?: string };
   };
   placeholder?: string;
   value?: string;
@@ -53,7 +54,7 @@ const InputFilter: React.FC<PropsInputFilter> = ({
 }) => {
   const { color: colorIconLeft = '', pointer: pointerEventsLeft = 'auto' } =
     iconLeft;
-  const { color: colorIconRight = '', sx = {} } = iconRight;
+  const { color: colorIconRight = '' } = iconRight;
 
   return (
     <InputGroup>
@@ -71,11 +72,11 @@ const InputFilter: React.FC<PropsInputFilter> = ({
       />
       <InputRightElement>
         <CloseIcon
+          className="button-filter-clear"
           color={colorIconRight}
           onClick={() => {
             doOnClear();
           }}
-          sx={{ ...sx }}
         />
       </InputRightElement>
     </InputGroup>
