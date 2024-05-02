@@ -19,3 +19,7 @@ If you want to hire me - that would be a first. You can find me on [LinkedIn](ht
 
 FYI:
 This blog was built from this starter blog: [https://github.com/gatsbyjs/gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) in May of 2023
+
+
+IndexNow:
+80491092aca544ccb83f5b17397cb553 (static file)
