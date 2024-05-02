@@ -1,6 +1,7 @@
 const emoji = require('emoji.json');
 //  types
 import {
+  TypeComplexLists,
   TypeEmoji,
   TypeEmojiDictionary,
   TypeEmojiOrganisation,
@@ -9,7 +10,8 @@ import {
 import setEmoji from './set-emoji';
 //  utilities
 import createUniqueList from '../../../../utilities/arrays/create-unique-list';
-import simpleSort from '../../../../utilities/arrays/simple-sort';
+import generateComplexList from './complex-list-generate';
+import sortComplexList from './complex-list-sort';
 
 type Payload = {
   setEmojis: Function;
@@ -19,6 +21,7 @@ type Payload = {
 const setData = (payload: Payload) => {
   const { setEmojis, setOrganisations } = payload;
   const categories: Array<string> = [];
+  const complexList: Array<TypeComplexLists> = [];
   const groups: Array<string> = [];
   const subgroups: Array<string> = [];
   let processedItems = 0;
@@ -44,6 +47,8 @@ const setData = (payload: Payload) => {
   sorted.forEach((emoji: TypeEmoji) => {
     const { category, group, subgroup } = emoji;
 
+    generateComplexList({ list: complexList, group, subgroup });
+
     createUniqueList({
       item: category,
       list: categories,
@@ -66,9 +71,11 @@ const setData = (payload: Payload) => {
       const sortedCategories = categories.toSorted();
       const sortedGroups = groups.toSorted();
       const sortedSubGroups = subgroups.toSorted();
+      const sortedComplexList = sortComplexList({ complex: complexList });
 
       setOrganisations((prevState: TypeEmojiOrganisation) => ({
         ...prevState,
+        complex: complexList,
         simple: {
           ...prevState.simple,
           categories: sortedCategories,

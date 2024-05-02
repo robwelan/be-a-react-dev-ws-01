@@ -1,19 +1,15 @@
 import { atom } from 'recoil';
 //  types
-import { TypeEmojiDictionary, TypeEmojiOrganisation } from './types';
+import {
+  TypeEmojiDictionary,
+  EmojiFilter,
+  TypeEmojiOrganisation,
+} from './types';
 
 const emoji = require('emoji.json');
 
 export const emojiDictionary = atom<TypeEmojiDictionary>({
   key: 'emojiDictionary',
-  // default: emoji.sort((emojiA, emojiB) => {
-  //   const { name: nameA } = emojiA;
-  //   const { name: nameB } = emojiB;
-
-  //   if (nameA < nameB) return -1;
-  //   if (nameA > nameB) return 1;
-  //   return 0;
-  // }),
   default: { emojis: [], processed: false },
 });
 
@@ -26,7 +22,7 @@ export const emojiOrganisation = atom<TypeEmojiOrganisation>({
   },
 });
 
-export const emojiDictionaryFilter = atom({
+export const emojiDictionaryFilter = atom<EmojiFilter>({
   key: 'emojiDictionaryFilter',
-  default: '',
+  default: { input: '', group: '', subgroup: '' },
 });

@@ -8,7 +8,13 @@ export type TypeEmoji = {
   subgroup: string;
 };
 
-type TypeComplexLists = {
+export type EmojiFilter = {
+  input: string;
+  group: string;
+  subgroup: string;
+};
+
+export type TypeComplexLists = {
   group: string;
   subgroups: Array<string>;
 };

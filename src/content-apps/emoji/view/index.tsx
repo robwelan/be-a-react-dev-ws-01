@@ -40,12 +40,8 @@ const ViewEmoji = () => {
           </Suspense>
         </ErrorBoundary>
       </Box>
-      <Box w="30%">
-        <ErrorBoundary fallback={<Text>Filter is sad...</Text>}>
-          <Suspense fallback={<LoadingScreen />}>
-            <Filtration />
-          </Suspense>
-        </ErrorBoundary>
+      <Box w="30%" sx={{ position: 'relative' }}>
+        <Filtration />
       </Box>
     </Flex>
   );
