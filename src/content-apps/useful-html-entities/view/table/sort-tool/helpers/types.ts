@@ -1,4 +1,4 @@
-import { Entities, EntitiesState, Entity } from '../../../state/types';
+import { Entities, EntitiesState, Entity } from '../../../../state/types';
 
 type EntityOrder = {
   list: Array<string>;

@@ -2,7 +2,7 @@
 import {
   SORT_BY_ORDER_ASCENDING,
   SORT_BY_ORDER_DESCENDING,
-} from '../../../constants/sorting';
+} from '../../../../constants/sorting';
 //  types
 import { PayloadGetCorrectOrder } from './types';
 

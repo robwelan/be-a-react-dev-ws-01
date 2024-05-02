@@ -8,7 +8,7 @@ import {
   SORT_BY_COLUMN_UNICODE,
   SORT_BY_ORDER_ASCENDING,
   SORT_BY_ORDER_DESCENDING,
-} from '../../../constants/sorting';
+} from '../../../../constants/sorting';
 //  helpers
 import checkIsCurrentColumn from './check-is-current-column';
 import getCorrectOrder from './get-correct-order';

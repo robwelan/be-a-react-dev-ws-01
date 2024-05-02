@@ -4,9 +4,9 @@ import { Box, Flex, TableCaption } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  state
-import { htmlEntitiesSortState } from '../../state/atoms';
+import { htmlEntitiesSortState } from '../../../state/atoms';
 //  utilities
-import toProperCase from '../../../../utilities/strings/to-proper-case';
+import toProperCase from '../../../../../utilities/strings/to-proper-case';
 
 const Caption = () => {
   const state = useRecoilValue(htmlEntitiesSortState);

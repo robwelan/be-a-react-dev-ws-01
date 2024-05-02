@@ -12,7 +12,7 @@ import {
   SORT_BY_COLUMN_UNICODE,
   SORT_BY_ORDER_ASCENDING,
   SORT_BY_ORDER_DESCENDING,
-} from '../../constants/sorting';
+} from '../../../constants/sorting';
 //  local helpers
 import setSortSettings from './helpers/set-sort-settings';
 //  recoil state
@@ -20,9 +20,9 @@ import {
   htmlEntitiesState,
   htmlEntitiesFootnotesState,
   htmlEntitiesOrderState,
-} from '../../state/atoms';
+} from '../../../state/atoms';
 //  recoil state types
-import { SortState } from '../../state/types';
+import { SortState } from '../../../state/types';
 
 type Props = {
   ariaLabel: string;

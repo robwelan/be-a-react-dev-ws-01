@@ -1,7 +1,7 @@
 import React from 'react';
 //  local components
 import Footnotes from '../footnotes';
-import TableOfEntities from '../table';
+import TableOfEntities from './table';
 
 const View = () => (
   <>

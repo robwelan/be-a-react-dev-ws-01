@@ -11,11 +11,11 @@ import {
   SORT_BY_COLUMN_UNICODE,
   SORT_BY_ORDER_ASCENDING,
   SORT_BY_ORDER_DESCENDING,
-} from '../../constants/sorting';
+} from '../../../constants/sorting';
 //  local components
 import SortTool from '../sort-tool';
 //  recoil state
-import { htmlEntitiesSortState } from '../../state/atoms';
+import { htmlEntitiesSortState } from '../../../state/atoms';
 
 const Content = () => {
   const [state, setState] = useRecoilState(htmlEntitiesSortState);

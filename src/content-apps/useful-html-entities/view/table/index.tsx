@@ -10,7 +10,7 @@ import TableFooter from './footer';
 import TableHeader from './header';
 import TableRow from './row';
 //  state
-import { htmlEntitiesState, htmlEntitiesFilterState } from '../state/atoms';
+import { htmlEntitiesState, htmlEntitiesFilterState } from '../../state/atoms';
 
 const Content = () => {
   const state = useRecoilValue(htmlEntitiesState);
