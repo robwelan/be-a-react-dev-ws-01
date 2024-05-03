@@ -9,4 +9,5 @@ const clearFilterValue = (payload: Payload) => {
 
   return null;
 };
+
 export default clearFilterValue;
