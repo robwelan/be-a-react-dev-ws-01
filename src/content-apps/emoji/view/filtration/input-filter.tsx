@@ -7,10 +7,10 @@ import InputFilterComponent from '../../../../components/input-filter';
 import clearFilterValue from './utilities/clear-filter-value';
 import setFilterValue from './utilities/set-filter-value';
 //  local state
-import { htmlEntitiesFilterState } from '../../../state/atoms';
+import { emojiDictionaryFilter } from '../../state/atoms';
 
 const InputFilter = () => {
-  const [filter, setFilter] = useRecoilState(htmlEntitiesFilterState);
+  const [filter, setFilter] = useRecoilState(emojiDictionaryFilter);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target) {
