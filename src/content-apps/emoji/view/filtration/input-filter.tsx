@@ -11,7 +11,7 @@ import { emojiDictionaryFilter } from '../../state/atoms';
 
 const InputFilter = () => {
   const [filter, setFilter] = useRecoilState(emojiDictionaryFilter);
-
+  console.log('fitlre', filter);
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target) {
       const { value = '' } = event.target;
@@ -30,7 +30,7 @@ const InputFilter = () => {
       iconLeft={{ color: 'gray.300', pointer: 'none' }}
       iconRight={{ color: 'gray.300' }}
       placeholder="filter..."
-      value={filter}
+      value={filter.input}
     />
   );
 };
