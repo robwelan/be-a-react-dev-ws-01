@@ -9,15 +9,18 @@ import {
   emojiDictionary,
   emojiDictionaryFilter,
   emojiOrganisation,
-} from '../../state/atoms';
+} from '../../../state/atoms';
+//  local utilities
+import getOptionList from './get-option-list';
 //  utilities
-import handleClickClear from './utilities/handle-click-clear';
-import handleSelectChange from './utilities/handle-select-change';
+import handleClickClear from '../utilities/handle-click-clear';
+import handleSelectChange from '../utilities/handle-select-change';
 
 const SelectSubgroup = () => {
   const organisation = useRecoilValue(emojiOrganisation);
   const [filter, setFilter] = useRecoilState(emojiDictionaryFilter);
-  const { processed } = organisation;
+  const { group } = filter;
+  const { complex, processed } = organisation;
 
   if (!processed) return null;
 
@@ -35,13 +38,7 @@ const SelectSubgroup = () => {
           placeholder="Select an option"
           value={filter.subgroup}
         >
-          {organisation.simple.subgroups.map((item, index) => {
-            return (
-              <option key={index} value={item.toLowerCase()}>
-                {item}
-              </option>
-            );
-          })}
+          {getOptionList({ complex, group, organisation })}
         </Select>
       </Box>
       <Box>
