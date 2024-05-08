@@ -1,27 +1,14 @@
-import React, { useEffect } from 'react';
-//  recoil
-import { SetterOrUpdater, useSetRecoilState } from 'recoil';
-//  state
-import { emojiDictionary, emojiOrganisation } from '../state/atoms';
-import { TypeEmojiDictionary, TypeEmojiOrganisation } from '../state/types';
-//  utilities
-import setData from './utilities/set-data';
+import React from 'react';
 
-const ContentRecoilEmoji = () => {
-  const setEmojiDictionary: SetterOrUpdater<TypeEmojiDictionary> =
-    useSetRecoilState(emojiDictionary);
-  const setEmojiOrganisation: SetterOrUpdater<TypeEmojiOrganisation> =
-    useSetRecoilState(emojiOrganisation);
+//  local components
+import DataCore from './core';
+import DataFilter from './filter';
 
-  //  on load effect
-  useEffect(() => {
-    setData({
-      setEmojis: setEmojiDictionary,
-      setOrganisations: setEmojiOrganisation,
-    });
-  }, []);
+const DataEmoji = () => (
+  <>
+    <DataCore />
+    <DataFilter />
+  </>
+);
 
-  return <></>;
-};
-
-export default ContentRecoilEmoji;
+export default DataEmoji;

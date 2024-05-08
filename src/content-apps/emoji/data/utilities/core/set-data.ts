@@ -5,13 +5,13 @@ import {
   TypeEmoji,
   TypeEmojiDictionary,
   TypeEmojiOrganisation,
-} from '../../state/types';
+} from '../../../state/types';
 //  local utilities
-import setEmoji from './set-emoji';
-//  utilities
-import createUniqueList from '../../../../utilities/arrays/create-unique-list';
 import generateComplexList from './complex-list-generate';
+import setEmoji from './set-emoji';
 import sortComplexList from './complex-list-sort';
+//  utilities
+import createUniqueList from '../../../../../utilities/arrays/create-unique-list';
 
 type Payload = {
   setEmojis: Function;
@@ -36,11 +36,12 @@ const setData = (payload: Payload) => {
       return 0;
     })
     .map((emoji: TypeEmoji) => {
-      const { category, codes, group, name, subgroup } = emoji;
+      const { codes, group, name, subgroup } = emoji;
+
       return {
         ...emoji,
         glyph: setEmoji({ codes }),
-        index: `${name.toLowerCase()}${category.toLowerCase()}${(group.toLowerCase(), subgroup.toLowerCase())}`,
+        index: `${name.toLowerCase()}${(group.toLowerCase(), subgroup.toLowerCase())}`,
       };
     });
 

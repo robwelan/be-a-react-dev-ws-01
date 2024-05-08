@@ -1,6 +1,6 @@
 import React from 'react';
 //  local components
-import EmojiData from './data';
+import DataEmoji from './data';
 import ViewEmoji from './view';
 
 //  lazy components
@@ -10,7 +10,7 @@ import ViewEmoji from './view';
 const ContentRecoilEmoji = () => {
   return (
     <>
-      <EmojiData />
+      <DataEmoji />
       <ViewEmoji />
     </>
   );

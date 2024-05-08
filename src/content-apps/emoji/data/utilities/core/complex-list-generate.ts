@@ -1,5 +1,5 @@
 //  types
-import { TypeComplexLists } from '../../state/types';
+import { TypeComplexLists } from '../../../state/types';
 
 type PayloadGenerateComplexList = {
   list: Array<TypeComplexLists>;

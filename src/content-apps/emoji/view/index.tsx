@@ -36,7 +36,7 @@ const ViewEmoji = () => {
       <Box w="70%">
         <ErrorBoundary fallback={<Text>Emoji Dictionary is sad...</Text>}>
           <Suspense fallback={<LoadingScreen />}>
-            <Emojis />
+            {/* <Emojis /> */}
           </Suspense>
         </ErrorBoundary>
       </Box>
