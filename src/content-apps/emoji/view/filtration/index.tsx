@@ -1,6 +1,7 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Heading, Select, VStack } from '@chakra-ui/react';
+import { Box, Heading, HStack, IconButton, VStack } from '@chakra-ui/react';
+import { CloseIcon } from '@chakra-ui/icons';
 //  recoil
 import { useRecoilValue } from 'recoil';
 import { emojiDictionary, emojiOrganisation } from '../../state/atoms';
@@ -24,20 +25,19 @@ const Filtration = () => {
       </Box>
       <Box>
         <Heading as="h2" fontSize="80%" textAlign="left">
-          Group:
+          Groups:
         </Heading>
       </Box>
-      <Box marginBottom={4}>
-        <SelectGroup />
-      </Box>
+
+      <SelectGroup />
+
       <Box>
         <Heading as="h2" fontSize="80%" textAlign="left">
-          Subgroup:
+          Collections:
         </Heading>
       </Box>
-      <Box marginBottom={4}>
-        <SelectSubgroup />
-      </Box>
+
+      <SelectSubgroup />
     </VStack>
   );
 };

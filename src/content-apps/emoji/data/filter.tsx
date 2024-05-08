@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //  recoil
 import { SetterOrUpdater, useSetRecoilState, useRecoilState } from 'recoil';
 //  state
@@ -7,7 +7,7 @@ import { EmojiFilter } from '../state/types';
 
 const DataFilter = () => {
   const [filter, setFilterState] = useRecoilState(emojiDictionaryFilter);
-
+  console.log('filter', filter);
   return <></>;
 };
 
