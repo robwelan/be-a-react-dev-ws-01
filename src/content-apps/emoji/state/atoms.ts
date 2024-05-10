@@ -24,5 +24,5 @@ export const emojiOrganisation = atom<TypeEmojiOrganisation>({
 
 export const emojiDictionaryFilter = atom<EmojiFilter>({
   key: 'emojiDictionaryFilter',
-  default: { input: '', group: '', subgroup: '' },
+  default: { emojis: [], filtered: false, input: '', group: '', subgroup: '' },
 });

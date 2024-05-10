@@ -9,6 +9,8 @@ export type TypeEmoji = {
 };
 
 export type EmojiFilter = {
+  emojis: Array<TypeEmoji>;
+  filtered: boolean;
   input: string;
   group: string;
   subgroup: string;
