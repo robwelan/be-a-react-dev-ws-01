@@ -49,7 +49,6 @@ const DataFilter = () => {
     }
   }, [input, group, processed, subgroup]);
 
-  console.log('filter', filter);
   return <></>;
 };
 
