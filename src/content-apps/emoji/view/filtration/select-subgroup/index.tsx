@@ -44,6 +44,7 @@ const SelectSubgroup = () => {
       <Box>
         <IconButton
           aria-label="clear collection"
+          color="gray.300"
           icon={<CloseIcon />}
           onClick={() => {
             handleClickClear({

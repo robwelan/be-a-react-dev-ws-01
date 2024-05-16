@@ -9,10 +9,10 @@ import {
   emojiDictionary,
   emojiDictionaryFilter,
   emojiOrganisation,
-} from '../../state/atoms';
+} from '../../../state/atoms';
 //  utilities
-import handleClickClear from './utilities/handle-click-clear';
-import handleSelectChange from './utilities/handle-select-change';
+import handleClickClear from '../utilities/handle-click-clear';
+import handleSelectChange from '../utilities/handle-select-change';
 
 const SelectGroup = () => {
   const organisation = useRecoilValue(emojiOrganisation);
@@ -49,6 +49,7 @@ const SelectGroup = () => {
       <Box>
         <IconButton
           aria-label="clear group"
+          color="gray.300"
           icon={<CloseIcon />}
           onClick={() => {
             handleClickClear({
