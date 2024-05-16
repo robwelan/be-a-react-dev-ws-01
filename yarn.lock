@@ -7049,11 +7049,6 @@ fast-levenshtein@^2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
 
-fast-sort@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/fast-sort/-/fast-sort-3.4.0.tgz#e5abb6bed199a601b34237d29db9262cdca82b3a"
-  integrity sha512-c/cMBGA5mH3OYjaXedtLIM3hQjv+KuZuiD2QEH5GofNOZeQVDIYIN7Okc2AW1KPhk44g5PTZnXp8t2lOMl8qhQ==
-
 fastest-levenshtein@^1.0.16:
   version "1.0.16"
   resolved "https://registry.yarnpkg.com/fastest-levenshtein/-/fastest-levenshtein-1.0.16.tgz#210e61b6ff181de91ea9b3d1b84fdedd47e034e5"
@@ -10239,11 +10234,6 @@ mingo@6.4.13:
   resolved "https://registry.yarnpkg.com/mingo/-/mingo-6.4.13.tgz#be9f3d414896bb00c1b4e796d136dd9c9a22710d"
   integrity sha512-giMYD1sB/7Xh16PrWX6Lf3pOJH3tsJ/vkrkICmjhFLVqcJe3NPjgcClVAxWlNIuW/jD6nitaZv3aYyhCfKmGzA==
 
-mingo@^6.4.13:
-  version "6.4.15"
-  resolved "https://registry.yarnpkg.com/mingo/-/mingo-6.4.15.tgz#5c617888a24b2333cbd59e0486ba6d9727a3ead2"
-  integrity sha512-fKUCGr7fUxrb7YBK6whm5O5VouXfKAVtxnb+6g3Xuwsj9Jt9u8hhMOgiUoKO4kp3DmuiN0qgpYX2H/nP3zD1Hw==
-
 mini-css-extract-plugin@1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-1.6.2.tgz#83172b4fd812f8fc4a09d6f6d16f924f53990ca8"
@@ -12650,14 +12640,6 @@ signal-exit@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
-
-signaldb@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/signaldb/-/signaldb-0.9.0.tgz#50e38e8e558e328d0935c09a778d9607ffaa2719"
-  integrity sha512-d20+dyZFXLa3KJYLOl3ViFr5hsP09Z1Ceb6fAprNdTl5VspzkGsxHfP9nKt5lRw9uDhF4UXZqSX70hsjlf6yig==
-  dependencies:
-    fast-sort "^3.4.0"
-    mingo "^6.4.13"
 
 signedsource@^1.0.0:
   version "1.0.0"

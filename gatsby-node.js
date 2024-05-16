@@ -150,8 +150,6 @@ exports.createSchemaCustomization = ({ actions }) => {
 //  https://github.com/gatsbyjs/gatsby/issues/564
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty'
-    }
-  })
-}
+    node: {},
+  });
+};
