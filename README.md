@@ -23,3 +23,5 @@ This blog was built from this starter blog: [https://github.com/gatsbyjs/gatsby-
 
 IndexNow:
 80491092aca544ccb83f5b17397cb553 (static file)
+
+TODO: https://github.com/vdmrgv/react-easy-infinite-scroll-hook
