@@ -3,6 +3,7 @@ export type TypeEmoji = {
   category: string;
   glyph: string;
   group: string;
+  id: string;
   index: string;
   name: string;
   subgroup: string;

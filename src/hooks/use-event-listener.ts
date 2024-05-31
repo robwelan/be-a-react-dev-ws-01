@@ -33,11 +33,11 @@ const useEventListener = (payload: Payload) => {
 
   useEffect(() => {
     if (mounted) {
-      document.addEventListener(type, shimCallback as EventListener, true);
+      document.addEventListener(type, shimCallback, true);
     }
 
     return () => {
-      document.removeEventListener(type, shimCallback as EventListener, true);
+      document.removeEventListener(type, shimCallback, true);
     };
   }, [mounted]);
 };

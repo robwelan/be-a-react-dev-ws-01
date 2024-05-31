@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 const emoji = require('emoji.json');
 //  types
 import {
@@ -41,6 +42,7 @@ const setData = (payload: Payload) => {
       return {
         ...emoji,
         glyph: setEmoji({ codes }),
+        id: uuidv4(),
         index: `${name.toLowerCase()}${(group.toLowerCase(), subgroup.toLowerCase())}`,
       };
     });

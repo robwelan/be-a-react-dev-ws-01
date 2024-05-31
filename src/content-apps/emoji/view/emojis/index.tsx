@@ -1,12 +1,10 @@
 import React from 'react';
-//  chakra-ui
-import { Grid } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  local components
-import ViewEmoji from '../emoji';
+import InfiniteScroll from './infinite-scroll';
 //  local utilities
-import getEmojis from './get-emojis';
+import getEmojis from '../../data/utilities/get-emojis';
 //  recoil state
 import { emojiDictionary, emojiDictionaryFilter } from '../../state/atoms';
 import { siteConfiguration } from '../../../../state';
@@ -26,19 +24,7 @@ const Emojis = () => {
   const { type } = device;
   const { isMobile } = type;
 
-  if (isMobile) {
-    return <p>emoji</p>;
-  }
-
-  return (
-    <Grid templateColumns="repeat(3, 1fr)" gap={4}>
-      {emojis.map((emoji, index) => (
-        <Grid key={index}>
-          <ViewEmoji emoji={emoji} />
-        </Grid>
-      ))}
-    </Grid>
-  );
+  return <InfiniteScroll emojis={emojis} isMobile={isMobile} />;
 };
 
 export default Emojis;
