@@ -17,17 +17,14 @@ import useEventListener from '../../../../../hooks/use-event-listener';
 //  local utilities
 import createItems from './utilities/create-items';
 import createNext from './utilities/create-next';
-//  types of state
-import { TypeEmoji } from '../../../state/types';
 
 type InfintiteScrollProps = {
-  emojis?: Array<TypeEmoji>;
   isMobile?: boolean;
   offset?: number;
 };
 
 const InfiniteScroll = (props: InfintiteScrollProps) => {
-  const { emojis = [], isMobile = false, offset = 50 } = props;
+  const { isMobile = false, offset = 50 } = props;
   const [rows, setRows] = useState({ first: 0, last: offset });
   const [data, setData] = useState(
     createItems({ api: { data: emojis }, rows }),

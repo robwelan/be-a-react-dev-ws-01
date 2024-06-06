@@ -9,32 +9,40 @@ export type TypeEmoji = {
   subgroup: string;
 };
 
-export type EmojiFilter = {
-  emojis: Array<TypeEmoji>;
-  filtered: boolean;
-  input: string;
-  group: string;
-  subgroup: string;
-};
+export type TypeArrayOfEmojis = Array<TypeEmoji>;
 
 export type TypeComplexLists = {
   group: string;
   subgroups: Array<string>;
 };
 
-type TypeSimpleLists = {
-  categories: Array<string>;
-  groups: Array<string>;
-  subgroups: Array<string>;
+export type TypeEmojiDictionary = {
+  emojis: TypeArrayOfEmojis;
+  processed: boolean;
 };
 
-export type TypeEmojiDictionary = {
-  emojis: Array<TypeEmoji>;
-  processed: boolean;
+export type TypeEmojiFakeAPI = {
+  emojis: TypeArrayOfEmojis;
+  length: number;
+  offset: number;
 };
 
 export type TypeEmojiOrganisation = {
   complex: Array<TypeComplexLists>;
   simple: TypeSimpleLists;
   processed: boolean;
+};
+
+export type EmojiFilter = {
+  emojis: TypeArrayOfEmojis;
+  filtered: boolean;
+  input: string;
+  group: string;
+  subgroup: string;
+};
+
+type TypeSimpleLists = {
+  categories: Array<string>;
+  groups: Array<string>;
+  subgroups: Array<string>;
 };
