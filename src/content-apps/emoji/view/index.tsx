@@ -34,7 +34,7 @@ const ViewEmoji = () => {
   return (
     <Flex gap={4}>
       <Box w="70%">
-        <ErrorBoundary fallback={<Text>Emoji Dictionary is sad...</Text>}>
+        <ErrorBoundary fallback={<Text>Emojis don't wanna...</Text>}>
           <Suspense fallback={<LoadingScreen />}>
             <Emojis />
           </Suspense>
