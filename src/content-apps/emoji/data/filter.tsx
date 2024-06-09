@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 //  recoil
-import { SetterOrUpdater, useRecoilValue, useRecoilState } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 //  state
 import { emojiDictionary, emojiDictionaryFilter } from '../state/atoms';
-import { EmojiFilter } from '../state/types';
 //  local utilities
 import getFilteredEmojis from './utilities/filter/get-filtered-emojis';
 import getFilteredValue from './utilities/filter/get-filtered-value';

@@ -16,7 +16,7 @@ export const emojiDictionary = atom<TypeEmojiDictionary>({
 
 export const emojiFakeAPI = atom<TypeEmojiFakeAPI>({
   key: 'emojiFakeAPI',
-  default: { emojis: [], length: 0, offset: 0 },
+  default: { emojis: [], length: 0 },
 });
 
 export const emojiOrganisation = atom<TypeEmojiOrganisation>({

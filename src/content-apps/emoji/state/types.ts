@@ -24,7 +24,6 @@ export type TypeEmojiDictionary = {
 export type TypeEmojiFakeAPI = {
   emojis: TypeArrayOfEmojis;
   length: number;
-  offset: number;
 };
 
 export type TypeEmojiOrganisation = {

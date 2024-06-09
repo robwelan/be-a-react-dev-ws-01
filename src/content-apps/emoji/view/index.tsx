@@ -23,9 +23,15 @@ const ViewEmoji = () => {
   if (isMobile) {
     return (
       <VStack>
-        <Box>top</Box>
         <Box>
-          <Emojis />
+          <Filtration />
+        </Box>
+        <Box>
+          <ErrorBoundary fallback={<Text>Emojis don't wanna...</Text>}>
+            <Suspense fallback={<LoadingScreen />}>
+              <Emojis />
+            </Suspense>
+          </ErrorBoundary>
         </Box>
       </VStack>
     );

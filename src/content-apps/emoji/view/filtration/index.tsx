@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Heading, Text, VStack } from '@chakra-ui/react';
+import { Heading, Text, VStack } from '@chakra-ui/react';
 //  recoil
 import { useRecoilValue } from 'recoil';
 import {
@@ -46,9 +46,13 @@ const Filtration = () => {
           </Text>
         </Wrapper>
         <Wrapper heading="Filter by Sets">
-        <Heading as="h3" size="sm">Sets</Heading>
+          <Heading as="h3" size="sm">
+            Sets
+          </Heading>
           <SelectGroup />
-          <Heading as="h3" size="sm">Subsets</Heading>
+          <Heading as="h3" size="sm">
+            Subsets
+          </Heading>
           <SelectSubgroup />
         </Wrapper>
       </Wrapper>

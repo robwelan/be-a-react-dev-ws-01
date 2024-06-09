@@ -4,8 +4,6 @@ import useInfiniteScroll, {
 } from 'react-easy-infinite-scroll-hook';
 //  chakra-ui
 import { Grid } from '@chakra-ui/react';
-//  components
-import LoadingScreen from '../../../../../components/loading-screen';
 //  hooks
 import useContainerBoundaryReached, {
   ContainerBoundaryReachedPayload,
@@ -25,17 +23,14 @@ type InfintiteScrollProps = {
 
 const InfiniteScroll = (props: InfintiteScrollProps) => {
   const { isMobile = false, offset = 50 } = props;
-  const [rows, setRows] = useState({ first: 0, last: offset });
-  const [data, setData] = useState(
-    createItems({ api: { data: emojis }, rows }),
-  );
+  const [rows, setRows] = useState({ first: 0, last: offset, offset });
+  const [data, setData] = useState(createItems({ rows }));
   const [loading, setLoading] = useState(false);
 
   const handleScroll = async (payload) => {
     const { bottom, top } = payload;
 
     const result = await createNext({
-      api: { data: emojis },
       edge: { bottom, top },
       offset,
       rows,
