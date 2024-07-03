@@ -15,7 +15,7 @@ import {
 const linkItems = [
   {
     icon: MdOutlineEmojiSymbols,
-    name: 'Emoji Search Tool',
+    name: 'Emojis',
     route: PUBLIC_ROUTE_PAGE_APPS_EMOJI_DICTIONARY,
   },
   {
