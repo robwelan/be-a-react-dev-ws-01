@@ -12,7 +12,7 @@ const Search = () => {
   const [filter, setFilterState] = useRecoilState(emojiDictionaryFilter);
   const { input, group, subgroup } = filter;
 
-  //  search effect
+  //  filtered value effect
   useEffect(() => {
     if (processed) {
       const filteredValue = getFilteredValue({ input, group, subgroup });

@@ -4,8 +4,11 @@ import { useRecoilValue } from 'recoil';
 import { emojiFakeAPI } from '../../../../state/atoms';
 //  default state
 import defaultState from './default-state';
+//  recoil types
+import { TypeArrayOfEmojis } from '../../../../state/types';
 
 type createItemsPayload = {
+  emojis: TypeArrayOfEmojis;
   rows: {
     first: number;
     last: number;
@@ -14,13 +17,12 @@ type createItemsPayload = {
 
 const createItems = (payload: createItemsPayload) => {
   const {
+    emojis,
     rows: { first = 0, last = 50 },
   } = payload;
 
   try {
-    const api = useRecoilValue(emojiFakeAPI);
-
-    const items = api.emojis.slice(first, last);
+    const items = emojis.slice(first, last);
 
     return {
       ...defaultState,

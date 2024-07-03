@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import useInfiniteScroll, {
-  ScrollDirection,
-} from 'react-easy-infinite-scroll-hook';
+import React, { useEffect, useState } from 'react';
+//  recoil
+import { useRecoilValue } from 'recoil';
 //  chakra-ui
 import { Grid } from '@chakra-ui/react';
 //  components
@@ -17,17 +16,25 @@ import useEventListener from '../../../../../hooks/use-event-listener';
 //  local utilities
 import createItems from './utilities/create-items';
 import createNext from './utilities/create-next';
+//  default state
+import defaultState from './utilities/default-state';
+//  recoil types
+import { TypeArrayOfEmojis } from '../../../state/types';
 
 type InfintiteScrollProps = {
+  emojis: TypeArrayOfEmojis;
   isMobile?: boolean;
+  length: number;
   offset?: number;
 };
 
 const InfiniteScroll = (props: InfintiteScrollProps) => {
-  const { isMobile = false, offset = 50 } = props;
+  const { emojis, isMobile = false, offset = 50 } = props;
   const [rows, setRows] = useState({ first: 0, last: offset, offset });
-  const [state, setState] = useState(createItems({ rows }));
+  const [state, setState] = useState(defaultState);
   const [loading, setLoading] = useState(false);
+
+  const templateColumns = isMobile ? 1 : 3;
 
   const handleScroll = async (payload) => {
     const { bottom, top } = payload;
@@ -39,11 +46,16 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
     });
   };
 
+  //  loading effect
+  useEffect(() => {
+    const values = createItems({ emojis, rows });
+    setState(values);
+  }, []);
+
   useContainerBoundaryReached({
     callback: handleScroll,
     type: 'window',
   });
-  const templateColumns = isMobile ? 1 : 3;
 
   // const ref = useInfiniteScroll<HTMLDivElement>({
   //   next,

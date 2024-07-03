@@ -12,7 +12,7 @@ const Sets = () => {
   const [filter, setFilterState] = useRecoilState(emojiDictionaryFilter);
   const { filtered, input, group, subgroup } = filter;
 
-  //  sets effect
+  //  filtered emojis effect
   useEffect(() => {
     if (filtered && processed) {
       const filteredEmojis = getFilteredEmojis({
@@ -33,7 +33,7 @@ const Sets = () => {
         emojis: [],
       }));
     }
-  }, [filtered, group, subgroup, processed]);
+  }, [filtered, input, group, subgroup, processed]);
 
   return null;
 };

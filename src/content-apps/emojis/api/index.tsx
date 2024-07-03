@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 //  recoil
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 //  recoil state
@@ -14,10 +14,21 @@ const Api = () => {
   const { emojis: allEmojis } = emojis;
   const filter = useRecoilValue(emojiDictionaryFilter);
   const { emojis: filteredEmojis, filtered } = filter;
+  const [track, setTrack] = useState(filtered);
+
+  //  track effect
+  useEffect(() => {
+    if (track !== filtered) {
+      setTrack(filtered);
+      setFake((prevState) => ({ ...prevState, loading: true }));
+    }
+    if (track === filtered) {
+      setFake((prevState) => ({ ...prevState, loading: false }));
+    }
+  }, [track, filtered]);
 
   useEffect(() => {
     if (filtered) {
-      console.log('filtered');
       setFake((prevState) => ({
         ...prevState,
         emojis: filteredEmojis,
@@ -26,7 +37,6 @@ const Api = () => {
     }
 
     if (!filtered) {
-      console.log('note filered');
       setFake((prevState) => ({
         ...prevState,
         emojis: allEmojis,

@@ -1,13 +1,13 @@
 import React from 'react';
 //  local components
-import Search from './search';
-import Sets from './sets';
+import IsFiltered from './is-filtered';
+import FilteredEmojis from './filtered-emojis';
 
 const Filter = () => {
   return (
     <>
-      <Search />
-      <Sets />
+      <IsFiltered />
+      <FilteredEmojis />
     </>
   );
 };

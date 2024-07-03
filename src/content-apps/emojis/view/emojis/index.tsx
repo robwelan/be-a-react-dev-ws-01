@@ -1,31 +1,27 @@
 import React, { lazy, Suspense } from 'react';
+//  recoil
+import { useRecoilValue } from 'recoil';
 //  chakra-ui
 import { Text } from '@chakra-ui/react';
 //  react error boundary
 import { ErrorBoundary } from 'react-error-boundary';
-//  recoil
-import { useRecoilValue } from 'recoil';
 //  components
 import LoadingScreen from '../../../../components/loading-screen';
-//  local components
-// import InfiniteScroll from './infinite-scroll';
-//  state of be-a-react-dev
-import { siteConfiguration } from '../../../../state';
+//  recoil state
+import { emojiFakeAPI } from '../../state/atoms';
 //  lazy
 const InfiniteScroll = lazy(() => import('./infinite-scroll'));
 
 const Emojis = () => {
-  const configuration = useRecoilValue(siteConfiguration);
-  const { device } = configuration;
-  const { type } = device;
-  const { isMobile } = type;
+  const { emojis, length, loading, processed } = useRecoilValue(emojiFakeAPI);
 
-  // return <InfiniteScroll isMobile={isMobile} />;
+  if (!processed) return <LoadingScreen />;
 
   return (
     <ErrorBoundary fallback={<Text>Emojis don't wanna...</Text>}>
       <Suspense fallback={<LoadingScreen />}>
-        <InfiniteScroll />
+        {loading && <LoadingScreen />}
+        {!loading && <InfiniteScroll emojis={emojis} length={length} />}
       </Suspense>
     </ErrorBoundary>
   );

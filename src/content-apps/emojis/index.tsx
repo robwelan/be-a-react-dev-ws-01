@@ -6,19 +6,25 @@ import DataApi from './api';
 import DataEmojis from './data';
 import ViewEmojis from './view';
 //  recoil state
-import { emojiDictionary, emojiOrganisation } from './state/atoms';
+import {
+  emojiDictionary,
+  emojiFakeAPI,
+  emojiOrganisation,
+} from './state/atoms';
 
 const ContentEmojis = () => {
   const dictionary = useRecoilValue(emojiDictionary);
+  const fake = useRecoilValue(emojiFakeAPI);
   const organisation = useRecoilValue(emojiOrganisation);
   const { processed: dictionaryIsProcessed } = dictionary;
+  const { processed: fakeIsProcessed } = fake;
   const { processed: organisationIsProcessed } = organisation;
 
   return (
     <>
       <DataEmojis />
-      {dictionaryIsProcessed && <DataApi />}
-      {dictionaryIsProcessed && organisationIsProcessed && <ViewEmojis />}
+      {dictionaryIsProcessed && organisationIsProcessed && <DataApi />}
+      {dictionaryIsProcessed && fakeIsProcessed && <ViewEmojis />}
     </>
   );
 };
