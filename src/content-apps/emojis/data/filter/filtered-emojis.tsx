@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 //  recoil
 import { useRecoilValue, useRecoilState } from 'recoil';
 //  state
-import { emojiDictionary, emojiDictionaryFilter } from '../../state/atoms';
+import { allEmojis, filteredEmojis } from '../../state/atoms';
 //  local utilities
 import getFilteredEmojis from '../utilities/filter/get-filtered-emojis';
 
 const Sets = () => {
-  const dictionary = useRecoilValue(emojiDictionary);
+  const dictionary = useRecoilValue(allEmojis);
   const { emojis: emojisCore, processed } = dictionary;
-  const [filter, setFilterState] = useRecoilState(emojiDictionaryFilter);
+  const [filter, setFilterState] = useRecoilState(filteredEmojis);
   const { filtered, input, group, subgroup } = filter;
 
   //  filtered emojis effect

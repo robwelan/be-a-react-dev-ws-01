@@ -8,10 +8,16 @@ import LoadingScreen from '../../../../components/loading-screen';
 //  lazy
 const Main = lazy(() => import('./main'));
 
-const Filtration = () => (
+type FiltrationProps = {
+  all: number;
+  display: number;
+  filtered: boolean;
+};
+
+const Filtration = (props: FiltrationProps) => (
   <ErrorBoundary fallback={<Text>Filtration View Error...</Text>}>
     <Suspense fallback={<LoadingScreen />}>
-      <Main />
+      <Main {...props} />
     </Suspense>
   </ErrorBoundary>
 );

@@ -1,12 +1,17 @@
-const getTotalEmojisText = (payload) => {
-  const { filtered, emojisDictionary, emojisFiltered } = payload;
-  const totalEmojis = emojisDictionary.length;
+type GetTotalEmojisTextPayload = {
+  all: number;
+  display: number;
+  filtered: boolean;
+};
+
+const getTotalEmojisText = (payload: GetTotalEmojisTextPayload) => {
+  const { all, display, filtered } = payload;
 
   if (filtered) {
-    return `Found ${emojisFiltered.length} of ${totalEmojis}`;
+    return `Found ${display} of ${all}`;
   }
 
-  return `Total emjois: ${totalEmojis}`;
+  return `Total emjois: ${all}`;
 };
 
 export default getTotalEmojisText;

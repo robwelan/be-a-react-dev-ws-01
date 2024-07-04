@@ -4,7 +4,7 @@ const emoji = require('emoji.json');
 import {
   TypeComplexLists,
   TypeEmoji,
-  TypeEmojiDictionary,
+  TypeAllEmojis,
   TypeEmojiOrganisation,
 } from '../../../state/types';
 //  local utilities
@@ -90,7 +90,7 @@ const setData = (payload: Payload) => {
     }
   });
 
-  setEmojis((prevState: TypeEmojiDictionary) => ({
+  setEmojis((prevState: TypeAllEmojis) => ({
     ...prevState,
     emojis: sorted,
     processed: true,

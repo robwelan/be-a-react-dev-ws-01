@@ -2,25 +2,27 @@ import { useEffect } from 'react';
 //  recoil
 import { useRecoilValue, useRecoilState } from 'recoil';
 //  state
-import { emojiDictionary, emojiDictionaryFilter } from '../../state/atoms';
+import { allEmojis, filteredEmojis } from '../../state/atoms';
 //  local utilities
 import getFilteredValue from '../utilities/filter/get-filtered-value';
 
 const Search = () => {
-  const dictionary = useRecoilValue(emojiDictionary);
+  const dictionary = useRecoilValue(allEmojis);
   const { processed } = dictionary;
-  const [filter, setFilterState] = useRecoilState(emojiDictionaryFilter);
-  const { input, group, subgroup } = filter;
+  const [filter, setFilterState] = useRecoilState(filteredEmojis);
+  const { filtered, input, group, subgroup } = filter;
 
   //  filtered value effect
   useEffect(() => {
     if (processed) {
       const filteredValue = getFilteredValue({ input, group, subgroup });
 
-      setFilterState((prevState) => ({
-        ...prevState,
-        filtered: filteredValue,
-      }));
+      if (filtered !== filteredValue) {
+        setFilterState((prevState) => ({
+          ...prevState,
+          filtered: filteredValue,
+        }));
+      }
     }
   }, [input, group, subgroup, processed]);
 

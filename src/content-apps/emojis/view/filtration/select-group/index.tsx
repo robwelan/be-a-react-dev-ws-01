@@ -5,14 +5,14 @@ import { Box, HStack, IconButton, Select } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
 //  recoil
 import { useRecoilValue, useRecoilState } from 'recoil';
-import { emojiDictionaryFilter, emojiOrganisation } from '../../../state/atoms';
+import { filteredEmojis, emojiOrganisation } from '../../../state/atoms';
 //  utilities
 import handleClickClear from '../utilities/handle-click-clear';
 import handleSelectChange from '../utilities/handle-select-change';
 
 const SelectGroup = () => {
   const organisation = useRecoilValue(emojiOrganisation);
-  const [filter, setFilter] = useRecoilState(emojiDictionaryFilter);
+  const [filter, setFilter] = useRecoilState(filteredEmojis);
 
   return (
     <HStack marginBottom={4}>

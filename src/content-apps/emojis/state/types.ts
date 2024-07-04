@@ -16,15 +16,8 @@ export type TypeComplexLists = {
   subgroups: Array<string>;
 };
 
-export type TypeEmojiDictionary = {
+export type TypeAllEmojis = {
   emojis: TypeArrayOfEmojis;
-  processed: boolean;
-};
-
-export type TypeEmojiFakeAPI = {
-  emojis: TypeArrayOfEmojis;
-  length: number;
-  loading: boolean;
   processed: boolean;
 };
 
@@ -34,7 +27,7 @@ export type TypeEmojiOrganisation = {
   processed: boolean;
 };
 
-export type EmojiFilter = {
+export type TypeFilteredEmojis = {
   emojis: TypeArrayOfEmojis;
   filtered: boolean;
   input: string;

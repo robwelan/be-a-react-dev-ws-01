@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { EmojiFilter } from '../../../state/types';
+import { TypeFilteredEmojis } from '../../../state/types';
 
 type EventPayload = {
   target?: {
@@ -7,7 +7,7 @@ type EventPayload = {
   };
 };
 
-type SetState = Dispatch<SetStateAction<EmojiFilter>>;
+type SetState = Dispatch<SetStateAction<TypeFilteredEmojis>>;
 
 type HandleSelectChangePayload = {
   event: EventPayload;
@@ -20,7 +20,7 @@ const handleSelectChange = (payload: HandleSelectChangePayload) => {
   const { target = {} } = event;
   const { value = '' } = target;
 
-  setState((prevState: EmojiFilter) => ({ ...prevState, [key]: value }));
+  setState((prevState: TypeFilteredEmojis) => ({ ...prevState, [key]: value }));
 };
 
 export default handleSelectChange;

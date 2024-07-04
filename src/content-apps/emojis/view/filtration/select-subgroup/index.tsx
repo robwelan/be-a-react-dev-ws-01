@@ -5,7 +5,7 @@ import { Box, HStack, IconButton, Select } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
 //  recoil
 import { useRecoilValue, useRecoilState } from 'recoil';
-import { emojiDictionaryFilter, emojiOrganisation } from '../../../state/atoms';
+import { filteredEmojis, emojiOrganisation } from '../../../state/atoms';
 //  local utilities
 import getOptionList from './get-option-list';
 //  utilities
@@ -14,7 +14,7 @@ import handleSelectChange from '../utilities/handle-select-change';
 
 const SelectSubgroup = () => {
   const organisation = useRecoilValue(emojiOrganisation);
-  const [filter, setFilter] = useRecoilState(emojiDictionaryFilter);
+  const [filter, setFilter] = useRecoilState(filteredEmojis);
   const { group } = filter;
   const { complex } = organisation;
 

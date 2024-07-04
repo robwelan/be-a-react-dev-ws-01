@@ -1,9 +1,6 @@
 import React from 'react';
 //  chakra-ui
 import { Heading, Text, VStack } from '@chakra-ui/react';
-//  recoil
-import { useRecoilValue } from 'recoil';
-import { emojiDictionary, emojiDictionaryFilter } from '../../../state/atoms';
 //  local components
 import Wrapper from '../components/wrapper';
 //  local filter devices
@@ -15,14 +12,19 @@ import getTotalEmojisText from '../utilities/get-total-emojis-text';
 //  styles
 import './index.css';
 
-const Main = () => {
-  const dictionary = useRecoilValue(emojiDictionary);
-  const dictionaryFilter = useRecoilValue(emojiDictionaryFilter);
+type MainProps = {
+  all: number;
+  display: number;
+  filtered: boolean;
+};
+
+const Main = (props: MainProps) => {
+  const { all, display, filtered } = props;
 
   const labelTotals = getTotalEmojisText({
-    filtered: dictionaryFilter.filtered,
-    emojisDictionary: dictionary.emojis,
-    emojisFiltered: dictionaryFilter.emojis,
+    all,
+    display,
+    filtered,
   });
 
   return (

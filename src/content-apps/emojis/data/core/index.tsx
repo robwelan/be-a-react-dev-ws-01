@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 //  recoil
 import { SetterOrUpdater, useSetRecoilState } from 'recoil';
 //  state
-import { emojiDictionary, emojiOrganisation } from '../../state/atoms';
-import { TypeEmojiDictionary, TypeEmojiOrganisation } from '../../state/types';
+import { allEmojis, emojiOrganisation } from '../../state/atoms';
+import { TypeAllEmojis, TypeEmojiOrganisation } from '../../state/types';
 //  utilities
 import setData from '../utilities/core/set-data';
 
 const Core = () => {
-  const setEmojiDictionary: SetterOrUpdater<TypeEmojiDictionary> =
-    useSetRecoilState(emojiDictionary);
+  const setEmojiDictionary: SetterOrUpdater<TypeAllEmojis> =
+    useSetRecoilState(allEmojis);
   const setEmojiOrganisation: SetterOrUpdater<TypeEmojiOrganisation> =
     useSetRecoilState(emojiOrganisation);
 

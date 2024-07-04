@@ -1,20 +1,14 @@
 import { atom } from 'recoil';
 //  types
 import {
-  TypeEmojiDictionary,
-  TypeEmojiFakeAPI,
-  EmojiFilter,
+  TypeAllEmojis,
+  TypeFilteredEmojis,
   TypeEmojiOrganisation,
 } from './types';
 
-export const emojiDictionary = atom<TypeEmojiDictionary>({
-  key: 'emojiDictionary',
+export const allEmojis = atom<TypeAllEmojis>({
+  key: 'allEmojis',
   default: { emojis: [], processed: false },
-});
-
-export const emojiFakeAPI = atom<TypeEmojiFakeAPI>({
-  key: 'emojiFakeAPI',
-  default: { emojis: [], length: 0, loading: false, processed: false },
 });
 
 export const emojiOrganisation = atom<TypeEmojiOrganisation>({
@@ -26,7 +20,7 @@ export const emojiOrganisation = atom<TypeEmojiOrganisation>({
   },
 });
 
-export const emojiDictionaryFilter = atom<EmojiFilter>({
+export const filteredEmojis = atom<TypeFilteredEmojis>({
   key: 'emojiDictionaryFilter',
   default: { emojis: [], filtered: false, input: '', group: '', subgroup: '' },
 });

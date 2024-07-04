@@ -1,12 +1,12 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy } from 'react';
 //  chakra-ui
 import { Box, Flex, VStack, Text } from '@chakra-ui/react';
-//  react error boundary
-import { ErrorBoundary } from 'react-error-boundary';
 //  recoil
 import { useRecoilValue } from 'recoil';
 //  components
 import LoadingScreen from '../../../components/loading-screen';
+//  hooks
+import useEmojisData from '../hooks/use-emojis-data';
 //  lazy components
 import Emojis from './emojis';
 // const Emojis = lazy(() => import('./emojis'));
@@ -15,19 +15,24 @@ const Filtration = lazy(() => import('./filtration'));
 import { siteConfiguration } from '../../../state';
 
 const ViewEmoji = () => {
+  const [state] = useEmojisData();
   const configuration = useRecoilValue(siteConfiguration);
   const { device } = configuration;
   const { type } = device;
   const { isMobile } = type;
+  const emojisProps = { ...state, isMobile };
+  const filtrationProps = { filtered: state.filtered, ...state.length };
+
+  if (state.length.all === 0) return <LoadingScreen />;
 
   if (isMobile) {
     return (
       <VStack>
         <Box>
-          <Filtration />
+          <Filtration {...filtrationProps} />
         </Box>
         <Box>
-          <Emojis />
+          <Emojis {...emojisProps} />
         </Box>
       </VStack>
     );
@@ -36,10 +41,10 @@ const ViewEmoji = () => {
   return (
     <Flex gap={4}>
       <Box w="70%">
-        <Emojis />
+        <Emojis {...emojisProps} />
       </Box>
       <Box w="30%" sx={{ position: 'relative' }}>
-        <Filtration />
+        <Filtration {...filtrationProps} />
       </Box>
     </Flex>
   );

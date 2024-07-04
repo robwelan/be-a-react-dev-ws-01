@@ -23,8 +23,12 @@ import { TypeArrayOfEmojis } from '../../../state/types';
 
 type InfintiteScrollProps = {
   emojis: TypeArrayOfEmojis;
+  filtered: boolean;
   isMobile?: boolean;
-  length: number;
+  length: {
+    all: number;
+    display: number;
+  };
   offset?: number;
 };
 
@@ -48,8 +52,9 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
 
   //  loading effect
   useEffect(() => {
-    const values = createItems({ emojis, rows });
-    setState(values);
+    const items = createItems({ emojis, rows });
+
+    setState(items);
   }, []);
 
   useContainerBoundaryReached({

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
-import { EmojiFilter } from '../../../state/types';
+import { TypeFilteredEmojis } from '../../../state/types';
 
-type SetState = Dispatch<SetStateAction<EmojiFilter>>;
+type SetState = Dispatch<SetStateAction<TypeFilteredEmojis>>;
 
 type HandleClickClearPayload = {
   key: string;
