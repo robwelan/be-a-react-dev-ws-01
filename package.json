@@ -33,16 +33,16 @@
     "@chakra-ui/system": "^2.6.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@hookform/resolvers": "^3.4.2",
-    "@maverick-js/signals": "^5.11.5",
+    "@hookform/resolvers": "^3.7.0",
+    "@maverick-js/signals": "^6.0.0",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "@react-icons/all-files": "^4.1.0",
-    "@tanstack/react-query": "^5.37.1",
+    "@tanstack/react-query": "^5.49.2",
     "copy-to-clipboard": "^3.3.3",
     "date-fns": "^3.6.0",
     "emoji.json": "^15.1.0",
-    "framer-motion": "^11.2.5",
-    "gatsby": "^5.13.5",
+    "framer-motion": "^11.2.12",
+    "gatsby": "^5.13.6",
     "gatsby-plugin-clarity": "^1.0.1",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-google-gtag": "^5.13.1",
@@ -69,7 +69,7 @@
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.0.13",
     "react-geolocated": "^4.1.2",
-    "react-hook-form": "^7.51.5",
+    "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
     "react-quill": "^2.0.0",
     "react-render-html": "^0.6.0",
@@ -77,16 +77,16 @@
     "react-window": "^1.8.10",
     "react-window-infinite-loader": "^1.0.9",
     "recoil": "^0.7.7",
-    "rxdb": "^15.21.3",
+    "rxdb": "^15.26.0",
     "rxjs": "^7.8.1",
-    "stream": "^0.0.2",
+    "stream": "^0.0.3",
     "styled-components": "^6.1.11",
     "util": "^0.12.5",
-    "uuid": "^9.0.1"
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^3.8.1",
-    "@types/uuid": "^9.0.8",
-    "prettier": "^3.2.5"
+    "@types/uuid": "^10.0.0",
+    "prettier": "^3.3.2"
   }
 }
