@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//  recoil
-import { useRecoilValue } from 'recoil';
 //  chakra-ui
 import { Grid } from '@chakra-ui/react';
 //  components
@@ -55,7 +53,7 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
     const items = createItems({ emojis, rows });
 
     setState(items);
-  }, []);
+  }, [emojis]);
 
   useContainerBoundaryReached({
     callback: handleScroll,
