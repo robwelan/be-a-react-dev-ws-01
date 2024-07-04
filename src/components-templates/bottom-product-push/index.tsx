@@ -19,10 +19,10 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 //  components
 import StandardDivider from '../../components/standard-divider';
 //  constants
-import storefrontZazzle from '../../constants/storefront-zazzle';
+import storefront from '../../constants/storefront';
 
 const ProductPush = () => {
-  const products = storefrontZazzle.products();
+  const products = storefront.products();
   const product = products[random.int(0, products.length - 1)];
 
   return (

@@ -6,11 +6,6 @@ import stickers from './sticker-designs';
 import tshirts from './t-shirt-designs';
 import xmas from './xmas-designs';
 
-const store = {
-  name: 'Be A React Dev',
-  uri: 'https://www.zazzle.com.au/store/beareactdev',
-};
-
 const getAllProducts = () => [
   ...glasses,
   ...magnets,
@@ -22,7 +17,6 @@ const getAllProducts = () => [
 ];
 
 const storefront = {
-  store,
   products: () => getAllProducts(),
   glasses,
   magnets,
