@@ -1,9 +1,9 @@
 import tshirts from './tshirt-designs';
 
-const getAllProducts = () => [...tshirts];
+const allProducts = [...tshirts];
 
 const storefront = {
-  products: () => getAllProducts(),
+  products: allProducts,
   tshirts,
 };
 

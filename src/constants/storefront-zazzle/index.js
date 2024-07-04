@@ -6,7 +6,7 @@ import stickers from './sticker-designs';
 import tshirts from './t-shirt-designs';
 import xmas from './xmas-designs';
 
-const getAllProducts = () => [
+const allProducts = [
   ...glasses,
   ...magnets,
   ...mugs,
@@ -17,7 +17,7 @@ const getAllProducts = () => [
 ];
 
 const storefront = {
-  products: () => getAllProducts(),
+  products: allProducts,
   glasses,
   magnets,
   mugs,

@@ -22,7 +22,7 @@ import StandardDivider from '../../components/standard-divider';
 import storefront from '../../constants/storefront';
 
 const ProductPush = () => {
-  const products = storefront.products();
+  const products = storefront.products;
   const product = products[random.int(0, products.length - 1)];
 
   return (
