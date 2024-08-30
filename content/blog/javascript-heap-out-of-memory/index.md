@@ -48,3 +48,7 @@ Happy coding and creating! 🌟🎉
 <span style="font-size:10px">
   Photo by <a href="https://unsplash.com/@6heinz3r?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Gabriel Heinzer</a> on <a href="https://unsplash.com/photos/text-g5jpH62pwes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </span>
+
+<span style="font-size:10px">
+  ChatGPT was used to help write this post. It has not been checked for accuracy. If anything is found to be in error or if there are any concerns please <a href="mailto:rob.welan@beareact.dev">feel free to email me at rob.welan@beareact.dev</a>.
+</span>
