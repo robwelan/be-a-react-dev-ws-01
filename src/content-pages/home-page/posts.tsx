@@ -31,11 +31,11 @@ const BlogPosts = (props: Props) => {
 
   return (
     <Grid
+      gap={4}
       templateColumns={{
         sm: 'repeat(1, 1fr)',
         md: 'repeat(1, 1fr)',
       }}
-      gap={4}
     >
       <>
         {data.map((edge) => (
