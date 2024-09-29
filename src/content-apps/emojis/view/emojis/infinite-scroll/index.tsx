@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react';
 //  chakra-ui
-import { Grid } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
+//  react-easy-infinite-scroll-hook
+import useInfiniteScroll, {
+  ScrollDirection,
+  ScrollDirectionBooleanState,
+} from 'react-easy-infinite-scroll-hook';
 //  components
 import LoadingScreen from '../../../../../components/loading-screen';
-//  hooks
-import useContainerBoundaryReached, {
-  ContainerBoundaryReachedPayload,
-} from '../../../../../hooks/use-container-edge-reached';
 //  local components
 import ViewEmoji from '../../emoji';
-//  local hooks
-import useEventListener from '../../../../../hooks/use-event-listener';
+import Wrapper from './wrapper';
+//  recoil types
+import { TypeArrayOfEmojis } from '../../../state/types';
 //  local utilities
 import createItems from './utilities/create-items';
 import createNext from './utilities/create-next';
-//  default state
 import defaultState from './utilities/default-state';
-//  recoil types
-import { TypeArrayOfEmojis } from '../../../state/types';
+//  styles
+import { container } from './infinite-scroll.module.css';
 
+/*
+https://github.com/vdmrgv/react-easy-infinite-scroll-hook/blob/main/example/src/pages/common/VerticalList.tsx
+*/
 type InfintiteScrollProps = {
   emojis: TypeArrayOfEmojis;
   filtered: boolean;
@@ -31,60 +35,66 @@ type InfintiteScrollProps = {
 };
 
 const InfiniteScroll = (props: InfintiteScrollProps) => {
-  const { emojis, isMobile = false, offset = 50 } = props;
-  const [rows, setRows] = useState({ first: 0, last: offset, offset });
+  const offset = 50;
+  const { emojis, isMobile = false } = props;
   const [state, setState] = useState(defaultState);
-  const [loading, setLoading] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState<ScrollDirectionBooleanState>({
+    up: false,
+    down: true,
+  });
   const templateColumns = isMobile ? 1 : 3;
 
-  const handleScroll = async (payload) => {
-    const { bottom, top } = payload;
-
-    const result = await createNext({
-      edge: { bottom, top },
+  const gridRef = useInfiniteScroll<HTMLDivElement>({
+    next: createNext({
+      setData: setState,
+      setIsLoading,
+      emojis,
+      length: state.data.emojis.length,
       offset,
-      rows,
-    });
-  };
-
-  //  loading effect
-  useEffect(() => {
-    const items = createItems({ emojis, rows });
-
-    setState(items);
-  }, [emojis]);
-
-  useContainerBoundaryReached({
-    callback: handleScroll,
-    type: 'window',
+    }),
+    rowCount: emojis.length,
+    hasMore,
   });
 
-  // const ref = useInfiniteScroll<HTMLDivElement>({
-  //   next,
-  //   rowCount: data.length,
-  //   hasMore: { down: true },
-  //   windowScroll: true,
-  // });
+  //  mounting
+  useEffect(() => {
+    const doLoadData = async () => {
+      const loadData = await createItems({
+        emojis,
+        offset,
+      });
 
-  if (state && state.data && !state.data.processed) {
-    return <LoadingScreen />;
-  }
+      setState(loadData);
+    };
+
+    doLoadData();
+  }, [emojis]);
+
+  //  loading
+  useEffect(() => {
+    if (!state.data.processed) {
+      setIsLoading(true);
+    }
+
+    if (state.data.processed) {
+      setIsLoading(false);
+    }
+  }, [state.data.processed]);
 
   return (
-    <Grid gap={4} templateColumns={`repeat(${templateColumns}, 1fr)`}>
-      {state &&
-        state.data &&
-        state.data.emojis &&
-        state.data.emojis.map((emoji) => {
-          const { id } = emoji;
-
-          return (
-            <Grid key={id}>
-              <ViewEmoji emoji={emoji} />
-            </Grid>
-          );
-        })}
+    <Grid
+      className={container}
+      gap={4}
+      templateColumns={`repeat(${templateColumns}, 1fr)`}
+      ref={gridRef}
+    >
+      {state.data.emojis.map((item) => (
+        <GridItem key={item.id}>
+          <ViewEmoji emoji={item} />
+        </GridItem>
+      ))}
+      {isLoading && <LoadingScreen />}
     </Grid>
   );
 };

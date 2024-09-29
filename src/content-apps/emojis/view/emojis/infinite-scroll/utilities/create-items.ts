@@ -1,7 +1,3 @@
-//  recoil
-import { useRecoilValue } from 'recoil';
-//  state
-import { emojiFakeAPI } from '../../../../state/atoms';
 //  default state
 import defaultState from './default-state';
 //  recoil types
@@ -9,20 +5,14 @@ import { TypeArrayOfEmojis } from '../../../../state/types';
 
 type createItemsPayload = {
   emojis: TypeArrayOfEmojis;
-  rows: {
-    first: number;
-    last: number;
-  };
+  offset: number;
 };
 
-const createItems = (payload: createItemsPayload) => {
-  const {
-    emojis,
-    rows: { first = 0, last = 50 },
-  } = payload;
+const createItems = async (payload: createItemsPayload) => {
+  const { emojis, offset = 50 } = payload;
 
   try {
-    const items = emojis.slice(first, last);
+    const items = await Promise.resolve(emojis.slice(0, offset));
 
     return {
       ...defaultState,

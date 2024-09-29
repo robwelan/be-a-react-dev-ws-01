@@ -1,0 +1,6 @@
+.container {
+  border: 1px solid;
+  border-color: var(--chakra-colors-gray-200);
+  height: calc(100vh - 140px);
+  overflow-y: scroll;
+}
