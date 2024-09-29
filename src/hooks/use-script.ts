@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+//  utilities
+import getWindow from '../utilities/window/get-window';
 
 interface Payload {
   async?: boolean;
@@ -17,11 +19,16 @@ const useScript = (payload: Payload) => {
     src = '',
     type = '',
   } = payload;
+  const globalWindow = getWindow();
 
   //  url effect
   useEffect(() => {
     const documentTag = isHead ? 'head' : 'body';
-    const script = document.createElement('script');
+    const script = globalWindow.document.createElement('script');
+
+    if (!globalWindow) return () => {};
+
+    if (!globalWindow.document) return () => {};
 
     if (isAsync) {
       script.async = true;
@@ -36,12 +43,12 @@ const useScript = (payload: Payload) => {
       script.type = type;
     }
 
-    document[documentTag].appendChild(script);
+    globalWindow.document[documentTag].appendChild(script);
 
     return () => {
-      document[documentTag].removeChild(script);
+      globalWindow.document[documentTag].removeChild(script);
     };
-  }, []);
+  }, [globalWindow]);
 };
 
 export default useScript;
