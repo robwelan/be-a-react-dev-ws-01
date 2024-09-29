@@ -81,7 +81,7 @@ const Seo = (props) => {
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5658856130575482"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
       {/* Google Ads - end */}
       {/* children */}
