@@ -23,7 +23,7 @@ const loadMore = async (
   timeout: number,
 ): Promise<TypeArrayOfEmojis> => {
   const proposedEnd = length + offset;
-  const maxEnd = rowCount > 0 ? rowCount - 1 : 0;
+  const maxEnd = rowCount > 0 ? rowCount + 1 : 0;
   const lastRowCountGoingDown = getLastRowGoingDown({
     proposedEnd,
     maxEnd,

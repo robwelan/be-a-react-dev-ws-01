@@ -42,6 +42,8 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
   const templateColumns = isMobile ? 1 : 3;
   const offset = isMobile ? 50 : 48;
   const timeout = 250;
+  const lengthEmojis = emojis?.length || 0;
+  const lengthStateEmojis = state?.data?.emojis?.length || 0;
 
   const gridRef = useInfiniteScroll<HTMLDivElement>({
     next: createNext({
@@ -81,6 +83,13 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
       setIsLoading(false);
     }
   }, [state.data.processed]);
+
+  //  hasMore effect
+  useEffect(() => {
+    if (lengthEmojis === lengthStateEmojis) {
+      setHasMore({ up: false, down: false });
+    }
+  }, [lengthEmojis, lengthStateEmojis]);
 
   return (
     <Grid
