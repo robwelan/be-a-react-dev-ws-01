@@ -9,8 +9,6 @@ import SelectGroup from '../select-group';
 import SelectSubgroup from '../select-subgroup';
 //  local utilities
 import getTotalEmojisText from '../utilities/get-total-emojis-text';
-//  styles
-import './index.css';
 
 type MainProps = {
   all: number;

@@ -4,17 +4,6 @@ import loadMore from './load-more';
 import { TypeArrayOfEmojis } from '../../../../state/types';
 import { TypeDefaultState } from './default-state';
 
-type CreateNextPayload = {
-  api: {
-    data: TypeArrayOfEmojis;
-  };
-  edge: {
-    bottom: boolean;
-    top: boolean;
-  };
-  offset: number;
-};
-
 const createNext =
   ({
     emojis,
@@ -22,18 +11,23 @@ const createNext =
     setIsLoading,
     length,
     offset,
+    rowCount,
     reverse,
+    timeout,
   }: {
+    emojis: TypeArrayOfEmojis;
     setData: (v: React.SetStateAction<TypeDefaultState>) => void;
     setIsLoading: (v: React.SetStateAction<boolean>) => void;
     length: number;
     offset: number;
+    rowCount: number;
     reverse?: boolean;
+    timeout: number;
   }) =>
   async (direction: ScrollDirection) => {
     try {
       setIsLoading(true);
-      const rows = await loadMore(emojis, length, offset);
+      const rows = await loadMore(emojis, length, offset, rowCount, timeout);
 
       setData((prev) => ({
         ...prev,

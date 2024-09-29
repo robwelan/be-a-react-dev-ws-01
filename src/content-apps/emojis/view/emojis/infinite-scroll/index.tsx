@@ -3,22 +3,19 @@ import React, { useEffect, useState } from 'react';
 import { Grid, GridItem } from '@chakra-ui/react';
 //  react-easy-infinite-scroll-hook
 import useInfiniteScroll, {
-  ScrollDirection,
   ScrollDirectionBooleanState,
 } from 'react-easy-infinite-scroll-hook';
-//  components
-import LoadingScreen from '../../../../../components/loading-screen';
 //  local components
 import ViewEmoji from '../../emoji';
-import Wrapper from './wrapper';
+import ViewEmojiLoading from '../../emoji-loading';
 //  recoil types
 import { TypeArrayOfEmojis } from '../../../state/types';
 //  local utilities
 import createItems from './utilities/create-items';
 import createNext from './utilities/create-next';
-import defaultState from './utilities/default-state';
+import defaultState, { TypeDefaultState } from './utilities/default-state';
 //  styles
-import { container } from './infinite-scroll.module.css';
+import * as styles from './InfiniteScroll.module.css';
 
 /*
 https://github.com/vdmrgv/react-easy-infinite-scroll-hook/blob/main/example/src/pages/common/VerticalList.tsx
@@ -35,15 +32,16 @@ type InfintiteScrollProps = {
 };
 
 const InfiniteScroll = (props: InfintiteScrollProps) => {
-  const offset = 50;
   const { emojis, isMobile = false } = props;
-  const [state, setState] = useState(defaultState);
+  const [state, setState] = useState<TypeDefaultState>(defaultState);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState<ScrollDirectionBooleanState>({
     up: false,
     down: true,
   });
   const templateColumns = isMobile ? 1 : 3;
+  const offset = isMobile ? 50 : 48;
+  const timeout = 250;
 
   const gridRef = useInfiniteScroll<HTMLDivElement>({
     next: createNext({
@@ -52,6 +50,8 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
       emojis,
       length: state.data.emojis.length,
       offset,
+      rowCount: emojis.length,
+      timeout,
     }),
     rowCount: emojis.length,
     hasMore,
@@ -65,7 +65,7 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
         offset,
       });
 
-      setState(loadData);
+      setState(loadData as TypeDefaultState);
     };
 
     doLoadData();
@@ -84,17 +84,23 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
 
   return (
     <Grid
-      className={container}
-      gap={4}
-      templateColumns={`repeat(${templateColumns}, 1fr)`}
+      alignItems="stretch"
+      className={styles.container}
+      gridAutoRows="auto"
       ref={gridRef}
+      templateColumns={`repeat(${templateColumns}, 1fr)`}
     >
       {state.data.emojis.map((item) => (
         <GridItem key={item.id}>
           <ViewEmoji emoji={item} />
         </GridItem>
       ))}
-      {isLoading && <LoadingScreen />}
+      {isLoading &&
+        Array.from({ length: templateColumns }, (_, index) => (
+          <GridItem key={index}>
+            <ViewEmojiLoading />
+          </GridItem>
+        ))}
     </Grid>
   );
 };
