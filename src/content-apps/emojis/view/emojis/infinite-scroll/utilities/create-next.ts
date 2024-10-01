@@ -1,4 +1,3 @@
-import { ScrollDirection } from 'react-easy-infinite-scroll-hook';
 import loadMore from './load-more';
 //  recoil types
 import { TypeArrayOfEmojis } from '../../../../state/types';
@@ -10,10 +9,9 @@ const createNext =
     setData,
     setIsLoading,
     length,
-    offset,
+    offset = 50,
     rowCount,
-    reverse,
-    timeout,
+    timeout = 150,
   }: {
     emojis: TypeArrayOfEmojis;
     setData: (v: React.SetStateAction<TypeDefaultState>) => void;
@@ -21,10 +19,9 @@ const createNext =
     length: number;
     offset: number;
     rowCount: number;
-    reverse?: boolean;
     timeout: number;
   }) =>
-  async (direction: ScrollDirection) => {
+  async () => {
     try {
       setIsLoading(true);
       const rows = await loadMore(emojis, length, offset, rowCount, timeout);
@@ -37,16 +34,6 @@ const createNext =
           page: prev.data.page + 1,
         },
       }));
-
-      // setData((prev) =>
-      //   direction === 'up' || direction === 'left'
-      //     ? reverse
-      //       ? [...prev, ...rows]
-      //       : [...rows, ...prev]
-      //     : reverse
-      //       ? [...rows, ...prev]
-      //       : [...prev, ...rows],
-      // );
     } finally {
       setIsLoading(false);
     }
