@@ -11,11 +11,11 @@ import ViewEmojiLoading from '../../emoji-loading';
 //  recoil types
 import { TypeArrayOfEmojis } from '../../../state/types';
 //  local utilities
-import createItems from './utilities/create-items';
+import createInitial from './utilities/create-initial';
 import createNext from './utilities/create-next';
 import defaultState, { TypeDefaultState } from './utilities/default-state';
 //  styles
-import * as styles from './InfiniteScroll.module.css';
+import { container } from './index.module.css';
 
 /*
 https://github.com/vdmrgv/react-easy-infinite-scroll-hook/blob/main/example/src/pages/common/VerticalList.tsx
@@ -59,30 +59,19 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
     hasMore,
   });
 
-  //  mounting
+  //  mount effect
   useEffect(() => {
-    const doLoadData = async () => {
-      const loadData = await createItems({
-        emojis,
-        offset,
-      });
-
-      setState(loadData as TypeDefaultState);
-    };
-
-    doLoadData();
-  }, [emojis]);
-
-  //  loading
-  useEffect(() => {
-    if (!state.data.processed) {
-      setIsLoading(true);
-    }
-
     if (state.data.processed) {
-      setIsLoading(false);
+      //  re-initialise state first
+      //  fixes weird issue where id is duplicated...
+      setState(defaultState);
     }
-  }, [state.data.processed]);
+
+    createInitial({ emojis, offset, setData: setState, setIsLoading, timeout });
+    setHasMore({ up: false, down: true });
+
+    gridRef?.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [emojis]);
 
   //  hasMore effect
   useEffect(() => {
@@ -94,7 +83,7 @@ const InfiniteScroll = (props: InfintiteScrollProps) => {
   return (
     <Grid
       alignItems="stretch"
-      className={styles.container}
+      className={container}
       gridAutoRows="auto"
       ref={gridRef}
       templateColumns={`repeat(${templateColumns}, 1fr)`}
