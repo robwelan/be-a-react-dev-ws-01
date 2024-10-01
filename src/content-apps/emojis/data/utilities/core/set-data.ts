@@ -19,6 +19,12 @@ type Payload = {
   setOrganisations: Function;
 };
 
+// Reusable function to check uniqueness of keys in an array of objects
+const isEverythingUnique = (arr, key) => {
+  const uniques = new Set(arr.map((item) => item[key]));
+  return [...uniques].length === arr.length;
+};
+
 const setData = (payload: Payload) => {
   const { setEmojis, setOrganisations } = payload;
   const categories: Array<string> = [];
@@ -38,11 +44,12 @@ const setData = (payload: Payload) => {
     })
     .map((emoji: TypeEmoji) => {
       const { codes, group, name, subgroup } = emoji;
+      const id = uuidv4();
 
       return {
         ...emoji,
         glyph: setEmoji({ codes }),
-        id: uuidv4(),
+        id,
         index: `${name.toLowerCase()}${(group.toLowerCase(), subgroup.toLowerCase())}`,
       };
     });
@@ -89,6 +96,8 @@ const setData = (payload: Payload) => {
       }));
     }
   });
+
+  const checkUnique = isEverythingUnique(sorted, 'id');
 
   setEmojis((prevState: TypeAllEmojis) => ({
     ...prevState,
