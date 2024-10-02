@@ -7,6 +7,7 @@ import PageCookies from '../../pages/legal/cookies';
 import PageGameRockPaperScissors from '../../pages/games/rock-paper-scissors';
 import PageGameRockPaperScissorsLizardSpock from '../../pages/games/rock-paper-scissors-lizard-spock';
 import PageHome from '../../pages/index';
+import PageAppEmojis from '../../pages/apps/emojis';
 import PageAppFelonyChargesDJT from '../../pages/apps/felony-charges-of-donald-j-trump';
 import PageAppJAT from '../../pages/apps/job-application-tracking';
 import PageAppToDo from '../../pages/apps/to-do';
@@ -26,6 +27,7 @@ import PageTutorialBuildTikTokBioPage from '../../pages/tutorials/build-a-tik-to
 import {
   PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE,
   PUBLIC_ROUTE_PAGE_ABOUT,
+  PUBLIC_ROUTE_PAGE_APPS_EMOJI_DICTIONARY,
   PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT,
   PUBLIC_ROUTE_PAGE_APPS_JOB_HUNTING_JAT,
   PUBLIC_ROUTE_PAGE_APPS_TO_DO,
@@ -65,6 +67,7 @@ const Routes = ({ element, location }) => {
         path={PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE}
       />
       {/* apps */}
+      <PageAppEmojis path={PUBLIC_ROUTE_PAGE_APPS_EMOJI_DICTIONARY} />
       <PageAppFelonyChargesDJT
         path={PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT}
       />
