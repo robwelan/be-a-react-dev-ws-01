@@ -2,7 +2,7 @@
 const PUBLIC_ROUTE_PAGE_COURSE_HELLO_CODING_ANYONE_CAN_LEARN_TO_CODE =
   '/affiliate/courses/hello-coding-anyone-can-learn-to-code';
 //  apps
-const PUBLIC_ROUTE_PAGE_APPS_EMOJI_DICTIONARY = '/apps/emoji';
+const PUBLIC_ROUTE_PAGE_APPS_EMOJI_DICTIONARY = '/apps/emojis';
 const PUBLIC_ROUTE_PAGE_APPS_FELONY_CHARGES_DJT =
   '/apps/felony-charges-of-donald-j-trump';
 const PUBLIC_ROUTE_PAGE_APPS_JOB_HUNTING_JAT = '/apps/job-application-tracking';
