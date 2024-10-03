@@ -41,20 +41,20 @@ const useDeviceSize = () => {
   useLayoutEffect(() => {
     const updateSize = () => {
       setWindowSize({
-        height: windowGlobal ? window.innerHeight : 0,
-        width: windowGlobal ? window.innerWidth : 0,
+        height: windowGlobal ? windowGlobal.innerHeight : 0,
+        width: windowGlobal ? windowGlobal.innerWidth : 0,
       });
     };
 
     if (windowGlobal) {
-      window.addEventListener('resize', updateSize);
+      windowGlobal.addEventListener('resize', updateSize, true);
     }
 
     updateSize();
 
     return () => {
       if (windowGlobal) {
-        window.removeEventListener('resize', updateSize);
+        windowGlobal.removeEventListener('resize', updateSize, true);
       }
     };
   }, []);
@@ -76,7 +76,7 @@ const useDeviceSize = () => {
       isMobile,
       isTablet,
     },
-    
+
     window: windowSize,
   };
 };

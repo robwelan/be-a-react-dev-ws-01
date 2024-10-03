@@ -3,16 +3,20 @@ import React, { useEffect, useState } from 'react';
 import { IconButton } from '@chakra-ui/react';
 //  react icons
 import { FaArrowCircleUp } from '@react-icons/all-files/fa/FaArrowCircleUp';
-//  constants
-import colors from '../../constants/colors';
 //  utiltities
 import getWindow from '../../utilities/window/get-window';
 
-const doScrollToTop = (payload) => {
+type TypeDoScrollToTopPayload = {
+  globalWindow: {
+    scrollTo: Function;       
+  };
+};
+
+const doScrollToTop = (payload: TypeDoScrollToTopPayload) => {
   const { globalWindow } = payload;
 
   if (globalWindow) {
-    window.scrollTo({
+    globalWindow.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
@@ -35,12 +39,12 @@ const ScrollToTop = () => {
         }
       };
 
-      globalWindow.addEventListener('scroll', listener);
+      globalWindow.addEventListener('scroll', listener, true);
     }
 
     return () => {
       if (globalWindow) {
-        globalWindow.removeEventListener('scroll', listener);
+        globalWindow.removeEventListener('scroll', listener, true);
       }
     };
   }, [globalWindow]);
