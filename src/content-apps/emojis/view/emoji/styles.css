@@ -1,7 +1,17 @@
+div.contain-emoji-box {
+  height: 4em;
+  width: 4em;
+}
+
+div.copy-to-clipboard {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-top: auto;
+}
+
 div.emoji-box {
   position: relative;
   height: 4em;
-  margin-bottom: 2em;
 }
 
 div.emoji-box::before {

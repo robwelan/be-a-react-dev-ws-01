@@ -3,10 +3,17 @@ import {
   Box,
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
+  Center,
+  Divider,
   Heading,
+  HStack,
   Text,
+  VStack,
 } from '@chakra-ui/react';
+//  components
+import CopyToClipboard from '../../../../components/copy-to-clipboard';
 //  types
 import { TypeEmoji } from '../../state/types';
 //  styles
@@ -28,21 +35,42 @@ const ViewEmoji = (payload: Payload) => {
         </CardHeader>
 
         <CardBody>
-          <Box
-            className="emoji-box"
-            sx={{
-              '&::before': {
-                content: `"${glyph}"`,
-              },
-            }}
-          ></Box>
-          <Text>
-            <strong>Group</strong>: {group}
-          </Text>
-          <Text>
-            <strong>sub-Group</strong>: {subgroup}
-          </Text>
+          <Center>
+            <HStack spacing={4}>
+              <Box className="contain-emoji-box">
+                <Box
+                  className="emoji-box"
+                  sx={{
+                    '&::before': {
+                      content: `"${glyph}"`,
+                    },
+                  }}
+                ></Box>
+              </Box>
+              <Box className="copy-to-clipboard">
+                <CopyToClipboard
+                  ariaLabel={`Copy ${name} ${glyph} to the clipboard`}
+                  value={glyph}
+                />
+              </Box>
+            </HStack>
+          </Center>
         </CardBody>
+        <CardFooter>
+          <VStack align="left">
+            <Divider />
+            <Box>
+              <Text>
+                <b>Group</b>: {group}
+              </Text>
+            </Box>
+            <Box>
+              <Text>
+                <b>sub-Group</b>: {subgroup}
+              </Text>
+            </Box>
+          </VStack>
+        </CardFooter>
       </Card>
     </Box>
   );
