@@ -2,7 +2,7 @@ import React from 'react';
 //  chakra-ui
 import { Box, HStack, Tr, Td } from '@chakra-ui/react';
 //  local components
-import CopyTool from './copy-tool';
+import CopyToClipboard from '../../../../../components/copy-to-clipboard';
 
 type Footnote = {
   key: string;
@@ -58,21 +58,21 @@ const TableRow = (props: Props) => {
       </Td>
       <Td>
         {literal}{' '}
-        <CopyTool
+        <CopyToClipboard
           ariaLabel={`Copy the literal entity of "${character}" to the clipboard`}
           value={literal}
         />
       </Td>
       <Td>
         {alphanumeric}{' '}
-        <CopyTool
+        <CopyToClipboard
           ariaLabel={`Copy the alphanumeric entity of "${character}" to the clipboard`}
           value={alphanumeric}
         />
       </Td>
       <Td>
         {unicode}{' '}
-        <CopyTool
+        <CopyToClipboard
           ariaLabel={`Copy the unicode entity of "${character}" to the clipboard`}
           value={unicode}
         />

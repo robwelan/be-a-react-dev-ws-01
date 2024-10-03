@@ -7,7 +7,7 @@ import copy from 'copy-to-clipboard';
 
 type Props = { ariaLabel: string; value: string };
 
-const CopyTool = (props: Props) => {
+const CopyToClipboard = (props: Props) => {
   const { ariaLabel, value } = props;
 
   return (
@@ -24,4 +24,4 @@ const CopyTool = (props: Props) => {
   );
 };
 
-export default CopyTool;
+export default CopyToClipboard;
