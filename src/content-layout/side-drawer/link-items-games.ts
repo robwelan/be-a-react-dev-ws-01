@@ -1,5 +1,5 @@
 //  react icons
-import { SiZeromq } from '@react-icons/all-files/si/SiZeromq';
+import { RiGameLine } from 'react-icons/ri';
 //  routes
 import {
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
@@ -8,12 +8,12 @@ import {
 
 const linkItems = [
   {
-    icon: SiZeromq,
+    icon: RiGameLine,
     name: 'Rock Paper Scissors',
     route: PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
   },
   {
-    icon: SiZeromq,
+    icon: RiGameLine,
     name: 'Rock Paper Scissors Lizard Spock',
     route: PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK,
   },
