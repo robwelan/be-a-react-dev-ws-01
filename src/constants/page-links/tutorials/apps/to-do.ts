@@ -7,7 +7,7 @@ const app = {
   description:
     'In this tutorial you will be building a better To Do app with GatsbyJS, React, Recoil, TypeScript, and uuid.',
   icon: LuListTodo,
-  label: 'Build a To Do App with React, Recoil and TypeScript',
+  name: 'Build a To Do App with React, Recoil and TypeScript',
   route: PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
 };
 

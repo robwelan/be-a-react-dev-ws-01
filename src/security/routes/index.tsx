@@ -3,6 +3,7 @@ import { Router } from '@reach/router';
 //  pages
 import PageAffiliateCoursesHelloCodingAnyoneCanLearnToCode from '../../pages/affiliate/courses/hello-coding-anyone-can-learn-to-code';
 import PageAbout from '../../pages/about';
+import PageBlog from '../../pages/blog';
 import PageCookies from '../../pages/legal/cookies';
 import PageGameRockPaperScissors from '../../pages/games/rock-paper-scissors';
 import PageGameRockPaperScissorsLizardSpock from '../../pages/games/rock-paper-scissors-lizard-spock';
@@ -33,6 +34,7 @@ import {
   PUBLIC_ROUTE_PAGE_APPS_TO_DO,
   PUBLIC_ROUTE_PAGE_APPS_USEFUL_HTML_ENTITIES,
   PUBLIC_ROUTE_PAGE_APPS_WEATHER,
+  PUBLIC_ROUTE_PAGE_BLOG,
   PUBLIC_ROUTE_PAGE_COOKIES,
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK,
@@ -54,6 +56,7 @@ const Routes = ({ element, location }) => {
       <PageNotFound default />
 
       <PageHome path={PUBLIC_ROUTE_PAGE_HOME} />
+      <PageBlog path={PUBLIC_ROUTE_PAGE_BLOG} />
 
       {/* games */}
       <PageGameRockPaperScissors
@@ -95,6 +98,7 @@ const Routes = ({ element, location }) => {
       <PagePrivacy path={PUBLIC_ROUTE_PAGE_PRIVACY} />
       <PageShop path={PUBLIC_ROUTE_PAGE_SHOP} />
       <PageTerms path={PUBLIC_ROUTE_PAGE_TERMS} />
+
       {element}
     </Router>
   );

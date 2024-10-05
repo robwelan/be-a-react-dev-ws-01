@@ -1,10 +1,10 @@
 import React from 'react';
 //  chakra-ui
 import { Box, Center, Heading, SimpleGrid } from '@chakra-ui/react';
-//  local components
+//  components
 import PageCard from '../../components/page-card';
-//  local constants
-import tutorials from './constants/tutorials';
+//  constants
+import tutorials from '../../constants/page-links/tutorials';
 
 const ContentTutorial = () => (
   <>

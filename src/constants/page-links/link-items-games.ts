@@ -1,5 +1,6 @@
 //  react icons
-import { RiGameLine } from 'react-icons/ri';
+import { FaRegHandScissors } from 'react-icons/fa';
+import { FaRegHandSpock } from 'react-icons/fa';
 //  routes
 import {
   PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
@@ -8,12 +9,14 @@ import {
 
 const linkItems = [
   {
-    icon: RiGameLine,
+    description: 'Classic game where you choose between Rock, Paper, or Scissors.',
+    icon: FaRegHandScissors,
     name: 'Rock Paper Scissors',
     route: PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORS,
   },
   {
-    icon: RiGameLine,
+    description: 'An extended version of the original game with two additional elements.',
+    icon: FaRegHandSpock,
     name: 'Rock Paper Scissors Lizard Spock',
     route: PUBLIC_ROUTE_PAGE_GAMES_ROCKPAPERSCISSORSLIZARDSPOCK,
   },

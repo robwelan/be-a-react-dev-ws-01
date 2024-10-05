@@ -18,14 +18,14 @@ type Props = {
   data: {
     description: string;
     icon: any;
-    label: string;
+    name: string;
     route: string;
   };
 };
 
 const PageCard = (props: Props) => {
   const { data } = props;
-  const { description, icon: CardIcon, label, route } = data;
+  const { description, icon: CardIcon, name, route } = data;
 
   return (
     <>
@@ -38,7 +38,7 @@ const PageCard = (props: Props) => {
           </CardHeader>
           <CardBody>
             <Stack>
-              <Heading size="sm">{label}</Heading>
+              <Heading size="md">{name}</Heading>
               <Text>{description}</Text>
             </Stack>
           </CardBody>

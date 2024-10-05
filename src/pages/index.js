@@ -1,54 +1,14 @@
-import * as React from 'react';
-//  gatsby
-import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
 //  components
 import Seo from '../components/seo';
 //  content
-import ContentHomePage from '../content-pages/home-page';
+import ContentHome from '../content-pages/home';
+//  content-seo
+import descriptionSeo from '../content-pages/home/seo/description';
 
-const BlogIndex = ({ location }) => {
-  const staticQuery = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        filter: { frontmatter: { settings_publish: { eq: true } } }
-        sort: { frontmatter: { date: DESC } }
-      ) {
-        edges {
-          node {
-            fields {
-              date_created(formatString: "DD-MMM-YYYY")
-              date_updated(formatString: "DD-MMM-YYYY")
-              slug
-            }
-            id
-            frontmatter {
-              settings_featured_image {
-                alt
-                src
-                title
-              }
-              date(formatString: "DD-MMM-YYYY")
-              title
-              categories
-              settings_publish
-            }
-            timeToRead
-            wordCount {
-              paragraphs
-              words
-              sentences
-            }
-            excerpt(pruneLength: 250)
-          }
-        }
-      }
-    }
-  `);
+const PageHome = ({ location }) => <ContentHome location={location} />;
 
-  return <ContentHomePage data={staticQuery} location={location} />;
-};
-
-export default BlogIndex;
+export default PageHome;
 
 /**
  * Head export to define metadata for the page
@@ -56,5 +16,5 @@ export default BlogIndex;
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = ({ location }) => (
-  <Seo location={location} title="All posts" />
+  <Seo description={descriptionSeo} location={location} title="Welcome!" />
 );

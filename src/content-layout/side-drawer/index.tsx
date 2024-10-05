@@ -29,10 +29,10 @@ import { PUBLIC_ROUTE_PAGE_HOME } from '../../security/constants/routes-public';
 //  siblings
 import NavItem from './nav-item';
 //  configurations
-import linkItemsAffiliateCourses from './link-items-affiliate-courses';
-import linkItemsApps from './link-items-apps';
-import linkItemsGames from './link-items-games';
-import linkItemsPages from './link-items-pages';
+import linkItemsAffiliateCourses from '../../constants/page-links/link-items-affiliate-courses';
+import linkItemsApps from '../../constants/page-links/link-items-apps';
+import linkItemsGames from '../../constants/page-links/link-items-games';
+import linkItemsPages from '../../constants/page-links/link-items-pages';
 
 type Props = {
   isOpen: boolean;
