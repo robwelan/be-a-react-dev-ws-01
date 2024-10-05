@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Center, Image, Link } from '@chakra-ui/react';
+import { Box, Image, Link } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const ProductCard = (props) => {

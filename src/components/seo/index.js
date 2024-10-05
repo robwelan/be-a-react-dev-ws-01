@@ -49,7 +49,7 @@ const Seo = (props) => {
     <>
       <title>{title}</title>
       <meta name="description" content={metaDescription} />
-      {/* {metaKeywords !== '' && <meta name="keywords" content={metaKeywords} />} */}
+      {metaKeywords !== '' && <meta name="keywords" content={metaKeywords} />}
       <meta property="og:title" content={propsTitle || 'no props title'} />
       <meta property="og:description" content={metaDescription} />
       {image && image.src !== '' && (

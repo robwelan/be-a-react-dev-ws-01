@@ -6,12 +6,12 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 const ProductCard = (props) => {
   const { data = {} } = props;
   const {
-    description = '',
+    // description = '',
     image = {},
-    link = '',
+    // link = '',
     name = '',
     uri = '',
-    why = '',
+    // why = '',
   } = data;
   const { alt = '', src = null } = image;
 

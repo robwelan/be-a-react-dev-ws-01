@@ -1,6 +1,6 @@
 import React from 'react';
 //  chakra-ui
-import { Box, Divider, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
 //  constants
 import { shopAmazon } from '../../constants/affiliate-marketing-amazon/links';
 import storefront from '../../constants/storefront';

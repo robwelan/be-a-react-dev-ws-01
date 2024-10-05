@@ -35,13 +35,13 @@ const BlogPost = (props) => {
     next = {},
     previous = {},
   } = data;
-  const { fields = {}, frontmatter = {}, html = '', id = '' } = markdownRemark;
-  const { date_updated, slug } = fields;
+  const { frontmatter = {}, html = '', id = '' } = markdownRemark;
+  // const { date_updated, slug } = fields; (fields comes from markdownRemark)
   const {
     title = '',
     date = '',
     meta_description = '',
-    meta_keywords,
+    // meta_keywords,
     settings_featured_image = {},
     twitter_tags = '',
   } = frontmatter;
@@ -67,7 +67,7 @@ const BlogPost = (props) => {
 
   return (
     <>
-      <HStack>
+      <HStack key={id}>
         <Box>
           <Heading as="h1" fontSize="130%">
             {title}
