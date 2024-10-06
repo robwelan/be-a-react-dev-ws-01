@@ -79,11 +79,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const fileNode = getNode(node.parent);
     const created = new Date(fileNode.birthtime);
     const updated = new Date(fileNode.mtime);
+    const setPath = `/blog${filePath}`;
 
     createNodeField({
       name: `slug`,
       node,
-      value: filePath,
+      value: setPath,
     });
 
     createNodeField({
