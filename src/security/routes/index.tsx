@@ -17,6 +17,7 @@ import PageAppWeather from '../../pages/apps/weather';
 import PageFelonyChargesDJT from '../../pages/felony-charges-of-donald-j-trump';
 import PagePrivacy from '../../pages/legal/privacy';
 import PageNotFound from '../../pages/404';
+import PageSitemap from '../../pages/sitemap';
 import PageShop from '../../pages/shop';
 import PageTerms from '../../pages/legal/terms';
 import PageTikTokBio from '../../pages/tik-tok-bio';
@@ -41,8 +42,9 @@ import {
   PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
   PUBLIC_ROUTE_PAGE_PRIVACY,
-  PUBLIC_ROUTE_PAGE_TERMS,
+  PUBLIC_ROUTE_PAGE_SITEMAP,
   PUBLIC_ROUTE_PAGE_SHOP,
+  PUBLIC_ROUTE_PAGE_TERMS,
   PUBLIC_ROUTE_PAGE_TIKTOKBIO,
   PUBLIC_ROUTE_PAGE_TUTORIALS,
   PUBLIC_ROUTE_PAGE_TUTORIALS_APP_TODO,
@@ -57,6 +59,7 @@ const Routes = ({ element, location }) => {
 
       <PageHome path={PUBLIC_ROUTE_PAGE_HOME} />
       <PageBlog path={PUBLIC_ROUTE_PAGE_BLOG} />
+      <PageSitemap path={PUBLIC_ROUTE_PAGE_SITEMAP} />
 
       {/* games */}
       <PageGameRockPaperScissors

@@ -29,6 +29,7 @@ import {
   PUBLIC_ROUTE_PAGE_PRICING,
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_REFUNDS,
+  PUBLIC_ROUTE_PAGE_SITEMAP,
   PUBLIC_ROUTE_PAGE_TERMS,
 } from '../../security/constants/routes-public';
 //  icons
@@ -59,6 +60,7 @@ const LayoutFooter = () => {
               <GatsbyLink to={PUBLIC_ROUTE_PAGE_ABOUT}>
                 The Author Guy
               </GatsbyLink>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_SITEMAP}>Sitemap</GatsbyLink>
             </Stack>
 
             <Stack align={'flex-start'}>
