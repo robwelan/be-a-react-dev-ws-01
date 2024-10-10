@@ -1,4 +1,7 @@
-li.indent {
+li.indent,
+li.indent h1,
+li.indent h2,
+li.indent h3 {
   text-indent: -1em;
   padding-left: 1em;
 }
