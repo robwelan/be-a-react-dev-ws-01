@@ -1,10 +1,21 @@
 import React, { useEffect, useState } from 'react';
 //  hooks
 import useScript from '../hooks/use-script';
-//  utlities
+//  utilities
 import getWindow from '../utilities/window/get-window';
 
-const UseScript = () => {
+const UseScriptAnalytics = () => {
+  useScript({
+    async: true,
+    crossOrigin: 'anonymous',
+    head: true,
+    src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5658856130575482',
+  });
+
+  return <></>;
+};
+
+const UseScriptOverlay = () => {
   useScript({
     async: true,
     src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
@@ -29,7 +40,12 @@ const IndependentScripts = () => {
 
   if (!isWindow) return null;
 
-  return <UseScript />;
+  return (
+    <>
+      <UseScriptAnalytics />
+      <UseScriptOverlay />
+    </>
+  );
 };
 
 export default IndependentScripts;

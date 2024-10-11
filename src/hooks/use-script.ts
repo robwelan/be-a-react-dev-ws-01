@@ -4,6 +4,7 @@ import getWindow from '../utilities/window/get-window';
 
 interface Payload {
   async?: boolean;
+  crossOrigin?: string;
   dependenciesLoaded?: boolean;
   head?: boolean;
   innerHTML?: string;
@@ -14,6 +15,7 @@ interface Payload {
 const useScript = (payload: Payload) => {
   const {
     async: isAsync = false,
+    crossOrigin = '',
     head: isHead = false,
     innerHTML = '',
     src = '',
@@ -32,6 +34,9 @@ const useScript = (payload: Payload) => {
 
     if (isAsync) {
       script.async = true;
+    }
+    if (crossOrigin !== '') {
+      script.crossOrigin = crossOrigin;
     }
     if (innerHTML !== '') {
       script.innerHTML = innerHTML;

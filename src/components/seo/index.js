@@ -77,12 +77,10 @@ const Seo = (props) => {
       {/* canonical authority */}
       <link rel="canonical" href={uri}></link>
       {/* Google Ads - start */}
-      <meta name="google-adsense-account" content="ca-pub-5658856130575482"></meta>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5658856130575482"
-        crossOrigin="anonymous"
-      ></script>
+      <meta
+        name="google-adsense-account"
+        content="ca-pub-5658856130575482"
+      ></meta>
       {/* Google Ads - end */}
       {/* children */}
       {children}
