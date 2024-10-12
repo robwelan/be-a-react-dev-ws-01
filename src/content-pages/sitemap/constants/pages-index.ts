@@ -4,6 +4,7 @@ import { FaBlog } from 'react-icons/fa6';
 import { FaCircleInfo } from 'react-icons/fa6';
 import { FaCookieBite } from 'react-icons/fa6';
 import { GoLaw } from 'react-icons/go';
+import { GrResources } from 'react-icons/gr';
 import { HiDocumentCheck } from 'react-icons/hi2';
 import { MdOutlinePrivacyTip } from 'react-icons/md';
 //  uuid
@@ -15,6 +16,7 @@ import {
   PUBLIC_ROUTE_PAGE_COOKIES,
   PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_PRIVACY,
+  PUBLIC_ROUTE_PAGE_RESOURCES,
   PUBLIC_ROUTE_PAGE_TERMS,
 } from '../../../security/constants/routes-public';
 
@@ -41,6 +43,13 @@ const pageIndex = [
     id: uuidv4(),
     link: PUBLIC_ROUTE_PAGE_BLOG,
     name: 'Blog',
+  },
+  {
+    description: 'Useful tools, frameworks, and references.',
+    icon: GrResources,
+    id: uuidv4(),
+    PUBLIC_ROUTE_PAGE_RESOURCES,
+    name: 'Resources',
   },
   { icon: GoLaw, id: uuidv4(), name: 'Legal' },
   {
