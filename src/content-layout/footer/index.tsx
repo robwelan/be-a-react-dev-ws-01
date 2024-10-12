@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 //  constants
 import linksSocial from '../../constants/social-links';
+import linksToResources from '../../constants/resources-links';
 //  hooks
 import useSiteMetadata from '../../hooks/use-site-meta-data';
 //  local components
@@ -32,15 +33,6 @@ import {
   PUBLIC_ROUTE_PAGE_SITEMAP,
   PUBLIC_ROUTE_PAGE_TERMS,
 } from '../../security/constants/routes-public';
-//  icons
-import iconGatsby from '../../images/gatsbyjs_icon.svg';
-import iconJavascript from '../../images/javascript_icon.svg';
-import iconNetlify from '../../images/netlify_icon.svg';
-import iconNodeDark from '../../images/nodejs_icon_dark.svg';
-import iconNodeLight from '../../images/nodejs_icon_light.svg';
-import iconReact from '../../images/react_icon.svg';
-import iconRecoil from '../../images/react-recoil-js-icon.svg';
-import iconTypescript from '../../images/typescript_icon.svg';
 
 const LayoutFooter = () => {
   const siteMetadata = useSiteMetadata();
@@ -94,100 +86,20 @@ const LayoutFooter = () => {
             <Stack align={'flex-start'}>
               <ListHeader>Tech In Use</ListHeader>
               <SimpleGrid columns={3} spacing={2}>
-                <Link
-                  href="https://www.gatsbyjs.com/"
-                  isExternal
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={colorMode === 'light' ? iconGatsby : iconGatsby}
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
-
-                <Link
-                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                  isExternal
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={
-                      colorMode === 'light' ? iconJavascript : iconJavascript
-                    }
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
-
-                <Link
-                  isExternal
-                  href="https://www.netlify.com/"
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={colorMode === 'light' ? iconNetlify : iconNetlify}
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
-
-                <Link
-                  href="https://nodejs.org/"
-                  isExternal
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={colorMode === 'light' ? iconNodeLight : iconNodeDark}
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
-
-                <Link
-                  href="https://react.dev/"
-                  isExternal
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={colorMode === 'light' ? iconReact : iconReact}
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
-
-                <Link
-                  href="https://recoiljs.org/"
-                  isExternal
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={colorMode === 'light' ? iconRecoil : iconRecoil}
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
-
-                <Link
-                  href="https://www.typescriptlang.org/"
-                  isExternal
-                  marginBottom="0.4em"
-                  target="_blank"
-                >
-                  <Image
-                    alt=""
-                    src={
-                      colorMode === 'light' ? iconTypescript : iconTypescript
-                    }
-                    sx={{ height: '1.2em' }}
-                  />
-                </Link>
+                {linksToResources.map((link, index) => (
+                  <Link
+                    key={index}
+                    href={link.href}
+                    isExternal
+                    marginBottom="0.4em"
+                  >
+                    <Image
+                      alt={link.image.alt}
+                      src={link.image.src[colorMode]}
+                      sx={{ height: '1.2em' }}
+                    />
+                  </Link>
+                ))}
               </SimpleGrid>
             </Stack>
           </SimpleGrid>
