@@ -48,7 +48,7 @@ const pageIndex = [
     description: 'Useful tools, frameworks, and references.',
     icon: GrResources,
     id: uuidv4(),
-    PUBLIC_ROUTE_PAGE_RESOURCES,
+    link: PUBLIC_ROUTE_PAGE_RESOURCES,
     name: 'Resources',
   },
   { icon: GoLaw, id: uuidv4(), name: 'Legal' },
