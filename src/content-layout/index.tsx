@@ -6,8 +6,6 @@ import { useRecoilValue } from 'recoil';
 //  constants
 import { Children, Location } from '../constants/types';
 //  local components
-import ContentListeners from './listeners';
-//  local components
 import BrowserOnly from './browser-only';
 import DependentScripts from './scripts-dependent';
 import IndependentScripts from './scripts-independent';
@@ -92,7 +90,6 @@ const ContentLayout = (props: Props) => {
 
   return (
     <>
-      <ContentListeners />
       {loaded && isLayoutRequired && <DependentScripts />}
       {!loaded && isLayoutRequired && <IndependentScripts />}
       {globalWindow && <BrowserOnly />}
