@@ -7,21 +7,16 @@ import { useRecoilValue } from 'recoil';
 import { Children, Location } from '../constants/types';
 //  local components
 import BrowserOnly from './browser-only';
-import DependentScripts from './scripts-dependent';
-import IndependentScripts from './scripts-independent';
+import ScriptsForLayout from './scripts-for-layout';
+import DependentScripts from './scripts-for-layout/scripts-dependent';
+import IndependentScripts from './scripts-for-layout/scripts-independent';
 import MainLayout from './main-layout';
 import StyledComponent from './styled-component';
 //  hooks
 import useIsLayoutRequired from './hooks/use-is-layout-required';
 //  state
 import { fontSizeState } from '../state';
-//  security
-import {
-  PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
-  PUBLIC_ROUTE_PAGE_TIKTOKBIO,
-} from '../security/constants/routes-public';
 //  utilities
-import replaceAll from '../utilities/strings/replace-all';
 import getWindow from '../utilities/window/get-window';
 // //  styles
 // import './index.css';
@@ -39,29 +34,9 @@ const ContentLayout = (props: Props) => {
   const { pathname } = location;
   const [loaded, setIsLoaded] = useState(false);
   const [mounted, setIsMounted] = useState(false);
-  const hookIsLayoutRequired = useIsLayoutRequired({ pathname });
+  const isLayoutRequired = useIsLayoutRequired({ pathname });
   const globalWindow = getWindow();
-  console.log('hookIsLayoutRequired', hookIsLayoutRequired);
-
-  const cleanPath = replaceAll({
-    string: pathname,
-    search: '/',
-    replaceWith: '',
-  });
-  const cleanRouteFelonyChargesDJT = replaceAll({
-    string: PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
-    search: '/',
-    replaceWith: '',
-  });
-  const cleanRouteTikTokLinks = replaceAll({
-    string: PUBLIC_ROUTE_PAGE_TIKTOKBIO,
-    search: '/',
-    replaceWith: '',
-  });
-  const isRouteFelonyChargesDJT = cleanPath === cleanRouteFelonyChargesDJT;
-  const isRouteTikTokLinks = cleanPath === cleanRouteTikTokLinks;
   const fontSize = useRecoilValue(fontSizeState);
-  const isLayoutRequired = !isRouteFelonyChargesDJT && !isRouteTikTokLinks;
 
   //  mounted effect
   useEffect(() => {
@@ -94,16 +69,15 @@ const ContentLayout = (props: Props) => {
 
   return (
     <>
-      {loaded && isLayoutRequired && <DependentScripts />}
-      {!loaded && isLayoutRequired && <IndependentScripts />}
+      <ScriptsForLayout isLayoutRequired={isLayoutRequired} loaded={loaded} />
+      {/* {loaded && isLayoutRequired && <DependentScripts />}
+      {!loaded && isLayoutRequired && <IndependentScripts />} */}
       {globalWindow && <BrowserOnly />}
       <StyledComponent
         fontSize={`${fontSize}rem`}
         scale={`${fontSize / NUMBER_BASE_FONT_SIZE}`}
       >
-        <MainLayout isLayoutRequired={hookIsLayoutRequired}>
-          {children}
-        </MainLayout>
+        <MainLayout isLayoutRequired={isLayoutRequired}>{children}</MainLayout>
       </StyledComponent>
     </>
   );
