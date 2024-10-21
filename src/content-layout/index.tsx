@@ -11,13 +11,15 @@ import DependentScripts from './scripts-dependent';
 import IndependentScripts from './scripts-independent';
 import MainLayout from './main-layout';
 import StyledComponent from './styled-component';
+//  hooks
+import useIsLayoutRequired from './hooks/use-is-layout-required';
+//  state
+import { fontSizeState } from '../state';
 //  security
 import {
   PUBLIC_ROUTE_PAGE_FELONY_CHARGES_DJT,
   PUBLIC_ROUTE_PAGE_TIKTOKBIO,
 } from '../security/constants/routes-public';
-//  state
-import { fontSizeState } from '../state';
 //  utilities
 import replaceAll from '../utilities/strings/replace-all';
 import getWindow from '../utilities/window/get-window';
@@ -37,7 +39,9 @@ const ContentLayout = (props: Props) => {
   const { pathname } = location;
   const [loaded, setIsLoaded] = useState(false);
   const [mounted, setIsMounted] = useState(false);
+  const hookIsLayoutRequired = useIsLayoutRequired({ pathname });
   const globalWindow = getWindow();
+  console.log('hookIsLayoutRequired', hookIsLayoutRequired);
 
   const cleanPath = replaceAll({
     string: pathname,
@@ -97,7 +101,9 @@ const ContentLayout = (props: Props) => {
         fontSize={`${fontSize}rem`}
         scale={`${fontSize / NUMBER_BASE_FONT_SIZE}`}
       >
-        <MainLayout isLayoutRequired={isLayoutRequired}>{children}</MainLayout>
+        <MainLayout isLayoutRequired={hookIsLayoutRequired}>
+          {children}
+        </MainLayout>
       </StyledComponent>
     </>
   );
