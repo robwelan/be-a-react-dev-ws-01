@@ -6,10 +6,9 @@ import { useRecoilValue } from 'recoil';
 //  constants
 import { Children, Location } from '../constants/types';
 //  local components
-import BrowserOnly from './browser-only';
+import ClientSideOnly from './client-side-only';
+import ScriptsAnyLayout from './scripts-any-layout';
 import ScriptsForLayout from './scripts-for-layout';
-import DependentScripts from './scripts-for-layout/scripts-dependent';
-import IndependentScripts from './scripts-for-layout/scripts-independent';
 import MainLayout from './main-layout';
 import StyledComponent from './styled-component';
 //  hooks
@@ -69,10 +68,13 @@ const ContentLayout = (props: Props) => {
 
   return (
     <>
-      <ScriptsForLayout isLayoutRequired={isLayoutRequired} loaded={loaded} />
-      {/* {loaded && isLayoutRequired && <DependentScripts />}
-      {!loaded && isLayoutRequired && <IndependentScripts />} */}
-      {globalWindow && <BrowserOnly />}
+      <ClientSideOnly globalWindow={globalWindow} />
+      <ScriptsAnyLayout globalWindow={globalWindow} loaded={loaded} />
+      <ScriptsForLayout
+        globalWindow={globalWindow}
+        isLayoutRequired={isLayoutRequired}
+        loaded={loaded}
+      />
       <StyledComponent
         fontSize={`${fontSize}rem`}
         scale={`${fontSize / NUMBER_BASE_FONT_SIZE}`}

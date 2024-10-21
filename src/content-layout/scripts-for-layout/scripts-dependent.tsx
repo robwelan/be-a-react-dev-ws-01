@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 //  hooks
 import useBackgroundColorToken from '../../hooks/use-background-color-token';
 import useScript from '../../hooks/use-script';
-//  utlities
-import getWindow from '../../utilities/window/get-window';
 
 /*
 SOURCE: https://ko-fi.com/Manage/donation-widget-setup
@@ -62,18 +60,22 @@ const UseScript = () => {
   return <></>;
 };
 
-const DependentScripts = () => {
+type Props = {
+  globalWindow: boolean;
+};
+
+const DependentScripts = (props: Props) => {
+  const { globalWindow } = props;
   const [isWindow, setIsWindow] = useState(false);
-  const windowGlobal = getWindow();
 
   //  isWindow effect
   useEffect(() => {
-    if (windowGlobal) {
+    if (globalWindow) {
       setIsWindow(true);
     }
 
     return () => setIsWindow(false);
-  }, [windowGlobal]);
+  }, [globalWindow]);
 
   if (!isWindow) return null;
 

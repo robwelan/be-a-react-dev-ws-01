@@ -5,14 +5,11 @@ import IndependentScripts from './scripts-independent';
 
 type Props = {
   globalWindow: boolean;
-  isLayoutRequired: boolean;
   loaded: boolean;
 };
 
-const ScriptsForLayout = (props: Props) => {
-  const { globalWindow, isLayoutRequired, loaded } = props;
-
-  if (!isLayoutRequired) return null;
+const ScriptsAnyLayout = (props: Props) => {
+  const { globalWindow, loaded } = props;
 
   if (loaded) {
     return <DependentScripts globalWindow={globalWindow} />;
@@ -21,4 +18,4 @@ const ScriptsForLayout = (props: Props) => {
   return <IndependentScripts globalWindow={globalWindow} />;
 };
 
-export default ScriptsForLayout;
+export default ScriptsAnyLayout;

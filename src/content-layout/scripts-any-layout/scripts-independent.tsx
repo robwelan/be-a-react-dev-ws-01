@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 //  hooks
 import useScript from '../../hooks/use-script';
 
-const UseScriptOverlay = () => {
+const UseScriptAnalytics = () => {
   useScript({
     async: true,
-    src: 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js',
-    type: 'application/javascript',
+    crossOrigin: 'anonymous',
+    head: true,
+    src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5658856130575482',
   });
 
   return <></>;
@@ -33,7 +34,7 @@ const IndependentScripts = (props: Props) => {
 
   return (
     <>
-      <UseScriptOverlay />
+      <UseScriptAnalytics />
     </>
   );
 };
