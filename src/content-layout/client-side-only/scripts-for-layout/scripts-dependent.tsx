@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 //  hooks
 import useBackgroundColorToken from '../../../hooks/use-background-color-token';
 import useScript from '../../../hooks/use-script';
@@ -60,26 +60,6 @@ const UseScript = () => {
   return <></>;
 };
 
-type Props = {
-  globalWindow: boolean;
-};
-
-const DependentScripts = (props: Props) => {
-  const { globalWindow } = props;
-  const [isWindow, setIsWindow] = useState(false);
-
-  //  isWindow effect
-  useEffect(() => {
-    if (globalWindow) {
-      setIsWindow(true);
-    }
-
-    return () => setIsWindow(false);
-  }, [globalWindow]);
-
-  if (!isWindow) return null;
-
-  return <UseScript />;
-};
+const DependentScripts = () => <UseScript />;
 
 export default DependentScripts;

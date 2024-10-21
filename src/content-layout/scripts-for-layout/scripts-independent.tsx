@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 //  hooks
-import useScript from '../../hooks/use-script';
+import useScript from '../../../hooks/use-script';
 
 const UseScriptOverlay = () => {
   useScript({

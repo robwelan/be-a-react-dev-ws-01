@@ -7,8 +7,6 @@ import { useRecoilValue } from 'recoil';
 import { Children, Location } from '../constants/types';
 //  local components
 import ClientSideOnly from './client-side-only';
-import ScriptsAnyLayout from './scripts-any-layout';
-import ScriptsForLayout from './scripts-for-layout';
 import MainLayout from './main-layout';
 import StyledComponent from './styled-component';
 //  hooks
@@ -68,9 +66,7 @@ const ContentLayout = (props: Props) => {
 
   return (
     <>
-      <ClientSideOnly globalWindow={globalWindow} />
-      <ScriptsAnyLayout globalWindow={globalWindow} loaded={loaded} />
-      <ScriptsForLayout
+      <ClientSideOnly
         globalWindow={globalWindow}
         isLayoutRequired={isLayoutRequired}
         loaded={loaded}

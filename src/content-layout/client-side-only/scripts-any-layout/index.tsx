@@ -4,18 +4,17 @@ import DependentScripts from './scripts-dependent';
 import IndependentScripts from './scripts-independent';
 
 type Props = {
-  globalWindow: boolean;
   loaded: boolean;
 };
 
 const ScriptsAnyLayout = (props: Props) => {
-  const { globalWindow, loaded } = props;
+  const { loaded } = props;
 
   if (loaded) {
-    return <DependentScripts globalWindow={globalWindow} />;
+    return <DependentScripts />;
   }
 
-  return <IndependentScripts globalWindow={globalWindow} />;
+  return <IndependentScripts />;
 };
 
 export default ScriptsAnyLayout;
