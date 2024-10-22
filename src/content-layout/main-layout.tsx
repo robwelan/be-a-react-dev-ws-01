@@ -5,6 +5,8 @@ import { Box, useDisclosure } from '@chakra-ui/react';
 import { useRecoilValue } from 'recoil';
 //  types
 import { Children } from '../constants/types';
+//  components
+import LoadingScreen from '../components/loading-screen';
 //  local components
 import ButtonScrollToTop from './components/scroll-to-top-button';
 import MediumContainer from './components/container-medium';
@@ -24,9 +26,11 @@ const MainLayout = (props: Props) => {
   const { children, isLayoutRequired } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const configuration = useRecoilValue(siteConfiguration);
-  const { device } = configuration;
+  const { device, loaded } = configuration;
   const { type } = device;
   const { isMobile } = type;
+
+  if (!loaded) return <LoadingScreen />;
 
   if (isLayoutRequired) {
     return (
