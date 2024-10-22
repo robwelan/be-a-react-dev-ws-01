@@ -31,6 +31,7 @@ import {
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_REFUNDS,
   PUBLIC_ROUTE_PAGE_RESOURCES,
+  PUBLIC_ROUTE_PAGE_SHOP,
   PUBLIC_ROUTE_PAGE_SITEMAP,
   PUBLIC_ROUTE_PAGE_TERMS,
 } from '../../security/constants/routes-public';
@@ -53,7 +54,10 @@ const LayoutFooter = () => {
               <GatsbyLink to={PUBLIC_ROUTE_PAGE_ABOUT}>
                 The Author Guy
               </GatsbyLink>
-              <GatsbyLink to={PUBLIC_ROUTE_PAGE_RESOURCES}>Resources</GatsbyLink>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_RESOURCES}>
+                Resources
+              </GatsbyLink>
+              <GatsbyLink to={PUBLIC_ROUTE_PAGE_SHOP}>Shop</GatsbyLink>
               <GatsbyLink to={PUBLIC_ROUTE_PAGE_SITEMAP}>Sitemap</GatsbyLink>
             </Stack>
 

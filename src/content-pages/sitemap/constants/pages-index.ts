@@ -5,6 +5,7 @@ import { FaCircleInfo } from 'react-icons/fa6';
 import { FaCookieBite } from 'react-icons/fa6';
 import { GoLaw } from 'react-icons/go';
 import { GrResources } from 'react-icons/gr';
+import { FaShop } from 'react-icons/fa6';
 import { HiDocumentCheck } from 'react-icons/hi2';
 import { MdOutlinePrivacyTip } from 'react-icons/md';
 //  uuid
@@ -17,6 +18,7 @@ import {
   PUBLIC_ROUTE_PAGE_HOME,
   PUBLIC_ROUTE_PAGE_PRIVACY,
   PUBLIC_ROUTE_PAGE_RESOURCES,
+  PUBLIC_ROUTE_PAGE_SHOP,
   PUBLIC_ROUTE_PAGE_TERMS,
 } from '../../../security/constants/routes-public';
 
@@ -50,6 +52,13 @@ const pageIndex = [
     id: uuidv4(),
     link: PUBLIC_ROUTE_PAGE_RESOURCES,
     name: 'Resources',
+  },
+  {
+    description: `When you shop with us, your purchase directly supports the creation of valuable content for the developer community. Every dollar helps us produce tutorials, guides, and resources that keep you informed and skilled. Your support fuels our mission—join us in making a difference!`,
+    icon: FaShop,
+    id: uuidv4(),
+    link: PUBLIC_ROUTE_PAGE_SHOP,
+    name: 'Shop',
   },
   { icon: GoLaw, id: uuidv4(), name: 'Legal' },
   {
