@@ -5,11 +5,13 @@ import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
 import { shopAmazon } from '../../constants/affiliate-marketing-amazon/links';
 import storefront from '../../constants/storefront';
 //  local components
+import Introduction from './introduction';
 import ProductCard from './product-card';
 import ProductAmazonProduct from './product-card-amazon-shop';
 
 const ContentShopPage = () => (
   <>
+    <Introduction />
     {shopAmazon.products.laptops && shopAmazon.products.laptops.length > 0 && (
       <>
         <Heading as="h2" size="md">
