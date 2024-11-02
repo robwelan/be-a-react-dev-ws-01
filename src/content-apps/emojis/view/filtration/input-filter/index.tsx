@@ -1,28 +1,47 @@
-import React from 'react';
-//  recoil
+import React, { useState, useEffect, useRef } from 'react';
 import { useRecoilState } from 'recoil';
-//  components
 import InputFilterComponent from '../../../../../components/input-filter';
-//  local utilities
 import clearFilterValue from '../utilities/clear-filter-value';
 import setFilterValue from '../utilities/set-filter-value';
-//  local state
 import { filteredEmojis } from '../../../state/atoms';
 
 const InputFilter = () => {
+  const MILLISECONDS = 150;
   const [filter, setFilter] = useRecoilState(filteredEmojis);
+  const [inputValue, setInputValue] = useState<string>(filter.input || ''); // Local input state for immediate feedback
+  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to store the timeout ID
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target) {
-      const { value = '' } = event.target;
+    const value = event.target?.value || '';
+    setInputValue(value); // Update input state immediately
 
-      setFilterValue({ value, setValue: setFilter });
+    // Clear any existing timeout to reset the delay
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current);
     }
+
+    // Set a new timeout to trigger the filter only after typing stops
+    typingTimeoutRef.current = setTimeout(() => {
+      setFilterValue({ value, setValue: setFilter });
+    }, MILLISECONDS);
   };
 
   const handleClearFilter = () => {
+    setInputValue(''); // Clear the input display immediately
     clearFilterValue({ setValue: setFilter });
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current); // Clear timeout if input is cleared
+    }
   };
+
+  // Clean up timeout on component unmount
+  useEffect(() => {
+    return () => {
+      if (typingTimeoutRef.current) {
+        clearTimeout(typingTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <InputFilterComponent
@@ -30,7 +49,7 @@ const InputFilter = () => {
       iconLeft={{ color: 'gray.300', pointer: 'none' }}
       iconRight={{ color: 'gray.300' }}
       placeholder="filter..."
-      value={filter.input}
+      value={inputValue}
     />
   );
 };
