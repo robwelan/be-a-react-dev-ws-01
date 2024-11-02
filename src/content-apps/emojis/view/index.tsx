@@ -15,7 +15,7 @@ const Filtration = lazy(() => import('./filtration'));
 import { siteConfiguration } from '../../../state';
 
 const ViewEmoji = () => {
-  const [state] = useEmojisData();
+  const state = useEmojisData();
   const configuration = useRecoilValue(siteConfiguration);
   const { device } = configuration;
   const { type } = device;

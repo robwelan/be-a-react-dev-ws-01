@@ -3,49 +3,41 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 //  state
 import { allEmojis, filteredEmojis } from '../state/atoms';
+//  types
+import { TypeEmoji } from '../state/types';
 
-const defaultState = {
+interface EmojisState {
+  emojis: TypeEmoji[];
+  filtered: boolean;
+  length: { all: number; display: number };
+}
+const defaultState: EmojisState = {
   emojis: [],
   filtered: false,
   length: { all: 0, display: 0 },
 };
 
 const useEmojisData = () => {
-  const stateAllEmojis = useRecoilValue(allEmojis);
-  const { emojis: arrayAllEmojis } = stateAllEmojis;
-  const stateFilteredEmojis = useRecoilValue(filteredEmojis);
-  const { emojis: arrayFilteredEmojis, filtered } = stateFilteredEmojis;
-  const [state, setState] = useState(defaultState);
+  const { emojis: arrayAllEmojis } = useRecoilValue(allEmojis);
+  const { emojis: arrayFilteredEmojis, filtered } =
+    useRecoilValue(filteredEmojis);
+  const [state, setState] = useState<EmojisState>(defaultState);
+  //  calculate lengths
   const lengthAll = arrayAllEmojis.length;
-  const lengthFiltered = arrayFilteredEmojis.length;
+  const lengthDisplay = filtered ? arrayFilteredEmojis.length : lengthAll;
 
   useEffect(() => {
-    if (filtered) {
-      setState({
-        ...defaultState,
-        emojis: arrayFilteredEmojis,
-        filtered,
-        length: {
-          all: lengthAll,
-          display: lengthFiltered,
-        },
-      });
-    }
+    setState({
+      emojis: filtered ? arrayFilteredEmojis : arrayAllEmojis,
+      filtered,
+      length: {
+        all: lengthAll,
+        display: lengthDisplay,
+      },
+    });
+  }, [arrayAllEmojis, arrayFilteredEmojis, filtered, lengthAll, lengthDisplay]);
 
-    if (!filtered) {
-      setState({
-        ...defaultState,
-        emojis: arrayAllEmojis,
-        filtered,
-        length: {
-          all: lengthAll,
-          display: lengthAll,
-        },
-      });
-    }
-  }, [filtered, lengthFiltered]);
-
-  return [state];
+  return state;
 };
 
 export default useEmojisData;
