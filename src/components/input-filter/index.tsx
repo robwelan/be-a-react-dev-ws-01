@@ -38,6 +38,7 @@ type PropsInputFilter = {
   iconRight?: {
     color?: string;
   };
+  inputRef?: React.Ref<HTMLInputElement>;
   placeholder?: string;
   value?: string;
 };
@@ -49,6 +50,7 @@ const InputFilter: React.FC<PropsInputFilter> = ({
   } = {},
   iconLeft = {},
   iconRight = {},
+  inputRef = null,
   placeholder = 'Search...',
   value = '',
 }) => {
@@ -68,6 +70,7 @@ const InputFilter: React.FC<PropsInputFilter> = ({
           }
         }}
         placeholder={placeholder}
+        ref={inputRef}
         value={value}
       />
       <InputRightElement>

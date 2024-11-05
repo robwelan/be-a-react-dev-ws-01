@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 //  recoil
 import { useRecoilState } from 'recoil';
 //  components
@@ -11,6 +11,7 @@ import { htmlEntitiesFilterState } from '../../../state/atoms';
 
 const InputFilter = () => {
   const [filter, setFilter] = useRecoilState(htmlEntitiesFilterState);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target) {
@@ -22,6 +23,10 @@ const InputFilter = () => {
 
   const handleClearFilter = () => {
     clearFilterValue({ setValue: setFilter });
+
+    if (inputRef && inputRef.current) {
+      (inputRef.current as HTMLInputElement).focus();
+    }
   };
 
   return (
@@ -29,6 +34,7 @@ const InputFilter = () => {
       functions={{ onChange: handleInputChange, onClear: handleClearFilter }}
       iconLeft={{ color: 'gray.300', pointer: 'none' }}
       iconRight={{ color: 'gray.300' }}
+      inputRef={inputRef}
       placeholder="filter..."
       value={filter}
     />

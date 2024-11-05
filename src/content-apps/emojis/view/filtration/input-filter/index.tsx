@@ -6,10 +6,11 @@ import setFilterValue from '../utilities/set-filter-value';
 import { filteredEmojis } from '../../../state/atoms';
 
 const InputFilter = () => {
-  const MILLISECONDS = 150;
+  const MILLISECONDS = 300;
   const [filter, setFilter] = useRecoilState(filteredEmojis);
   const [inputValue, setInputValue] = useState<string>(filter.input || ''); // Local input state for immediate feedback
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to store the timeout ID
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target?.value || '';
@@ -29,6 +30,11 @@ const InputFilter = () => {
   const handleClearFilter = () => {
     setInputValue(''); // Clear the input display immediately
     clearFilterValue({ setValue: setFilter });
+
+    if (inputRef && inputRef.current) {
+      (inputRef.current as HTMLInputElement).focus();
+    }
+
     if (typingTimeoutRef.current) {
       clearTimeout(typingTimeoutRef.current); // Clear timeout if input is cleared
     }
@@ -48,6 +54,7 @@ const InputFilter = () => {
       functions={{ onChange: handleInputChange, onClear: handleClearFilter }}
       iconLeft={{ color: 'gray.300', pointer: 'none' }}
       iconRight={{ color: 'gray.300' }}
+      inputRef={inputRef}
       placeholder="filter..."
       value={inputValue}
     />
