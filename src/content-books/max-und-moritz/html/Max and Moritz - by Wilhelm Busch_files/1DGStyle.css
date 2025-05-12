@@ -1,0 +1,687 @@
+﻿/* CSS Stylesheet for LearningMethods CD Publications */
+/* (C) 2006 David Gorman */
+
+/* RESET DECLARATIONS
+This rule resets a core set of elements so that they will appear consistent across browsers. Without this rule, content styled with an h1 tag, for example, would appear in different places in Firefox and Internet Explorer because each browser has a different top margin default value. By resetting these values to 0, the elements will initially be rendered in an identical fashion and their properties can be easily defined by the designer in any subsequent rule. */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5. h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+}	
+
+/* BODY and BASEFONT */
+/* background color for old Green theme: 234135 */
+/* background color for Brown theme: 330000 */
+
+  body { 
+		margin: 0; 
+		background: #003300 url("images/BGblack.gif");
+		/* background-color: #003300; */
+		font: 400 13px Arial, Helvetica, sans-serif; 
+		color: #000000; 
+}
+  body.Plain { 
+		margin-top: 0; 
+		margin-bottom: 25; 
+		background-color: #FFFFFF; 
+		font: 400 13px Arial, Helvetica, sans-serif; 
+		color: #000000;
+}
+  basefont  { 
+		font: 400 13px Arial, Helvetica, sans-serif; 
+		color: #000000; 
+}
+
+/* PAGE STRUCTURE, sets table properties for margins, headers, etc. */
+
+	/* for table in the _private\LMHeader.htm file */
+  table.header { 
+		width: 772; 
+		table-align: center; 
+		background-color: #FFFFFF; 
+		spacing: 0; 
+		padding: 0; \
+		border-collapse: collapse; 
+		margin: 0; 
+		border-right: 2; 
+}
+  div.page { 
+		margin-top: 0; 
+		margin-bottom: 30; 
+		margin-left: 0; 
+		margin-right: 0;
+} 
+	/* for underlying table into which goes the header and content */
+  table.base { 
+		width: 772; 
+		table-align: center; 
+		background-color: #cccccc; 
+		spacing: 0; 
+		padding: 0; 
+		margin: 0;
+		border: none;
+		border-collapse: collapse; 
+
+}
+	/* this table fits into base table and carries all the content */
+  table.content { 
+		width: 725; 
+		table-align: center; 
+		background-color: #cccccc; 
+		spacing: 0; 
+		border-collapse: collapse; 
+		margin-top: 0; 
+		margin-bottom: 30; 
+		margin-left: 25; 
+		margin-right: 20; 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+	/* this table floats right in content for news, specials, etc */
+  table.float { 
+		width: 205;
+		float: right; 
+		background-color: #FFFFFF; 
+		spacing: 0; 
+		border-collapse: collapse;
+		margin-top: 10; 
+		margin-bottom: 10; 
+		margin-left: 20; 
+		margin-right: 0; 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+	/* this table floats right on the home page */
+  table.floathome { 
+		width: 205;
+		float: right; 
+		background-color: #FFFFFF; 
+		spacing: 0; 
+		border-collapse: collapse;
+		margin-top: 10; 
+		margin-bottom: 10; 
+		margin-left: 20; 
+		margin-right: 0; 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+	/* this table floats left on the home page */
+  table.floathomemenu { 
+		width: 116;
+		float: left; 
+		background-color: #FFFFFF; 
+		spacing: 0; 
+		border-collapse: collapse;
+		margin-top: 10; 
+		margin-bottom: 10; 
+		margin-left: 0; 
+		margin-right: 0; 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+	  /* this table sits at the top of the page and is used for various notices */
+	table.top { 
+		table-align: center; 
+		/* background-color: #2E625C; */
+		border-width: 3; 
+		width: 100%; 
+		height: 30px; 
+		padding: 120; 
+		spacing: 30;
+		table-border-color-light: rgb(102,204,204); 
+		table-border-color-dark: rgb(0,102,102); 
+}
+
+  table.introtable { 
+			  /* this table carries intro to articles */
+  		table-align: left; 
+	  	background-color: #F2F2F2; 
+		  border: 1px outset #C8C8C8;
+  		  /* spacing: 0; 
+	  	border-collapse: collapse;  */
+      margin: 25px 0 25px 0;
+}
+
+  .introtext   {   	
+  	  text-align: left;
+	  	font-family:  Verdana, Geneva, sans-serif; 
+		  font-size: 0.9em;
+		  font-style: italic;
+  		line-height: 150%;
+  		margin: 0 0 8px 0;
+  		letter-spacing: 0px;
+  		word-spacing: 0em;
+}
+
+
+/* GENERAL ELEMENTS */
+
+  table { 
+		font: 400 13px Arial Helvetica sans-serif; 
+}
+  td    { 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+  H1  { 
+		font: 700 22px Times New Roman, Times, serif; 
+		color: #005500; 
+		text-align: left; 
+}
+  H2  { 
+		font: 700 18px Arial, Helvetica, sans-serif; 
+		color: #005500; 
+		text-align: left; 
+}
+  H3  { 
+		font: 700 18px Times New Roman, Times, serif; 
+		color: #800000; 
+		text-align: left; 
+}
+  H4  { 
+		font: 700 14px Arial, Helvetica, sans-serif; 
+		color: #005500; 
+		text-align: left; 
+}
+  H5  { 
+		font: 700 14px Arial, Helvetica, sans-serif; 
+		color: #800000; 
+		text-align: left; 
+}
+  H6  { 
+		font: 700 14px Arial, Helvetica, sans-serif; 
+		color: #000000; 
+		text-align: left; 
+}
+  P   {   	
+  	   /* text-align: left; */
+	  	font-family:  Verdana, Geneva, sans-serif; 
+		font-size: 1em;
+  		line-height: 150%;
+  		margin: 0 0 10px 0;
+  		letter-spacing: 0px;
+  		word-spacing: 0em;
+}
+/*  P   { 
+		font: 400 13px Arial, Helvetica, sans-serif; 
+} */
+
+  P.copyright { 
+		font: 400 11px Arial, Helvetica, sans-serif; 
+		color: #000000; 
+}
+  P.Indent { 	
+		margin-left: "1.3em"; 
+}
+	/* this style indents text, instead of blockquote tag */
+  P.Indent2  { 
+		margin-left: "3.5em"; 
+}
+
+  B   {
+		font-weight: 700;
+}
+  strong {
+		font-weight: 700;
+}
+  UL { 
+		font: 13px Arial Helvetica sans-serif; 
+		padding-left: "0em"; 
+		margin-top: ".6em"; 
+		margin-bottom: 0; 
+		margin-left: "1.5em"; 
+		margin-right: "1.5em"; 
+}
+  A:link  { 
+		color: black;
+		text-decoration: underline;
+		font-weight: 600
+}
+  A:visited { 
+		color: #444;
+		text-decoration: underline;
+		font-weight: 600
+
+}
+  A:hover { 
+		color: #888;
+		text-decoration: underline;
+		font-weight: 600
+
+}
+  A.Plain:hover { 
+		text-decoration: none;
+}
+
+  A.Plain:visited { 
+		text-decoration: none;
+}
+
+  A.Plain:link { 
+		text-decoration: none;
+}
+
+  A.Recipe:link  { 
+		color: #222;
+		text-decoration: none;
+		font-weight: normal; 
+}
+  A.Recipe:visited { 
+		color: #990000; 
+		text-decoration: underline; 
+		font-weight: normal;
+}
+  A.Recipe:hover { 
+		color: #990099; 
+		text-decoration: none; 
+		font-weight: normal;
+
+
+/* SPECIAL FORMATTING */
+
+/* Links */
+
+  A.pagetop:link  { 
+		color: #FFFF66; 
+		text-decoration: underline; 
+		font-weight: normal; 
+}
+  A.pagetop:visited { 
+		color: #FFFF88; 
+		text-decoration: underline; 
+		font-weight: normal; 
+}
+  A.pagetop:hover { 
+		color: yellow; 
+		text-decoration: underline; 
+		font-weight: normal; 
+}
+
+  a.menu:link  { 
+	       /* These are the links in the main menu bars
+    	   at the top and bottom of the "page".  */
+    	font: 12px Arial, Helvetica, sans-serif; 
+	    color: #555555; 
+  	  text-decoration: none; 
+}
+  a.menu:visited  { 
+  	  font: 12px Arial, Helvetica, sans-serif; 
+    	color: #777777; 
+	    text-decoration: none; 
+}
+  a.menu:hover  { 
+	    font: 12px Arial, Helvetica, sans-serif; 
+    	color: white; 
+    	background-color: #555555; 
+    	text-decoration: none; 
+    	   /* color: #660033;  */
+}
+
+/* 
+  A.menu:link  { 
+		font: bold Arial, Helvetica, sans-serif; 
+		color: #777777; 
+		text-decoration: none; 
+}
+  A.menu:visited  { 
+		font: bold Arial, Helvetica, sans-serif; 
+		color: #660066; 
+		text-decoration: none; 
+}
+  A.menu:hover  { 
+		font: bold Arial, Helvetica, sans-serif; 
+		color: blue; 
+		text-decoration: underline; 
+}
+*/
+
+
+  A.SS11px:link  { 
+		font: bold 11px Arial, Helvetica, sans-serif; 
+		color: #999999; 
+		text-decoration: none; 
+}
+  A.SS11px:visited { 
+		font: bold 11px Arial, Helvetica, sans-serif; 
+		color: white; 
+		text-decoration: none; 
+}
+  A.SS11px:hover { 
+		font: bold 11px Arial, Helvetica, sans-serif; 
+		color: yellow; 
+		text-decoration: underline; 
+}
+
+  A.SS14px:link  { 
+		font: bold 11px Arial, Helvetica, sans-serif; 
+		color: yellow; 
+		text-decoration: none; 
+}
+  A.SS14px:visited { 
+		font: bold 11px Arial, Helvetica, sans-serif; 
+		color: silver; 
+		text-decoration: none; 
+}
+  A.SS14px:hover { 
+		font: bold 11px Arial, Helvetica, sans-serif; 
+		color: white; 
+		text-decoration: underline; 
+}
+
+  A.StatusBar:link { 
+		font: bold 10px Arial, Helvetica, sans-serif; 
+		color: #000000; 
+		text-decoration: none;
+}
+  A.StatusBar:visited { 
+		font: bold 10px Arial, Helvetica, sans-serif; 
+		color: #000000; 
+		text-decoration: none;
+}
+  A.StatusBar:hover { 
+		font: bold 10px Arial, Helvetica, sans-serif; 
+		color: #7F7F7F; 
+		text-decoration: underline; 
+}
+  A.icra:link { 
+		font: 9px Verdana, Geneva, sans-serif; 
+		color: #C0C0C0;
+		text-decoration: none;
+}
+  A.icra:visited { 
+		font: 9px Verdana, Geneva, sans-serif; 
+		color: #C0C0C0;
+		text-decoration: none;
+}
+  A.icra:hover { 
+		font: 9px Verdana, Geneva, sans-serif; 
+		color: white;
+		text-decoration: underline;
+}
+
+/* Fonts */
+
+  p.indent { 	
+  		margin: 0 0 0 150px; 
+}
+
+  .indent2  { 
+	  		/* this style indents text, instead of blockquote tag */
+		  margin-left: 3.5em; 
+}
+
+  .article   {
+		text-align: left;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0 0 10px 0;
+		letter-spacing: 0px;
+		word-spacing: 0em;
+}
+  .articleindent   {   	
+  	    text-align: left;
+	  	font-family: Verdana, Geneva, sans-serif; 
+		font-size: 1em;
+  		line-height: 1.5em;
+  		margin: 0 0 10px 1.75em;
+  		letter-spacing: 0px;
+  		word-spacing: 0em;
+}
+
+  .articleindenttwice   {   	
+  	    text-align: left;
+	  	font-family: Verdana, Geneva, sans-serif; 
+		font-size: 1em;
+  		line-height: 1.5em;
+  		margin: 0 0 10px 3em;
+  		letter-spacing: 0px;
+  		word-spacing: 0em;
+}
+
+  .articleoutdent  { 
+	  		/* article style for hanging indent for bulleted lists, outdented header paragraphs, etc */
+		text-align: left;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0 0 10px 1.75em;
+		text-indent: -1.75em;
+		letter-spacing: 0px;
+		word-spacing: 0em;
+}
+
+  .articleoutdentpara  { 
+	  		/* article style for hanging indent for bulleted lists, outdented header paragraphs, etc */
+		text-align: left;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0 0 10px 1.75em;
+		letter-spacing: 0px;
+		word-spacing: 0em;
+}
+
+  .articleoutdentlist  { 
+	  		/* article style for hanging indent for bulleted lists, outdented header paragraphs, etc */
+		text-align: left;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0 0 10px 2.5em;
+		text-indent: -1.45em;
+		letter-spacing: 0px;
+		word-spacing: 0em;
+}
+
+  .articleoutdentlistpara  { 
+	  		/* article style for folow-on paragraph to match articleoutdent margins */
+		text-align: left;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0 0 10px 2.5em;
+		letter-spacing: 0px;
+		word-spacing: 0em;
+}
+
+  .category   { 
+  		font: 700 16px  Verdana, Geneva, sans-serif; 
+      margin: 8px 0 0 0;
+		  text-align: left; 
+  	  text-shadow: 3px 3px 3px #aaa;
+	  	color: #600000;
+		  /*  color: #777; #993333; #712400; */
+}
+
+  .nomargins   {   	
+  		margin: 0 0 0 0;
+}
+
+  .horizrule   {   	
+  		margin: 0 0 20px 0;
+}
+
+  .Footer9   { 
+		font-family: Arial, Helvetica, sans-serif; 
+		font-size: 9pt; 
+		text-align: Center; 
+}
+  .Footer10px  { 
+		font: 10px Arial, Helvetica, sans-serif; 
+		text-align: Center; 
+}
+
+  p.recipelink {
+      font: 400 11px Arial, Helvetica, sans-serif; 
+      color: #000000; 
+      margin: 0 0 0 2em; 
+	  text-indent: -1.45em;
+
+}
+
+  p.alphabet { 
+      font-weight: 700; 
+      font-size: 20px; 
+      font-family: Times New Roman, Times, serif; 
+      color: #000000; 
+      margin: 5 0 0 0; 
+}
+
+  .S      { 	font-family: Arial, Helvetica, sans-serif; 
+}
+  .SS9px  { 	font: 9px Arial, Helvetica, sans-serif; 
+}
+  .SS10px  { 	font: 10px Arial, Helvetica, sans-serif; 
+}
+  .SS11px  { 	font: 11px Arial, Helvetica, sans-serif; 
+}
+  .SS12px  { 	font: 12px Arial, Helvetica, sans-serif; 
+}
+  .SS13pxb  { 	font: 13px Arial, Helvetica, sans-serif; 
+		font-weight: 700; 
+}
+  .SS14px  { 	font: 14px Arial, Helvetica, sans-serif; 
+}
+  .SS14yelo  { 	font: bold 14px Arial, Helvetica, sans-serif; 
+		color: yellow;
+}
+  .SS15px  { 	font: 15px Arial, Helvetica, sans-serif; 
+}
+  .SS15pxb  { 	font: 15px Arial, Helvetica, sans-serif; 
+		font-weight: 700; 
+}
+  .SS16px  { 	font: 16px Arial, Helvetica, sans-serif; 
+}
+  .SS18px  { 	font: 18px Arial, Helvetica, sans-serif; 
+}
+  .SS22px  { 	font: 22px Arial, Helvetica, sans-serif; 
+}
+
+
+  .V      { 	font-family: Verdana, Geneva, sans-serif; 
+}
+  .V9px  { 	font: 9px Verdana, Geneva, sans-serif; 
+}
+  .V10px  { 	font: 10px Verdana, Geneva, sans-serif; 
+}
+  .v10pxgry  { 	font-family: Verdana, Geneva, sans-serif; 
+		font-size: 10px; 
+		color: #333333; 
+}
+  .V11px  { 	font: 11px Verdana, Geneva, sans-serif; 
+}
+  .V12px  { 	font: 12px Verdana, Geneva, sans-serif; 
+}
+  .V13px  { 	font: 12px Verdana, Geneva, sans-serif; 
+}
+  .V14px  { 	font: 14px Verdana, Geneva, sans-serif; 
+}
+  .V15px  { 	font: 14px Verdana, Geneva, sans-serif; 
+}
+  .V16px  { 	font: 16px Verdana, Geneva, sans-serif; 
+}
+
+
+  .T  { 	font-family: "Times New Roman", Times, serif; 
+}
+  .TNR { 	font-family: "Times New Roman", Times, serif; 
+		font-size: 11pt; 
+}
+  .T10px  { 	font: 10px "Times New Roman", Times, serif; 
+}
+  .T12px  { 	font: 12px "Times New Roman", Times, serif; 
+}
+  .T14px  { 	font: 14px "Times New Roman", Times, serif; 
+}
+  .T16px  { 	font: 16px "Times New Roman", Times, serif; 
+}
+  .T18px  { 	font: 18px "Times New Roman", Times, serif; 
+}
+  .T20px  { 	font: 20px "Times New Roman", Times, serif; 
+}
+  .T24px  { 	font: 24px "Times New Roman", Times, serif; 
+}
+  .T30px  {	font: 30px "Times New Roman", Times, serif; 
+}
+
+
+/* ----------------------------- */
+
+/* UNUSED STYLES ?? */
+
+  table.base1 { 
+		width: 776; 
+		table-align: center; 
+		background-color: #000000; 
+		spacing: 0; 
+		padding: 0; 
+		border-collapse: collapse; 
+		margin: 0; 
+		border-right: solid black; 
+		border-bottom: thick solid black; 
+}
+  table.frame1 { 
+		width: 768; 
+		table-align: center; 
+		background-color: #FFFFFF; 
+		spacing: 0; 
+		padding: 0; 
+		border-collapse: collapse; 
+		margin-top: 0; 
+		margin-bottom: 0; 
+		margin-left: 0; 
+		margin-right: 0; 
+		border-left: thin black; 
+		border-right: thick black; 
+}
+  table.content1 { 
+		width: 723; 
+		table-align: center; 
+		background-color: #FFFFFF; 
+		spacing: 0; border-collapse: collapse; 
+		margin-top: 10; 
+		margin-bottom: 0; 
+		margin-left: 25; 
+		margin-right: 20; 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+  table.pageframebackup { 
+		width: 770; 
+		table-align: center; 
+		background-color: #FFFFFF; 
+		spacing: 0; 
+		padding: 0; 
+		border-collapse: collapse; 
+		margin: 0; 
+		border-top: none; 
+		border-left: solid black; 
+		border-right: thick solid black; 
+		border-bottom: thick solid black; 
+}
+  table.page { 
+		width: 770; 
+		table-align: center; 
+		border-width: 0; 
+		padding: 0; 
+		spacing: 0; 
+		background-color: #FFFFFF; 
+		font-weight: 400; 
+		font-size: 13px; 
+		font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* STORAGE - old background color: #2E625C */
+/* STORAGE - A:link  { color: blue; text-decoration: none; font-weight: normal; } */
+/* STORAGE - A:visited { color: #3333FF; text-decoration: none; font-weight: normal; } */
+/* STORAGE - A:hover { color: red; text-decoration: underline; font-weight: normal; } */
