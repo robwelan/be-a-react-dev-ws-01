@@ -6,6 +6,8 @@ import { FaTiktok } from 'react-icons/fa6';
 //  components
 import ListItemWithLink from '../../../components/list-item-with-link';
 import LinkToTutorials from '../components/link-to-tutorials';
+//  security routes
+import { PUBLIC_ROUTE_PAGE_BLOG } from '../../../security/constants/routes-public';
 
 const ContentTutorial = () => (
   <>
@@ -23,7 +25,7 @@ const ContentTutorial = () => (
       <ListItemWithLink
         icon={FaTiktok}
         label="Build a Tik Tok Bio Page"
-        route="/build-a-tik-tok-bio-in-chakra-ui-for-react/"
+        route={`${PUBLIC_ROUTE_PAGE_BLOG}/build-a-tik-tok-bio-in-chakra-ui-for-react/`}
       />
     </List>
     <LinkToTutorials />
